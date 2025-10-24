@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Gift, CheckCircle2, MapPin, Phone, Zap, Target, Calendar } from "lucide-react";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const AuditOffer = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section id="audit" className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-deep-black via-spider-red/8 to-deep-black">
       {/* Background effects */}
@@ -63,7 +66,7 @@ const AuditOffer = () => {
 
             {/* CTA Button */}
             <div className="text-center">
-              <Button variant="cta" size="xl" className="text-xl px-12 py-8 h-auto animate-glow">
+              <Button variant="cta" size="xl" className="text-xl px-12 py-8 h-auto animate-glow" onClick={openCalendly}>
                 <Gift className="w-6 h-6" />
                 JE RÉSERVE MON CRÉNEAU (30 MIN) - GRATUIT
               </Button>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Gift, Zap, Phone, Target } from "lucide-react";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const FinalCTA = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section className="py-24 px-4 relative overflow-hidden">
       {/* Background effects */}
@@ -40,7 +43,7 @@ const FinalCTA = () => {
 
           {/* CTA Button */}
           <div className="pt-4">
-            <Button variant="cta" size="xl" className="text-xl px-12 py-8 h-auto animate-glow">
+            <Button variant="cta" size="xl" className="text-xl px-12 py-8 h-auto animate-glow" onClick={openCalendly}>
               <Gift className="w-6 h-6" />
               JE RÉSERVE MON AUDIT GRATUIT (30 MIN)
             </Button>

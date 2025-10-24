@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import SpiderLogo from "@/components/SpiderLogo";
 import BackgroundEffects from "@/components/BackgroundEffects";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const Hero = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-black">
       <BackgroundEffects />
@@ -45,7 +48,7 @@ const Hero = () => {
 
           {/* CTA principal */}
           <div className="pt-8">
-            <Button variant="cta" size="xl" className="text-lg px-12 py-6 h-auto">
+            <Button variant="cta" size="xl" className="text-lg px-12 py-6 h-auto" onClick={openCalendly}>
               🎁 Réserver mon audit gratuit (30 min)
             </Button>
           </div>
