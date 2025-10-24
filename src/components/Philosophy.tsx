@@ -37,7 +37,7 @@ const Philosophy = () => {
           </p>
 
           <p>
-            Et on le fait avec une équipe basée dans les Vosges (Semih) + des experts techniques Upwork triés sur le volet, pour vous garantir le meilleur rapport qualité/prix.
+            Et on le fait avec une équipe basée dans les Vosges (Semih) + des experts techniques triés sur le volet, pour vous garantir le meilleur rapport qualité/prix.
           </p>
         </div>
 

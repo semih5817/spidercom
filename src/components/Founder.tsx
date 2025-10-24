@@ -37,7 +37,7 @@ const Founder = () => {
                 <span className="font-bold text-white">Ma mission :</span> Rendre accessible à une TPE les outils qu'utilisent les grandes entreprises (IA, automatisations, CRM intelligents).
               </p>
               <p>
-                Je travaille en direct avec vous pour l'audit et la stratégie. Pour la partie technique, je m'appuie sur une équipe Upwork d'experts développeurs et intégrateurs que je manage personnellement.
+                Je travaille en direct avec vous pour l'audit et la stratégie. Pour la partie technique, je m'appuie sur une équipe d'experts développeurs et intégrateurs que je manage personnellement.
               </p>
               <p>
                 <span className="font-bold text-white">Ce qui me motive :</span> Voir un artisan gagner 10h/semaine grâce à un chatbot IA, ou voir un restaurateur doubler ses réservations grâce à des automatisations simples.
@@ -56,7 +56,7 @@ const Founder = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-spider-red">💻</span>
-                    <span><span className="font-bold text-white">Équipe Upwork :</span> Développement, intégration IA, automatisations N8N</span>
+                    <span><span className="font-bold text-white">Équipe technique :</span> Développement, intégration IA, automatisations N8N</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-spider-red">🤝</span>
