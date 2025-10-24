@@ -76,20 +76,20 @@ const ElectricCursor = () => {
           8
         );
         
-        // Spider-cyan color: hsl(185, 100%, 50%)
-        gradient.addColorStop(0, `rgba(0, 230, 255, ${alpha * 0.8})`);
-        gradient.addColorStop(0.5, `rgba(0, 230, 255, ${alpha * 0.4})`);
-        gradient.addColorStop(1, `rgba(0, 230, 255, 0)`);
+        // Electric blue color - plus vif et électrique
+        gradient.addColorStop(0, `rgba(0, 255, 255, ${alpha * 1})`);
+        gradient.addColorStop(0.5, `rgba(50, 200, 255, ${alpha * 0.6})`);
+        gradient.addColorStop(1, `rgba(0, 150, 255, 0)`);
 
         ctx.fillStyle = gradient;
         ctx.fillRect(particle.x - 8, particle.y - 8, 16, 16);
 
         // Draw lightning bolt effect occasionally
         if (Math.random() < 0.1) {
-          ctx.strokeStyle = `rgba(0, 230, 255, ${alpha * 0.6})`;
+          ctx.strokeStyle = `rgba(0, 255, 255, ${alpha * 0.8})`;
           ctx.lineWidth = 2;
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = "rgba(0, 230, 255, 0.8)";
+          ctx.shadowBlur = 15;
+          ctx.shadowColor = "rgba(0, 255, 255, 1)";
           
           ctx.beginPath();
           ctx.moveTo(particle.x, particle.y);
