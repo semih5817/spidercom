@@ -48,10 +48,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "spider-red": "hsl(var(--spider-red))",
-        "spider-red-glow": "hsl(var(--spider-red-glow))",
+        "spider-cyan": "hsl(var(--spider-cyan))",
         "deep-black": "hsl(var(--deep-black))",
-        "card-dark": "hsl(var(--card-dark))",
-        "border-subtle": "hsl(var(--border-subtle))",
+      },
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

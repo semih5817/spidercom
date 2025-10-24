@@ -8,56 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    /* Miles Morales Premium Color System */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 354 70% 54%;
+    --primary: 354 85% 57%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 12%;
+    --muted: 0 0% 10%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 354 70% 54%;
+    --accent: 354 85% 57%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
+    --border: 354 85% 57%;
     --input: 0 0% 15%;
-    --ring: 354 70% 54%;
+    --ring: 354 85% 57%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    /* SPYDERCOM Custom Tokens */
-    --spider-red: 354 70% 54%;
-    --spider-red-glow: 354 70% 64%;
-    --deep-black: 0 0% 4%;
-    --card-dark: 0 0% 6%;
-    --border-subtle: 0 0% 15%;
-
+    /* SPYDERCOM Miles Morales Tokens */
+    --spider-red: 354 85% 57%;
+    --spider-cyan: 185 100% 50%;
+    --deep-black: 0 0% 0%;
+    
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4%), hsl(354 70% 10%));
-    --gradient-cta: linear-gradient(135deg, hsl(354 70% 54%), hsl(354 70% 64%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 4%));
-
-    /* Shadows */
-    --shadow-red-glow: 0 0 40px hsl(354 70% 54% / 0.3);
-    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.4);
-    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.5);
-
+    --gradient-hero: radial-gradient(circle at 50% 50%, hsl(354 85% 57% / 0.15), transparent 70%);
+    --gradient-cta: linear-gradient(135deg, hsl(354 85% 57%), hsl(354 85% 47%));
+    --gradient-glow: radial-gradient(circle at center, hsl(354 85% 57% / 0.4), transparent 70%);
+    
+    /* Shadows & Effects */
+    --shadow-red-glow: 0 0 30px hsl(354 85% 57% / 0.4);
+    --shadow-red-intense: 0 5px 40px hsl(354 85% 57% / 0.6);
+    --shadow-cyan-subtle: 0 0 20px hsl(185 100% 50% / 0.2);
+    
     /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 }
 
@@ -68,7 +67,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #000000;
   }
 
   html {
@@ -77,31 +77,61 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.02em;
   }
 }
 
 @layer utilities {
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-primary to-spider-red-glow bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent;
   }
 
   .glow-red {
     box-shadow: var(--shadow-red-glow);
   }
 
+  .glow-red-intense {
+    box-shadow: var(--shadow-red-intense);
+  }
+
   .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   .animate-glow {
-    animation: glow 2s ease-in-out infinite;
+    animation: glowPulse 8s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-scan {
+    animation: scanLine 8s linear infinite;
+  }
+
+  .animate-grid {
+    animation: gridMove 20s linear infinite;
+  }
+
+  .animate-particle {
+    animation: particleFloat 10s linear infinite;
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -109,11 +139,55 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes glow {
+@keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(354 70% 54% / 0.3);
+    box-shadow: 0 0 30px hsl(354 85% 57% / 0.4);
   }
   50% {
-    box-shadow: 0 0 40px hsl(354 70% 54% / 0.6);
+    box-shadow: 0 0 60px hsl(354 85% 57% / 0.7);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
   }
 }
