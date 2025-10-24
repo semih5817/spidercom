@@ -47,14 +47,14 @@ const Hero = () => {
           </p>
 
           {/* CTA principal */}
-          <div className="pt-8">
-            <Button variant="cta" size="xl" className="text-lg px-12 py-6 h-auto" onClick={openCalendly}>
+          <div className="pt-8 px-4">
+            <Button variant="cta" size="xl" className="text-base sm:text-lg px-8 sm:px-12 py-5 sm:py-6 h-auto w-full sm:w-auto" onClick={openCalendly}>
               🎁 Réserver mon audit gratuit (30 min)
             </Button>
           </div>
 
           {/* Badges de réassurance */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-5xl mx-auto px-4">
             {[
               "Basé dans les Vosges",
               "Abonnement 4 ans tout inclus",

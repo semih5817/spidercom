@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Moon, TrendingDown, Layers } from "lucide-react";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const problems = [
   {
@@ -41,6 +42,8 @@ const problems = [
 ];
 
 const Problems = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section id="problemes" className="relative py-24 bg-deep-black">
       <div className="container mx-auto px-4">
@@ -84,7 +87,7 @@ const Problems = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="cta-outline" size="lg">
+          <Button variant="cta-outline" size="lg" onClick={openCalendly}>
             Je veux résoudre ça → Réserver mon audit gratuit
           </Button>
         </div>

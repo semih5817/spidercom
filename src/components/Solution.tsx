@@ -1,5 +1,6 @@
 import { Search, Settings, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const steps = [
   {
@@ -41,6 +42,8 @@ const steps = [
 ];
 
 const Solution = () => {
+  const { openCalendly } = useCalendly();
+  
   return (
     <section id="methode" className="relative py-24 bg-gradient-to-b from-deep-black to-background">
       <div className="container mx-auto px-4">
@@ -95,7 +98,7 @@ const Solution = () => {
           <p className="font-orbitron text-2xl md:text-3xl font-bold text-white">
             Mais concrètement, qu'est-ce qu'on peut automatiser pour <span className="text-spider-red">VOUS</span> ?
           </p>
-          <Button variant="cta" size="lg">
+          <Button variant="cta" size="lg" onClick={openCalendly}>
             Découvrir ce qui est possible pour mon entreprise
           </Button>
         </div>
