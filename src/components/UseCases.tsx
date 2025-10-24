@@ -62,7 +62,7 @@ const useCases = [
       { icon: "📈", title: "Analyse automatique des avis Google", desc: "Génère un rapport mensuel d'amélioration" }
     ],
     example: {
-      name: "Restaurant Le Montagnard, Gérardmer",
+      name: "Marc, restaurateur dans les Vosges",
       before: "On ratait 10 réservations/semaine par manque de temps pour répondre.",
       after: "Système unifié, confirmation auto, rappel J-1.",
       result: "Remplissage +25%, avis Google passés de 4.2 à 4.7 étoiles."
@@ -78,7 +78,7 @@ const useCases = [
       { icon: "🤖", title: "Base de données talents intelligente", desc: "Google Sheets / Notion / Airtable connecté - Recherche instantanée" }
     ],
     example: {
-      name: "Cabinet RH Lorraine Talents, Épinal",
+      name: "Marie, cabinet RH, Épinal",
       before: "On recevait 150 CV/mois, tri manuel de 10h.",
       after: "IA qui filtre, notifications auto, base recherchable.",
       result: "On traite 3x plus de candidatures avec le même temps."
