@@ -1,108 +1,74 @@
 import { Button } from "@/components/ui/button";
-import { Gift, CheckCircle2, MapPin } from "lucide-react";
-import heroDashboard from "@/assets/hero-dashboard.png";
-import spiderLogo from "@/assets/spider-logo.png";
+import { Check } from "lucide-react";
+import SpiderLogo from "@/components/SpiderLogo";
+import BackgroundEffects from "@/components/BackgroundEffects";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-black via-background to-background" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-black">
+      <BackgroundEffects />
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-spider-red/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-spider-red/5 rounded-full blur-3xl" />
-
-      <div className="container relative z-10 mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8 animate-fade-in-up">
-            {/* Logo */}
-            <div className="flex items-center gap-3">
-              <img src={spiderLogo} alt="SPYDERCOM" className="w-12 h-12" />
-              <div>
-                <h1 className="text-3xl font-bold text-gradient">SPYDERCOM</h1>
-                <p className="text-sm text-muted-foreground">L'agence vosgienne qui combine humain + IA + automatisation</p>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
+          {/* Logo + Nom */}
+          <div className="flex flex-col items-center gap-6 mb-8">
+            <SpiderLogo size={90} className="animate-float" />
+            <h1 className="font-orbitron text-5xl md:text-6xl font-black tracking-[4px] text-white relative">
+              SPYDERCOM
+              <div className="absolute inset-0 text-spider-cyan opacity-10 translate-x-0.5 translate-y-0.5">
+                SPYDERCOM
               </div>
-            </div>
-
-            {/* Main headline */}
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Pendant que vous gérez votre entreprise,{" "}
-                <span className="text-gradient">votre site travaille pour vous 24/7</span>
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Nous créons des sites web intelligents + automatisations sur mesure pour les entreprises vosgiennes qui veulent scaler sans s'épuiser
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="space-y-4">
-              <Button variant="cta" size="xl" className="w-full sm:w-auto">
-                <Gift className="w-5 h-5" />
-                Réserver mon audit gratuit (30 min)
-              </Button>
-              <p className="text-sm text-muted-foreground flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                Basé dans les Vosges • Réponse sous 24h
-              </p>
-            </div>
-
-            {/* Trust badges */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  <span className="font-semibold block">Basé dans les Vosges</span>
-                  <span className="text-muted-foreground">Proximité garantie</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  <span className="font-semibold block">Abonnement 4 ans</span>
-                  <span className="text-muted-foreground">Tout inclus</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  <span className="font-semibold block">Déjà 2 entreprises</span>
-                  <span className="text-muted-foreground">Nous font confiance</span>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-sm">
-                  <span className="font-semibold block">Site + IA + Auto</span>
-                  <span className="text-muted-foreground">Maintenance incluse</span>
-                </div>
-              </div>
-            </div>
+            </h1>
           </div>
 
-          {/* Right content - Dashboard mockup */}
-          <div className="relative animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-elegant glow-red">
-              <img 
-                src={heroDashboard} 
-                alt="Dashboard d'automatisation SPYDERCOM" 
-                className="w-full h-auto"
-              />
-            </div>
-            {/* Floating stats */}
-            <div className="absolute -bottom-6 -left-6 bg-card border border-border-subtle rounded-xl p-4 shadow-card">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
-                </div>
-                <div>
-                  <div className="font-bold text-xl">10h/semaine</div>
-                  <div className="text-sm text-muted-foreground">de temps gagné</div>
+          {/* Baseline */}
+          <p className="font-inter text-lg md:text-xl text-white/60 tracking-wide max-w-3xl mx-auto">
+            La première agence dans les Vosges spécialisée en IA et automatisations
+          </p>
+
+          {/* Headline principal */}
+          <h2 className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+            Votre entreprise mérite un{" "}
+            <span className="text-spider-red glow-red">écosystème digital</span>{" "}
+            qui travaille pour vous{" "}
+            <span className="text-white relative">
+              24/7
+              <span className="absolute inset-0 text-spider-cyan opacity-20 blur-sm">24/7</span>
+            </span>
+          </h2>
+
+          {/* Sous-titre */}
+          <p className="font-inter text-xl md:text-2xl text-white/80 leading-relaxed max-w-4xl mx-auto">
+            Nous créons des sites web intelligents et automatisations sur mesure pour les entreprises vosgiennes qui veulent{" "}
+            <span className="text-spider-red font-semibold">scaler sans s'épuiser</span>
+          </p>
+
+          {/* CTA principal */}
+          <div className="pt-8">
+            <Button variant="cta" size="xl" className="text-lg px-12 py-6 h-auto">
+              🎁 Réserver mon audit gratuit (30 min)
+            </Button>
+          </div>
+
+          {/* Badges de réassurance */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-5xl mx-auto">
+            {[
+              "Basé dans les Vosges",
+              "Abonnement 4 ans tout inclus",
+              "Déjà 2 entreprises nous font confiance",
+              "Site, Maintenance, IA, Automatisations"
+            ].map((badge, index) => (
+              <div
+                key={index}
+                className="group relative bg-spider-red/8 border border-spider-red/30 backdrop-blur-sm rounded-lg p-4 transition-all duration-400 hover:bg-spider-red/12 hover:border-spider-red/60 hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="flex items-center gap-3 justify-center relative z-10">
+                  <Check className="w-5 h-5 text-spider-red" />
+                  <span className="text-white/90 font-inter text-sm">{badge}</span>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

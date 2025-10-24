@@ -1,5 +1,5 @@
-import { Clock, Moon, TrendingDown, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Clock, Moon, TrendingDown, Layers } from "lucide-react";
 
 const problems = [
   {
@@ -7,7 +7,7 @@ const problems = [
     title: "Vous perdez un temps fou sur des tâches répétitives",
     points: [
       "Relancer les devis manuellement",
-      "Répondre aux mêmes questions 50x/jour",
+      "Répondre aux mêmes questions 50 fois par jour",
       "Saisir les mêmes données dans 3 outils différents"
     ]
   },
@@ -30,10 +30,10 @@ const problems = [
     ]
   },
   {
-    icon: Zap,
+    icon: Layers,
     title: "Vous avez 10 outils qui ne communiquent pas entre eux",
     points: [
-      "Google Sheets + Gmail + WhatsApp + Excel = chaos",
+      "Google Sheets, Gmail, WhatsApp, Excel en mode chaos",
       "Aucune vue d'ensemble",
       "Peur de rater une info importante"
     ]
@@ -42,50 +42,50 @@ const problems = [
 
 const Problems = () => {
   return (
-    <section className="py-20 px-4 relative">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
+    <section id="problemes" className="relative py-24 bg-deep-black">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-            Ces situations vous parlent ?
+          <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
+            Vous perdez un temps précieux et des opportunités{" "}
+            <span className="text-spider-red">sans le savoir</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Chaque jour, des entrepreneurs vosgiens perdent du temps et de l'argent sur ces 4 problèmes
-          </p>
         </div>
 
-        {/* Problems grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {problems.map((problem, index) => (
-            <div 
-              key={index}
-              className="bg-card border border-border-subtle rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-card group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <problem.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-lg mb-3">{problem.title}</h3>
-                  <ul className="space-y-2">
-                    {problem.points.map((point, i) => (
-                      <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-12">
+          {problems.map((problem, index) => {
+            const Icon = problem.icon;
+            return (
+              <div
+                key={index}
+                className="group bg-spider-red/5 border border-spider-red/20 rounded-lg p-8 transition-all duration-400 hover:border-spider-red/60 hover:-translate-y-2 animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <Icon className="w-10 h-10 text-spider-red" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-orbitron text-xl font-bold text-white mb-4">
+                      {problem.title}
+                    </h3>
+                    <ul className="space-y-2">
+                      {problem.points.map((point, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-white/70 font-inter">
+                          <span className="text-spider-red mt-1">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* CTA */}
         <div className="text-center">
           <Button variant="cta-outline" size="lg">
-            Je veux résoudre ça → Audit gratuit
+            Je veux résoudre ça → Réserver mon audit gratuit
           </Button>
         </div>
       </div>
