@@ -61,9 +61,6 @@ const Footer = () => {
                   contact@spydercom.fr
                 </a>
               </li>
-              <li>
-                <span className="text-spider-red">📞</span> [Votre numéro]
-              </li>
             </ul>
           </div>
         </div>
