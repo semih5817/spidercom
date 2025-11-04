@@ -69,14 +69,43 @@ const AgencesImmobilieres = () => {
     }
   ];
 
+  const aiTools = [
+    {
+      id: 6,
+      icon: "🎨",
+      color: "pink",
+      colorHex: "#ec4899",
+      title: "Home Staging Virtuel IA",
+      description: "Transformez n'importe quelle pièce vide en intérieur design en 30 secondes. IA génère un style parisien contemporain minimaliste sur vos photos.",
+      stats: ["30 secondes par image", "+35% de visites générées", "-80% coût staging physique"],
+      tag: "IA Génération Image",
+      link: "/home-staging-virtuel",
+      badge: "🆕 NOUVEAU"
+    },
+    {
+      id: 7,
+      icon: "📋",
+      color: "teal",
+      colorHex: "#14b8a6",
+      title: "Comparateur États des Lieux IA",
+      description: "Comparez automatiquement état des lieux d'entrée et de sortie. L'IA détecte les différences et génère le rapport en 2 minutes.",
+      stats: ["2 min vs 45 min manuel", "100% conformité légale", "0 litige oublié"],
+      tag: "IA Vision + OCR",
+      link: "/comparateur-etats-lieux",
+      badge: "🆕 NOUVEAU"
+    }
+  ];
+
   const processSteps = [
     { num: 1, icon: "📥", title: "Collecte Leads", desc: "Agrégation multi-sources" },
-    { num: 2, icon: "🎯", title: "Qualification automatique", desc: "Score IA 0-100" },
-    { num: 3, icon: "📧", title: "Emails personnalisés", desc: "GPT adaptatif" },
-    { num: 4, icon: "🔗", title: "Sync CRM temps réel", desc: "Zéro saisie manuelle" },
-    { num: 5, icon: "📡", title: "Publication multi-plateformes", desc: "6 portails en 12 min" },
-    { num: 6, icon: "🏘️", title: "Gestion locative automatisée", desc: "Workflow incidents" },
-    { num: 7, icon: "📊", title: "Analytics & ROI", desc: "Tableaux de bord live" }
+    { num: 2, icon: "🎯", title: "Qualification", desc: "Score IA 0-100" },
+    { num: 3, icon: "📧", title: "Emails", desc: "GPT adaptatif" },
+    { num: 4, icon: "🔗", title: "Sync CRM", desc: "Temps réel" },
+    { num: 5, icon: "🎨", title: "Staging virtuel", desc: "IA génération" },
+    { num: 6, icon: "📡", title: "Publication", desc: "6 portails en 12 min" },
+    { num: 7, icon: "🏘️", title: "Gestion locative", desc: "Workflow incidents" },
+    { num: 8, icon: "📋", title: "États des lieux", desc: "IA comparaison" },
+    { num: 9, icon: "📊", title: "Analytics", desc: "Tableaux de bord live" }
   ];
 
   // Calcul ROI
@@ -105,7 +134,7 @@ const AgencesImmobilieres = () => {
 
               {/* Titre */}
               <h1 className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
-                5 Automatisations Qui Transforment Votre Agence
+                7 Automatisations & Outils Qui Transforment Votre Agence
               </h1>
 
               {/* Sous-titre */}
@@ -147,12 +176,12 @@ const AgencesImmobilieres = () => {
           </div>
         </section>
 
-        {/* SECTION: LES 5 AUTOMATISATIONS */}
+        {/* SECTION: AUTOMATISATIONS PROCESS */}
         <section className="px-4 py-20 bg-gradient-to-b from-transparent to-spider-red/5">
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-                🎯 Nos Automatisations IA
+                🎯 Automatisations Process
               </h2>
               <p className="font-inter text-xl text-white/60 max-w-2xl mx-auto">
                 5 solutions qui révolutionnent votre quotidien d'agent immobilier
@@ -217,6 +246,91 @@ const AgencesImmobilieres = () => {
                     style={{ color: auto.colorHex }}
                   >
                     Découvrir
+                    <ArrowRight className="w-4 h-4" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION: OUTILS MÉTIER IA */}
+        <section className="px-4 py-20">
+          <div className="container mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
+                🔧 Outils Métier Spécialisés
+              </h2>
+              <p className="font-inter text-xl text-white/60 max-w-2xl mx-auto">
+                Des outils IA pour vos tâches quotidiennes
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {aiTools.map((tool, index) => (
+                <Link
+                  key={tool.id}
+                  to={tool.link}
+                  className="group p-8 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border-2 transition-all duration-300 hover:scale-105 cursor-pointer relative"
+                  style={{
+                    borderColor: `${tool.colorHex}30`,
+                    animationDelay: `${index * 100}ms`
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = `0 0 40px ${tool.colorHex}66`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  {/* Badge NOUVEAU */}
+                  {tool.badge && (
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-spider-red to-orange-600 rounded-full text-xs font-inter font-black text-white">
+                      {tool.badge}
+                    </div>
+                  )}
+
+                  {/* Icône */}
+                  <div className="text-6xl mb-4">{tool.icon}</div>
+
+                  {/* Tag */}
+                  <div 
+                    className="inline-block px-3 py-1 rounded-full text-xs font-inter font-semibold mb-4"
+                    style={{
+                      backgroundColor: `${tool.colorHex}20`,
+                      color: tool.colorHex
+                    }}
+                  >
+                    {tool.tag}
+                  </div>
+
+                  {/* Titre */}
+                  <h3 className="font-orbitron text-2xl font-bold text-white mb-4 leading-tight">
+                    {tool.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-inter text-gray-300 leading-relaxed mb-6">
+                    {tool.description}
+                  </p>
+
+                  {/* Stats */}
+                  <div className="space-y-2 mb-6">
+                    {tool.stats.map((stat, i) => (
+                      <div 
+                        key={i}
+                        className="inline-block px-3 py-1 bg-white/5 rounded-lg text-sm font-inter text-white/80 mr-2 mb-2"
+                      >
+                        {stat}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className="flex items-center gap-2 font-inter font-semibold group-hover:gap-4 transition-all"
+                    style={{ color: tool.colorHex }}
+                  >
+                    Essayer l'outil
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </Link>
@@ -346,7 +460,7 @@ const AgencesImmobilieres = () => {
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-                💰 ROI Cumulé des 5 Automatisations
+                💰 ROI Cumulé des 7 Solutions
               </h2>
               <p className="font-inter text-xl text-white/60 max-w-2xl mx-auto">
                 Calculez vos économies en temps réel
