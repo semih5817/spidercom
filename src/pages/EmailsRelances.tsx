@@ -9,6 +9,7 @@ import EmailPreviewPanel from "@/components/leads/EmailPreviewPanel";
 import RelanceROIResults from "@/components/leads/RelanceROIResults";
 import { BenefitItem, TimingRule, BenchmarkStat } from "@/components/leads/SMSComponents";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
+import CTABooking from "@/components/CTABooking";
 
 const EmailsRelances = () => {
   const [selectedStep, setSelectedStep] = useState('j0');
@@ -846,6 +847,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
         </section>
       </main>
 
+      <CTABooking subtitle="Voyez nos scénarios email en action" />
       <Footer />
     </div>
   );

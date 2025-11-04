@@ -5,6 +5,7 @@ import ParticlesBackground from "@/components/leads/ParticlesBackground";
 import CopyPasteNightmareAnimation from "@/components/leads/CopyPasteNightmareAnimation";
 import DataMappingVisualizer from "@/components/leads/DataMappingVisualizer";
 import LiveStat from "@/components/leads/LiveStat";
+import CTABooking from "@/components/CTABooking";
 import { LeadTableRow } from "@/components/leads/LeadTableRow";
 import { mockLeads } from "@/data/mockLeads";
 
@@ -441,6 +442,7 @@ const IntegrationCRM = () => {
         </section>
       </main>
 
+      <CTABooking subtitle="Connectons vos outils en direct pendant la démo" />
       <Footer />
     </div>
   );

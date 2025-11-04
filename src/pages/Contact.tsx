@@ -3,6 +3,7 @@ import { Mail, MapPin, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackgroundEffects from "@/components/BackgroundEffects";
+import CTABooking from "@/components/CTABooking";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -171,6 +172,7 @@ const Contact = () => {
         </div>
       </main>
 
+      <CTABooking subtitle="Planifiez une démo personnalisée pour découvrir Spydercom en action" />
       <Footer />
     </div>
   );

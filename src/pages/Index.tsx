@@ -9,6 +9,7 @@ import AuditOffer from "@/components/AuditOffer";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import CTABooking from "@/components/CTABooking";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
       <Testimonials />
       <FAQ />
       <FinalCTA />
+      <CTABooking />
       <Footer />
     </div>
   );

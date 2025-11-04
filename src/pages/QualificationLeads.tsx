@@ -13,6 +13,7 @@ import BenchmarkCard from "@/components/leads/BenchmarkCard";
 import FunnelStage from "@/components/leads/FunnelStage";
 import FunnelConnector from "@/components/leads/FunnelConnector";
 import ROICalculationResults from "@/components/leads/ROICalculationResults";
+import CTABooking from "@/components/CTABooking";
 import { Slider } from "@/components/ui/slider";
 
 const QualificationLeads = () => {
@@ -707,6 +708,7 @@ Répondez simplement OUI ou NON.
           </div>
         </section>
       </main>
+      <CTABooking subtitle="Découvrez comment scorer vos leads en temps réel" />
       <Footer />
     </div>
   );

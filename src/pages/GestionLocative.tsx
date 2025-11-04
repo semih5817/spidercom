@@ -6,6 +6,7 @@ import PropertyManagerChaosAnimation from "@/components/leads/PropertyManagerCha
 import TicketKanbanBoard from "@/components/leads/TicketKanbanBoard";
 import PropertyManagementROICalculator from "@/components/leads/PropertyManagementROICalculator";
 import PropertyManagementWorkflowDiagram from "@/components/leads/PropertyManagementWorkflowDiagram";
+import CTABooking from "@/components/CTABooking";
 
 const GestionLocative = () => {
   const scrollToDemo = () => {
@@ -646,6 +647,7 @@ const GestionLocative = () => {
         </section>
       </main>
 
+      <CTABooking subtitle="Testons la gestion d'incident automatique en live" />
       <Footer />
     </div>
   );

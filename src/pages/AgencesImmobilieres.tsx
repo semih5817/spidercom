@@ -4,6 +4,7 @@ import { Target, Mail, Link as LinkIcon, Radio, Home, ArrowRight, TrendingUp, Cl
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackgroundEffects from "@/components/BackgroundEffects";
+import CTABooking from "@/components/CTABooking";
 import { useCalendly } from "@/hooks/useCalendly";
 
 const AgencesImmobilieres = () => {
@@ -469,6 +470,7 @@ const AgencesImmobilieres = () => {
         </section>
       </main>
 
+      <CTABooking subtitle="Choisissons les automatisations prioritaires pour vous" />
       <Footer />
     </div>
   );

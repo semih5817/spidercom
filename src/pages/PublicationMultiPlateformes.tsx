@@ -8,6 +8,7 @@ import { PublicationTableRow } from "@/components/leads/PublicationTableRow";
 import { PublicationLineChart } from "@/components/leads/PublicationLineChart";
 import { PublicationROICalculator } from "@/components/leads/PublicationROICalculator";
 import { PublicationWorkflowDiagram } from "@/components/leads/PublicationWorkflowDiagram";
+import CTABooking from "@/components/CTABooking";
 import { mockPublications } from "@/data/mockPublications";
 
 const PublicationMultiPlateformes = () => {
@@ -645,6 +646,7 @@ const PublicationMultiPlateformes = () => {
         </section>
       </main>
 
+      <CTABooking subtitle="Simulons une publication sur 6 portails ensemble" />
       <Footer />
     </div>
   );
