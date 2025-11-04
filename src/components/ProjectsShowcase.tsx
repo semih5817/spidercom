@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/mockProjects";
+import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 
 const ProjectsShowcase = () => {
   // Filter out coming soon projects and featured ones for the homepage
@@ -43,8 +44,8 @@ const ProjectsShowcase = () => {
                 className="group block bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-spider-cyan transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-[0_0_40px_rgba(180,235,245,0.3)]"
               >
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-spider-red/20 to-spider-cyan/20 flex items-center justify-center">
-                  <span className="text-6xl">🚀</span>
+                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
+                  <WorkflowDiagram />
                   
                   {/* Badges */}
                   {project.isNew && (

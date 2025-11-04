@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Project } from "@/data/mockProjects";
 import { ArrowRight, ExternalLink } from "lucide-react";
+import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 
 interface FeaturedProjectProps {
   project: Project;
@@ -29,8 +30,8 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
             transition={{ delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-spider-red/30 to-spider-cyan/30 border-2 border-gray-700 flex items-center justify-center">
-              <span className="text-8xl">🚀</span>
+            <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-2 border-gray-700 flex items-center justify-center p-4">
+              <WorkflowDiagram />
             </div>
           </motion.div>
 

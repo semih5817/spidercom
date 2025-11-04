@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Project } from "@/data/mockProjects";
 import { ArrowRight } from "lucide-react";
+import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 
 interface ProjectCardProps {
   project: Project;
@@ -22,10 +23,10 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       }`}
     >
       {/* Image */}
-      <div className="relative aspect-video overflow-hidden bg-gray-800">
+      <div className="relative aspect-video overflow-hidden bg-gray-900/50">
         {project.image && (
-          <div className="w-full h-full bg-gradient-to-br from-spider-red/20 to-spider-cyan/20 flex items-center justify-center">
-            <span className="text-6xl">🚀</span>
+          <div className="w-full h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
+            <WorkflowDiagram />
           </div>
         )}
         
