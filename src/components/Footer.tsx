@@ -27,22 +27,31 @@ const Footer = () => {
           <div>
             <h3 className="font-orbitron text-lg font-bold text-white mb-6">Liens rapides</h3>
             <ul className="space-y-3">
-              {[
-                { label: "Accueil", href: "#hero" },
-                { label: "Nos automatisations", href: "#cas-usage" },
-                { label: "La méthode", href: "#methode" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Réserver un audit", href: "#audit" }
-              ].map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Accueil
+                </a>
+              </li>
+              <li>
+                <a href="/lead-scoring" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Lead Scoring
+                </a>
+              </li>
+              <li>
+                <a href="/publication-automatique" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Publication Auto
+                </a>
+              </li>
+              <li>
+                <a href="/gestion-locative" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Gestion Locative
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
