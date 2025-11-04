@@ -1,17 +1,14 @@
 import { motion } from 'framer-motion';
+import { useCalendly } from '@/hooks/useCalendly';
 
 interface CTABookingProps {
   subtitle?: string;
-  calendlyUrl?: string;
 }
 
 const CTABooking = ({ 
-  subtitle = "30 minutes pour découvrir comment Spydercom transforme votre agence",
-  calendlyUrl = "https://calendly.com/spydercom/demo"
+  subtitle = "30 minutes pour découvrir comment Spydercom transforme votre agence"
 }: CTABookingProps) => {
-  const handleBooking = () => {
-    window.open(calendlyUrl, '_blank');
-  };
+  const { openCalendly } = useCalendly();
 
   return (
     <section className="px-8 py-20">
@@ -69,13 +66,13 @@ const CTABooking = ({
 
         {/* Bouton CTA */}
         <motion.button
-          onClick={handleBooking}
+          onClick={openCalendly}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           data-event="cta-booking-clicked"
           data-page={typeof window !== 'undefined' ? window.location.pathname : ''}
           data-source="end-of-page"
-          className="group relative px-8 md:px-12 py-5 md:py-6 
+          className="group relative px-8 md:px-12 py-5 md:py-6
                      bg-gradient-to-r from-red-600 via-red-500 to-orange-600
                      text-white font-black text-xl md:text-2xl rounded-2xl
                      shadow-[0_0_60px_rgba(235,45,58,0.6)]
