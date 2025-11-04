@@ -625,6 +625,70 @@ Répondez simplement OUI ou NON.
           </div>
         </section>
 
+        {/* FUNNEL INTERACTIF - ajouté avant CTA */}
+        <section className="px-8 py-20 bg-gradient-to-b from-deep-black via-purple-950/10 to-deep-black" id="funnel-section">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-black mb-6 text-white">🎯 Funnel de Conversion</h2>
+              <div className="inline-flex bg-gray-900 rounded-xl p-2 border border-gray-700">
+                <button 
+                  onClick={() => setFunnelMode('before')}
+                  className={`px-8 py-3 rounded-lg font-bold transition-all ${
+                    funnelMode === 'before' ? 'bg-spider-red text-white' : 'text-gray-400'
+                  }`}>
+                  ❌ AVANT
+                </button>
+                <button 
+                  onClick={() => setFunnelMode('after')}
+                  className={`px-8 py-3 rounded-lg font-bold transition-all ${
+                    funnelMode === 'after' ? 'bg-spider-cyan text-white' : 'text-gray-400'
+                  }`}>
+                  ✅ APRÈS
+                </button>
+              </div>
+            </div>
+            <div className="relative max-w-5xl mx-auto">
+              <FunnelStage icon="📱" title="Leads Captés" valueBefore={420} valueAfter={420} mode={funnelMode} color="cyan" width="100%" description="Tous canaux" />
+              <FunnelConnector lossBefore={160} lossAfter={20} mode={funnelMode} reason={funnelMode === 'before' ? '38% perdus' : '5% filtrés'} />
+              <FunnelStage icon="🎯" title="Qualifiés" valueBefore={260} valueAfter={400} mode={funnelMode} color="purple" width="85%" description="Score ≥60" />
+              <FunnelConnector lossBefore={142} lossAfter={80} mode={funnelMode} reason={funnelMode === 'before' ? '55% abandons' : '20% no-show'} />
+              <FunnelStage icon="📅" title="RDV Pris" valueBefore={118} valueAfter={320} mode={funnelMode} color="yellow" width="70%" description="Visites programmées" />
+              <FunnelConnector lossBefore={84} lossAfter={90} mode={funnelMode} reason={funnelMode === 'before' ? '71% perdus' : '28% refus'} />
+              <FunnelStage icon="🎉" title="Ventes" valueBefore={34} valueAfter={230} mode={funnelMode} color="green" width="55%" description="Compromis signés" />
+            </div>
+          </div>
+        </section>
+
+        {/* CALCULATEUR ROI */}
+        <section className="px-8 py-20 bg-gradient-to-b from-deep-black via-purple-950/20 to-deep-black">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-6xl font-black mb-6 font-['Orbitron'] bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                💸 Calculez Vos Pertes Actuelles
+              </h2>
+            </div>
+            <div className="bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 rounded-3xl p-12 border-2 border-purple-500/30">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div>
+                  <label className="flex items-center gap-3 text-xl font-bold text-white mb-4">
+                    <span className="text-4xl">👥</span> Nombre d'agents
+                  </label>
+                  <input type="range" min="1" max="50" value={nbAgents} onChange={(e) => setNbAgents(parseInt(e.target.value))} className="w-full" />
+                  <div className="text-center mt-4 text-6xl font-black text-spider-cyan font-['Orbitron']">{nbAgents}</div>
+                </div>
+                <div>
+                  <label className="flex items-center gap-3 text-xl font-bold text-white mb-4">
+                    <span className="text-4xl">📞</span> Leads/mois
+                  </label>
+                  <input type="range" min="50" max="1000" step="50" value={nbLeads} onChange={(e) => setNbLeads(parseInt(e.target.value))} className="w-full" />
+                  <div className="text-center mt-4 text-6xl font-black text-green-400 font-['Orbitron']">{nbLeads}</div>
+                </div>
+              </div>
+              <ROICalculationResults nbAgents={nbAgents} nbLeads={nbLeads} tjm={tjm} avgCommission={avgCommission} />
+            </div>
+          </div>
+        </section>
+
         {/* CTA FINAL */}
         <section className="px-8 py-20 bg-gradient-to-b from-deep-black via-spider-red/10 to-deep-black">
           <div className="max-w-4xl mx-auto text-center">
@@ -633,24 +697,9 @@ Répondez simplement OUI ou NON.
             <button className="px-12 py-6 bg-gradient-to-r from-spider-red to-red-600 text-white font-black text-2xl rounded-xl shadow-[0_0_60px_rgba(239,68,68,0.6)] hover:shadow-[0_0_80px_rgba(239,68,68,0.8)] hover:scale-105 transition-all duration-300">
               Demander une démo ✨
             </button>
-            <div className="mt-8 flex items-center justify-center gap-8 text-gray-400">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🏢</span>
-                <span>156 agences équipées</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">⭐</span>
-                <span>4.9/5 (203 avis)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">📞</span>
-                <span>Support 7j/7</span>
-              </div>
-            </div>
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );
