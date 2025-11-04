@@ -388,13 +388,13 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
             {/* Left: Steps */}
             <EmailSequenceTimeline 
               selectedStep={selectedStep} 
-              setSelectedStep={setSelectedStep} 
-              emailTemplates={emailTemplates} 
+              onSelectStep={setSelectedStep}
             />
 
             {/* Right: Preview */}
             <EmailPreviewPanel 
-              template={emailTemplates[selectedStep]} 
+              step={selectedStep}
+              emailData={emailTemplates[selectedStep as keyof typeof emailTemplates]}
             />
           </div>
         </section>
