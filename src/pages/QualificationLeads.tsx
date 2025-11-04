@@ -10,17 +10,24 @@ import ProcessStep from "@/components/leads/ProcessStep";
 import StatBar from "@/components/leads/StatBar";
 import EmailCard from "@/components/leads/EmailCard";
 import BenchmarkCard from "@/components/leads/BenchmarkCard";
+import FunnelStage from "@/components/leads/FunnelStage";
+import FunnelConnector from "@/components/leads/FunnelConnector";
+import ROICalculationResults from "@/components/leads/ROICalculationResults";
 import { Slider } from "@/components/ui/slider";
 
 const QualificationLeads = () => {
-  const [numAgents, setNumAgents] = useState([5]);
+  const [funnelMode, setFunnelMode] = useState<'before' | 'after'>('before');
+  const [nbAgents, setNbAgents] = useState(5);
+  const [nbLeads, setNbLeads] = useState(300);
+  const [tjm, setTjm] = useState(35);
+  const [avgCommission, setAvgCommission] = useState(8000);
 
   const scrollToDemo = () => {
     document.getElementById('kpi-dashboard')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Calculs ROI
-  const hoursPerMonth = 15 * numAgents[0] * 4;
+  // Calculs ROI (old calculator for backward compatibility)
+  const hoursPerMonth = 15 * nbAgents * 4;
   const savingsPerMonth = hoursPerMonth * 35;
   const roiAnnual = savingsPerMonth * 12;
   const paybackDays = Math.round((500 / savingsPerMonth) * 30);
@@ -591,9 +598,9 @@ Répondez simplement OUI ou NON.
               <div className="mb-8">
                 <div className="flex justify-between mb-4">
                   <label className="text-white font-semibold">Nombre d'agents</label>
-                  <span className="text-spider-cyan font-black text-2xl font-orbitron">{numAgents[0]}</span>
+                  <span className="text-spider-cyan font-black text-2xl font-orbitron">{nbAgents}</span>
                 </div>
-                <Slider value={numAgents} onValueChange={setNumAgents} min={1} max={20} step={1} className="w-full" />
+                <Slider value={[nbAgents]} onValueChange={(val) => setNbAgents(val[0])} min={1} max={20} step={1} className="w-full" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -617,8 +624,8 @@ Répondez simplement OUI ou NON.
 
               <div className="bg-spider-cyan/10 border border-spider-cyan/30 rounded-xl p-4 text-center">
                 <p className="text-gray-300 text-sm">
-                  Pour <span className="text-spider-cyan font-bold">{numAgents[0]}</span> agents :<br />
-                  <span className="text-white font-semibold">(15h × 35€) × {numAgents[0]} agents × 4 semaines = {savingsPerMonth.toLocaleString()}€/mois</span>
+                  Pour <span className="text-spider-cyan font-bold">{nbAgents}</span> agents :<br />
+                  <span className="text-white font-semibold">(15h × 35€) × {nbAgents} agents × 4 semaines = {savingsPerMonth.toLocaleString()}€/mois</span>
                 </p>
               </div>
             </div>
