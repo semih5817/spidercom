@@ -5,6 +5,8 @@ import ParticlesBackground from "@/components/leads/ParticlesBackground";
 import CopyPasteNightmareAnimation from "@/components/leads/CopyPasteNightmareAnimation";
 import DataMappingVisualizer from "@/components/leads/DataMappingVisualizer";
 import LiveStat from "@/components/leads/LiveStat";
+import { LeadTableRow } from "@/components/leads/LeadTableRow";
+import { mockLeads } from "@/data/mockLeads";
 
 const IntegrationCRM = () => {
   const scrollToDemo = () => {
@@ -290,6 +292,132 @@ const IntegrationCRM = () => {
                 color="blue"
                 live
               />
+            </div>
+          </div>
+        </section>
+
+        {/* TABLEAU DES LEADS INTÉGRÉS */}
+        <section className="px-8 py-20 bg-deep-black">
+          <div className="max-w-7xl mx-auto">
+            
+            <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+              <h2 className="text-4xl font-bold text-white">
+                📊 Derniers Leads Intégrés
+              </h2>
+              
+              <div className="flex items-center gap-4">
+                <select className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 
+                                  text-white focus:border-cyan-500 focus:outline-none">
+                  <option>Toutes les sources</option>
+                  <option>SeLoger</option>
+                  <option>Leboncoin</option>
+                  <option>Site Web</option>
+                  <option>Facebook</option>
+                </select>
+                
+                <select className="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 
+                                  text-white focus:border-cyan-500 focus:outline-none">
+                  <option>Aujourd'hui</option>
+                  <option>Cette semaine</option>
+                  <option>Ce mois</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl 
+                            border border-cyan-500/30 overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-gray-700 bg-gray-950/50">
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">SOURCE</th>
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">NOM</th>
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">EMAIL</th>
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">TÉLÉPHONE</th>
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">BUDGET</th>
+                      <th className="text-left p-4 text-cyan-400 font-semibold text-sm">TYPE</th>
+                      <th className="text-center p-4 text-cyan-400 font-semibold text-sm">STATUT</th>
+                      <th className="text-center p-4 text-cyan-400 font-semibold text-sm">IA CHECK</th>
+                      <th className="text-right p-4 text-cyan-400 font-semibold text-sm">INTÉGRÉ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mockLeads.map((lead, index) => (
+                      <LeadTableRow key={lead.id} lead={lead} index={index} />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="border-t border-gray-700 bg-gray-950/50 px-6 py-4 
+                              flex items-center justify-between flex-wrap gap-4">
+                <div className="text-sm text-gray-400">
+                  Affichage de <span className="text-white font-bold">1-10</span> sur{' '}
+                  <span className="text-white font-bold">247</span> leads
+                </div>
+                <div className="flex items-center gap-2">
+                  <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg 
+                                    text-white transition-all">
+                    ← Précédent
+                  </button>
+                  <button className="px-4 py-2 bg-cyan-500 text-white rounded-lg font-bold">
+                    1
+                  </button>
+                  <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg 
+                                    text-white transition-all">
+                    2
+                  </button>
+                  <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg 
+                                    text-white transition-all">
+                    3
+                  </button>
+                  <button className="px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg 
+                                    text-white transition-all">
+                    Suivant →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-green-950/50 to-green-900/30 
+                              rounded-xl p-6 border border-green-500/30">
+                <div className="flex items-center gap-4">
+                  <div className="text-5xl">✅</div>
+                  <div>
+                    <div className="text-3xl font-black text-green-400 font-orbitron">
+                      245/247
+                    </div>
+                    <div className="text-sm text-gray-400">Intégrés avec succès</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-orange-950/50 to-orange-900/30 
+                              rounded-xl p-6 border border-orange-500/30">
+                <div className="flex items-center gap-4">
+                  <div className="text-5xl">⚠️</div>
+                  <div>
+                    <div className="text-3xl font-black text-orange-400 font-orbitron">
+                      2/247
+                    </div>
+                    <div className="text-sm text-gray-400">Erreurs corrigées auto</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-950/50 to-purple-900/30 
+                              rounded-xl p-6 border border-purple-500/30">
+                <div className="flex items-center gap-4">
+                  <div className="text-5xl">🔄</div>
+                  <div>
+                    <div className="text-3xl font-black text-purple-400 font-orbitron">
+                      0/247
+                    </div>
+                    <div className="text-sm text-gray-400">Doublons détectés</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
