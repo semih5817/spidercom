@@ -4,6 +4,8 @@ import BackgroundEffects from "@/components/BackgroundEffects";
 import ParticlesBackground from "@/components/leads/ParticlesBackground";
 import PropertyManagerChaosAnimation from "@/components/leads/PropertyManagerChaosAnimation";
 import TicketKanbanBoard from "@/components/leads/TicketKanbanBoard";
+import PropertyManagementROICalculator from "@/components/leads/PropertyManagementROICalculator";
+import PropertyManagementWorkflowDiagram from "@/components/leads/PropertyManagementWorkflowDiagram";
 
 const GestionLocative = () => {
   const scrollToDemo = () => {
@@ -373,6 +375,273 @@ const GestionLocative = () => {
             </div>
 
             <TicketKanbanBoard />
+          </div>
+        </section>
+
+        {/* ROI CALCULATOR */}
+        <section className="px-8 py-20 bg-gradient-to-b from-black via-emerald-950/20 to-black">
+          <div className="max-w-6xl mx-auto">
+            
+            <div className="text-center mb-16">
+              <div className="text-emerald-500 text-sm font-bold uppercase tracking-widest mb-4">
+                💸 CALCULATEUR D'IMPACT
+              </div>
+              <h2 className="text-6xl font-black mb-6 font-orbitron">
+                <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 
+                               bg-clip-text text-transparent">
+                  Combien Vous Coûte la Gestion Manuelle ?
+                </span>
+              </h2>
+              <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+                Calculez le temps et l'argent perdus chaque mois sur votre parc locatif
+              </p>
+            </div>
+
+            <PropertyManagementROICalculator />
+          </div>
+        </section>
+
+        {/* WORKFLOW */}
+        <section className="px-8 py-20 bg-black">
+          <div className="max-w-7xl mx-auto">
+            
+            <h2 className="text-4xl font-bold text-center mb-12 text-white">
+              🔄 Le Workflow Automatique en Détail
+            </h2>
+
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 
+                            border border-emerald-500/30">
+              
+              <PropertyManagementWorkflowDiagram />
+
+              {/* Détails workflow */}
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div className="bg-black/30 rounded-xl p-6 border border-cyan-500/30">
+                  <h4 className="text-lg font-bold text-cyan-400 mb-4 flex items-center gap-2">
+                    <span>🎯</span>
+                    <span>Déclencheurs</span>
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400">▸</span>
+                      <span>Formulaire incident (site/WhatsApp/email)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400">▸</span>
+                      <span>Échéance bail (J-30)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400">▸</span>
+                      <span>Loyer impayé (J+2)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-400">▸</span>
+                      <span>Paiement reçu (quittance auto)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-black/30 rounded-xl p-6 border border-purple-500/30">
+                  <h4 className="text-lg font-bold text-purple-400 mb-4 flex items-center gap-2">
+                    <span>🤖</span>
+                    <span>Traitement IA</span>
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400">▸</span>
+                      <span>Classification (plomberie/élec/chauffage...)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400">▸</span>
+                      <span>Détection urgence (urgent/normal/faible)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400">▸</span>
+                      <span>Attribution prestataire optimal</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-400">▸</span>
+                      <span>Génération emails personnalisés</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-black/30 rounded-xl p-6 border border-green-500/30">
+                  <h4 className="text-lg font-bold text-green-400 mb-4 flex items-center gap-2">
+                    <span>⚡</span>
+                    <span>Actions & Suivi</span>
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400">▸</span>
+                      <span>Notification prestataire + locataire</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400">▸</span>
+                      <span>Suivi temps réel (SMS + email)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400">▸</span>
+                      <span>Relances auto si délai dépassé</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-400">▸</span>
+                      <span>Clôture + satisfaction locataire</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL BENEFITS */}
+        <section className="px-8 py-20 bg-gradient-to-b from-black via-emerald-950/20 to-black">
+          <div className="max-w-7xl mx-auto">
+            
+            <h2 className="text-5xl font-bold text-center mb-16 text-white">
+              🎯 Pourquoi Choisir Spydercom ?
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              
+              <div className="group bg-gradient-to-br from-green-950/50 to-green-900/30 
+                              rounded-2xl p-8 border-2 border-green-500/30
+                              hover:scale-105 hover:border-green-400 
+                              hover:shadow-[0_0_40px_rgba(74,222,128,0.4)]
+                              transition-all duration-300">
+                <div className="text-6xl mb-6 text-center">⚡</div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                  Réactivité Extrême
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  <span className="text-green-400 font-bold">2 minutes</span> de la déclaration à l'assignation.
+                  Zéro attente, zéro oubli, satisfaction locataire maximale.
+                </p>
+              </div>
+
+              <div className="group bg-gradient-to-br from-cyan-950/50 to-cyan-900/30 
+                              rounded-2xl p-8 border-2 border-cyan-500/30
+                              hover:scale-105 hover:border-cyan-400 
+                              hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]
+                              transition-all duration-300">
+                <div className="text-6xl mb-6 text-center">🤖</div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                  IA Intelligente
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  Classification automatique, détection d'urgence, choix du meilleur prestataire.
+                  <span className="text-cyan-400 font-bold"> Zéro intervention manuelle.</span>
+                </p>
+              </div>
+
+              <div className="group bg-gradient-to-br from-purple-950/50 to-purple-900/30 
+                              rounded-2xl p-8 border-2 border-purple-500/30
+                              hover:scale-105 hover:border-purple-400 
+                              hover:shadow-[0_0_40px_rgba(168,85,247,0.4)]
+                              transition-all duration-300">
+                <div className="text-6xl mb-6 text-center">📊</div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                  Suivi Total
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  Dashboard temps réel, historique complet, KPI détaillés.
+                  <span className="text-purple-400 font-bold"> Visibilité à 360° sur votre parc.</span>
+                </p>
+              </div>
+
+              <div className="group bg-gradient-to-br from-orange-950/50 to-red-950/30 
+                              rounded-2xl p-8 border-2 border-orange-500/30
+                              hover:scale-105 hover:border-orange-400 
+                              hover:shadow-[0_0_40px_rgba(251,146,60,0.4)]
+                              transition-all duration-300">
+                <div className="text-6xl mb-6 text-center">💰</div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">
+                  ROI Immédiat
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed">
+                  Payback en <span className="text-orange-400 font-bold">14 jours.</span>
+                  60% de temps économisé = plus de prospection, moins de pompier.
+                </p>
+              </div>
+            </div>
+
+            {/* Final CTA */}
+            <div className="text-center">
+              <button className="group relative px-20 py-10 
+                                 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600
+                                 text-white font-black text-4xl rounded-3xl
+                                 shadow-[0_0_80px_rgba(16,185,129,0.8)]
+                                 hover:shadow-[0_0_120px_rgba(16,185,129,1)]
+                                 hover:scale-110 transition-all duration-500
+                                 border-4 border-white/30 overflow-hidden">
+                <span className="relative z-10 flex flex-col items-center gap-4">
+                  <span className="text-6xl animate-bounce">🚀</span>
+                  <span>DÉMARRER MAINTENANT</span>
+                  <span className="text-xl font-normal text-white/90">
+                    Automatisation complète • Résultats J+1 • Sans engagement
+                  </span>
+                </span>
+                
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {[...Array(30)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="absolute w-2 h-2 bg-white rounded-full animate-ping"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 3}s`,
+                      animationDuration: `${1 + Math.random() * 2}s`
+                    }}
+                  />
+                ))}
+              </button>
+
+              <div className="mt-8 flex items-center justify-center gap-12 text-base text-gray-400">
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl">⭐</div>
+                  <div>
+                    <div className="text-white font-bold">4.9/5</div>
+                    <div className="text-xs">247 avis vérifiés</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl">🏆</div>
+                  <div>
+                    <div className="text-white font-bold">189 agences</div>
+                    <div className="text-xs">nous font confiance</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl">💰</div>
+                  <div>
+                    <div className="text-white font-bold">16.8k€</div>
+                    <div className="text-xs">économisés/mois (120 biens)</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 flex items-center justify-center gap-8 text-sm">
+                <div className="flex items-center gap-2 text-green-400">
+                  <span className="text-xl">✓</span>
+                  <span>Satisfait ou remboursé 30j</span>
+                </div>
+                <div className="flex items-center gap-2 text-green-400">
+                  <span className="text-xl">✓</span>
+                  <span>Support 7j/7 inclus</span>
+                </div>
+                <div className="flex items-center gap-2 text-green-400">
+                  <span className="text-xl">✓</span>
+                  <span>Formation offerte</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
