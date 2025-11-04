@@ -70,7 +70,7 @@ export const projects: Project[] = [
     },
     isNew: true,
     isPopular: true,
-    isFeatured: true,
+    isFeatured: false,
     blogUrl: '/blog/automatisation-agences-immobilieres',
     demoUrl: '/agences-immobilieres',
     clientTestimonial: {
@@ -139,7 +139,7 @@ Restaurateur local avec 12 avis/mois qui passait 4h à répondre manuellement. M
     },
     isNew: true,
     isPopular: true,
-    isFeatured: false,
+    isFeatured: true,
     blogUrl: null,
     demoUrl: null,
     clientTestimonial: {
