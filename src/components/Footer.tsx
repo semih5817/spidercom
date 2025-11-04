@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-6">
               <SpiderLogo size={50} />
-              <span className="font-orbitron text-2xl font-black text-white">SPYDERCOM</span>
+              <span className="font-orbitron text-2xl font-black text-white">SPIDERCOM</span>
             </div>
             <p className="text-white/60 font-inter text-sm leading-relaxed">
               La première agence dans les Vosges spécialisée en IA et automatisations
@@ -86,8 +86,8 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-spider-red">📧</span>{" "}
-                <a href="mailto:contact@spydercom.fr" className="hover:text-spider-red transition-colors">
-                  contact@spydercom.fr
+                <a href="mailto:contact@spidercom.fr" className="hover:text-spider-red transition-colors">
+                  contact@spidercom.fr
                 </a>
               </li>
               <li>
@@ -101,7 +101,7 @@ const Footer = () => {
         {/* Barre du bas */}
         <div className="border-t border-spider-red/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50 font-inter">
-            <p>© 2025 SPYDERCOM. Tous droits réservés.</p>
+            <p>© 2025 SPIDERCOM. Tous droits réservés.</p>
             <p className="text-white/60">Fièrement basé dans les Vosges 🏔️</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-spider-red transition-colors">Mentions légales</a>

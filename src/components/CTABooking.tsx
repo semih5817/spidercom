@@ -6,7 +6,7 @@ interface CTABookingProps {
 }
 
 const CTABooking = ({ 
-  subtitle = "30 minutes pour découvrir comment Spydercom transforme votre agence"
+  subtitle = "30 minutes pour découvrir comment Spidercom transforme votre agence"
 }: CTABookingProps) => {
   const { openCalendly } = useCalendly();
 

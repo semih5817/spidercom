@@ -49,7 +49,7 @@ const Solution = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
           <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
-            La méthode <span className="text-spider-red glow-red">SPYDERCOM</span>
+            La méthode <span className="text-spider-red glow-red">SPIDERCOM</span>
           </h2>
           <p className="text-xl text-white/70 font-inter">
             On tisse votre toile digitale intelligente

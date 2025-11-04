@@ -38,7 +38,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <SpiderLogo size={40} />
-            <span className="font-orbitron text-xl font-black text-white">SPYDERCOM</span>
+            <span className="font-orbitron text-xl font-black text-white">SPIDERCOM</span>
           </Link>
 
           {/* Desktop Navigation */}

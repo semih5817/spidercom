@@ -19,7 +19,7 @@ const Founder = () => {
                 <div className="absolute inset-0 bg-spider-red/20 rounded-lg blur-xl group-hover:bg-spider-red/30 transition-all duration-400" />
                 <img
                   src={founderImage}
-                  alt="Semih, fondateur de SPYDERCOM"
+                  alt="Semih, fondateur de SPIDERCOM"
                   className="relative rounded-lg border-2 border-spider-red/50 w-full max-w-md object-cover group-hover:border-spider-red transition-all duration-400"
                 />
               </div>
@@ -28,7 +28,7 @@ const Founder = () => {
             {/* Bio */}
             <div className="space-y-6 font-inter text-white/80 leading-relaxed">
               <p className="text-xl">
-                👋 Moi c'est Semih, créateur de SPYDERCOM.
+                👋 Moi c'est Semih, créateur de SPIDERCOM.
               </p>
               <p>
                 Après plusieurs années à aider des entreprises à digitaliser leurs process, j'ai créé cette agence pour accompagner les entrepreneurs vosgiens vers le digital intelligent.

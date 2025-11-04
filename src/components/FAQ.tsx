@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Je ne suis pas très à l'aise avec la technologie, c'est pour moi ?",
-    answer: "Justement ! On a créé SPYDERCOM pour les entrepreneurs qui veulent les bénéfices de la tech sans la complexité. Vous n'avez RIEN à faire techniquement. On gère tout de A à Z : Installation, Configuration, Formation (si nécessaire), Maintenance, Évolutions. Vous utilisez simplement les outils qu'on met en place. Si vous savez envoyer un email, vous saurez utiliser vos automatisations."
+    answer: "Justement ! On a créé SPIDERCOM pour les entrepreneurs qui veulent les bénéfices de la tech sans la complexité. Vous n'avez RIEN à faire techniquement. On gère tout de A à Z : Installation, Configuration, Formation (si nécessaire), Maintenance, Évolutions. Vous utilisez simplement les outils qu'on met en place. Si vous savez envoyer un email, vous saurez utiliser vos automatisations."
   },
   {
     question: "Combien ça coûte vraiment ?",

@@ -71,14 +71,14 @@ const ProjetsRealises = () => {
   return (
     <>
       <Helmet>
-        <title>Projets Réalisés - Portfolio Spydercom | Automatisation & Outils</title>
+        <title>Projets Réalisés - Portfolio Spidercom | Automatisation & Outils</title>
         <meta
           name="description"
-          content="Découvrez les projets concrets réalisés par Spydercom : automatisations N8N, outils Lovable, dashboards IA pour agences immobilières, restaurants, e-commerce et plus."
+          content="Découvrez les projets concrets réalisés par Spidercom : automatisations N8N, outils Lovable, dashboards IA pour agences immobilières, restaurants, e-commerce et plus."
         />
         <meta
           name="keywords"
-          content="projets automatisation, portfolio spydercom, n8n projets, outils no-code, dashboard sur mesure"
+          content="projets automatisation, portfolio spidercom, n8n projets, outils no-code, dashboard sur mesure"
         />
       </Helmet>
 
@@ -104,7 +104,7 @@ const ProjetsRealises = () => {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-7xl font-black text-white mb-6 font-['Orbitron']"
             >
-              Projets Réalisés par Spydercom
+              Projets Réalisés par Spidercom
             </motion.h1>
 
             <motion.p
@@ -113,7 +113,7 @@ const ProjetsRealises = () => {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
             >
-              Chez Spydercom, chaque projet est une expérimentation concrète de nos solutions
+              Chez Spidercom, chaque projet est une expérimentation concrète de nos solutions
               d'automatisation, de conception et de performance. Découvrez comment nous aidons nos
               clients à gagner du temps, à automatiser leurs processus et à valoriser leur activité.
             </motion.p>
@@ -148,20 +148,6 @@ const ProjetsRealises = () => {
 
         {/* Featured Project */}
         {featuredProject && <FeaturedProject project={featuredProject} />}
-
-        {/* Filters */}
-        <ProjectFilters
-          selectedSector={selectedSector}
-          selectedTechnologies={selectedTechnologies}
-          sortBy={sortBy}
-          onSectorChange={setSelectedSector}
-          onTechnologyToggle={handleTechnologyToggle}
-          onSortChange={setSortBy}
-          onReset={handleReset}
-          resultCount={filteredProjects.length}
-          sectors={sectors}
-          technologies={technologies}
-        />
 
         {/* Projects Grid */}
         <section className="py-12 px-4">

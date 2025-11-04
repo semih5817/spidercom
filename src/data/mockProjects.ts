@@ -74,7 +74,7 @@ export const projects: Project[] = [
     blogUrl: '/blog/automatisation-agences-immobilieres',
     demoUrl: '/agences-immobilieres',
     clientTestimonial: {
-      quote: "Spydercom a transformé notre agence. On a gagné 15h par semaine et doublé notre volume de leads traités.",
+      quote: "Spidercom a transformé notre agence. On a gagné 15h par semaine et doublé notre volume de leads traités.",
       author: "Sophie Martin",
       role: "Directrice",
       company: "Martin Immobilier Paris"
@@ -132,7 +132,7 @@ Restaurateur local avec 12 avis/mois qui passait 4h à répondre manuellement. M
     image: '/projects/take5-dashboard.jpg',
     tags: ['Restauration', 'Google Business', 'WhatsApp', 'IA Conversationnelle', 'Avis Clients', 'N8N'],
     metrics: {
-      timeSaved: '3,5h/semaine',
+      timeSaved: 'Full automatique',
       conversion: '+60% réponse avis',
       savings: '—',
       satisfaction: '+25% avis positifs'

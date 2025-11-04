@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Thomas D.",
     role: "Artisan électricien, Épinal",
-    content: "Avant SPYDERCOM, je perdais 2h/jour à relancer les devis et à répondre aux mêmes questions. Maintenant tout est automatisé : chatbot la nuit, relances programmées, notifications instantanées. Je me concentre enfin sur mes chantiers. Le ROI a été immédiat.",
+    content: "Avant SPIDERCOM, je perdais 2h/jour à relancer les devis et à répondre aux mêmes questions. Maintenant tout est automatisé : chatbot la nuit, relances programmées, notifications instantanées. Je me concentre enfin sur mes chantiers. Le ROI a été immédiat.",
     rating: 5
   },
   {

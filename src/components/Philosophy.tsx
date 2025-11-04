@@ -8,7 +8,7 @@ const Philosophy = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-6 animate-fade-in">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-spider-red/10 mb-4 animate-float">
-            <img src={spiderLogo} alt="SPYDERCOM" className="w-12 h-12" />
+            <img src={spiderLogo} alt="SPIDERCOM" className="w-12 h-12" />
           </div>
           <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
             Pourquoi on fait ça ?
@@ -18,7 +18,7 @@ const Philosophy = () => {
         {/* Content */}
         <div className="space-y-6 text-lg text-white/80 mb-12 font-inter leading-relaxed">
           <p>
-            Chez <span className="text-spider-red font-semibold">SPYDERCOM</span>, on pense qu'une petite entreprise peut avoir les mêmes outils qu'un grand groupe.
+            Chez <span className="text-spider-red font-semibold">SPIDERCOM</span>, on pense qu'une petite entreprise peut avoir les mêmes outils qu'un grand groupe.
           </p>
           
           <p>

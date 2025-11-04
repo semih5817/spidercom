@@ -17,9 +17,9 @@ const Hero = () => {
           <div className="flex flex-col items-center gap-6 mb-8">
             <SpiderLogo size={90} className="animate-float" />
             <h1 className="font-orbitron text-5xl md:text-6xl font-black tracking-[4px] text-white relative">
-              SPYDERCOM
+              SPIDERCOM
               <div className="absolute inset-0 text-spider-cyan opacity-10 translate-x-0.5 translate-y-0.5">
-                SPYDERCOM
+                SPIDERCOM
               </div>
             </h1>
           </div>
