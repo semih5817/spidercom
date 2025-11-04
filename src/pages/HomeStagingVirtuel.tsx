@@ -8,6 +8,9 @@ import CTABooking from "@/components/CTABooking";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { StagingGalleryTab } from "@/components/staging/StagingGalleryTab";
+import { StagingDemoTab } from "@/components/staging/StagingDemoTab";
+import { StagingStatsTab } from "@/components/staging/StagingStatsTab";
 
 const HomeStagingVirtuel = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -366,130 +369,41 @@ const HomeStagingVirtuel = () => {
               </p>
             </div>
 
-            {/* PLACEHOLDER POUR LE DASHBOARD */}
+            {/* DASHBOARD INTERACTIF COMPLET */}
             <div className="max-w-6xl mx-auto">
-              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/30">
-                <CardContent className="p-12">
-                  <Tabs defaultValue="upload" className="w-full">
-                    <TabsList className="grid w-full grid-cols-4 mb-8">
-                      <TabsTrigger value="upload" className="data-[state=active]:bg-pink-500">
-                        1. Upload
-                      </TabsTrigger>
-                      <TabsTrigger value="style" className="data-[state=active]:bg-pink-500">
-                        2. Style
-                      </TabsTrigger>
-                      <TabsTrigger value="preview" className="data-[state=active]:bg-pink-500">
-                        3. Aperçu
-                      </TabsTrigger>
-                      <TabsTrigger value="download" className="data-[state=active]:bg-pink-500">
-                        4. Télécharger
-                      </TabsTrigger>
-                    </TabsList>
+              <Tabs defaultValue="gallery" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 bg-gray-900/50 border border-pink-500/20">
+                  <TabsTrigger value="gallery" className="data-[state=active]:bg-pink-500">
+                    Galerie IA
+                  </TabsTrigger>
+                  <TabsTrigger value="demo" className="data-[state=active]:bg-pink-500">
+                    Mode Démo
+                  </TabsTrigger>
+                  <TabsTrigger value="stats" className="data-[state=active]:bg-pink-500">
+                    Statistiques
+                  </TabsTrigger>
+                </TabsList>
 
-                    <TabsContent value="upload" className="space-y-6">
-                      <div className="border-2 border-dashed border-pink-500/30 rounded-xl p-12 text-center hover:border-pink-500/60 transition-all cursor-pointer bg-black/20">
-                        <div className="text-6xl mb-4">📤</div>
-                        <h3 className="font-orbitron text-2xl font-bold text-white mb-2">
-                          Uploadez votre photo
-                        </h3>
-                        <p className="font-inter text-white/60 mb-4">
-                          Glissez-déposez ou cliquez pour sélectionner
-                        </p>
-                        <p className="font-inter text-sm text-white/40">
-                          JPG, PNG, HEIC • Max 20MB • Min 1024x768px
-                        </p>
-                      </div>
-                      <div className="p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
-                        <p className="font-inter text-yellow-400 text-center">
-                          <strong>📌 INTÉGREZ VOTRE DASHBOARD ICI</strong><br/>
-                          <span className="text-sm text-yellow-400/70">
-                            Collez le code de votre composant d'upload dans cette section
-                          </span>
-                        </p>
-                      </div>
-                    </TabsContent>
+                <TabsContent value="gallery" className="mt-8">
+                  <StagingGalleryTab />
+                </TabsContent>
 
-                    <TabsContent value="style" className="space-y-6">
-                      <h3 className="font-orbitron text-2xl font-bold text-white text-center mb-6">
-                        Choisissez votre style
-                      </h3>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {styles.map((style) => (
-                          <div
-                            key={style.id}
-                            className="p-6 bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl border-2 border-pink-500/20 hover:border-pink-500 transition-all cursor-pointer text-center group"
-                          >
-                            <div className="text-5xl mb-3">{style.emoji}</div>
-                            <h4 className="font-inter font-semibold text-white group-hover:text-pink-400 transition-colors">
-                              {style.name}
-                            </h4>
-                            {style.isDefault && (
-                              <span className="inline-block mt-2 px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full">
-                                Par défaut
-                              </span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
-                        <p className="font-inter text-yellow-400 text-center text-sm">
-                          Intégrez votre sélecteur de style personnalisé ici
-                        </p>
-                      </div>
-                    </TabsContent>
+                <TabsContent value="demo" className="mt-8">
+                  <StagingDemoTab />
+                </TabsContent>
 
-                    <TabsContent value="preview" className="space-y-6">
-                      <div className="aspect-video bg-gradient-to-br from-pink-900/30 to-orange-900/30 rounded-xl border-2 border-pink-500/30 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="text-6xl mb-4">👁️</div>
-                          <h3 className="font-orbitron text-2xl font-bold text-white mb-2">
-                            Aperçu Avant/Après
-                          </h3>
-                          <p className="font-inter text-white/60">
-                            Votre comparaison interactive apparaîtra ici
-                          </p>
-                        </div>
-                      </div>
-                      <div className="p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
-                        <p className="font-inter text-yellow-400 text-center text-sm">
-                          Intégrez votre composant de preview avec slider ici
-                        </p>
-                      </div>
-                    </TabsContent>
+                <TabsContent value="stats" className="mt-8">
+                  <StagingStatsTab />
+                </TabsContent>
+              </Tabs>
 
-                    <TabsContent value="download" className="space-y-6">
-                      <div className="text-center space-y-6">
-                        <div className="text-6xl">✅</div>
-                        <h3 className="font-orbitron text-2xl font-bold text-white">
-                          Votre image est prête !
-                        </h3>
-                        <button className="px-8 py-4 bg-gradient-to-r from-pink-500 to-orange-500 text-white font-inter font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-pink-500/50 transition-all hover:scale-105">
-                          <span className="flex items-center gap-3">
-                            <span>⬇️</span>
-                            <span>Télécharger en HD</span>
-                          </span>
-                        </button>
-                        <p className="font-inter text-sm text-white/40">
-                          Format : PNG • Résolution : 2048x1536px
-                        </p>
-                      </div>
-                      <div className="p-6 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
-                        <p className="font-inter text-yellow-400 text-center text-sm">
-                          Intégrez votre logique de téléchargement ici
-                        </p>
-                      </div>
-                    </TabsContent>
-                  </Tabs>
-                </CardContent>
-              </Card>
-
-              <div className="mt-8 p-6 bg-blue-950/30 border border-blue-500/30 rounded-xl">
+              <div className="mt-8 p-6 bg-green-950/30 border border-green-500/30 rounded-xl">
                 <h4 className="font-orbitron font-bold text-white mb-3 flex items-center gap-2">
-                  <span className="text-2xl">💡</span>
-                  Instructions d'intégration
+                  <span className="text-2xl">✅</span>
+                  Dashboard Intégré avec Succès
                 </h4>
-                <ul className="font-inter text-sm text-blue-300 space-y-2 list-disc list-inside">
-                  <li>Remplacez les placeholders par vos composants de dashboard</li>
+                <ul className="font-inter text-sm text-green-300 space-y-2 list-disc list-inside">
+                  <li>✅ Galerie interactive avec slider avant/après</li>
                   <li>Si votre dashboard a plusieurs routes, gardez les Tabs et mappez chaque route à un TabsContent</li>
                   <li>Si vous avez déjà des Tabs dans votre dashboard, supprimez les Tabs externes et gardez seulement votre code</li>
                   <li>Assurez-vous que les imports de vos composants fonctionnent</li>
