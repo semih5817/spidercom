@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Problems from "@/components/Problems";
 import Solution from "@/components/Solution";
 import UseCases from "@/components/UseCases";
+import ProjectsShowcase from "@/components/ProjectsShowcase";
 import Philosophy from "@/components/Philosophy";
 import Founder from "@/components/Founder";
 import AuditOffer from "@/components/AuditOffer";
@@ -20,6 +21,7 @@ const Index = () => {
       <Problems />
       <Solution />
       <UseCases />
+      <ProjectsShowcase />
       <Philosophy />
       <Founder />
       <AuditOffer />
