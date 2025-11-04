@@ -10,6 +10,7 @@ import EmailsRelances from "./pages/EmailsRelances";
 import IntegrationCRM from "./pages/IntegrationCRM";
 import PublicationMultiPlateformes from "./pages/PublicationMultiPlateformes";
 import GestionLocative from "./pages/GestionLocative";
+import HomeStagingVirtuel from "./pages/HomeStagingVirtuel";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/integration-crm" element={<IntegrationCRM />} />
           <Route path="/publication-multi-plateformes" element={<PublicationMultiPlateformes />} />
           <Route path="/gestion-locative" element={<GestionLocative />} />
+          <Route path="/home-staging-virtuel" element={<HomeStagingVirtuel />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
