@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import DocumentComparisonChaos from "@/components/leads/DocumentComparisonChaos";
 import StateComparisonDemo from "@/components/leads/StateComparisonDemo";
+import InteractiveComparison from "@/components/edl/InteractiveComparison";
 import EDLComparisonTable from "@/components/leads/EDLComparisonTable";
 import EDLROICalculator from "@/components/leads/EDLROICalculator";
 import EDLWorkflowDiagram from "@/components/leads/EDLWorkflowDiagram";
@@ -390,7 +391,7 @@ const ComparateurEtatsLieux = () => {
               🎯 Démo : Comparez 2 États des Lieux en Direct
             </h2>
 
-            <StateComparisonDemo />
+            <InteractiveComparison />
           </div>
         </section>
 
