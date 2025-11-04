@@ -31,7 +31,15 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
             className="relative"
           >
             <div className="aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-2 border-gray-700 flex items-center justify-center p-4">
-              <WorkflowDiagram />
+              {project.slug === 'take-5-automatisation-google-business' && project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              ) : (
+                <WorkflowDiagram />
+              )}
             </div>
           </motion.div>
 

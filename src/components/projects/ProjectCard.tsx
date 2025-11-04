@@ -24,11 +24,19 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     >
       {/* Image */}
       <div className="relative aspect-video overflow-hidden bg-gray-900/50">
-        {project.image && (
-          <div className="w-full h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
-            <WorkflowDiagram />
-          </div>
-        )}
+        {project.image ? (
+          project.slug === 'take-5-automatisation-google-business' ? (
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
+              <WorkflowDiagram />
+            </div>
+          )
+        ) : null}
         
         {/* Badges */}
         <div className="absolute top-4 left-4 flex gap-2">
