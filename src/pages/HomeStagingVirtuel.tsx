@@ -56,44 +56,6 @@ const HomeStagingVirtuel = () => {
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: "Starter",
-      price: "29€",
-      period: "/mois",
-      features: [
-        "10 images/mois",
-        "1 style disponible",
-        "HD download",
-        "Support email"
-      ]
-    },
-    {
-      name: "Pro",
-      price: "99€",
-      period: "/mois",
-      features: [
-        "50 images/mois",
-        "Tous les styles",
-        "HD + 4K download",
-        "Support prioritaire",
-        "API access"
-      ],
-      highlighted: true
-    },
-    {
-      name: "Agence",
-      price: "Sur devis",
-      period: "",
-      features: [
-        "Illimité",
-        "Styles custom",
-        "API access",
-        "White label",
-        "Formation équipe"
-      ]
-    }
-  ];
 
   const faqs = [
     {
@@ -558,68 +520,6 @@ const HomeStagingVirtuel = () => {
           </div>
         </section>
 
-        {/* SECTION: TARIFS */}
-        <section className="px-4 py-20">
-          <div className="container mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-                💰 Tarifs
-              </h2>
-              <p className="font-inter text-xl text-white/60">
-                Choisissez la formule adaptée à votre volume
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {pricingPlans.map((plan, index) => (
-                <Card 
-                  key={index} 
-                  className={`bg-gradient-to-br from-gray-900 to-gray-800 border-2 ${
-                    plan.highlighted 
-                      ? 'border-pink-500 shadow-[0_0_60px_rgba(236,72,153,0.3)] scale-105' 
-                      : 'border-pink-500/20'
-                  } relative`}
-                >
-                  {plan.highlighted && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-pink-500 to-orange-500 rounded-full">
-                      <span className="font-inter font-black text-white text-sm">⭐ POPULAIRE</span>
-                    </div>
-                  )}
-                  <CardHeader className="text-center">
-                    <CardTitle className="font-orbitron text-2xl text-white mb-4">
-                      {plan.name}
-                    </CardTitle>
-                    <div className="space-y-1">
-                      <div className="font-orbitron text-5xl font-black text-white">
-                        {plan.price}
-                      </div>
-                      {plan.period && (
-                        <div className="font-inter text-white/60">{plan.period}</div>
-                      )}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-2 font-inter text-white/80">
-                          <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <button className={`w-full py-3 rounded-xl font-inter font-bold transition-all ${
-                      plan.highlighted
-                        ? 'bg-gradient-to-r from-pink-500 to-orange-500 text-white hover:shadow-lg hover:shadow-pink-500/50 hover:scale-105'
-                        : 'bg-white/10 text-white hover:bg-white/20'
-                    }`}>
-                      {plan.price === "Sur devis" ? "Nous contacter" : "Choisir ce plan"}
-                    </button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* SECTION: FAQ */}
         <section className="px-4 py-20 bg-gradient-to-b from-transparent to-pink-950/20">
