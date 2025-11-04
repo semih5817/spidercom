@@ -517,69 +517,7 @@ const ComparateurEtatsLieux = () => {
           </div>
         </section>
 
-        {/* SECTION 12: TARIFS */}
-        <section className="px-4 py-20">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4 text-center">
-              💎 Tarifs Transparents
-            </h2>
-            <p className="text-center text-white/60 text-xl mb-12">
-              Choisissez la formule adaptée à votre volume
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {pricingPlans.map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`bg-gradient-to-br from-gray-900 to-gray-800 border-2 ${
-                    plan.highlighted
-                      ? 'border-spider-cyan shadow-[0_0_60px_rgba(180,235,245,0.3)] scale-105'
-                      : 'border-white/10'
-                  } relative`}
-                >
-                  {plan.highlighted && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-spider-cyan to-blue-500 rounded-full">
-                      <span className="font-inter font-black text-black text-sm">{plan.badge}</span>
-                    </div>
-                  )}
-                  <CardHeader className="text-center">
-                    {!plan.highlighted && plan.badge && (
-                      <div className="text-sm text-white/60 mb-2">{plan.badge}</div>
-                    )}
-                    <CardTitle className="font-orbitron text-2xl text-white mb-4">
-                      {plan.name}
-                    </CardTitle>
-                    <div className="space-y-1">
-                      <div className="font-orbitron text-5xl font-black text-white">
-                        {plan.price}
-                      </div>
-                      <div className="font-inter text-white/60">{plan.period}</div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-2 font-inter text-white/80">
-                          <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      className={`w-full ${
-                        plan.highlighted
-                          ? 'bg-gradient-to-r from-spider-cyan to-blue-500 text-black hover:shadow-lg hover:shadow-spider-cyan/50'
-                          : 'bg-white/10 text-white hover:bg-white/20'
-                      }`}
-                    >
-                      {plan.price === "Sur devis" ? "Nous contacter" : "Choisir ce plan"}
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* SECTION 12: TARIFS - REMOVED */}
 
         {/* SECTION 13: FAQ */}
         <section className="px-4 py-20 bg-gradient-to-b from-transparent to-purple-950/20">

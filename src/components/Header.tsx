@@ -9,9 +9,19 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { openCalendly } = useCalendly();
 
-  const solutions = [
-    { name: "Agences Immobilières", path: "/agences-immobilieres" },
-  ];
+  const agenciesSolutions = {
+    automations: [
+      { name: "Publication Multi-Plateformes", path: "/publication-multi-plateformes" },
+      { name: "Qualification de Leads", path: "/qualification-leads" },
+      { name: "Emails & Relances", path: "/emails-relances" },
+      { name: "Gestion Locative", path: "/gestion-locative" },
+      { name: "Comparateur États des Lieux", path: "/comparateur-etats-lieux" },
+    ],
+    outils: [
+      { name: "Home Staging Virtuel", path: "/home-staging-virtuel" },
+      { name: "Intégration CRM", path: "/integration-crm" },
+    ]
+  };
 
   const tools = [
     { name: "Qualification de Leads", path: "/qualification-leads" },
@@ -45,32 +55,60 @@ const Header = () => {
               Accueil
             </NavLink>
 
-            {/* Solutions Dropdown */}
+            {/* Agences Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-red transition-colors">
-                Solutions
+                Agences
                 <ChevronDown className="w-4 h-4" />
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg overflow-hidden">
-                  {solutions.map((solution) => (
+                <div className="absolute top-full left-0 mt-2 w-72 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  {/* Automatisations Section */}
+                  <div className="px-4 py-2 bg-spider-red/10 border-b border-gray-800">
+                    <span className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider">
+                      Automatisations
+                    </span>
+                  </div>
+                  {agenciesSolutions.automations.map((item) => (
                     <NavLink
-                      key={solution.path}
-                      to={solution.path}
+                      key={item.path}
+                      to={item.path}
                       className={({ isActive }) =>
-                        `block px-4 py-3 font-inter transition-colors ${
+                        `block px-4 py-2.5 font-inter text-sm transition-colors ${
                           isActive
                             ? "bg-spider-red/20 text-spider-red"
                             : "text-white/80 hover:bg-gray-900 hover:text-spider-red"
                         }`
                       }
                     >
-                      {solution.name}
+                      {item.name}
+                    </NavLink>
+                  ))}
+                  
+                  {/* Outils Section */}
+                  <div className="px-4 py-2 bg-spider-cyan/10 border-b border-t border-gray-800">
+                    <span className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider">
+                      Outils
+                    </span>
+                  </div>
+                  {agenciesSolutions.outils.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      className={({ isActive }) =>
+                        `block px-4 py-2.5 font-inter text-sm transition-colors ${
+                          isActive
+                            ? "bg-spider-cyan/20 text-spider-cyan"
+                            : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"
+                        }`
+                      }
+                    >
+                      {item.name}
                     </NavLink>
                   ))}
                 </div>
@@ -134,21 +172,51 @@ const Header = () => {
               </NavLink>
 
               <div className="space-y-2">
-                <div className="font-inter font-medium text-white/60 text-sm">Solutions</div>
-                {solutions.map((solution) => (
-                  <NavLink
-                    key={solution.path}
-                    to={solution.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `block pl-4 font-inter transition-colors ${
-                        isActive ? "text-spider-red" : "text-white/80"
-                      }`
-                    }
-                  >
-                    {solution.name}
-                  </NavLink>
-                ))}
+                <div className="font-inter font-medium text-white/60 text-sm uppercase tracking-wider mb-2">
+                  Agences
+                </div>
+                
+                {/* Automatisations */}
+                <div className="pl-2">
+                  <div className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider mb-2">
+                    Automatisations
+                  </div>
+                  {agenciesSolutions.automations.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `block pl-4 py-2 font-inter text-sm transition-colors ${
+                          isActive ? "text-spider-red" : "text-white/80"
+                        }`
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
+
+                {/* Outils */}
+                <div className="pl-2 mt-3">
+                  <div className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider mb-2">
+                    Outils
+                  </div>
+                  {agenciesSolutions.outils.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `block pl-4 py-2 font-inter text-sm transition-colors ${
+                          isActive ? "text-spider-cyan" : "text-white/80"
+                        }`
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
 
               <NavLink
