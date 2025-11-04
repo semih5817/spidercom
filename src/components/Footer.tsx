@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-black border-t border-spider-red/20">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Colonne 1 : À propos */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-6">
@@ -23,23 +23,28 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Colonne 2 : Liens rapides */}
+          {/* Colonne 2 : Solutions */}
           <div>
-            <h3 className="font-orbitron text-lg font-bold text-white mb-6">Liens rapides</h3>
+            <h3 className="font-orbitron text-lg font-bold text-white mb-6">Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
-                  Accueil
+                <a href="/qualification-leads" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Qualification de Leads
                 </a>
               </li>
               <li>
-                <a href="/lead-scoring" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
-                  Lead Scoring
+                <a href="/emails-relances" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Emails & Relances
                 </a>
               </li>
               <li>
-                <a href="/publication-automatique" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
-                  Publication Auto
+                <a href="/integration-crm" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Intégration CRM
+                </a>
+              </li>
+              <li>
+                <a href="/publication-multi-plateformes" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  Publication Multi-Plateformes
                 </a>
               </li>
               <li>
@@ -47,15 +52,33 @@ const Footer = () => {
                   Gestion Locative
                 </a>
               </li>
+            </ul>
+          </div>
+
+          {/* Colonne 3 : Entreprise */}
+          <div>
+            <h3 className="font-orbitron text-lg font-bold text-white mb-6">Entreprise</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="/" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
+                  À propos
+                </a>
+              </li>
               <li>
                 <a href="/contact" className="text-white/60 hover:text-spider-red transition-colors font-inter text-sm">
                   Contact
                 </a>
               </li>
+              <li>
+                <span className="text-white/40 font-inter text-sm">Blog (à venir)</span>
+              </li>
+              <li>
+                <span className="text-white/40 font-inter text-sm">Témoignages (à venir)</span>
+              </li>
             </ul>
           </div>
 
-          {/* Colonne 3 : Contact */}
+          {/* Colonne 4 : Contact */}
           <div>
             <h3 className="font-orbitron text-lg font-bold text-white mb-6">Contact</h3>
             <ul className="space-y-3 font-inter text-sm text-white/60">
@@ -68,6 +91,12 @@ const Footer = () => {
                 <span className="text-spider-red">📧</span>{" "}
                 <a href="mailto:contact@spydercom.fr" className="hover:text-spider-red transition-colors">
                   contact@spydercom.fr
+                </a>
+              </li>
+              <li>
+                <span className="text-spider-red">📞</span>{" "}
+                <a href="tel:+33123456789" className="hover:text-spider-red transition-colors">
+                  +33 1 XX XX XX XX
                 </a>
               </li>
             </ul>

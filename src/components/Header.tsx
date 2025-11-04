@@ -9,9 +9,15 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { openCalendly } = useCalendly();
 
+  const solutions = [
+    { name: "Agences Immobilières", path: "/agences-immobilieres" },
+  ];
+
   const tools = [
-    { name: "Lead Scoring", path: "/lead-scoring" },
-    { name: "Publication Auto", path: "/publication-automatique" },
+    { name: "Qualification de Leads", path: "/qualification-leads" },
+    { name: "Emails & Relances", path: "/emails-relances" },
+    { name: "Intégration CRM", path: "/integration-crm" },
+    { name: "Publication Multi-Plateformes", path: "/publication-multi-plateformes" },
     { name: "Gestion Locative", path: "/gestion-locative" },
   ];
 
@@ -39,23 +45,23 @@ const Header = () => {
               Accueil
             </NavLink>
 
-            {/* Outils Dropdown */}
+            {/* Solutions Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-red transition-colors">
-                Outils
+                Solutions
                 <ChevronDown className="w-4 h-4" />
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg overflow-hidden">
-                  {tools.map((tool) => (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg overflow-hidden">
+                  {solutions.map((solution) => (
                     <NavLink
-                      key={tool.path}
-                      to={tool.path}
+                      key={solution.path}
+                      to={solution.path}
                       className={({ isActive }) =>
                         `block px-4 py-3 font-inter transition-colors ${
                           isActive
@@ -64,7 +70,7 @@ const Header = () => {
                         }`
                       }
                     >
-                      {tool.name}
+                      {solution.name}
                     </NavLink>
                   ))}
                 </div>
@@ -75,7 +81,18 @@ const Header = () => {
               to="/contact"
               className={({ isActive }) =>
                 `font-inter font-medium transition-colors ${
-                  isActive ? "text-spider-red" : "text-white/80 hover:text-spider-red"
+                  isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"
+                }`
+              }
+            >
+              À propos
+            </NavLink>
+
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `font-inter font-medium transition-colors ${
+                  isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"
                 }`
               }
             >
@@ -117,11 +134,11 @@ const Header = () => {
               </NavLink>
 
               <div className="space-y-2">
-                <div className="font-inter font-medium text-white/60 text-sm">Outils</div>
-                {tools.map((tool) => (
+                <div className="font-inter font-medium text-white/60 text-sm">Solutions</div>
+                {solutions.map((solution) => (
                   <NavLink
-                    key={tool.path}
-                    to={tool.path}
+                    key={solution.path}
+                    to={solution.path}
                     onClick={() => setIsMenuOpen(false)}
                     className={({ isActive }) =>
                       `block pl-4 font-inter transition-colors ${
@@ -129,10 +146,22 @@ const Header = () => {
                       }`
                     }
                   >
-                    {tool.name}
+                    {solution.name}
                   </NavLink>
                 ))}
               </div>
+
+              <NavLink
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `font-inter font-medium transition-colors ${
+                    isActive ? "text-spider-red" : "text-white/80"
+                  }`
+                }
+              >
+                À propos
+              </NavLink>
 
               <NavLink
                 to="/contact"

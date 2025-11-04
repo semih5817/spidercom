@@ -4,8 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import LeadScoring from "./pages/LeadScoring";
-import PublicationAutomatique from "./pages/PublicationAutomatique";
+import AgencesImmobilieres from "./pages/AgencesImmobilieres";
+import QualificationLeads from "./pages/QualificationLeads";
+import EmailsRelances from "./pages/EmailsRelances";
+import IntegrationCRM from "./pages/IntegrationCRM";
+import PublicationMultiPlateformes from "./pages/PublicationMultiPlateformes";
 import GestionLocative from "./pages/GestionLocative";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -22,8 +25,11 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/lead-scoring" element={<LeadScoring />} />
-          <Route path="/publication-automatique" element={<PublicationAutomatique />} />
+          <Route path="/agences-immobilieres" element={<AgencesImmobilieres />} />
+          <Route path="/qualification-leads" element={<QualificationLeads />} />
+          <Route path="/emails-relances" element={<EmailsRelances />} />
+          <Route path="/integration-crm" element={<IntegrationCRM />} />
+          <Route path="/publication-multi-plateformes" element={<PublicationMultiPlateformes />} />
           <Route path="/gestion-locative" element={<GestionLocative />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
