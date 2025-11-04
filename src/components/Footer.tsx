@@ -1,11 +1,8 @@
 import { MapPin, Mail, Phone } from "lucide-react";
 import spiderLogo from "@/assets/spider-logo.png";
-
 import SpiderLogo from "./SpiderLogo";
-
 const Footer = () => {
-  return (
-    <footer className="bg-black border-t border-spider-red/20">
+  return <footer className="bg-black border-t border-spider-red/20">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Colonne 1 : À propos */}
@@ -94,10 +91,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <span className="text-spider-red">📞</span>{" "}
-                <a href="tel:+33123456789" className="hover:text-spider-red transition-colors">
-                  +33 1 XX XX XX XX
-                </a>
+                {" "}
+                
               </li>
             </ul>
           </div>
@@ -116,8 +111,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
