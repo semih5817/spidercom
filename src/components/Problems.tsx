@@ -45,12 +45,12 @@ const Problems = () => {
   const { openCalendly } = useCalendly();
   
   return (
-    <section id="problemes" className="relative py-24 bg-deep-black">
+    <section id="problemes" className="relative py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
+          <h2 className="font-inter text-4xl md:text-5xl font-semibold text-foreground">
             Vous perdez un temps précieux et des opportunités{" "}
-            <span className="text-spider-red">sans le savoir</span>
+            <span className="text-primary">sans le savoir</span>
           </h2>
         </div>
 
@@ -60,21 +60,21 @@ const Problems = () => {
             return (
               <div
                 key={index}
-                className="group bg-spider-red/5 border border-spider-red/20 rounded-lg p-8 transition-all duration-400 hover:border-spider-red/60 hover:-translate-y-2 animate-fade-in"
+                className="group glass-effect border border-primary/20 rounded-lg p-8 transition-all duration-300 hover:border-primary/40 hover:shadow-blue-glow hover:-translate-y-2 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <Icon className="w-10 h-10 text-spider-red" />
+                    <Icon className="w-10 h-10 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-orbitron text-xl font-bold text-white mb-4">
+                    <h3 className="font-inter text-xl font-semibold text-foreground mb-4">
                       {problem.title}
                     </h3>
                     <ul className="space-y-2">
                       {problem.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-white/70 font-inter">
-                          <span className="text-spider-red mt-1">•</span>
+                        <li key={idx} className="flex items-start gap-2 text-foreground/70 font-inter">
+                          <span className="text-primary mt-1">•</span>
                           <span>{point}</span>
                         </li>
                       ))}
