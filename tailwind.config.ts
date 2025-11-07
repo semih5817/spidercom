@@ -47,12 +47,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "spider-red": "hsl(var(--spider-red))",
+        "spider-blue": "hsl(var(--spider-blue))",
         "spider-cyan": "hsl(var(--spider-cyan))",
-        "deep-black": "hsl(var(--deep-black))",
+        "tech-navy": "hsl(var(--tech-navy))",
+        "slate-dark": "hsl(var(--slate-dark))",
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
       borderRadius: {
