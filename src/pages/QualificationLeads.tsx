@@ -15,26 +15,24 @@ import FunnelConnector from "@/components/leads/FunnelConnector";
 import ROICalculationResults from "@/components/leads/ROICalculationResults";
 import CTABooking from "@/components/CTABooking";
 import { Slider } from "@/components/ui/slider";
-
 const QualificationLeads = () => {
   const [funnelMode, setFunnelMode] = useState<'before' | 'after'>('before');
   const [nbAgents, setNbAgents] = useState(5);
   const [nbLeads, setNbLeads] = useState(300);
   const [tjm, setTjm] = useState(35);
   const [avgCommission, setAvgCommission] = useState(8000);
-
   const scrollToDemo = () => {
-    document.getElementById('kpi-dashboard')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('kpi-dashboard')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
 
   // Calculs ROI (old calculator for backward compatibility)
   const hoursPerMonth = 15 * nbAgents * 4;
   const savingsPerMonth = hoursPerMonth * 35;
   const roiAnnual = savingsPerMonth * 12;
-  const paybackDays = Math.round((500 / savingsPerMonth) * 30);
-
-  return (
-    <div className="min-h-screen">
+  const paybackDays = Math.round(500 / savingsPerMonth * 30);
+  return <div className="min-h-screen">
       <Header />
       <BackgroundEffects />
 
@@ -106,10 +104,7 @@ const QualificationLeads = () => {
             </div>
 
             <div className="animate-bounce">
-              <button
-                onClick={scrollToDemo}
-                className="px-10 py-5 bg-gradient-to-r from-spider-red to-red-600 text-white font-black text-xl rounded-xl shadow-[0_0_40px_rgba(239,68,68,0.5)] hover:shadow-[0_0_60px_rgba(239,68,68,0.7)] hover:scale-105 transition-all duration-300"
-              >
+              <button onClick={scrollToDemo} className="px-10 py-5 bg-gradient-to-r from-spider-red to-red-600 text-white font-black text-xl rounded-xl shadow-[0_0_40px_rgba(239,68,68,0.5)] hover:shadow-[0_0_60px_rgba(239,68,68,0.7)] hover:scale-105 transition-all duration-300">
                 ⚡ VOIR LA DÉMO EN ACTION
               </button>
             </div>
@@ -136,7 +131,9 @@ const QualificationLeads = () => {
                 </div>
                 <p className="text-sm text-gray-400 mb-4">Temps de réponse moyen</p>
                 <div className="relative h-2 bg-gray-700 rounded-full overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-400 rounded-full animate-pulse" style={{ width: '78%' }} />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-400 rounded-full animate-pulse" style={{
+                  width: '78%'
+                }} />
                 </div>
                 <p className="text-xs text-green-400 mt-2">🎯 Objectif: &lt;60s atteint à 78%</p>
               </div>
@@ -153,9 +150,9 @@ const QualificationLeads = () => {
                 </div>
                 <p className="text-sm text-gray-400 mb-4">vs période sans automatisation</p>
                 <div className="flex items-end gap-1 h-8">
-                  {[40, 50, 45, 60, 70, 65, 80, 85].map((h, i) => (
-                    <div key={i} className="flex-1 bg-gradient-to-t from-spider-cyan to-cyan-400 rounded-t" style={{ height: `${h}%` }} />
-                  ))}
+                  {[40, 50, 45, 60, 70, 65, 80, 85].map((h, i) => <div key={i} className="flex-1 bg-gradient-to-t from-spider-cyan to-cyan-400 rounded-t" style={{
+                  height: `${h}%`
+                }} />)}
                 </div>
                 <p className="text-xs text-spider-cyan mt-2">📈 Tendance: +12% vs mois dernier</p>
               </div>
@@ -340,7 +337,7 @@ const QualificationLeads = () => {
                   <div className="text-6xl animate-pulse">VS</div>
                 </div>
                 <div>
-                  <div className="text-spider-cyan text-sm mb-2 font-bold">AGENCE B (Spydercom)</div>
+                  <div className="text-spider-cyan text-sm mb-2 font-bold">AGENCE B (Spidercom)</div>
                   <div className="text-5xl font-black text-green-500 mb-2">+126k€</div>
                   <p className="text-gray-400 text-sm">100% traités • 17% conversion • 8k€</p>
                 </div>
@@ -367,7 +364,7 @@ const QualificationLeads = () => {
                     <span className="text-xl">🤖</span>
                   </div>
                   <div>
-                    <div className="text-white font-bold">Assistant Spydercom</div>
+                    <div className="text-white font-bold">Assistant Spidercom</div>
                     <div className="text-cyan-200 text-xs flex items-center gap-2">
                       <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                       En ligne • Répond en &lt;2 secondes
@@ -378,42 +375,27 @@ const QualificationLeads = () => {
                 <div className="p-6 space-y-4 h-[500px] overflow-y-auto bg-gray-950">
                   <ChatBubble type="bot" message="👋 Bonjour ! Je peux vous aider sur quel bien ?" time="10:23" />
                   <ChatBubble type="user" message="Le T3 rue de la Paix" time="10:24" />
-                  <ChatBubble
-                    type="bot"
-                    message="Excellent choix ! 🏠 Ce bien est disponible. Préférez-vous une visite cette semaine ou ce week-end ?"
-                    time="10:24"
-                    buttons={['Cette semaine', 'Ce week-end']}
-                  />
+                  <ChatBubble type="bot" message="Excellent choix ! 🏠 Ce bien est disponible. Préférez-vous une visite cette semaine ou ce week-end ?" time="10:24" buttons={['Cette semaine', 'Ce week-end']} />
                   <ChatBubble type="user" message="Cette semaine" time="10:25" />
-                  <ChatBubble
-                    type="bot"
-                    message="Parfait ! J'ai 2 créneaux disponibles :\n• Mercredi 18h (15 min)\n• Jeudi 12h30 (15 min)\n\nLequel vous arrange ?"
-                    time="10:25"
-                    buttons={['Mercredi 18h', 'Jeudi 12h30']}
-                  />
+                  <ChatBubble type="bot" message="Parfait ! J'ai 2 créneaux disponibles :\n• Mercredi 18h (15 min)\n• Jeudi 12h30 (15 min)\n\nLequel vous arrange ?" time="10:25" buttons={['Mercredi 18h', 'Jeudi 12h30']} />
                   <ChatBubble type="user" message="Mercredi 18h" time="10:25" />
-                  <ChatBubble
-                    type="bot"
-                    message="✅ C'est réservé ! Mercredi 15/11 à 18h00.\n\nVous recevrez un email de confirmation avec :\n• L'adresse exacte\n• Le dossier du bien\n• Un rappel 1h avant\n\nÀ mercredi ! 🎉"
-                    time="10:26"
-                  />
+                  <ChatBubble type="bot" message="✅ C'est réservé ! Mercredi 15/11 à 18h00.\n\nVous recevrez un email de confirmation avec :\n• L'adresse exacte\n• Le dossier du bien\n• Un rappel 1h avant\n\nÀ mercredi ! 🎉" time="10:26" />
                   <div className="flex items-center gap-2">
                     <div className="bg-gray-800 rounded-2xl px-4 py-3 flex gap-1">
                       <span className="w-2 h-2 bg-spider-cyan rounded-full animate-bounce"></span>
-                      <span className="w-2 h-2 bg-spider-cyan rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
-                      <span className="w-2 h-2 bg-spider-cyan rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></span>
+                      <span className="w-2 h-2 bg-spider-cyan rounded-full animate-bounce" style={{
+                      animationDelay: '0.2s'
+                    }}></span>
+                      <span className="w-2 h-2 bg-spider-cyan rounded-full animate-bounce" style={{
+                      animationDelay: '0.4s'
+                    }}></span>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gray-900 px-6 py-4 border-t border-gray-700">
                   <div className="flex gap-3">
-                    <input
-                      type="text"
-                      placeholder="Mode démo - conversation pré-enregistrée"
-                      disabled
-                      className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-gray-500 cursor-not-allowed"
-                    />
+                    <input type="text" placeholder="Mode démo - conversation pré-enregistrée" disabled className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-gray-500 cursor-not-allowed" />
                     <button disabled className="px-6 py-3 bg-spider-cyan/30 text-cyan-300 rounded-lg cursor-not-allowed">
                       Envoyer
                     </button>
@@ -464,15 +446,7 @@ const QualificationLeads = () => {
             <h2 className="text-4xl font-bold text-center mb-12 text-white">📬 Séquences de Relance Automatiques</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <EmailCard
-                day="J+0"
-                title="Réponse instantanée"
-                timing="< 60 secondes après le contact"
-                openRate={52}
-                clickRate={11}
-                replyRate={13}
-                subject="Re: [Nom du bien] — dispo & prochaine visite"
-                body={`Bonjour [Prénom],
+              <EmailCard day="J+0" title="Réponse instantanée" timing="< 60 secondes après le contact" openRate={52} clickRate={11} replyRate={13} subject="Re: [Nom du bien] — dispo & prochaine visite" body={`Bonjour [Prénom],
 
 Merci pour votre intérêt pour le [Type bien] situé [Adresse] !
 
@@ -487,19 +461,9 @@ Merci pour votre intérêt pour le [Type bien] situé [Adresse] !
 👉 Réserver mon créneau : [Lien Calendly]
 
 À très vite !
-[Signature]`}
-                color="green"
-              />
+[Signature]`} color="green" />
 
-              <EmailCard
-                day="J+2"
-                title="Relance valeur"
-                timing="Si email ouvert mais pas de clic"
-                openRate={47}
-                clickRate={9}
-                replyRate={10}
-                subject="3 raisons pour lesquelles [Adresse] part vite"
-                body={`Bonjour [Prénom],
+              <EmailCard day="J+2" title="Relance valeur" timing="Si email ouvert mais pas de clic" openRate={47} clickRate={9} replyRate={10} subject="3 raisons pour lesquelles [Adresse] part vite" body={`Bonjour [Prénom],
 
 Vous avez consulté le bien [Adresse]. Voici pourquoi il intéresse beaucoup :
 
@@ -512,19 +476,9 @@ Vous avez consulté le bien [Adresse]. Voici pourquoi il intéresse beaucoup :
 Je bloque un créneau pour vous ?
 👉 [Lien Calendly - 15 min]
 
-[Signature]`}
-                color="orange"
-              />
+[Signature]`} color="orange" />
 
-              <EmailCard
-                day="J+7"
-                title="Dernière relance douce"
-                timing="Si toujours pas de réponse"
-                openRate={41}
-                clickRate={7}
-                replyRate={8}
-                subject="Toujours intéressé par [Adresse] ?"
-                body={`Bonjour [Prénom],
+              <EmailCard day="J+7" title="Dernière relance douce" timing="Si toujours pas de réponse" openRate={41} clickRate={7} replyRate={8} subject="Toujours intéressé par [Adresse] ?" body={`Bonjour [Prénom],
 
 Je n'ai pas eu de retour concernant le bien [Adresse].
 
@@ -537,9 +491,7 @@ Souhaitez-vous que je vous envoie les dossiers ?
 
 Répondez simplement OUI ou NON.
 
-[Signature]`}
-                color="cyan"
-              />
+[Signature]`} color="cyan" />
             </div>
 
             {/* SMS Rappel */}
@@ -601,7 +553,7 @@ Répondez simplement OUI ou NON.
                   <label className="text-white font-semibold">Nombre d'agents</label>
                   <span className="text-spider-cyan font-black text-2xl font-orbitron">{nbAgents}</span>
                 </div>
-                <Slider value={[nbAgents]} onValueChange={(val) => setNbAgents(val[0])} min={1} max={20} step={1} className="w-full" />
+                <Slider value={[nbAgents]} onValueChange={val => setNbAgents(val[0])} min={1} max={20} step={1} className="w-full" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -639,18 +591,10 @@ Répondez simplement OUI ou NON.
             <div className="text-center mb-16">
               <h2 className="text-5xl font-black mb-6 text-white">🎯 Funnel de Conversion</h2>
               <div className="inline-flex bg-gray-900 rounded-xl p-2 border border-gray-700">
-                <button 
-                  onClick={() => setFunnelMode('before')}
-                  className={`px-8 py-3 rounded-lg font-bold transition-all ${
-                    funnelMode === 'before' ? 'bg-spider-red text-white' : 'text-gray-400'
-                  }`}>
+                <button onClick={() => setFunnelMode('before')} className={`px-8 py-3 rounded-lg font-bold transition-all ${funnelMode === 'before' ? 'bg-spider-red text-white' : 'text-gray-400'}`}>
                   ❌ AVANT
                 </button>
-                <button 
-                  onClick={() => setFunnelMode('after')}
-                  className={`px-8 py-3 rounded-lg font-bold transition-all ${
-                    funnelMode === 'after' ? 'bg-spider-cyan text-white' : 'text-gray-400'
-                  }`}>
+                <button onClick={() => setFunnelMode('after')} className={`px-8 py-3 rounded-lg font-bold transition-all ${funnelMode === 'after' ? 'bg-spider-cyan text-white' : 'text-gray-400'}`}>
                   ✅ APRÈS
                 </button>
               </div>
@@ -681,14 +625,14 @@ Répondez simplement OUI ou NON.
                   <label className="flex items-center gap-3 text-xl font-bold text-white mb-4">
                     <span className="text-4xl">👥</span> Nombre d'agents
                   </label>
-                  <input type="range" min="1" max="50" value={nbAgents} onChange={(e) => setNbAgents(parseInt(e.target.value))} className="w-full" />
+                  <input type="range" min="1" max="50" value={nbAgents} onChange={e => setNbAgents(parseInt(e.target.value))} className="w-full" />
                   <div className="text-center mt-4 text-6xl font-black text-spider-cyan font-['Orbitron']">{nbAgents}</div>
                 </div>
                 <div>
                   <label className="flex items-center gap-3 text-xl font-bold text-white mb-4">
                     <span className="text-4xl">📞</span> Leads/mois
                   </label>
-                  <input type="range" min="50" max="1000" step="50" value={nbLeads} onChange={(e) => setNbLeads(parseInt(e.target.value))} className="w-full" />
+                  <input type="range" min="50" max="1000" step="50" value={nbLeads} onChange={e => setNbLeads(parseInt(e.target.value))} className="w-full" />
                   <div className="text-center mt-4 text-6xl font-black text-green-400 font-['Orbitron']">{nbLeads}</div>
                 </div>
               </div>
@@ -710,8 +654,6 @@ Répondez simplement OUI ou NON.
       </main>
       <CTABooking subtitle="Découvrez comment scorer vos leads en temps réel" />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default QualificationLeads;
