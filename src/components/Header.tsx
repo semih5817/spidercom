@@ -15,11 +15,11 @@ const Header = () => {
       { name: "Qualification de Leads", path: "/qualification-leads" },
       { name: "Emails & Relances", path: "/emails-relances" },
       { name: "Gestion Locative", path: "/gestion-locative" },
-      { name: "Comparateur États des Lieux", path: "/comparateur-etats-lieux" },
+      { name: "Intégration CRM", path: "/integration-crm" },
     ],
     outils: [
       { name: "Home Staging Virtuel", path: "/home-staging-virtuel" },
-      { name: "Intégration CRM", path: "/integration-crm" },
+      { name: "Comparateur États des Lieux", path: "/comparateur-etats-lieux" },
     ]
   };
 
@@ -27,8 +27,16 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          {/* Mobile Menu Button - Left */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden text-foreground p-2"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Logo - Right on mobile, Left on desktop */}
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity lg:order-first">
             <SpiderLogo size={40} />
             <span className="font-inter text-xl font-semibold text-foreground">SPIDERCOM</span>
           </Link>
@@ -44,7 +52,7 @@ const Header = () => {
                 }`
               }
             >
-              Accueil
+              Agence Immobilière
             </NavLink>
 
             {/* Agences Dropdown */}
@@ -148,13 +156,8 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-foreground p-2"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Spacer for mobile layout symmetry */}
+          <div className="lg:hidden w-10"></div>
         </div>
 
         {/* Mobile Navigation */}
@@ -171,7 +174,7 @@ const Header = () => {
                   }`
                 }
               >
-                Accueil
+                Agence Immobilière
               </NavLink>
 
               <div className="space-y-2">
