@@ -55,12 +55,11 @@ const Hero = () => {
 
           {/* Badges de réassurance */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-5xl mx-auto px-4">
-            {[
-              "Basé dans les Vosges",
-              "Abonnement 4 ans tout inclus",
-              "Déjà 2 entreprises nous font confiance",
-              "Site, Maintenance, IA, Automatisations"
-            ].map((badge, index) => (
+          {[
+            "Basé dans les Vosges",
+            "Déjà 2 entreprises nous font confiance",
+            "Site, Maintenance, IA, Automatisations"
+          ].map((badge, index) => (
               <div
                 key={index}
                 className="group relative bg-spider-red/8 border border-spider-red/30 backdrop-blur-sm rounded-lg p-4 transition-all duration-400 hover:bg-spider-red/12 hover:border-spider-red/60 hover:-translate-y-1"
