@@ -3,12 +3,11 @@ import { Check } from "lucide-react";
 import SpiderLogo from "@/components/SpiderLogo";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import { useCalendly } from "@/hooks/useCalendly";
-
 const Hero = () => {
-  const { openCalendly } = useCalendly();
-  
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-black">
+  const {
+    openCalendly
+  } = useCalendly();
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-black">
       <BackgroundEffects />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -54,28 +53,9 @@ const Hero = () => {
           </div>
 
           {/* Badges de réassurance */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-12 max-w-5xl mx-auto px-4">
-          {[
-            "Basé dans les Vosges",
-            "Déjà 2 entreprises nous font confiance",
-            "Site, Maintenance, IA, Automatisations"
-          ].map((badge, index) => (
-              <div
-                key={index}
-                className="group relative bg-spider-red/8 border border-spider-red/30 backdrop-blur-sm rounded-lg p-4 transition-all duration-400 hover:bg-spider-red/12 hover:border-spider-red/60 hover:-translate-y-1"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-                <div className="flex items-center gap-3 justify-center relative z-10">
-                  <Check className="w-5 h-5 text-spider-red" />
-                  <span className="text-white/90 font-inter text-sm">{badge}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
