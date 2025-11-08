@@ -4,26 +4,27 @@ interface ROICalculationResultsProps {
   tjm: number;
   avgCommission: number;
 }
-
-const ROICalculationResults = ({ nbAgents, nbLeads, tjm, avgCommission }: ROICalculationResultsProps) => {
+const ROICalculationResults = ({
+  nbAgents,
+  nbLeads,
+  tjm,
+  avgCommission
+}: ROICalculationResultsProps) => {
   // Calculs
   const tempsGagneParAgent = 6 * 4.3; // 6h/sem × 4.3 semaines
   const tempsGagneTotal = Math.floor(tempsGagneParAgent * nbAgents);
   const valeurTempsGagne = tempsGagneTotal * tjm;
-  
   const leadsActuellementPerdus = Math.floor(nbLeads * 0.30);
   const manqueAGagnerLeads = leadsActuellementPerdus * avgCommission * 0.12; // 12% conversion perdue
-  
+
   const leadsRecuperes = Math.floor(leadsActuellementPerdus * 0.95); // 95% récupérés
   const gainConversionApres = leadsRecuperes * avgCommission * 0.17; // 17% conversion avec auto
-  
+
   const gainTotal = valeurTempsGagne + gainConversionApres;
   const coutSpydercom = 250 * nbAgents; // Estimation coût mensuel
   const gainNet = gainTotal - coutSpydercom;
   const roi = (gainNet / coutSpydercom * 100).toFixed(0);
-
-  return (
-    <>
+  return <>
       {/* Section AVANT : Pertes actuelles */}
       <div className="mb-12 bg-gradient-to-r from-red-950/50 to-red-900/30 
                       rounded-2xl p-10 border-2 border-red-500
@@ -74,9 +75,7 @@ const ROICalculationResults = ({ nbAgents, nbLeads, tjm, avgCommission }: ROICal
                       shadow-[0_0_40px_rgba(6,182,212,0.3)]">
         <div className="flex items-center gap-4 mb-8">
           <div className="text-6xl">🚀</div>
-          <h3 className="text-3xl font-black text-cyan-400">
-            VOS GAINS AVEC SPYDERCOM
-          </h3>
+          <h3 className="text-3xl font-black text-cyan-400">VOS GAINS AVEC SPIDERCOM</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -192,26 +191,18 @@ const ROICalculationResults = ({ nbAgents, nbLeads, tjm, avgCommission }: ROICal
           </span>
           
           {/* Sparkles */}
-          {[...Array(15)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full animate-ping"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1 + Math.random()}s`
-              }}
-            />
-          ))}
+          {[...Array(15)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 2}s`,
+          animationDuration: `${1 + Math.random()}s`
+        }} />)}
         </button>
         
         <p className="text-gray-400 mt-6 text-xl">
           ⚡ Démo live en 15 min • 🔒 Sans CB • 🚀 Setup en 48h • 💪 Satisfait ou remboursé
         </p>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default ROICalculationResults;
