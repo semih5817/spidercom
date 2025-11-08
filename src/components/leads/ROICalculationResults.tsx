@@ -119,85 +119,20 @@ const ROICalculationResults = ({
         </div>
 
         {/* Total gains */}
-        <div className="bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl p-8 
-                        text-center shadow-[0_0_60px_rgba(251,191,36,0.5)]">
-          <div className="text-white text-xl mb-3 font-bold">
-            💰 GAIN MENSUEL NET (après déduction Spydercom)
-          </div>
-          <div className="text-8xl font-black text-white mb-4 font-['Orbitron'] tabular-nums
-                          animate-pulse">
-            +{Math.floor(gainNet / 1000)}k€
-          </div>
-          <div className="flex items-center justify-center gap-8 text-white/90 flex-wrap">
-            <div>
-              <div className="text-sm">Coût Spydercom</div>
-              <div className="text-2xl font-bold">{coutSpydercom}€/mois</div>
-            </div>
-            <div className="text-4xl">→</div>
-            <div>
-              <div className="text-sm">ROI</div>
-              <div className="text-2xl font-bold">×{roi}</div>
-            </div>
-            <div className="text-4xl">→</div>
-            <div>
-              <div className="text-sm">Amorti en</div>
-              <div className="text-2xl font-bold">&lt;1 sem</div>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       {/* Projection annuelle */}
       <div className="bg-gradient-to-r from-purple-950/50 to-pink-950/50 
                       rounded-2xl p-8 border border-purple-500/30">
-        <h4 className="text-2xl font-bold text-center text-purple-400 mb-6">
-          📊 Projection sur 12 mois
-        </h4>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div>
-            <div className="text-gray-400 text-sm mb-2">GAIN ANNUEL</div>
-            <div className="text-4xl font-black text-white">
-              +{Math.floor(gainNet * 12 / 1000)}k€
-            </div>
-          </div>
-          <div>
-            <div className="text-gray-400 text-sm mb-2">VENTES SUPPLÉMENTAIRES</div>
-            <div className="text-4xl font-black text-white">
-              +{Math.floor(leadsRecuperes * 0.17 * 12)}
-            </div>
-          </div>
-          <div>
-            <div className="text-gray-400 text-sm mb-2">TEMPS TOTAL LIBÉRÉ</div>
-            <div className="text-4xl font-black text-white">
-              {Math.floor(tempsGagneTotal * 12)}h
-            </div>
-          </div>
-        </div>
+        
+        
       </div>
 
       {/* CTA final */}
       <div className="text-center mt-12">
-        <button className="group relative px-16 py-8 
-                           bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500
-                           text-white font-black text-2xl md:text-3xl rounded-2xl
-                           shadow-[0_0_60px_rgba(251,191,36,0.6)]
-                           hover:shadow-[0_0_80px_rgba(251,191,36,0.8)]
-                           hover:scale-110 transition-all duration-300
-                           border-4 border-yellow-300 overflow-hidden">
-          <span className="relative z-10 flex items-center gap-4">
-            <span className="text-5xl">🎯</span>
-            JE RÉCUPÈRE MES {Math.floor(gainNet / 1000)}K€ PAR MOIS
-          </span>
-          
-          {/* Sparkles */}
-          {[...Array(15)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
-          left: `${Math.random() * 100}%`,
-          top: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 2}s`,
-          animationDuration: `${1 + Math.random()}s`
-        }} />)}
-        </button>
+        
         
         <p className="text-gray-400 mt-6 text-xl">
           ⚡ Démo live en 15 min • 🔒 Sans CB • 🚀 Setup en 48h • 💪 Satisfait ou remboursé

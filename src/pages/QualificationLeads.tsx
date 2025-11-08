@@ -636,7 +636,7 @@ Répondez simplement OUI ou NON.
                   <div className="text-center mt-4 text-6xl font-black text-green-400 font-['Orbitron']">{nbLeads}</div>
                 </div>
               </div>
-              <ROICalculationResults nbAgents={nbAgents} nbLeads={nbLeads} tjm={tjm} avgCommission={avgCommission} />
+              
             </div>
           </div>
         </section>
