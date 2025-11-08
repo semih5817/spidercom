@@ -30,10 +30,6 @@ const AuditOffer = () => {
                 AUDIT GRATUIT OFFERT
               </h3>
             </div>
-            
-            <p className="text-center text-white/60 font-inter text-lg mb-8">
-              (valeur 300€)
-            </p>
 
             <div className="space-y-4 mb-8">
               <p className="font-orbitron text-xl font-bold text-white text-center mb-6">
