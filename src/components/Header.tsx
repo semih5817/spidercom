@@ -133,7 +133,11 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && <nav className="lg:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col space-y-4">
-              
+              <NavLink to="/" end onClick={() => setIsMenuOpen(false)} className={({
+            isActive
+          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red" : "text-white/80"}`}>
+                Agence Immobilière
+              </NavLink>
 
               <div className="space-y-2">
                 
