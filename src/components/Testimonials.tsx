@@ -17,11 +17,11 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="relative py-24 bg-gradient-to-b from-background to-deep-black">
+    <section id="testimonials" className="relative py-24 bg-gradient-to-b from-background to-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-            Ce que nos clients <span className="text-spider-red glow-red">disent</span> de nous
+          <h2 className="font-inter text-4xl md:text-5xl font-black text-foreground mb-4">
+            Ce que nos clients <span className="text-primary">disent</span> de nous
           </h2>
         </div>
 
@@ -29,24 +29,24 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-spider-red/5 border-l-4 border-spider-red rounded-lg p-8 hover:bg-spider-red/8 transition-all duration-400 animate-fade-in"
+              className="relative bg-primary/5 border-l-4 border-primary rounded-lg p-8 hover:bg-primary/8 transition-all duration-400 animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <Quote className="w-10 h-10 text-spider-red/30 mb-4" />
+              <Quote className="w-10 h-10 text-primary/30 mb-4" />
               
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-spider-red text-spider-red" />
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
 
-              <p className="font-inter text-white/80 leading-relaxed mb-6 text-lg">
+              <p className="font-inter text-foreground leading-relaxed mb-6 text-lg">
                 "{testimonial.content}"
               </p>
 
-              <div className="border-t border-spider-red/20 pt-4">
-                <p className="font-orbitron font-bold text-white">— {testimonial.name}</p>
-                <p className="font-inter text-white/60 text-sm">{testimonial.role}</p>
+              <div className="border-t border-primary/20 pt-4">
+                <p className="font-inter font-bold text-foreground">— {testimonial.name}</p>
+                <p className="font-inter text-muted-foreground text-sm">{testimonial.role}</p>
               </div>
             </div>
           ))}
