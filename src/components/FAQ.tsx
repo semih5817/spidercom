@@ -34,11 +34,11 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="relative py-24 bg-deep-black">
+    <section id="faq" className="relative py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
-            Questions <span className="text-spider-red glow-red">fréquentes</span>
+          <h2 className="font-inter text-4xl md:text-5xl font-black text-foreground">
+            Questions <span className="text-primary">fréquentes</span>
           </h2>
         </div>
 
@@ -48,15 +48,15 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-b border-spider-red/20 pb-4"
+                className="border-b border-border pb-4"
               >
                 <AccordionTrigger className="text-left hover:no-underline group py-4">
-                  <span className="font-orbitron text-lg md:text-xl font-bold text-white group-hover:text-spider-red transition-colors pr-4">
+                  <span className="font-inter text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors pr-4">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pt-2">
-                  <p className="font-inter text-white/80 leading-relaxed whitespace-pre-line">
+                  <p className="font-inter text-muted-foreground leading-relaxed whitespace-pre-line">
                     {faq.answer}
                   </p>
                 </AccordionContent>
