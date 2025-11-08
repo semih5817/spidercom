@@ -7,10 +7,6 @@ import {
 
 const faqs = [
   {
-    question: "C'est quoi exactement l'abonnement 4 ans ?",
-    answer: "L'abonnement mensuel inclut TOUT ce dont vous avez besoin : ✅ Votre site web professionnel ✅ Hébergement et nom de domaine ✅ Maintenance et mises à jour de sécurité ✅ Support technique illimité ✅ Automatisations N8N ✅ Ajustements et optimisations réguliers. Pas de surprise, pas de frais cachés. Un tarif fixe mensuel sur 4 ans. C'est comme un abonnement Netflix, mais pour votre écosystème digital."
-  },
-  {
     question: "Je ne suis pas très à l'aise avec la technologie, c'est pour moi ?",
     answer: "Justement ! On a créé SPIDERCOM pour les entrepreneurs qui veulent les bénéfices de la tech sans la complexité. Vous n'avez RIEN à faire techniquement. On gère tout de A à Z : Installation, Configuration, Formation (si nécessaire), Maintenance, Évolutions. Vous utilisez simplement les outils qu'on met en place. Si vous savez envoyer un email, vous saurez utiliser vos automatisations."
   },
