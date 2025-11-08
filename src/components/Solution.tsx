@@ -45,13 +45,13 @@ const Solution = () => {
   const { openCalendly } = useCalendly();
   
   return (
-    <section id="methode" className="relative py-24 bg-gradient-to-b from-background to-muted">
+    <section id="methode" className="relative py-24 bg-gradient-to-b from-deep-black to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="font-inter text-4xl md:text-5xl font-black text-foreground">
-            La méthode <span className="text-primary">SPIDERCOM</span>
+          <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
+            La méthode <span className="text-spider-red glow-red">SPIDERCOM</span>
           </h2>
-          <p className="text-xl text-muted-foreground font-inter">
+          <p className="text-xl text-white/70 font-inter">
             On tisse votre toile digitale intelligente
           </p>
         </div>
@@ -62,30 +62,30 @@ const Solution = () => {
             return (
               <div key={index} className="relative flex gap-8">
                 {index < steps.length - 1 && (
-                  <div className="absolute left-6 top-20 w-0.5 h-full bg-gradient-to-b from-primary to-primary/20" />
+                  <div className="absolute left-6 top-20 w-0.5 h-full bg-gradient-to-b from-spider-red to-spider-red/20" />
                 )}
                 
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary border-2 border-primary/50 flex items-center justify-center font-inter font-black text-primary-foreground text-xl relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-spider-red border-2 border-spider-red/50 flex items-center justify-center font-orbitron font-black text-white text-xl glow-red relative z-10">
                     {step.number}
                   </div>
                 </div>
 
-                <div className="flex-1 bg-primary/5 border border-primary/20 rounded-lg p-8 hover:border-primary/60 transition-all duration-400">
+                <div className="flex-1 bg-spider-red/5 border border-spider-red/20 rounded-lg p-8 hover:border-spider-red/60 transition-all duration-400">
                   <div className="flex items-start gap-4 mb-6">
-                    <Icon className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-                    <h3 className="font-inter text-2xl font-bold text-foreground">{step.title}</h3>
+                    <Icon className="w-8 h-8 text-spider-red flex-shrink-0 mt-1" />
+                    <h3 className="font-orbitron text-2xl font-bold text-white">{step.title}</h3>
                   </div>
                   
                   <ul className="space-y-2 mb-4">
                     {step.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-muted-foreground font-inter">
-                        <span className="text-primary mt-1">✓</span>
+                      <li key={idx} className="flex items-start gap-3 text-white/70 font-inter">
+                        <span className="text-spider-red mt-1">✓</span>
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className="font-inter text-primary font-semibold pt-4 border-t border-primary/20">
+                  <p className="font-inter text-spider-red font-semibold pt-4 border-t border-spider-red/20">
                     → Résultat : {step.result}
                   </p>
                 </div>
@@ -95,8 +95,8 @@ const Solution = () => {
         </div>
 
         <div className="text-center mt-16 space-y-6">
-          <p className="font-inter text-2xl md:text-3xl font-bold text-foreground">
-            Mais concrètement, qu'est-ce qu'on peut automatiser pour <span className="text-primary">VOUS</span> ?
+          <p className="font-orbitron text-2xl md:text-3xl font-bold text-white">
+            Mais concrètement, qu'est-ce qu'on peut automatiser pour <span className="text-spider-red">VOUS</span> ?
           </p>
           <Button variant="cta" size="lg" onClick={openCalendly}>
             Découvrir ce qui est possible pour mon entreprise

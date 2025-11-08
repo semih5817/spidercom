@@ -40,22 +40,22 @@ const QualificationLeads = () => {
 
       <main className="relative">
         {/* HERO SECTION */}
-        <section className="relative min-h-screen bg-gradient-to-b from-background via-primary/5 to-background px-8 py-20 overflow-hidden">
+        <section className="relative min-h-screen bg-gradient-to-b from-deep-black via-spider-red/10 to-deep-black px-8 py-20 overflow-hidden">
           <ParticlesBackground color="red" density={50} />
 
           <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
             <div className="inline-block mb-8">
-              <div className="text-primary text-sm font-bold uppercase tracking-widest mb-4">
+              <div className="text-spider-red text-sm font-bold uppercase tracking-widest mb-4">
                 ⚠️ STATISTIQUE CHOC
               </div>
-              <h1 className="text-6xl md:text-8xl font-black mb-6 font-inter">
-                <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-black mb-6 font-orbitron">
+                <span className="bg-gradient-to-r from-spider-red via-orange-500 to-yellow-500 bg-clip-text text-transparent">
                   ⏰ LA GUERRE DES 60 SECONDES
                 </span>
               </h1>
-              <p className="text-2xl md:text-3xl text-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Un lead vous contacte. Vous avez{' '}
-                <span className="text-primary font-black text-4xl animate-pulse">60 secondes</span>{' '}
+                <span className="text-spider-red font-black text-4xl animate-pulse">60 secondes</span>{' '}
                 avant qu'il appelle votre concurrent.
               </p>
             </div>
@@ -117,9 +117,9 @@ const QualificationLeads = () => {
         </section>
 
         {/* KPI DASHBOARD */}
-        <section id="kpi-dashboard" className="px-8 py-20 bg-background">
+        <section id="kpi-dashboard" className="px-8 py-20 bg-deep-black">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+            <h2 className="text-4xl font-bold text-center mb-12 text-white">
               📊 Performance en Temps Réel
             </h2>
 
@@ -212,11 +212,11 @@ const QualificationLeads = () => {
         </section>
 
         {/* BATTLE VISUELLE */}
-        <section className="px-8 py-20 bg-gradient-to-b from-background via-muted to-background">
+        <section className="px-8 py-20 bg-gradient-to-b from-deep-black via-gray-900 to-deep-black">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-black mb-6 text-foreground">⚔️ Duel en Temps Réel</h2>
-              <p className="text-2xl text-muted-foreground">
+              <h2 className="text-5xl font-black mb-6 text-white">⚔️ Duel en Temps Réel</h2>
+              <p className="text-2xl text-gray-300">
                 Même lead, même moment, deux approches radicalement différentes...
               </p>
             </div>
