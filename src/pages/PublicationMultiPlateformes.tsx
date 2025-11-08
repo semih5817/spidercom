@@ -10,14 +10,13 @@ import { PublicationROICalculator } from "@/components/leads/PublicationROICalcu
 import { PublicationWorkflowDiagram } from "@/components/leads/PublicationWorkflowDiagram";
 import CTABooking from "@/components/CTABooking";
 import { mockPublications } from "@/data/mockPublications";
-
 const PublicationMultiPlateformes = () => {
   const scrollToDemo = () => {
-    document.getElementById('demo-section')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('demo-section')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <BackgroundEffects />
       
@@ -179,13 +178,10 @@ const PublicationMultiPlateformes = () => {
               <p className="text-xl text-gray-300 mb-8">
                 Une seule saisie • Diffusion automatique • Zéro erreur • SEO optimisé par IA
               </p>
-              <button 
-                onClick={scrollToDemo}
-                className="px-12 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white 
+              <button onClick={scrollToDemo} className="px-12 py-5 bg-gradient-to-r from-indigo-500 to-purple-600 text-white 
                            font-black text-2xl rounded-xl shadow-[0_0_40px_rgba(99,102,241,0.5)]
                            hover:shadow-[0_0_60px_rgba(99,102,241,0.7)] hover:scale-105 
-                           transition-all duration-300"
-              >
+                           transition-all duration-300">
                 ⚡ DÉCOUVRIR LA MAGIE
               </button>
             </div>
@@ -427,9 +423,7 @@ const PublicationMultiPlateformes = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {mockPublications.slice(0, 5).map((pub, index) => (
-                      <PublicationTableRow key={pub.id} publication={pub} index={index} />
-                    ))}
+                    {mockPublications.slice(0, 5).map((pub, index) => <PublicationTableRow key={pub.id} publication={pub} index={index} />)}
                   </tbody>
                 </table>
               </div>
@@ -587,18 +581,12 @@ const PublicationMultiPlateformes = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {[...Array(30)].map((_, i) => (
-                  <div 
-                    key={i}
-                    className="absolute w-2 h-2 bg-white rounded-full animate-ping"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 3}s`,
-                      animationDuration: `${1 + Math.random() * 2}s`
-                    }}
-                  />
-                ))}
+                {[...Array(30)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1 + Math.random() * 2}s`
+              }} />)}
               </button>
 
               <div className="mt-8 flex items-center justify-center gap-12 text-base text-gray-400">
@@ -613,7 +601,7 @@ const PublicationMultiPlateformes = () => {
                 <div className="flex items-center gap-3">
                   <div className="text-3xl">🏆</div>
                   <div>
-                    <div className="text-white font-bold">156 agences</div>
+                    <div className="text-white font-bold">2 agences</div>
                     <div className="text-xs">nous font confiance</div>
                   </div>
                 </div>
@@ -648,8 +636,6 @@ const PublicationMultiPlateformes = () => {
 
       <CTABooking subtitle="Simulons une publication sur 6 portails ensemble" />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default PublicationMultiPlateformes;
