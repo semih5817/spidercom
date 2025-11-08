@@ -594,7 +594,7 @@ const PublicationMultiPlateformes = () => {
                   <div className="text-3xl">⭐</div>
                   <div>
                     <div className="text-white font-bold">4.9/5</div>
-                    <div className="text-xs">203 avis vérifiés</div>
+                    <div className="text-xs">2 avis vérifiés</div>
                   </div>
                 </div>
                 
