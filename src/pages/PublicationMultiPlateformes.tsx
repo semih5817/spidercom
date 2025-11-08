@@ -63,7 +63,7 @@ const PublicationMultiPlateformes = () => {
                               hover:border-red-500 hover:shadow-[0_0_60px_rgba(239,68,68,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">⏰</div>
-                <div className="text-7xl font-black text-red-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-red-500 mb-3 font-orbitron">
                   2h
                 </div>
                 <p className="text-lg text-gray-300">
@@ -76,7 +76,7 @@ const PublicationMultiPlateformes = () => {
                               hover:border-orange-500 hover:shadow-[0_0_60px_rgba(251,146,60,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">❌</div>
-                <div className="text-7xl font-black text-orange-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-orange-500 mb-3 font-orbitron">
                   18%
                 </div>
                 <p className="text-lg text-gray-300">
@@ -89,7 +89,7 @@ const PublicationMultiPlateformes = () => {
                               hover:border-yellow-500 hover:shadow-[0_0_60px_rgba(251,191,36,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">📊</div>
-                <div className="text-7xl font-black text-yellow-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-yellow-500 mb-3 font-orbitron">
                   -33%
                 </div>
                 <p className="text-lg text-gray-300">
@@ -102,7 +102,7 @@ const PublicationMultiPlateformes = () => {
                               hover:border-purple-500 hover:shadow-[0_0_60px_rgba(168,85,247,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">💸</div>
-                <div className="text-7xl font-black text-purple-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-purple-500 mb-3 font-orbitron">
                   44h
                 </div>
                 <p className="text-lg text-gray-300">
@@ -142,7 +142,7 @@ const PublicationMultiPlateformes = () => {
                 
                 <div className="text-center">
                   <div className="text-red-400 text-sm mb-2 font-bold">PERTE MENSUELLE</div>
-                  <div className="text-6xl font-black text-red-500 font-orbitron">
+                  <div className="text-4xl font-black text-red-500 font-orbitron">
                     1 540€
                   </div>
                   <div className="text-xs text-gray-500 mt-1">par agent</div>
