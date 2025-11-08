@@ -1,26 +1,28 @@
 import { motion } from 'framer-motion';
 import { useCalendly } from '@/hooks/useCalendly';
-
 interface CTABookingProps {
   subtitle?: string;
 }
-
-const CTABooking = ({ 
+const CTABooking = ({
   subtitle = "30 minutes pour découvrir comment Spidercom transforme votre agence"
 }: CTABookingProps) => {
-  const { openCalendly } = useCalendly();
-
-  return (
-    <section className="px-8 py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto bg-gradient-to-r from-red-950/50 via-red-900/30 to-orange-950/50 
+  const {
+    openCalendly
+  } = useCalendly();
+  return <section className="px-8 py-20">
+      <motion.div initial={{
+      opacity: 0,
+      y: 40
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} viewport={{
+      once: true
+    }} transition={{
+      duration: 0.6
+    }} className="max-w-6xl mx-auto bg-gradient-to-r from-red-950/50 via-red-900/30 to-orange-950/50 
                    rounded-3xl p-12 md:p-16 border-2 border-red-500
-                   shadow-[0_0_80px_rgba(235,45,58,0.4)] text-center mb-20"
-      >
+                   shadow-[0_0_80px_rgba(235,45,58,0.4)] text-center mb-20">
         {/* Badge */}
         <div className="inline-block mb-6">
           <span className="px-4 py-2 bg-red-500/20 rounded-full text-red-400 
@@ -65,47 +67,35 @@ const CTABooking = ({
         </div>
 
         {/* Bouton CTA */}
-        <motion.button
-          onClick={openCalendly}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          data-event="cta-booking-clicked"
-          data-page={typeof window !== 'undefined' ? window.location.pathname : ''}
-          data-source="end-of-page"
-          className="group relative px-8 md:px-12 py-5 md:py-6
+        <motion.button onClick={openCalendly} whileHover={{
+        scale: 1.05
+      }} whileTap={{
+        scale: 0.95
+      }} data-event="cta-booking-clicked" data-page={typeof window !== 'undefined' ? window.location.pathname : ''} data-source="end-of-page" className="group relative px-8 md:px-12 py-5 md:py-6
                      bg-gradient-to-r from-red-600 via-red-500 to-orange-600
                      text-white font-black text-xl md:text-2xl rounded-2xl
                      shadow-[0_0_60px_rgba(235,45,58,0.6)]
                      hover:shadow-[0_0_80px_rgba(235,45,58,0.8)]
                      transition-all duration-300 cursor-pointer
-                     overflow-hidden w-full md:w-auto"
-        >
+                     overflow-hidden w-full md:w-auto">
           <span className="relative z-10 flex items-center justify-center gap-3">
             <span className="text-2xl md:text-3xl">📅</span>
             <span>Prendre Rendez-vous Maintenant</span>
           </span>
 
           {/* Sparkles */}
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full"
-              animate={{
-                x: [0, Math.random() * 200 - 100],
-                y: [0, Math.random() * 100 - 50],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 2 + Math.random(),
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
+          {[...Array(20)].map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-white rounded-full" animate={{
+          x: [0, Math.random() * 200 - 100],
+          y: [0, Math.random() * 100 - 50],
+          opacity: [0, 1, 0]
+        }} transition={{
+          duration: 2 + Math.random(),
+          repeat: Infinity,
+          delay: Math.random() * 2
+        }} style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`
+        }} />)}
         </motion.button>
 
         {/* Sous-texte */}
@@ -117,11 +107,11 @@ const CTABooking = ({
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-gray-500 mt-8">
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-base md:text-lg">✓</span>
-            <span>156 agences équipées</span>
+            <span>2 agences équipées</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-base md:text-lg">✓</span>
-            <span>4.9/5 (203 avis)</span>
+            <span>4.9/5 (2 avis)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-base md:text-lg">✓</span>
@@ -129,8 +119,6 @@ const CTABooking = ({
           </div>
         </div>
       </motion.div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTABooking;
