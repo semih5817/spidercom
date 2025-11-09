@@ -175,13 +175,12 @@ const RelanceROIResults = ({
             💰 GAIN NET MENSUEL
           </div>
           <div className="text-8xl font-black text-white mb-4 font-orbitron tabular-nums
-                          animate-pulse">
-            +{Math.floor(gainNet / 1000)}k€
+                          animate-pulse">💰 GAIN NET MENSUEL{Math.floor(gainNet / 1000)}k€
           </div>
           <div className="flex items-center justify-center gap-8 text-white/90 text-sm">
             <div>
               <div className="text-xs opacity-70">Coût Spydercom</div>
-              <div className="text-2xl font-bold">{coutSpydercom}€/mois</div>
+              
             </div>
             <div className="text-4xl">→</div>
             <div>
