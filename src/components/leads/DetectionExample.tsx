@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 interface DetectionExampleProps {
   title: string;
   beforeDesc: string;
+  beforeImage?: string;
   afterDesc: string;
+  afterImage?: string;
   badge: 'major' | 'minor' | 'normal';
   badgeText: string;
   aiAnalysis: string;
@@ -14,8 +16,10 @@ interface DetectionExampleProps {
 
 const DetectionExample = ({ 
   title, 
-  beforeDesc, 
-  afterDesc, 
+  beforeDesc,
+  beforeImage,
+  afterDesc,
+  afterImage,
   badge, 
   badgeText, 
   aiAnalysis, 
@@ -44,20 +48,28 @@ const DetectionExample = ({
           {/* Before */}
           <div className="space-y-2">
             <div className="text-xs text-white/60 uppercase">Avant</div>
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3 h-24 flex items-center justify-center">
-              <div className="text-center text-sm text-white/80">{beforeDesc}</div>
+            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg overflow-hidden h-32 flex items-center justify-center">
+              {beforeImage ? (
+                <img src={beforeImage} alt={beforeDesc} className="w-full h-full object-cover" />
+              ) : (
+                <div className="text-center text-sm text-white/80 p-3">{beforeDesc}</div>
+              )}
             </div>
           </div>
 
           {/* After */}
           <div className="space-y-2">
             <div className="text-xs text-white/60 uppercase">Après</div>
-            <div className={`border rounded-lg p-3 h-24 flex items-center justify-center ${
+            <div className={`border rounded-lg overflow-hidden h-32 flex items-center justify-center ${
               badge === 'major' ? 'bg-spider-red/10 border-spider-red/30' :
               badge === 'minor' ? 'bg-orange-500/10 border-orange-500/30' :
               'bg-emerald-500/10 border-emerald-500/30'
             }`}>
-              <div className="text-center text-sm text-white/80">{afterDesc}</div>
+              {afterImage ? (
+                <img src={afterImage} alt={afterDesc} className="w-full h-full object-cover" />
+              ) : (
+                <div className="text-center text-sm text-white/80 p-3">{afterDesc}</div>
+              )}
             </div>
           </div>
         </div>
