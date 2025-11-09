@@ -244,8 +244,8 @@ const RelanceROIResults = ({
                            hover:shadow-[0_0_80px_rgba(251,146,60,0.8)]
                            hover:scale-110 transition-all duration-300
                            border-4 border-orange-300 overflow-hidden">
-          <span className="relative z-10 flex items-center gap-4">
-            <span className="text-5xl">💸</span>
+          <span className="relative z-10 flex items-center gap-4">💸
+JE RÉCUPÈRE MES 10K€ PAR MOIS<span className="text-5xl">💸</span>
             JE RÉCUPÈRE MES {Math.floor(gainNet / 1000)}K€ PAR MOIS
           </span>
           
