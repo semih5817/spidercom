@@ -156,20 +156,14 @@ const AgencesImmobilieres = () => {
     desc: "Dashboards live"
   }];
   const testimonials = [{
-    name: "Sophie Martin",
-    role: "Directrice - Century 21 Paris 15",
-    avatar: "👩‍💼",
-    quote: "On a économisé 23h par semaine. L'équipe se concentre enfin sur la relation client au lieu des tâches admin.",
-    results: "3 200€/agent/mois économisés"
-  }, {
     name: "Thomas Dubois",
-    role: "Gestionnaire - Foncia Lyon",
+    role: "Gestionnaire - Agence Immobilière Strasbourg",
     avatar: "👨‍💼",
     quote: "Le comparateur d'états des lieux nous a sauvé sur 12 litiges ce mois-ci. C'est incroyable.",
     results: "0 litige perdu en 6 mois"
   }, {
     name: "Marie Lefèvre",
-    role: "Agent - Orpi Bordeaux",
+    role: "Agent - Agence Immobilière Nancy",
     avatar: "👩",
     quote: "Le home staging virtuel a transformé nos annonces. +41% de visites en moyenne depuis qu'on l'utilise.",
     results: "+41% de visites générées"
