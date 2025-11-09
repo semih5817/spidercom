@@ -30,9 +30,6 @@ const Take5Project = () => {
       {/* Results Section */}
       <ResultsSection />
       
-      {/* Testimonial */}
-      <TestimonialSection />
-      
       {/* CTA Section */}
       <CTASection />
       
@@ -423,34 +420,6 @@ const ResultsSection = () => {
     </section>;
 };
 
-// Testimonial Section
-const TestimonialSection = () => {
-  return <section className="py-20 px-4 bg-background">
-      <div className="container mx-auto max-w-4xl">
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} className="relative bg-gradient-to-br from-primary/10 to-purple-500/10 border-2 border-primary/30 rounded-3xl p-12 text-center">
-          <div className="text-6xl opacity-30 absolute top-8 left-8">"</div>
-          
-          <p className="text-2xl italic leading-relaxed mb-8 relative z-10">
-            Avant Take 5, je passais mes soirées à répondre aux avis Google. Maintenant l'IA le fait pour moi avec un ton parfait, et je reçois un rapport clair chaque mois sur WhatsApp. C'est magique.
-          </p>
-          
-          <div className="mt-8">
-            <div className="font-bold text-xl text-primary mb-2">Jean-Pierre Fontaine</div>
-            <div className="text-muted-foreground">Propriétaire • Restaurant Le Petit Zinc - Lyon</div>
-          </div>
-        </motion.div>
-      </div>
-    </section>;
-};
-
 // CTA Section
 const CTASection = () => {
   return <section className="py-20 px-4 bg-gradient-to-br from-[hsl(var(--primary))] via-purple-600 to-[hsl(var(--primary))]">
@@ -514,6 +483,6 @@ const LiveWidget = () => {
     }, 15000);
     return () => clearInterval(interval);
   }, []);
-  return;
+  return null;
 };
 export default Take5Project;
