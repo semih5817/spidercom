@@ -183,7 +183,7 @@ const HomeStagingVirtuel = () => {
                     APRÈS
                   </div>
                 </div>
-                <p className="text-sm text-white/40 mt-4 font-inter">← Glissez pour comparer →</p>
+                
               </div>
             </div>
           </div>
