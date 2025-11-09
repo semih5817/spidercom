@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Project } from "@/data/mockProjects";
 import { ArrowRight } from "lucide-react";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
+import agiaLogo from "@/assets/agia-logo.png";
 
 interface ProjectCardProps {
   project: Project;
@@ -34,6 +35,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               alt={project.title}
               className="w-full h-full object-cover"
             />
+          ) : project.slug === 'agia' ? (
+            <div className="w-full h-full bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center p-8">
+              <img 
+                src={agiaLogo} 
+                alt="AGIA Logo"
+                className="w-auto h-full max-h-48 object-contain"
+              />
+            </div>
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
               <WorkflowDiagram />
