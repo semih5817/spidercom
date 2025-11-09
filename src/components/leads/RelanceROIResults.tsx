@@ -263,11 +263,11 @@ const RelanceROIResults = ({
         <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-xl">✓</span>
-            <span>247 agences équipées</span>
+            <span>2 agences équipées</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-xl">✓</span>
-            <span>4.9/5 (189 avis)</span>
+            <span>4.9/5 (2 avis)</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-xl">✓</span>
