@@ -3,7 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-
 const EDLROICalculator = () => {
   const [properties, setProperties] = useState(120);
   const [rotationRate, setRotationRate] = useState(50);
@@ -11,23 +10,20 @@ const EDLROICalculator = () => {
   const [hourlyRate, setHourlyRate] = useState(35);
 
   // Calculs
-  const comparisonsPerYear = Math.round((properties * rotationRate) / 100) * 2;
-  const manualTimeHours = Math.round((comparisonsPerYear * 45) / 60);
+  const comparisonsPerYear = Math.round(properties * rotationRate / 100) * 2;
+  const manualTimeHours = Math.round(comparisonsPerYear * 45 / 60);
   const manualTimeCost = Math.round(manualTimeHours * hourlyRate);
   const missedLitigations = Math.round(comparisonsPerYear * 0.18);
   const missedLitigationsCost = missedLitigations * 450;
   const totalLoss = manualTimeCost + missedLitigationsCost;
-
-  const autoTimeHours = Math.round((comparisonsPerYear * 2) / 60);
+  const autoTimeHours = Math.round(comparisonsPerYear * 2 / 60);
   const timeSaved = manualTimeHours - autoTimeHours;
   const timeSavings = Math.round(timeSaved * hourlyRate);
   const litigationsSavings = missedLitigationsCost;
   const totalGain = timeSavings + litigationsSavings;
-  const paybackDays = Math.round((59 * 12) / (totalGain / 365));
-  const roi = Math.round((totalGain / (59 * 12)) * 100);
-
-  return (
-    <div className="space-y-8">
+  const paybackDays = Math.round(59 * 12 / (totalGain / 365));
+  const roi = Math.round(totalGain / (59 * 12) * 100);
+  return <div className="space-y-8">
       <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-spider-cyan/30 p-8">
         <h3 className="font-orbitron text-2xl text-white mb-8">⚙️ Configurez Votre Profil</h3>
         
@@ -38,14 +34,7 @@ const EDLROICalculator = () => {
               <label className="text-white/80">Nombre de biens gérés</label>
               <div className="font-orbitron text-3xl text-spider-cyan font-black">{properties}</div>
             </div>
-            <Slider
-              value={[properties]}
-              onValueChange={(value) => setProperties(value[0])}
-              min={10}
-              max={500}
-              step={10}
-              className="w-full"
-            />
+            <Slider value={[properties]} onValueChange={value => setProperties(value[0])} min={10} max={500} step={10} className="w-full" />
           </div>
 
           {/* Slider 2 */}
@@ -54,16 +43,9 @@ const EDLROICalculator = () => {
               <label className="text-white/80">Taux rotation annuel</label>
               <div className="font-orbitron text-3xl text-spider-cyan font-black">{rotationRate}%</div>
             </div>
-            <Slider
-              value={[rotationRate]}
-              onValueChange={(value) => setRotationRate(value[0])}
-              min={10}
-              max={100}
-              step={5}
-              className="w-full"
-            />
+            <Slider value={[rotationRate]} onValueChange={value => setRotationRate(value[0])} min={10} max={100} step={5} className="w-full" />
             <div className="text-sm text-white/60 mt-2">
-              = {Math.round((properties * rotationRate) / 100)} biens × 2 EDL = {comparisonsPerYear} comparaisons/an
+              = {Math.round(properties * rotationRate / 100)} biens × 2 EDL = {comparisonsPerYear} comparaisons/an
             </div>
           </div>
 
@@ -73,14 +55,7 @@ const EDLROICalculator = () => {
               <label className="text-white/80">Agents gestionnaires</label>
               <div className="font-orbitron text-3xl text-spider-cyan font-black">{agents}</div>
             </div>
-            <Slider
-              value={[agents]}
-              onValueChange={(value) => setAgents(value[0])}
-              min={1}
-              max={20}
-              step={1}
-              className="w-full"
-            />
+            <Slider value={[agents]} onValueChange={value => setAgents(value[0])} min={1} max={20} step={1} className="w-full" />
           </div>
 
           {/* Slider 4 */}
@@ -89,24 +64,21 @@ const EDLROICalculator = () => {
               <label className="text-white/80">TJM agent (€/h)</label>
               <div className="font-orbitron text-3xl text-spider-cyan font-black">{hourlyRate}€</div>
             </div>
-            <Slider
-              value={[hourlyRate]}
-              onValueChange={(value) => setHourlyRate(value[0])}
-              min={25}
-              max={80}
-              step={5}
-              className="w-full"
-            />
+            <Slider value={[hourlyRate]} onValueChange={value => setHourlyRate(value[0])} min={25} max={80} step={5} className="w-full" />
           </div>
         </div>
       </Card>
 
       {/* Pertes actuelles */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
+      <motion.div initial={{
+      opacity: 0,
+      y: 20
+    }} animate={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      delay: 0.2
+    }}>
         <Card className="bg-gradient-to-br from-spider-red/20 to-gray-900 border-spider-red p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-4xl">😫</span>
@@ -138,11 +110,12 @@ const EDLROICalculator = () => {
 
           <div className="bg-spider-red/20 border border-spider-red rounded-lg p-6 text-center">
             <div className="text-white/60 text-sm mb-2">TOTAL PERDU PAR AN</div>
-            <motion.div
-              className="font-orbitron text-5xl text-spider-red font-black"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
+            <motion.div className="font-orbitron text-5xl text-spider-red font-black" animate={{
+            scale: [1, 1.05, 1]
+          }} transition={{
+            duration: 2,
+            repeat: Infinity
+          }}>
               -{totalLoss.toLocaleString()}€/an
             </motion.div>
           </div>
@@ -150,15 +123,19 @@ const EDLROICalculator = () => {
       </motion.div>
 
       {/* Gains avec Spydercom */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
+      <motion.div initial={{
+      opacity: 0,
+      y: 20
+    }} animate={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      delay: 0.4
+    }}>
         <Card className="bg-gradient-to-br from-emerald-500/20 to-gray-900 border-emerald-500 p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-4xl">🚀</span>
-            <h3 className="font-orbitron text-2xl text-white">AVEC SPYDERCOM (Automatisation IA)</h3>
+            <h3 className="font-orbitron text-2xl text-white">AVEC SPIDERCOM (Automatisation IA)</h3>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -190,11 +167,12 @@ const EDLROICalculator = () => {
 
           <div className="bg-emerald-500/20 border border-emerald-500 rounded-lg p-6 text-center mb-6">
             <div className="text-white/60 text-sm mb-2">TOTAL GAIN NET PAR AN</div>
-            <motion.div
-              className="font-orbitron text-5xl text-emerald-400 font-black"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
+            <motion.div className="font-orbitron text-5xl text-emerald-400 font-black" animate={{
+            scale: [1, 1.05, 1]
+          }} transition={{
+            duration: 2,
+            repeat: Infinity
+          }}>
               +{totalGain.toLocaleString()}€/an
             </motion.div>
           </div>
@@ -210,7 +188,11 @@ const EDLROICalculator = () => {
             </div>
           </div>
 
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+          <motion.div whileHover={{
+          scale: 1.02
+        }} whileTap={{
+          scale: 0.98
+        }}>
             <Button className="w-full bg-gradient-to-r from-spider-cyan to-blue-500 text-black font-orbitron font-black text-xl py-8 hover:shadow-lg hover:shadow-spider-cyan/50">
               🚀 JE RÉCUPÈRE MES {totalGain.toLocaleString()}€ PAR AN
             </Button>
@@ -221,8 +203,6 @@ const EDLROICalculator = () => {
           </div>
         </Card>
       </motion.div>
-    </div>
-  );
+    </div>;
 };
-
 export default EDLROICalculator;
