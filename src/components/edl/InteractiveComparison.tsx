@@ -9,6 +9,7 @@ import BeforeAfterSlider from "./BeforeAfterSlider";
 import ConformityGauge from "./ConformityGauge";
 import IssueCard from "./IssueCard";
 import { toast } from "sonner";
+import rayureParquet from "@/assets/edl/rayure-parquet.png";
 
 interface Issue {
   id: number;
@@ -33,8 +34,8 @@ const mockPairs: PhotoPair[] = [
   {
     id: 1,
     room: "Salon",
-    entryPhoto: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800",
-    exitPhoto: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800",
+    entryPhoto: rayureParquet,
+    exitPhoto: rayureParquet,
     score: 65,
     status: null,
     issues: [
