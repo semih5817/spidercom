@@ -662,116 +662,164 @@ const ComparateurEtatsLieux = () => {
           </div>
         </section>
 
-        {/* SECTION 2: KPI DASHBOARD */}
+        {/* SECTION 2: KPI DASHBOARD - LA TRANSFORMATION PAR L'IA */}
         <section className="px-4 py-20 bg-gradient-to-b from-transparent to-spider-cyan/5">
           <div className="container mx-auto max-w-7xl">
-            <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-12 text-center">
+            <h2 className="font-orbitron text-3xl md:text-4xl lg:text-5xl font-black text-white mb-16 text-center">
               ⚡ La Transformation par l'IA
             </h2>
 
             {/* KPIs */}
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* KPI 1: Temps de Comparaison */}
-              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-spider-cyan/30 p-6">
-                <CardHeader>
-                  <CardTitle className="font-orbitron text-xl text-spider-cyan">Temps de Comparaison</CardTitle>
+              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-spider-cyan/30">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-orbitron text-lg md:text-xl text-spider-cyan text-center">
+                    Temps de Comparaison
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="mb-4">
-                    <div className="text-white/70 mb-1">Avant</div>
-                    <div className="w-full bg-red-700 rounded-full h-4">
-                      <div className="bg-spider-red h-4 rounded-full w-full animate-pulse" />
+                <CardContent className="space-y-6">
+                  <div>
+                    <div className="text-white/70 mb-2 text-sm">Avant</div>
+                    <div className="w-full bg-red-900/50 rounded-full h-3 mb-2">
+                      <div className="bg-spider-red h-3 rounded-full w-full animate-pulse" />
                     </div>
-                    <div className="text-white/80 font-orbitron text-2xl mt-1">45 min</div>
+                    <div className="text-white font-orbitron text-2xl md:text-3xl">45 min</div>
                   </div>
                   <div>
-                    <div className="text-white/70 mb-1">Après</div>
-                    <div className="w-full bg-green-700 rounded-full h-4">
-                      <div className="bg-emerald-400 h-4 rounded-full w-[4%] transition-all" />
+                    <div className="text-white/70 mb-2 text-sm">Après</div>
+                    <div className="w-full bg-emerald-900/50 rounded-full h-3 mb-2">
+                      <div className="bg-emerald-400 h-3 rounded-full w-[4%] transition-all duration-1000" />
                     </div>
-                    <div className="text-white/80 font-orbitron text-2xl mt-1">2 min</div>
+                    <div className="text-emerald-400 font-orbitron text-2xl md:text-3xl">2 min</div>
                   </div>
-                  <div className="mt-4 text-white/60 text-sm">Économie : -96% de temps</div>
+                  <div className="text-center pt-2 border-t border-white/10">
+                    <div className="text-spider-cyan font-bold text-sm">-96% de temps</div>
+                  </div>
                 </CardContent>
               </Card>
 
               {/* KPI 2: Taux d'Erreur */}
-              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-orange-500/30 p-6">
-                <CardHeader>
-                  <CardTitle className="font-orbitron text-xl text-orange-400">Taux d'Erreur</CardTitle>
+              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-orange-500/30">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-orbitron text-lg md:text-xl text-orange-400 text-center">
+                    Taux d'Erreur
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="flex justify-center items-center gap-6">
-                  <div className="relative w-20 h-20">
-                    <svg viewBox="0 0 36 36" className="w-full h-full">
-                      <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
-                      <circle className="text-orange-400" strokeWidth="3" strokeDasharray="18 82" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
-                      transition: "stroke-dasharray 1s ease"
-                    }} />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center font-orbitron text-orange-400 font-black text-xl">
-                      18%
+                <CardContent className="flex flex-col items-center gap-6">
+                  <div className="flex justify-center items-center gap-8">
+                    <div className="text-center">
+                      <div className="relative w-20 h-20 md:w-24 md:h-24">
+                        <svg viewBox="0 0 36 36" className="w-full h-full">
+                          <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
+                          <circle className="text-orange-400" strokeWidth="3" strokeDasharray="18 82" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{transition: "stroke-dasharray 1s ease"}} />
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center font-orbitron text-orange-400 font-black text-xl">
+                          18%
+                        </div>
+                      </div>
+                      <div className="text-xs text-white/60 mt-2">Avant</div>
+                    </div>
+                    <div className="text-2xl text-white/40">→</div>
+                    <div className="text-center">
+                      <div className="relative w-20 h-20 md:w-24 md:h-24">
+                        <svg viewBox="0 0 36 36" className="w-full h-full">
+                          <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
+                          <circle className="text-emerald-400" strokeWidth="3" strokeDasharray="0 100" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{transition: "stroke-dasharray 1s ease"}} />
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center font-orbitron text-emerald-400 font-black text-xl">
+                          0%
+                        </div>
+                      </div>
+                      <div className="text-xs text-white/60 mt-2">Après</div>
                     </div>
                   </div>
-                  <div className="relative w-20 h-20">
-                    <svg viewBox="0 0 36 36" className="w-full h-full">
-                      <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
-                      <circle className="text-emerald-400" strokeWidth="3" strokeDasharray="0 100" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
-                      transition: "stroke-dasharray 1s ease"
-                    }} />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center font-orbitron text-emerald-400 font-black text-xl">
-                      0%
-                    </div>
+                  <div className="text-center pt-2 border-t border-white/10 w-full">
+                    <div className="text-emerald-400 font-bold text-sm">100% fiabilité</div>
                   </div>
                 </CardContent>
-                <div className="text-center text-white/60 mt-4 text-sm">Gain : 100% de fiabilité</div>
               </Card>
 
               {/* KPI 3: Litiges Oubliés */}
-              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-purple-500/30 p-6">
-                <CardHeader>
-                  <CardTitle className="font-orbitron text-xl text-purple-400">Litiges Oubliés</CardTitle>
+              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-purple-500/30">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-orbitron text-lg md:text-xl text-purple-400 text-center">
+                    Litiges Évités
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <div className="font-orbitron text-4xl text-white mb-2">21</div>
-                  <div className="text-white/70 mb-4">litiges/an (120 biens × 18%)</div>
-                  <div className="font-orbitron text-4xl text-emerald-400 mb-2">0</div>
-                  <div className="text-white/70">litige</div>
-                  <div className="mt-4 text-emerald-400 font-bold">Économie : 9 720€/an évités</div>
-                  <div className="mt-2 text-emerald-400 text-3xl">✅</div>
+                <CardContent className="text-center space-y-4">
+                  <div>
+                    <div className="text-xs text-white/60 mb-1">Avant (18% erreurs)</div>
+                    <div className="font-orbitron text-3xl md:text-4xl text-white mb-1">21</div>
+                    <div className="text-xs text-white/60">litiges/an oubliés</div>
+                  </div>
+                  <div className="text-3xl text-white/40">↓</div>
+                  <div>
+                    <div className="text-xs text-white/60 mb-1">Après (IA)</div>
+                    <div className="font-orbitron text-3xl md:text-4xl text-emerald-400 mb-1">0</div>
+                    <div className="text-xs text-white/60">litige</div>
+                  </div>
+                  <div className="pt-2 border-t border-white/10">
+                    <div className="text-emerald-400 font-bold text-sm">2 916€/an évités</div>
+                  </div>
                 </CardContent>
               </Card>
 
               {/* KPI 4: ROI Mensuel */}
-              <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-emerald-500/30 p-6">
-                <CardHeader>
-                  <CardTitle className="font-orbitron text-xl text-emerald-400">ROI Mensuel</CardTitle>
+              <Card className="bg-gradient-to-br from-emerald-900/30 to-gray-800 border-emerald-500/50">
+                <CardHeader className="pb-4">
+                  <CardTitle className="font-orbitron text-lg md:text-xl text-emerald-400 text-center">
+                    ROI Mensuel
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-2 gap-4 text-white/80 text-sm mb-4">
-                    <div>Gain temps :</div>
-                    <div className="font-orbitron text-2xl text-emerald-400 font-black">+516€/mois</div>
-                    <div>Gain litiges évités :</div>
-                    <div className="font-orbitron text-2xl text-emerald-400 font-black">+810€/mois</div>
-                    <div>Total :</div>
-                    <div className="font-orbitron text-2xl text-emerald-400 font-black">+1 326€/mois</div>
-                    <div>Payback :</div>
-                    <div className="font-orbitron text-2xl text-emerald-400 font-black">11 jours</div>
+                <CardContent className="space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-white/70">Gain temps:</span>
+                      <span className="font-orbitron text-lg text-emerald-400 font-bold">158€</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-white/70">Litiges évités:</span>
+                      <span className="font-orbitron text-lg text-emerald-400 font-bold">243€</span>
+                    </div>
+                    <div className="pt-2 border-t border-emerald-500/30 flex justify-between items-center">
+                      <span className="text-sm text-white font-bold">Total:</span>
+                      <span className="font-orbitron text-2xl text-emerald-400 font-black">401€</span>
+                    </div>
                   </div>
-                  <div className="text-center text-emerald-400 font-bold text-lg animate-pulse">🚀</div>
+                  <div className="text-center pt-2 border-t border-white/10">
+                    <div className="text-xs text-white/60 mb-1">Retour sur investissement</div>
+                    <div className="font-orbitron text-lg text-emerald-400 font-bold">~15 jours</div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
 
             {/* Impact global */}
-            <Card className="bg-gradient-to-br from-spider-cyan/20 to-gray-900 border-spider-cyan p-6 mt-12">
-              <h3 className="font-orbitron text-2xl text-spider-cyan mb-6 text-center">📊 Pour 120 biens avec 2 états/an :</h3>
-              <ul className="grid md:grid-cols-2 gap-4 text-white/80 text-sm max-w-xl mx-auto">
-                <li>• 86h économisées par an</li>
-                <li>• 0 erreur vs 21 litiges évités</li>
-                <li>• +15 900€ net par an</li>
-                <li>• 1 demi ETP économisé</li>
-              </ul>
+            <Card className="bg-gradient-to-br from-spider-cyan/20 to-gray-900 border-spider-cyan mt-12">
+              <CardContent className="p-6 md:p-8">
+                <h3 className="font-orbitron text-xl md:text-2xl text-spider-cyan mb-6 text-center">
+                  📊 Impact Global (120 biens × 30% rotation)
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="font-orbitron text-2xl md:text-3xl text-white mb-1">54h</div>
+                    <div className="text-sm text-white/70">économisées/an</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="font-orbitron text-2xl md:text-3xl text-emerald-400 mb-1">0</div>
+                    <div className="text-sm text-white/70">erreur vs 21 litiges</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="font-orbitron text-2xl md:text-3xl text-emerald-400 mb-1">4 800€</div>
+                    <div className="text-sm text-white/70">économisés/an</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="font-orbitron text-2xl md:text-3xl text-spider-cyan mb-1">0.3 ETP</div>
+                    <div className="text-sm text-white/70">temps libéré</div>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           </div>
         </section>
