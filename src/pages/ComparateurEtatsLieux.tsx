@@ -18,93 +18,55 @@ import EDLROICalculator from "@/components/leads/EDLROICalculator";
 import EDLWorkflowDiagram from "@/components/leads/EDLWorkflowDiagram";
 import DetectionExample from "@/components/leads/DetectionExample";
 import { edlMockData } from "@/data/mockDataEDL";
-
 type StatModalType = '45min' | '18percent' | '450euros' | '100percent' | null;
-
 const ComparateurEtatsLieux = () => {
   const [openModal, setOpenModal] = useState<StatModalType>(null);
-  const faqs = [
-    {
-      question: "Quels formats de documents sont acceptés ?",
-      answer: "PDF, Word, Excel, images (JPG, PNG), et même documents scannés ou photos smartphone. L'IA OCR extrait le texte même sur documents manuscrits."
-    },
-    {
-      question: "Le rapport généré a-t-il une valeur juridique ?",
-      answer: "Oui, 100% opposable en justice. Conforme Loi ALUR, horodatage blockchain, signature électronique qualifiée (norme eIDAS). Déjà utilisé avec succès dans 47 litiges tribunal."
-    },
-    {
-      question: "Combien de temps prend vraiment l'analyse ?",
-      answer: "2 minutes en moyenne. Le temps exact dépend du nombre de pages (entre 1m30 pour un T1 et 3m30 pour une maison 150m²)."
-    },
-    {
-      question: "Que se passe-t-il si l'IA se trompe ?",
-      answer: "L'IA a un taux de précision de 99.8%. Dans le 0.2% restant, vous pouvez corriger manuellement avant génération du rapport final. Validation humaine toujours possible."
-    },
-    {
-      question: "Mes données sont-elles sécurisées ?",
-      answer: "Cryptage AES-256, serveurs en France (OVH), conformité RGPD totale. Vos documents ne sont jamais utilisés pour entraîner l'IA. Suppression automatique après archivage selon durée légale."
-    },
-    {
-      question: "Puis-je personnaliser le rapport avec mon logo ?",
-      answer: "Oui, en plan Pro et Agence. Vous pouvez customiser : logo, couleurs, mentions légales, coordonnées. Export PDF ou Word éditable."
-    },
-    {
-      question: "L'outil fonctionne-t-il sur mobile ?",
-      answer: "Oui, app iOS et Android disponibles. Vous pouvez prendre les photos directement depuis l'app, upload les PDFs, et consulter les rapports."
-    },
-    {
-      question: "Comment gérez-vous les cas complexes (piscine, jardin, etc.) ?",
-      answer: "L'IA est entraînée sur 250 000 états des lieux réels incluant tous types de biens. Pour les cas très spécifiques (château, loft industriel...), mode \"expert\" avec analyse approfondie (5-7 min)."
-    }
-  ];
-
-  const pricingPlans = [
-    {
-      name: "Solo",
-      price: "19€",
-      period: "/mois",
-      features: [
-        "5 comparaisons/mois",
-        "Rapport PDF standard",
-        "Support email",
-        "Archivage 1 an"
-      ],
-      badge: "Idéal débutant"
-    },
-    {
-      name: "Pro",
-      price: "59€",
-      period: "/mois",
-      features: [
-        "25 comparaisons/mois",
-        "Rapport personnalisé avec logo",
-        "Archivage illimité",
-        "Support prioritaire (chat)",
-        "Intégration CRM",
-        "Analytics basiques"
-      ],
-      highlighted: true,
-      badge: "🔥 Le plus populaire"
-    },
-    {
-      name: "Agence",
-      price: "Sur devis",
-      period: "(à partir de 199€/mois)",
-      features: [
-        "Comparaisons illimitées",
-        "Multi-utilisateurs (équipe)",
-        "API access",
-        "White label (votre marque)",
-        "Formation équipe incluse",
-        "Support dédié 7j/7",
-        "Analytics avancées"
-      ],
-      badge: "🏆 Pour les pros"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const faqs = [{
+    question: "Quels formats de documents sont acceptés ?",
+    answer: "PDF, Word, Excel, images (JPG, PNG), et même documents scannés ou photos smartphone. L'IA OCR extrait le texte même sur documents manuscrits."
+  }, {
+    question: "Le rapport généré a-t-il une valeur juridique ?",
+    answer: "Oui, 100% opposable en justice. Conforme Loi ALUR, horodatage blockchain, signature électronique qualifiée (norme eIDAS). Déjà utilisé avec succès dans 47 litiges tribunal."
+  }, {
+    question: "Combien de temps prend vraiment l'analyse ?",
+    answer: "2 minutes en moyenne. Le temps exact dépend du nombre de pages (entre 1m30 pour un T1 et 3m30 pour une maison 150m²)."
+  }, {
+    question: "Que se passe-t-il si l'IA se trompe ?",
+    answer: "L'IA a un taux de précision de 99.8%. Dans le 0.2% restant, vous pouvez corriger manuellement avant génération du rapport final. Validation humaine toujours possible."
+  }, {
+    question: "Mes données sont-elles sécurisées ?",
+    answer: "Cryptage AES-256, serveurs en France (OVH), conformité RGPD totale. Vos documents ne sont jamais utilisés pour entraîner l'IA. Suppression automatique après archivage selon durée légale."
+  }, {
+    question: "Puis-je personnaliser le rapport avec mon logo ?",
+    answer: "Oui, en plan Pro et Agence. Vous pouvez customiser : logo, couleurs, mentions légales, coordonnées. Export PDF ou Word éditable."
+  }, {
+    question: "L'outil fonctionne-t-il sur mobile ?",
+    answer: "Oui, app iOS et Android disponibles. Vous pouvez prendre les photos directement depuis l'app, upload les PDFs, et consulter les rapports."
+  }, {
+    question: "Comment gérez-vous les cas complexes (piscine, jardin, etc.) ?",
+    answer: "L'IA est entraînée sur 250 000 états des lieux réels incluant tous types de biens. Pour les cas très spécifiques (château, loft industriel...), mode \"expert\" avec analyse approfondie (5-7 min)."
+  }];
+  const pricingPlans = [{
+    name: "Solo",
+    price: "19€",
+    period: "/mois",
+    features: ["5 comparaisons/mois", "Rapport PDF standard", "Support email", "Archivage 1 an"],
+    badge: "Idéal débutant"
+  }, {
+    name: "Pro",
+    price: "59€",
+    period: "/mois",
+    features: ["25 comparaisons/mois", "Rapport personnalisé avec logo", "Archivage illimité", "Support prioritaire (chat)", "Intégration CRM", "Analytics basiques"],
+    highlighted: true,
+    badge: "🔥 Le plus populaire"
+  }, {
+    name: "Agence",
+    price: "Sur devis",
+    period: "(à partir de 199€/mois)",
+    features: ["Comparaisons illimitées", "Multi-utilisateurs (équipe)", "API access", "White label (votre marque)", "Formation équipe incluse", "Support dédié 7j/7", "Analytics avancées"],
+    badge: "🏆 Pour les pros"
+  }];
+  return <div className="min-h-screen">
       <Header />
       <BackgroundEffects />
       
@@ -154,10 +116,7 @@ const ComparateurEtatsLieux = () => {
 
             {/* Stats choc avec modals */}
             <div className="grid md:grid-cols-4 gap-6 mt-12 mb-12">
-              <Card 
-                className="bg-gradient-to-br from-spider-red/20 to-gray-900 border-spider-red cursor-pointer hover:scale-105 transition-transform relative group"
-                onClick={() => setOpenModal('45min')}
-              >
+              <Card className="bg-gradient-to-br from-spider-red/20 to-gray-900 border-spider-red cursor-pointer hover:scale-105 transition-transform relative group" onClick={() => setOpenModal('45min')}>
                 <CardContent className="pt-6 text-center">
                   <Info className="absolute top-3 right-3 w-5 h-5 text-spider-red opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">⏰</div>
@@ -167,10 +126,7 @@ const ComparateurEtatsLieux = () => {
                 </CardContent>
               </Card>
 
-              <Card 
-                className="bg-gradient-to-br from-orange-500/20 to-gray-900 border-orange-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
-                onClick={() => setOpenModal('18percent')}
-              >
+              <Card className="bg-gradient-to-br from-orange-500/20 to-gray-900 border-orange-500/50 cursor-pointer hover:scale-105 transition-transform relative group" onClick={() => setOpenModal('18percent')}>
                 <CardContent className="pt-6 text-center">
                   <Info className="absolute top-3 right-3 w-5 h-5 text-orange-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">😡</div>
@@ -180,10 +136,7 @@ const ComparateurEtatsLieux = () => {
                 </CardContent>
               </Card>
 
-              <Card 
-                className="bg-gradient-to-br from-yellow-500/20 to-gray-900 border-yellow-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
-                onClick={() => setOpenModal('450euros')}
-              >
+              <Card className="bg-gradient-to-br from-yellow-500/20 to-gray-900 border-yellow-500/50 cursor-pointer hover:scale-105 transition-transform relative group" onClick={() => setOpenModal('450euros')}>
                 <CardContent className="pt-6 text-center">
                   <Info className="absolute top-3 right-3 w-5 h-5 text-yellow-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">💸</div>
@@ -193,10 +146,7 @@ const ComparateurEtatsLieux = () => {
                 </CardContent>
               </Card>
 
-              <Card 
-                className="bg-gradient-to-br from-purple-500/20 to-gray-900 border-purple-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
-                onClick={() => setOpenModal('100percent')}
-              >
+              <Card className="bg-gradient-to-br from-purple-500/20 to-gray-900 border-purple-500/50 cursor-pointer hover:scale-105 transition-transform relative group" onClick={() => setOpenModal('100percent')}>
                 <CardContent className="pt-6 text-center">
                   <Info className="absolute top-3 right-3 w-5 h-5 text-purple-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">😰</div>
@@ -563,27 +513,10 @@ const ComparateurEtatsLieux = () => {
                 <CardContent className="flex justify-center items-center gap-6">
                   <div className="relative w-20 h-20">
                     <svg viewBox="0 0 36 36" className="w-full h-full">
-                      <circle
-                        className="text-gray-700"
-                        strokeWidth="3"
-                        stroke="currentColor"
-                        fill="none"
-                        cx="18"
-                        cy="18"
-                        r="15"
-                      />
-                      <circle
-                        className="text-orange-400"
-                        strokeWidth="3"
-                        strokeDasharray="18 82"
-                        strokeLinecap="round"
-                        stroke="currentColor"
-                        fill="none"
-                        cx="18"
-                        cy="18"
-                        r="15"
-                        style={{ transition: "stroke-dasharray 1s ease" }}
-                      />
+                      <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
+                      <circle className="text-orange-400" strokeWidth="3" strokeDasharray="18 82" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
+                      transition: "stroke-dasharray 1s ease"
+                    }} />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center font-orbitron text-orange-400 font-black text-xl">
                       18%
@@ -591,27 +524,10 @@ const ComparateurEtatsLieux = () => {
                   </div>
                   <div className="relative w-20 h-20">
                     <svg viewBox="0 0 36 36" className="w-full h-full">
-                      <circle
-                        className="text-gray-700"
-                        strokeWidth="3"
-                        stroke="currentColor"
-                        fill="none"
-                        cx="18"
-                        cy="18"
-                        r="15"
-                      />
-                      <circle
-                        className="text-emerald-400"
-                        strokeWidth="3"
-                        strokeDasharray="0 100"
-                        strokeLinecap="round"
-                        stroke="currentColor"
-                        fill="none"
-                        cx="18"
-                        cy="18"
-                        r="15"
-                        style={{ transition: "stroke-dasharray 1s ease" }}
-                      />
+                      <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
+                      <circle className="text-emerald-400" strokeWidth="3" strokeDasharray="0 100" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
+                      transition: "stroke-dasharray 1s ease"
+                    }} />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center font-orbitron text-emerald-400 font-black text-xl">
                       0%
@@ -711,9 +627,7 @@ const ComparateurEtatsLieux = () => {
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {edlMockData.detectionExamples.map((example) => (
-                <DetectionExample key={example.id} {...example} />
-              ))}
+              {edlMockData.detectionExamples.map(example => <DetectionExample key={example.id} {...example} />)}
             </div>
 
             <Card className="bg-gradient-to-br from-gray-900 to-black border-spider-cyan/30 p-8">
@@ -746,23 +660,10 @@ const ComparateurEtatsLieux = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Inventaire détaillé pièce par pièce obligatoire",
-                  "État des équipements (électroménager, chauffage, etc.)",
-                  "État des revêtements (sol, murs, plafond)",
-                  "Relevés compteurs (eau, gaz, électricité)",
-                  "Nombre et état des clés remises",
-                  "Photos annexées horodatées",
-                  "Signatures électroniques valides juridiquement",
-                  "Envoi recommandé électronique (valeur probante)",
-                  "Archivage 10 ans minimum",
-                  "Justification détaillée retenues (opposable tribunal)"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-white/80">
+                {["Inventaire détaillé pièce par pièce obligatoire", "État des équipements (électroménager, chauffage, etc.)", "État des revêtements (sol, murs, plafond)", "Relevés compteurs (eau, gaz, électricité)", "Nombre et état des clés remises", "Photos annexées horodatées", "Signatures électroniques valides juridiquement", "Envoi recommandé électronique (valeur probante)", "Archivage 10 ans minimum", "Justification détaillée retenues (opposable tribunal)"].map((item, idx) => <div key={idx} className="flex items-start gap-2 text-white/80">
                     <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
                     <span>{item}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </Card>
 
@@ -813,20 +714,14 @@ const ComparateurEtatsLieux = () => {
             </h2>
 
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 rounded-lg px-6"
-                >
+              {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 rounded-lg px-6">
                   <AccordionTrigger className="text-white hover:text-spider-cyan font-inter text-lg">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-white/80 font-inter">
                     {faq.answer}
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </section>
@@ -839,12 +734,9 @@ const ComparateurEtatsLieux = () => {
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {edlMockData.testimonials.map((testimonial, idx) => (
-                <Card key={idx} className="bg-gradient-to-br from-gray-900 to-gray-800 border-white/10 p-6">
+              {edlMockData.testimonials.map((testimonial, idx) => <Card key={idx} className="bg-gradient-to-br from-gray-900 to-gray-800 border-white/10 p-6">
                   <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-400">⭐</span>
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <span key={i} className="text-yellow-400">⭐</span>)}
                   </div>
                   <p className="text-white/80 italic mb-6">"{testimonial.quote}"</p>
                   <div className="border-t border-white/10 pt-4">
@@ -853,8 +745,7 @@ const ComparateurEtatsLieux = () => {
                     <div className="text-sm text-white/60">{testimonial.company}</div>
                     <div className="text-xs text-spider-cyan mt-2">{testimonial.stats}</div>
                   </div>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -893,14 +784,10 @@ const ComparateurEtatsLieux = () => {
         </section>
 
         {/* CTA FINAL */}
-        <CTABooking 
-          subtitle="Testez la comparaison IA sur un vrai état des lieux en démo live"
-        />
+        <CTABooking subtitle="Testez la comparaison IA sur un vrai état des lieux en démo live" />
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ComparateurEtatsLieux;
