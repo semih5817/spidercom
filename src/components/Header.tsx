@@ -100,6 +100,12 @@ const Header = () => {
                 </div>}
             </div>
 
+            <NavLink to="/outils" className={({
+            isActive
+          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-cyan border-b-2 border-spider-cyan" : "text-white/80 hover:text-spider-cyan"}`}>
+              Outils
+            </NavLink>
+
             <NavLink to="/projets-realises" className={({
             isActive
           }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"}`}>
@@ -162,6 +168,12 @@ const Header = () => {
                     </NavLink>)}
                 </div>
               </div>
+
+              <NavLink to="/outils" onClick={() => setIsMenuOpen(false)} className={({
+            isActive
+          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-cyan" : "text-white/80"}`}>
+                Outils
+              </NavLink>
 
               <NavLink to="/projets-realises" onClick={() => setIsMenuOpen(false)} className={({
             isActive
