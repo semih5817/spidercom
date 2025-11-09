@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
-
 const LeadsEscapeAnimation = () => {
-  return (
-    <div className="relative h-64 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
+  return <div className="relative h-64 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
                     rounded-2xl border border-gray-700 overflow-hidden">
       {/* Visite au centre */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
@@ -17,50 +15,40 @@ const LeadsEscapeAnimation = () => {
 
       {/* Prospects qui s'échappent (animation) */}
       {[...Array(8)].map((_, i) => {
-        const angle = (i * 45) * (Math.PI / 180);
-        const distance = 150;
-        const x = Math.cos(angle) * distance;
-        const y = Math.sin(angle) * distance;
-        
-        return (
-          <motion.div
-            key={i}
-            initial={{ 
-              x: 0, 
-              y: 0,
-              opacity: 1,
-              scale: 1
-            }}
-            animate={{ 
-              x: x, 
-              y: y,
-              opacity: 0,
-              scale: 0.5
-            }}
-            transition={{
-              duration: 2,
-              delay: i * 0.2,
-              repeat: Infinity,
-              repeatDelay: 1
-            }}
-            className="absolute top-1/2 left-1/2 w-12 h-12 bg-red-500 rounded-full 
-                       flex items-center justify-center text-2xl"
-            style={{ translateX: '-50%', translateY: '-50%' }}
-          >
+      const angle = i * 45 * (Math.PI / 180);
+      const distance = 150;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      return <motion.div key={i} initial={{
+        x: 0,
+        y: 0,
+        opacity: 1,
+        scale: 1
+      }} animate={{
+        x: x,
+        y: y,
+        opacity: 0,
+        scale: 0.5
+      }} transition={{
+        duration: 2,
+        delay: i * 0.2,
+        repeat: Infinity,
+        repeatDelay: 1
+      }} className="absolute top-1/2 left-1/2 w-12 h-12 bg-red-500 rounded-full 
+                       flex items-center justify-center text-2xl" style={{
+        translateX: '-50%',
+        translateY: '-50%'
+      }}>
             😢
-          </motion.div>
-        );
-      })}
+          </motion.div>;
+    })}
 
       {/* Label */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
                       bg-red-950/80 border border-red-500 rounded-lg px-6 py-3 backdrop-blur-sm">
-        <p className="text-red-400 font-bold text-center">
-          💸 67% s'échappent sans relance = -8 000€ par prospect perdu
-        </p>
+        <p className="text-red-400 font-bold text-center">💸 67% s'échappent sans relance = 
+-8 000€ par prospect perdu</p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default LeadsEscapeAnimation;
