@@ -307,21 +307,7 @@ const PropertyManagementROIResults = ({
                           animate-pulse">
             +{Math.round(netGain / 1000)}k€
           </div>
-          <div className="flex items-center justify-center gap-8 text-white/90 text-sm flex-wrap">
-            <div>
-              <div className="text-xs opacity-70">ROI</div>
-              <div className="text-3xl font-bold">
-                ×{(netGain / costSpydercom).toFixed(1)}
-              </div>
-            </div>
-            
-            <div>
-              <div className="text-xs opacity-70">Payback</div>
-              <div className="text-3xl font-bold">
-                {paybackDays} jours
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
