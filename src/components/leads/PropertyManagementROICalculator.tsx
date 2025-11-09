@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 const PropertyManagementROICalculator = () => {
   const [properties, setProperties] = useState(120);
   const [agents, setAgents] = useState(3);
@@ -10,12 +9,12 @@ const PropertyManagementROICalculator = () => {
   const totalHoursLost = properties * hoursPerPropertyPerMonth;
   const hoursPerAgent = totalHoursLost / agents;
   const totalCostLost = totalHoursLost * tjm;
-  
+
   // AVEC AUTOMATISATION
   const timeSavedPercentage = 0.6;
   const hoursSaved = totalHoursLost * timeSavedPercentage;
   const moneySaved = hoursSaved * tjm;
-  
+
   // Incidents
   const avgIncidentsPerPropertyPerMonth = 1.5;
   const totalIncidents = properties * avgIncidentsPerPropertyPerMonth;
@@ -23,7 +22,7 @@ const PropertyManagementROICalculator = () => {
   const timePerIncidentAuto = 0.25;
   const timeSavedIncidents = totalIncidents * (timePerIncidentManual - timePerIncidentAuto);
   const moneySavedIncidents = timeSavedIncidents * tjm;
-  
+
   // Loyers impayés
   const rentDelayBefore = 0.10;
   const rentDelayAfter = 0.03;
@@ -33,17 +32,14 @@ const PropertyManagementROICalculator = () => {
   const costDelayBefore = properties * avgRent * rentDelayBefore * avgDelayDays * interestRate;
   const costDelayAfter = properties * avgRent * rentDelayAfter * avgDelayDays * interestRate;
   const moneySavedRentDelay = costDelayBefore - costDelayAfter;
-  
+
   // TOTAL
   const totalMoneySaved = moneySaved + moneySavedIncidents + moneySavedRentDelay;
   const totalYearlySaved = totalMoneySaved * 12;
-  
   const costSpydercom = 180 * agents;
   const netGain = totalMoneySaved - costSpydercom;
   const paybackDays = (costSpydercom / (netGain / 30)).toFixed(0);
-
-  return (
-    <div className="bg-gradient-to-br from-gray-900 via-emerald-900/10 to-gray-900 
+  return <div className="bg-gradient-to-br from-gray-900 via-emerald-900/10 to-gray-900 
                     rounded-3xl p-12 border-2 border-emerald-500/30
                     shadow-[0_0_60px_rgba(16,185,129,0.2)]">
       
@@ -56,14 +52,7 @@ const PropertyManagementROICalculator = () => {
             Biens gérés
           </label>
           <div className="bg-black/30 rounded-xl p-6 border border-emerald-500/30">
-            <input 
-              type="range"
-              min="20"
-              max="500"
-              step="10"
-              value={properties}
-              onChange={(e) => setProperties(parseInt(e.target.value))}
-              className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
+            <input type="range" min="20" max="500" step="10" value={properties} onChange={e => setProperties(parseInt(e.target.value))} className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
                          [&::-webkit-slider-thumb]:appearance-none
                          [&::-webkit-slider-thumb]:w-8
                          [&::-webkit-slider-thumb]:h-8
@@ -71,8 +60,7 @@ const PropertyManagementROICalculator = () => {
                          [&::-webkit-slider-thumb]:bg-gradient-to-r
                          [&::-webkit-slider-thumb]:from-emerald-500
                          [&::-webkit-slider-thumb]:to-teal-500
-                         [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(16,185,129,0.8)]"
-            />
+                         [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(16,185,129,0.8)]" />
             <div className="flex justify-between text-xs text-gray-500 mt-2">
               <span>20</span>
               <span>250</span>
@@ -94,13 +82,7 @@ const PropertyManagementROICalculator = () => {
             Agents property manager
           </label>
           <div className="bg-black/30 rounded-xl p-6 border border-teal-500/30">
-            <input 
-              type="range"
-              min="1"
-              max="20"
-              value={agents}
-              onChange={(e) => setAgents(parseInt(e.target.value))}
-              className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
+            <input type="range" min="1" max="20" value={agents} onChange={e => setAgents(parseInt(e.target.value))} className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
                          [&::-webkit-slider-thumb]:appearance-none
                          [&::-webkit-slider-thumb]:w-8
                          [&::-webkit-slider-thumb]:h-8
@@ -108,8 +90,7 @@ const PropertyManagementROICalculator = () => {
                          [&::-webkit-slider-thumb]:bg-gradient-to-r
                          [&::-webkit-slider-thumb]:from-teal-500
                          [&::-webkit-slider-thumb]:to-cyan-500
-                         [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(20,184,166,0.8)]"
-            />
+                         [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(20,184,166,0.8)]" />
           </div>
           <div className="text-center mt-4">
             <div className="text-6xl font-black text-teal-400 font-orbitron tabular-nums">
@@ -126,17 +107,9 @@ const PropertyManagementROICalculator = () => {
             Coût horaire (salaire chargé)
           </label>
           <div className="bg-black/30 rounded-xl p-6 border border-cyan-500/30">
-            <input 
-              type="number"
-              min="25"
-              max="80"
-              step="5"
-              value={tjm}
-              onChange={(e) => setTjm(parseInt(e.target.value))}
-              className="w-full bg-gray-800 border-2 border-cyan-500/30 rounded-lg 
+            <input type="number" min="25" max="80" step="5" value={tjm} onChange={e => setTjm(parseInt(e.target.value))} className="w-full bg-gray-800 border-2 border-cyan-500/30 rounded-lg 
                          px-6 py-4 text-4xl font-bold text-white text-center
-                         focus:border-cyan-400 focus:outline-none font-orbitron"
-            />
+                         focus:border-cyan-400 focus:outline-none font-orbitron" />
           </div>
           <div className="text-center mt-4">
             <div className="text-4xl font-black text-cyan-400">
@@ -147,29 +120,9 @@ const PropertyManagementROICalculator = () => {
       </div>
 
       {/* RÉSULTATS */}
-      <PropertyManagementROIResults 
-        properties={properties}
-        agents={agents}
-        tjm={tjm}
-        totalHoursLost={totalHoursLost}
-        hoursPerAgent={hoursPerAgent}
-        totalCostLost={totalCostLost}
-        hoursSaved={hoursSaved}
-        moneySaved={moneySaved}
-        timeSavedIncidents={timeSavedIncidents}
-        moneySavedIncidents={moneySavedIncidents}
-        moneySavedRentDelay={moneySavedRentDelay}
-        totalMoneySaved={totalMoneySaved}
-        totalYearlySaved={totalYearlySaved}
-        costSpydercom={costSpydercom}
-        netGain={netGain}
-        paybackDays={paybackDays}
-        totalIncidents={totalIncidents}
-      />
-    </div>
-  );
+      <PropertyManagementROIResults properties={properties} agents={agents} tjm={tjm} totalHoursLost={totalHoursLost} hoursPerAgent={hoursPerAgent} totalCostLost={totalCostLost} hoursSaved={hoursSaved} moneySaved={moneySaved} timeSavedIncidents={timeSavedIncidents} moneySavedIncidents={moneySavedIncidents} moneySavedRentDelay={moneySavedRentDelay} totalMoneySaved={totalMoneySaved} totalYearlySaved={totalYearlySaved} costSpydercom={costSpydercom} netGain={netGain} paybackDays={paybackDays} totalIncidents={totalIncidents} />
+    </div>;
 };
-
 interface ROIResultsProps {
   properties: number;
   agents: number;
@@ -189,10 +142,9 @@ interface ROIResultsProps {
   paybackDays: string;
   totalIncidents: number;
 }
-
-const PropertyManagementROIResults = ({ 
-  properties, 
-  agents, 
+const PropertyManagementROIResults = ({
+  properties,
+  agents,
   tjm,
   totalHoursLost,
   hoursPerAgent,
@@ -209,9 +161,7 @@ const PropertyManagementROIResults = ({
   paybackDays,
   totalIncidents
 }: ROIResultsProps) => {
-  
-  return (
-    <>
+  return <>
       {/* SECTION 1 */}
       <div className="mb-12 bg-gradient-to-r from-red-950/50 to-red-900/30 
                       rounded-2xl p-10 border-2 border-red-500
@@ -277,9 +227,7 @@ const PropertyManagementROIResults = ({
                       shadow-[0_0_40px_rgba(16,185,129,0.3)]">
         <div className="flex items-center gap-4 mb-8">
           <div className="text-6xl">🚀</div>
-          <h3 className="text-3xl font-black text-emerald-400">
-            AVEC SPYDERCOM (Automatisation Totale)
-          </h3>
+          <h3 className="text-3xl font-black text-emerald-400">AVEC SPIDERCOM (Automatisation Totale)</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -368,7 +316,7 @@ const PropertyManagementROIResults = ({
             <div>
               <div className="text-xs opacity-70">ROI</div>
               <div className="text-3xl font-bold">
-                ×{((netGain / costSpydercom)).toFixed(1)}
+                ×{(netGain / costSpydercom).toFixed(1)}
               </div>
             </div>
             <div className="text-4xl">→</div>
@@ -438,18 +386,12 @@ const PropertyManagementROIResults = ({
             JE RÉCUPÈRE MES {Math.round(netGain / 1000)}K€ PAR MOIS
           </span>
           
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full animate-ping"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1 + Math.random()}s`
-              }}
-            />
-          ))}
+          {[...Array(20)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 2}s`,
+          animationDuration: `${1 + Math.random()}s`
+        }} />)}
         </button>
         
         <p className="text-gray-400 mt-6 text-xl">
@@ -471,8 +413,6 @@ const PropertyManagementROIResults = ({
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default PropertyManagementROICalculator;
