@@ -34,6 +34,79 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    slug: 'agia',
+    title: 'AGIA - Analyse Intelligente d\'Images Aériennes',
+    shortDescription: 'Plateforme d\'analyse IA pour la détection automatique d\'anomalies sur panneaux photovoltaïques via imagerie thermique aérienne par drone.',
+    fullDescription: `**Contexte :** Les inspections de parcs photovoltaïques prennent 4h par drone et nécessitent une expertise thermique pointue.
+
+**Problème :**
+- Analyse manuelle des images thermiques ultra chronophage
+- Détection d'anomalies incomplète (erreur humaine)
+- Rapports générés manuellement (2h supplémentaires)
+- Coûts d'inspection très élevés
+
+**Solution AGIA :**
+Plateforme complète d'analyse IA en 4 modules :
+
+1️⃣ **Upload & Traitement automatique**
+   - Import massif d'images thermiques par drone
+   - Traitement batch en 42 minutes (vs 4h manuel)
+   - Support RGB + thermique simultané
+
+2️⃣ **Détection IA des anomalies** (Computer Vision)
+   - Points chauds (hot spots)
+   - Microfissures
+   - Snail trails
+   - Ombrage et salissures
+   - Précision : 97.8%
+
+3️⃣ **Dashboard de visualisation**
+   - Viewer thermique interactif
+   - Cartographie des panneaux défectueux
+   - Classification par sévérité (critique/élevée/moyenne)
+   - Recommandations d'action automatiques
+
+4️⃣ **Rapports PDF automatiques**
+   - Génération instantanée
+   - Synthèse visuelle + données chiffrées
+   - Export multi-formats
+   - Archivage cloud automatique
+
+**Résultats :**
+- Temps d'analyse : 4h → 42 min (-90%)
+- Précision détection : 97.8% (vs ~85% manuel)
+- Coût inspection : -60%
+- Satisfaction clients : 4.9/5
+
+**Cas concret :**
+Opérateur de 5 parcs PV (1200 panneaux total). Avant : 20h/mois d'analyse manuelle. Maintenant : 2h/mois de validation IA. ROI : 25 000€/an économisés.`,
+    sector: 'Énergie',
+    technologies: ['IA & Machine Learning', 'Lovable', 'Dashboard & Analytics', 'Intégrations API'],
+    date: '2025-01-15',
+    duration: '3 mois',
+    roi: '+90% efficacité',
+    image: '/projects/agia-dashboard.jpg',
+    tags: ['Énergie', 'IA', 'Computer Vision', 'Drones', 'Photovoltaïque'],
+    metrics: {
+      timeSaved: '90% (42 min vs 4h)',
+      conversion: '97.8% précision',
+      savings: '25 000€/an',
+      satisfaction: '4.9/5'
+    },
+    isNew: true,
+    isPopular: true,
+    isFeatured: true,
+    blogUrl: null,
+    demoUrl: '/projets/agia',
+    clientTestimonial: {
+      quote: "AGIA a révolutionné nos inspections. Ce qui prenait 4 heures se fait maintenant en 42 minutes avec une précision exceptionnelle. Un gain de temps et d'argent considérable.",
+      author: "Marc Dubois",
+      role: "Responsable Maintenance",
+      company: "SolarTech Operations"
+    }
+  },
+  {
+    id: 2,
     slug: 'automatisation-agences-immobilieres',
     title: 'Automatisation Complète pour Agences Immobilières',
     shortDescription: 'Développement d\'un écosystème complet d\'automatisations via N8N et d\'outils visuels Lovable pour agences immobilières. Centralisation de la qualification de leads, publication multi-plateformes, gestion locative et reporting.',
@@ -81,7 +154,7 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 2,
+    id: 3,
     slug: 'take-5-automatisation-google-business',
     title: 'Take 5 — Automatisation Google Business & IA Conversationnelle',
     shortDescription: 'Solution automatisée complète qui connecte Google Business Profile à WhatsApp et à une IA conversationnelle pour gérer les avis clients, analyser les métriques et envoyer des rapports mensuels automatiques.',
@@ -139,7 +212,7 @@ Restaurateur local avec 12 avis/mois qui passait 4h à répondre manuellement. M
     },
     isNew: true,
     isPopular: true,
-    isFeatured: true,
+    isFeatured: false,
     blogUrl: null,
     demoUrl: null,
     clientTestimonial: {
@@ -150,7 +223,7 @@ Restaurateur local avec 12 avis/mois qui passait 4h à répondre manuellement. M
     }
   },
   {
-    id: 3,
+    id: 4,
     slug: 'coming-soon-restaurant',
     title: 'Automatisation Restaurant (À venir)',
     shortDescription: 'Projet en cours de développement...',
@@ -171,7 +244,7 @@ Restaurateur local avec 12 avis/mois qui passait 4h à répondre manuellement. M
     isComingSoon: true
   },
   {
-    id: 4,
+    id: 5,
     slug: 'coming-soon-ecommerce',
     title: 'E-commerce Automatisé (À venir)',
     shortDescription: 'Projet en préparation...',
@@ -197,6 +270,7 @@ export const sectors = [
   '🏠 Tous les secteurs',
   '🏢 Agence Immobilière',
   '🍽️ Restauration',
+  '⚡ Énergie',
   '🏥 Santé & Bien-être',
   '🛍️ E-commerce',
   '🎓 Éducation & Formation',
