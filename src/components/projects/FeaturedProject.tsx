@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Project } from "@/data/mockProjects";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
+import agiaLogo from "@/assets/agia-logo.png";
 
 interface FeaturedProjectProps {
   project: Project;
@@ -37,6 +38,14 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
                   alt={project.title}
                   className="w-full h-full object-cover rounded-xl"
                 />
+              ) : project.slug === 'agia' ? (
+                <div className="w-full h-full bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl flex items-center justify-center p-8">
+                  <img 
+                    src={agiaLogo} 
+                    alt="AGIA Logo"
+                    className="w-auto h-full max-h-64 object-contain"
+                  />
+                </div>
               ) : (
                 <WorkflowDiagram />
               )}
