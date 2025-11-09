@@ -314,14 +314,13 @@ const GestionLocative = () => {
                 </div>
 
                 <div className="mt-6 text-center">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-950/50 to-cyan-950/50 
-                                  rounded-full px-6 py-3 border border-emerald-500/30">
-                    <span className="text-2xl">🤖</span>
-                    <p className="text-emerald-400 font-bold">
-                      Avec l'automatisation : réduction à <span className="text-3xl font-orbitron">
-1-2h/mois</span>
+                  <div className="inline-flex items-center gap-4 bg-gradient-to-r from-emerald-950/50 to-cyan-950/50 
+                                  rounded-full px-8 py-4 border border-emerald-500/30">
+                    <span className="text-3xl">🤖</span>
+                    <p className="text-emerald-400 font-bold text-base md:text-lg">
+                      Avec l'automatisation : réduction à <span className="text-2xl md:text-3xl font-orbitron mx-1">1-2h/mois</span>
                     </p>
-                    <span className="text-emerald-400 text-sm">= 80-90% d'économie</span>
+                    <span className="text-emerald-400 text-xs md:text-sm font-medium">= 80-90% d'économie</span>
                   </div>
                 </div>
               </div>
