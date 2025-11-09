@@ -7,7 +7,14 @@ import TicketKanbanBoard from "@/components/leads/TicketKanbanBoard";
 import PropertyManagementROICalculator from "@/components/leads/PropertyManagementROICalculator";
 import PropertyManagementWorkflowDiagram from "@/components/leads/PropertyManagementWorkflowDiagram";
 import CTABooking from "@/components/CTABooking";
+import { useState } from "react";
 const GestionLocative = () => {
+  const [biensGeres, setBiensGeres] = useState(120);
+  const [heuresParBien, setHeuresParBien] = useState(10);
+  const [coutHoraire, setCoutHoraire] = useState(35);
+
+  const coutMensuel = biensGeres * heuresParBien * coutHoraire;
+  const coutAnnuel = coutMensuel * 12;
   const scrollToDemo = () => {
     document.getElementById('kanban-section')?.scrollIntoView({
       behavior: 'smooth'
@@ -111,7 +118,7 @@ const GestionLocative = () => {
               </div>
             </div>
 
-            {/* Calcul du coût */}
+            {/* Calculateur interactif */}
             <div className="bg-gradient-to-r from-red-950/50 via-orange-950/50 to-yellow-950/50 
                             rounded-2xl p-12 border-2 border-red-500/30 mb-12
                             shadow-[0_0_60px_rgba(239,68,68,0.3)]">
@@ -119,29 +126,53 @@ const GestionLocative = () => {
                 💰 Le Coût de la Gestion Locative Manuelle
               </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center mb-8">
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-2">Biens gérés</div>
-                  <div className="text-5xl font-black text-white font-orbitron">
-                    120
-                  </div>
+                  <input
+                    type="number"
+                    min="1"
+                    max="1000"
+                    value={biensGeres}
+                    onChange={(e) => setBiensGeres(Number(e.target.value))}
+                    className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-2 text-center
+                             focus:border-white/50 focus:outline-none transition-all"
+                  />
                 </div>
                 
                 <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-2">Heures/bien/mois</div>
-                  <div className="text-5xl font-black text-white font-orbitron">
-                    10h
-                  </div>
+                  <input
+                    type="number"
+                    min="1"
+                    max="50"
+                    value={heuresParBien}
+                    onChange={(e) => setHeuresParBien(Number(e.target.value))}
+                    className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-2 text-center
+                             focus:border-white/50 focus:outline-none transition-all"
+                  />
                 </div>
                 
                 <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-2">Coût horaire</div>
-                  <div className="text-5xl font-black text-white font-orbitron">
-                    35€
+                  <div className="relative">
+                    <input
+                      type="number"
+                      min="1"
+                      max="200"
+                      value={coutHoraire}
+                      onChange={(e) => setCoutHoraire(Number(e.target.value))}
+                      className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                               border-2 border-white/20 rounded-xl px-4 py-2 text-center
+                               focus:border-white/50 focus:outline-none transition-all"
+                    />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-3xl text-white font-orbitron">€</span>
                   </div>
                 </div>
               </div>
@@ -149,10 +180,10 @@ const GestionLocative = () => {
               <div className="mt-8 text-center">
                 <div className="text-red-400 text-lg mb-2 font-bold">= COÛT MENSUEL CACHÉ</div>
                 <div className="text-6xl font-black text-red-500 animate-pulse mb-4">
-                  42 000€
+                  {coutMensuel.toLocaleString('fr-FR')}€
                 </div>
                 <p className="text-gray-300 text-xl">
-                  par mois = <span className="text-red-400 font-bold">504 000€ par an</span> en pure perte
+                  par mois = <span className="text-red-400 font-bold">{coutAnnuel.toLocaleString('fr-FR')}€ par an</span> en pure perte
                 </p>
               </div>
 
