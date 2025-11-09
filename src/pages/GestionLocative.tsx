@@ -133,7 +133,7 @@ const GestionLocative = () => {
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-2">Heures/bien/mois</div>
                   <div className="text-5xl font-black text-white font-orbitron">
-                    12h
+                    10h
                   </div>
                 </div>
                 
@@ -150,11 +150,146 @@ const GestionLocative = () => {
               <div className="mt-8 text-center">
                 <div className="text-red-400 text-lg mb-2 font-bold">= COÛT MENSUEL CACHÉ</div>
                 <div className="text-6xl font-black text-red-500 animate-pulse mb-4">
-                  50 400€
+                  42 000€
                 </div>
                 <p className="text-gray-300 text-xl">
-                  par mois = <span className="text-red-400 font-bold">604 800€ par an</span> en pure perte
+                  par mois = <span className="text-red-400 font-bold">504 000€ par an</span> en pure perte
                 </p>
+              </div>
+
+              {/* Détail des 10 heures */}
+              <div className="mt-12 bg-gradient-to-br from-gray-900/80 to-gray-800/80 rounded-2xl p-8 border border-red-500/20">
+                <h4 className="text-2xl font-bold text-white mb-6 text-center">
+                  🔍 Détail des 10h de Gestion par Logement
+                </h4>
+                <p className="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+                  Ces heures s'accumulent à travers des dizaines de micro-tâches répétitives et manuelles.
+                  Voici la répartition mensuelle moyenne :
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {/* Catégorie 1 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-cyan-500/20 hover:border-cyan-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">💬</div>
+                      <div className="flex-1">
+                        <h5 className="text-cyan-400 font-bold text-sm mb-1">Communication</h5>
+                        <p className="text-xs text-gray-400 mb-2">Locataire / Propriétaire</p>
+                      </div>
+                      <div className="text-2xl font-black text-cyan-400 font-orbitron">2-3h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Appels, emails, SMS pour suivi, réclamations, pannes, documents, relances
+                    </p>
+                  </div>
+
+                  {/* Catégorie 2 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-purple-500/20 hover:border-purple-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">🧾</div>
+                      <div className="flex-1">
+                        <h5 className="text-purple-400 font-bold text-sm mb-1">Administratif & Financier</h5>
+                        <p className="text-xs text-gray-400 mb-2">Suivi comptable</p>
+                      </div>
+                      <div className="text-2xl font-black text-purple-400 font-orbitron">2h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Vérification loyers, relances impayés, reçus, rapprochement bancaire, quittances
+                    </p>
+                  </div>
+
+                  {/* Catégorie 3 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-orange-500/20 hover:border-orange-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">🧰</div>
+                      <div className="flex-1">
+                        <h5 className="text-orange-400 font-bold text-sm mb-1">Maintenance</h5>
+                        <p className="text-xs text-gray-400 mb-2">Interventions & travaux</p>
+                      </div>
+                      <div className="text-2xl font-black text-orange-400 font-orbitron">1-2h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Gestion prestataires, devis, suivi travaux, comptes rendus
+                    </p>
+                  </div>
+
+                  {/* Catégorie 4 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-green-500/20 hover:border-green-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">📑</div>
+                      <div className="flex-1">
+                        <h5 className="text-green-400 font-bold text-sm mb-1">Dossiers & Contrats</h5>
+                        <p className="text-xs text-gray-400 mb-2">Mise à jour légale</p>
+                      </div>
+                      <div className="text-2xl font-black text-green-400 font-orbitron">1h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Assurances, états des lieux, documents légaux, renouvellement bail
+                    </p>
+                  </div>
+
+                  {/* Catégorie 5 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-yellow-500/20 hover:border-yellow-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">🧮</div>
+                      <div className="flex-1">
+                        <h5 className="text-yellow-400 font-bold text-sm mb-1">Comptabilité</h5>
+                        <p className="text-xs text-gray-400 mb-2">Reporting & régularisations</p>
+                      </div>
+                      <div className="text-2xl font-black text-yellow-400 font-orbitron">1h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Calcul charges, régularisations, export comptable
+                    </p>
+                  </div>
+
+                  {/* Catégorie 6 */}
+                  <div className="bg-black/40 rounded-xl p-5 border border-pink-500/20 hover:border-pink-500/50 transition-all">
+                    <div className="flex items-start gap-3 mb-2">
+                      <div className="text-3xl">📸</div>
+                      <div className="flex-1">
+                        <h5 className="text-pink-400 font-bold text-sm mb-1">Visites & Relocations</h5>
+                        <p className="text-xs text-gray-400 mb-2">Selon turnover</p>
+                      </div>
+                      <div className="text-2xl font-black text-pink-400 font-orbitron">2-3h</div>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed">
+                      Photos, rédaction annonces, visites, filtrage candidats
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 bg-red-950/30 rounded-xl p-6 border border-red-500/30">
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <div className="text-4xl">⚠️</div>
+                    <h5 className="text-xl font-bold text-red-400">Pourquoi c'est une moyenne réaliste ?</h5>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-300">
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold">•</span>
+                      <p>Certains mois (sans problème) = 2h, d'autres (dégât des eaux, impayé) = 20h</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold">•</span>
+                      <p>Tâches réparties entre plusieurs personnes (coût horaire cumulé ≈ 35€/h)</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold">•</span>
+                      <p>Temps non automatisé : emails manuels, suivis Excel, relances individuelles</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-950/50 to-cyan-950/50 
+                                  rounded-full px-6 py-3 border border-emerald-500/30">
+                    <span className="text-2xl">🤖</span>
+                    <p className="text-emerald-400 font-bold">
+                      Avec l'automatisation : réduction à <span className="text-3xl font-orbitron">1-2h/mois</span>
+                    </p>
+                    <span className="text-emerald-400 text-sm">= 80-90% d'économie</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -293,7 +428,7 @@ const GestionLocative = () => {
                 
                 <div className="mb-4">
                   <div className="text-5xl font-black text-orange-400 font-orbitron animate-pulse">
-                    +16.8k€
+                    +14k€
                   </div>
                   <p className="text-sm text-gray-400 mt-2">pour 120 biens (3 agents)</p>
                 </div>
@@ -317,22 +452,22 @@ const GestionLocative = () => {
                 <div>
                   <div className="text-5xl mb-3">⏱️</div>
                   <div className="text-4xl font-black text-white mb-2 font-orbitron">
-                    480h
+                    400h
                   </div>
                   <p className="text-gray-300">
                     économisées par mois<br />
-                    <span className="text-cyan-400 text-sm">(12h × 120 / 3)</span>
+                    <span className="text-cyan-400 text-sm">(10h × 120 / 3)</span>
                   </p>
                 </div>
 
                 <div>
                   <div className="text-5xl mb-3">💰</div>
                   <div className="text-4xl font-black text-green-400 mb-2 font-orbitron">
-                    +16.8k€
+                    +14k€
                   </div>
                   <p className="text-gray-300">
                     gagnés par mois<br />
-                    <span className="text-green-400 text-sm">(480h × 35€/h)</span>
+                    <span className="text-green-400 text-sm">(400h × 35€/h)</span>
                   </p>
                 </div>
 
@@ -622,7 +757,7 @@ const GestionLocative = () => {
                 <div className="flex items-center gap-3">
                   <div className="text-3xl">💰</div>
                   <div>
-                    <div className="text-white font-bold">16.8k€</div>
+                    <div className="text-white font-bold">14k€</div>
                     <div className="text-xs">économisés/mois (120 biens)</div>
                   </div>
                 </div>
