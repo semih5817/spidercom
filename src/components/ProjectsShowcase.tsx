@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/mockProjects";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 import agiaLogo from "@/assets/agia-logo.png";
+import agenceImmoImage from "@/assets/agence-immo-automation.png";
 
 const ProjectsShowcase = () => {
   // Filter out coming soon projects and featured ones for the homepage
@@ -60,6 +61,12 @@ const ProjectsShowcase = () => {
                         className="w-auto h-full max-h-48 object-contain"
                       />
                     </div>
+                  ) : project.slug === 'automatisation-agences-immobilieres' ? (
+                    <img 
+                      src={agenceImmoImage} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   ) : (
                     <div className="p-2 scale-75">
                       <WorkflowDiagram />

@@ -3,6 +3,7 @@ import { Project } from "@/data/mockProjects";
 import { ArrowRight } from "lucide-react";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 import agiaLogo from "@/assets/agia-logo.png";
+import agenceImmoImage from "@/assets/agence-immo-automation.png";
 
 interface ProjectCardProps {
   project: Project;
@@ -43,6 +44,12 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 className="w-auto h-full max-h-48 object-contain"
               />
             </div>
+          ) : project.slug === 'automatisation-agences-immobilieres' ? (
+            <img 
+              src={agenceImmoImage} 
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 flex items-center justify-center p-2 scale-75">
               <WorkflowDiagram />

@@ -108,7 +108,7 @@ Opérateur de 5 parcs PV (1200 panneaux total). Avant : 20h/mois d'analyse manue
   {
     id: 2,
     slug: 'automatisation-agences-immobilieres',
-    title: 'Automatisation Complète pour Agences Immobilières',
+    title: 'Agence Immobilière — Automatisation Complète',
     shortDescription: 'Développement d\'un écosystème complet d\'automatisations via N8N et d\'outils visuels Lovable pour agences immobilières. Centralisation de la qualification de leads, publication multi-plateformes, gestion locative et reporting.',
     fullDescription: `Projet de transformation digitale complète pour agences immobilières.
     

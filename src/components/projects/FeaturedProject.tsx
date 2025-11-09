@@ -3,6 +3,7 @@ import { Project } from "@/data/mockProjects";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 import agiaLogo from "@/assets/agia-logo.png";
+import agenceImmoImage from "@/assets/agence-immo-automation.png";
 
 interface FeaturedProjectProps {
   project: Project;
@@ -46,6 +47,12 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
                     className="w-auto h-full max-h-64 object-contain"
                   />
                 </div>
+              ) : project.slug === 'automatisation-agences-immobilieres' ? (
+                <img 
+                  src={agenceImmoImage} 
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-xl"
+                />
               ) : (
                 <WorkflowDiagram />
               )}
