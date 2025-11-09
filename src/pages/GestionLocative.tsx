@@ -12,7 +12,6 @@ const GestionLocative = () => {
   const [biensGeres, setBiensGeres] = useState(120);
   const [heuresParBien, setHeuresParBien] = useState(10);
   const [coutHoraire, setCoutHoraire] = useState(35);
-
   const coutMensuel = biensGeres * heuresParBien * coutHoraire;
   const coutAnnuel = coutMensuel * 12;
   const scrollToDemo = () => {
@@ -129,34 +128,20 @@ const GestionLocative = () => {
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center mb-8">
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-3 font-medium">Biens gérés</div>
-                  <input
-                    type="number"
-                    min="1"
-                    max="1000"
-                    value={biensGeres}
-                    onChange={(e) => setBiensGeres(Number(e.target.value))}
-                    className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                  <input type="number" min="1" max="1000" value={biensGeres} onChange={e => setBiensGeres(Number(e.target.value))} className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
                              border-2 border-white/20 rounded-xl px-4 py-4 text-center
                              focus:border-white/50 focus:outline-none transition-all
-                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  />
+                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
                 </div>
                 
                 <div className="text-5xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-3 font-medium">Heures/bien/mois</div>
-                  <input
-                    type="number"
-                    min="1"
-                    max="50"
-                    value={heuresParBien}
-                    onChange={(e) => setHeuresParBien(Number(e.target.value))}
-                    className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                  <input type="number" min="1" max="50" value={heuresParBien} onChange={e => setHeuresParBien(Number(e.target.value))} className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
                              border-2 border-white/20 rounded-xl px-4 py-4 text-center
                              focus:border-white/50 focus:outline-none transition-all
-                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  />
+                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
                 </div>
                 
                 <div className="text-5xl text-gray-500 hidden md:block text-center">×</div>
@@ -164,17 +149,10 @@ const GestionLocative = () => {
                 <div className="text-center">
                   <div className="text-gray-400 text-sm mb-3 font-medium">Coût horaire</div>
                   <div className="relative">
-                    <input
-                      type="number"
-                      min="1"
-                      max="200"
-                      value={coutHoraire}
-                      onChange={(e) => setCoutHoraire(Number(e.target.value))}
-                      className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                    <input type="number" min="1" max="200" value={coutHoraire} onChange={e => setCoutHoraire(Number(e.target.value))} className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
                                border-2 border-white/20 rounded-xl px-4 py-4 pr-12 text-center
                                focus:border-white/50 focus:outline-none transition-all
-                               [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                    />
+                               [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl md:text-3xl text-white font-orbitron">€</span>
                   </div>
                 </div>
@@ -666,9 +644,7 @@ const GestionLocative = () => {
         <section className="px-8 py-20 bg-gradient-to-b from-black via-emerald-950/20 to-black">
           <div className="max-w-7xl mx-auto">
             
-            <h2 className="text-5xl font-bold text-center mb-16 text-white">
-              🎯 Pourquoi Choisir Spydercom ?
-            </h2>
+            <h2 className="text-5xl font-bold text-center mb-16 text-white">🎯 Pourquoi Choisir Spidercom ?</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               
