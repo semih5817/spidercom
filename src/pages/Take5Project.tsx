@@ -183,7 +183,7 @@ const ProblemSolutionSection = () => {
           Du chaos quotidien à l'automatisation totale
         </motion.p>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Before - Problems */}
           <motion.div initial={{
           opacity: 0,
@@ -196,45 +196,25 @@ const ProblemSolutionSection = () => {
         }} transition={{
           duration: 0.6
         }} className="relative">
-            <div className="sticky top-8">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 border-2 border-red-500/30 flex items-center justify-center">
-                  <TrendingDown className="w-8 h-8 text-red-500" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-red-500">Avant Take 5</h3>
-                  <p className="text-sm text-muted-foreground">Gestion manuelle chronophage</p>
-                </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 border-2 border-red-500/30 flex items-center justify-center">
+                <TrendingDown className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-500" />
               </div>
-              
-              <div className="space-y-3">
-                <ProblemItem>3-5 heures/mois perdues sur les avis</ProblemItem>
-                <ProblemItem>40% des avis sans réponse</ProblemItem>
-                <ProblemItem>Aucune vision des performances</ProblemItem>
-                <ProblemItem>Réponses tardives ou génériques</ProblemItem>
-                <ProblemItem>WhatsApp Business non exploité</ProblemItem>
-                <ProblemItem>Rapports manuels chronophages</ProblemItem>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-red-500">Avant Take 5</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">Gestion manuelle</p>
               </div>
             </div>
+            
+            <div className="space-y-2 md:space-y-3">
+              <ProblemItem>3-5 heures/mois perdues</ProblemItem>
+              <ProblemItem>40% des avis sans réponse</ProblemItem>
+              <ProblemItem>Aucune vision des performances</ProblemItem>
+              <ProblemItem>Réponses tardives</ProblemItem>
+              <ProblemItem>WhatsApp non exploité</ProblemItem>
+              <ProblemItem>Rapports manuels</ProblemItem>
+            </div>
           </motion.div>
-
-          {/* Arrow Separator */}
-          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <motion.div initial={{
-            scale: 0,
-            rotate: -180
-          }} whileInView={{
-            scale: 1,
-            rotate: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.8,
-            delay: 0.3
-          }} className="w-20 h-20 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-purple-600 flex items-center justify-center shadow-2xl shadow-primary/50">
-                <ArrowRight className="w-10 h-10 text-white" />
-              </motion.div>
-          </div>
 
           {/* After - Solutions */}
           <motion.div initial={{
@@ -249,25 +229,23 @@ const ProblemSolutionSection = () => {
           duration: 0.6,
           delay: 0.2
         }} className="relative">
-            <div className="sticky top-8">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 border-2 border-green-500/30 flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 text-green-500" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-green-500">Après Take 5</h3>
-                  <p className="text-sm text-muted-foreground">Automatisation intelligente</p>
-                </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 border-2 border-green-500/30 flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-green-500" />
               </div>
-              
-              <div className="space-y-3">
-                <SolutionItem>5 minutes/semaine de supervision</SolutionItem>
-                <SolutionItem>100% de réponses automatiques IA</SolutionItem>
-                <SolutionItem>Dashboard temps réel accessible</SolutionItem>
-                <SolutionItem>Réponses personnalisées en 2min</SolutionItem>
-                <SolutionItem>WhatsApp = centre de contrôle</SolutionItem>
-                <SolutionItem>Rapports automatiques mensuels</SolutionItem>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-green-500">Après Take 5</h3>
+                <p className="text-xs md:text-sm text-muted-foreground">Automatisation IA</p>
               </div>
+            </div>
+            
+            <div className="space-y-2 md:space-y-3">
+              <SolutionItem>5 min/semaine seulement</SolutionItem>
+              <SolutionItem>100% réponses automatiques</SolutionItem>
+              <SolutionItem>Dashboard temps réel</SolutionItem>
+              <SolutionItem>Réponses en 2 minutes</SolutionItem>
+              <SolutionItem>WhatsApp centre de contrôle</SolutionItem>
+              <SolutionItem>Rapports automatiques</SolutionItem>
             </div>
           </motion.div>
         </div>
@@ -290,11 +268,11 @@ const ProblemItem = ({
     once: true
   }} transition={{
     duration: 0.4
-  }} className="group flex items-start gap-4 p-4 rounded-xl bg-card/30 border border-red-500/20 hover:border-red-500/40 hover:bg-card/50 transition-all duration-300">
-      <div className="mt-0.5 w-6 h-6 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
-        <XCircle className="w-4 h-4 text-red-500" />
+  }} className="group flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-xl bg-card/30 border border-red-500/20 hover:border-red-500/40 hover:bg-card/50 transition-all duration-300">
+      <div className="mt-0.5 w-5 h-5 md:w-6 md:h-6 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
+        <XCircle className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
       </div>
-      <span className="text-base text-foreground/90 leading-relaxed">{children}</span>
+      <span className="text-sm md:text-base text-foreground/90 leading-relaxed">{children}</span>
     </motion.div>;
 };
 
@@ -313,11 +291,11 @@ const SolutionItem = ({
     once: true
   }} transition={{
     duration: 0.4
-  }} className="group flex items-start gap-4 p-4 rounded-xl bg-card/30 border border-green-500/20 hover:border-green-500/40 hover:bg-card/50 transition-all duration-300">
-      <div className="mt-0.5 w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/20 transition-colors">
-        <CheckCircle2 className="w-4 h-4 text-green-500" />
+  }} className="group flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-xl bg-card/30 border border-green-500/20 hover:border-green-500/40 hover:bg-card/50 transition-all duration-300">
+      <div className="mt-0.5 w-5 h-5 md:w-6 md:h-6 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/20 transition-colors">
+        <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4 text-green-500" />
       </div>
-      <span className="text-base text-foreground/90 leading-relaxed">{children}</span>
+      <span className="text-sm md:text-base text-foreground/90 leading-relaxed">{children}</span>
     </motion.div>;
 };
 
