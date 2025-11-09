@@ -7,14 +7,13 @@ import TicketKanbanBoard from "@/components/leads/TicketKanbanBoard";
 import PropertyManagementROICalculator from "@/components/leads/PropertyManagementROICalculator";
 import PropertyManagementWorkflowDiagram from "@/components/leads/PropertyManagementWorkflowDiagram";
 import CTABooking from "@/components/CTABooking";
-
 const GestionLocative = () => {
   const scrollToDemo = () => {
-    document.getElementById('kanban-section')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('kanban-section')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <BackgroundEffects />
       
@@ -285,7 +284,8 @@ const GestionLocative = () => {
                                   rounded-full px-6 py-3 border border-emerald-500/30">
                     <span className="text-2xl">🤖</span>
                     <p className="text-emerald-400 font-bold">
-                      Avec l'automatisation : réduction à <span className="text-3xl font-orbitron">1-2h/mois</span>
+                      Avec l'automatisation : réduction à <span className="text-3xl font-orbitron">
+1-2h/mois</span>
                     </p>
                     <span className="text-emerald-400 text-sm">= 80-90% d'économie</span>
                   </div>
@@ -303,13 +303,10 @@ const GestionLocative = () => {
               <p className="text-xl text-gray-300 mb-8">
                 IA + Automatisation • Maintenance préventive • Relances auto • Zéro oubli
               </p>
-              <button 
-                onClick={scrollToDemo}
-                className="px-12 py-5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white 
+              <button onClick={scrollToDemo} className="px-12 py-5 bg-gradient-to-r from-emerald-500 to-teal-600 text-white 
                            font-black text-2xl rounded-xl shadow-[0_0_40px_rgba(16,185,129,0.5)]
                            hover:shadow-[0_0_60px_rgba(16,185,129,0.7)] hover:scale-105 
-                           transition-all duration-300"
-              >
+                           transition-all duration-300">
                 ⚡ DÉCOUVRIR LA SOLUTION
               </button>
             </div>
@@ -723,18 +720,12 @@ const GestionLocative = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-teal-600 to-emerald-600 
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                {[...Array(30)].map((_, i) => (
-                  <div 
-                    key={i}
-                    className="absolute w-2 h-2 bg-white rounded-full animate-ping"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 3}s`,
-                      animationDuration: `${1 + Math.random() * 2}s`
-                    }}
-                  />
-                ))}
+                {[...Array(30)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${1 + Math.random() * 2}s`
+              }} />)}
               </button>
 
               <div className="mt-8 flex items-center justify-center gap-12 text-base text-gray-400">
@@ -784,8 +775,6 @@ const GestionLocative = () => {
 
       <CTABooking subtitle="Testons la gestion d'incident automatique en live" />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default GestionLocative;
