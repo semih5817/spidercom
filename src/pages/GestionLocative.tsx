@@ -128,39 +128,41 @@ const GestionLocative = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center mb-8">
                 <div className="text-center">
-                  <div className="text-gray-400 text-base mb-3">Biens gérés</div>
+                  <div className="text-gray-400 text-sm mb-3 font-medium">Biens gérés</div>
                   <input
                     type="number"
                     min="1"
                     max="1000"
                     value={biensGeres}
                     onChange={(e) => setBiensGeres(Number(e.target.value))}
-                    className="w-full text-6xl font-black text-white font-orbitron bg-transparent 
-                             border-2 border-white/20 rounded-xl px-6 py-6 text-center
-                             focus:border-white/50 focus:outline-none transition-all"
+                    className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-4 text-center
+                             focus:border-white/50 focus:outline-none transition-all
+                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
                 
-                <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
+                <div className="text-5xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
-                  <div className="text-gray-400 text-base mb-3">Heures/bien/mois</div>
+                  <div className="text-gray-400 text-sm mb-3 font-medium">Heures/bien/mois</div>
                   <input
                     type="number"
                     min="1"
                     max="50"
                     value={heuresParBien}
                     onChange={(e) => setHeuresParBien(Number(e.target.value))}
-                    className="w-full text-6xl font-black text-white font-orbitron bg-transparent 
-                             border-2 border-white/20 rounded-xl px-6 py-6 text-center
-                             focus:border-white/50 focus:outline-none transition-all"
+                    className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-4 text-center
+                             focus:border-white/50 focus:outline-none transition-all
+                             [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
                 
-                <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
+                <div className="text-5xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
-                  <div className="text-gray-400 text-base mb-3">Coût horaire</div>
+                  <div className="text-gray-400 text-sm mb-3 font-medium">Coût horaire</div>
                   <div className="relative">
                     <input
                       type="number"
@@ -168,11 +170,12 @@ const GestionLocative = () => {
                       max="200"
                       value={coutHoraire}
                       onChange={(e) => setCoutHoraire(Number(e.target.value))}
-                      className="w-full text-6xl font-black text-white font-orbitron bg-transparent 
-                               border-2 border-white/20 rounded-xl px-6 py-6 text-center pr-16
-                               focus:border-white/50 focus:outline-none transition-all"
+                      className="w-full min-h-[100px] text-4xl md:text-5xl font-black text-white font-orbitron bg-transparent 
+                               border-2 border-white/20 rounded-xl px-4 py-4 pr-12 text-center
+                               focus:border-white/50 focus:outline-none transition-all
+                               [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
-                    <span className="absolute right-6 top-1/2 -translate-y-1/2 text-4xl text-white font-orbitron">€</span>
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl md:text-3xl text-white font-orbitron">€</span>
                   </div>
                 </div>
               </div>
