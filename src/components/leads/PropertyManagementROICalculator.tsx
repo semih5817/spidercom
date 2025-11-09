@@ -294,12 +294,7 @@ const PropertyManagementROIResults = ({
                 +{Math.round(moneySavedRentDelay)}€
               </span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-red-950/30 rounded-lg border-t-2 border-gray-700">
-              <span className="text-gray-300">Coût Spydercom</span>
-              <span className="text-xl font-bold text-red-400">
-                -{costSpydercom}€
-              </span>
-            </div>
+            
           </div>
         </div>
 
