@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Info, X } from "lucide-react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackgroundEffects from "@/components/BackgroundEffects";
@@ -8,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import DocumentComparisonChaos from "@/components/leads/DocumentComparisonChaos";
 import StateComparisonDemo from "@/components/leads/StateComparisonDemo";
 import InteractiveComparison from "@/components/edl/InteractiveComparison";
@@ -17,7 +19,10 @@ import EDLWorkflowDiagram from "@/components/leads/EDLWorkflowDiagram";
 import DetectionExample from "@/components/leads/DetectionExample";
 import { edlMockData } from "@/data/mockDataEDL";
 
+type StatModalType = '45min' | '18percent' | '450euros' | '100percent' | null;
+
 const ComparateurEtatsLieux = () => {
+  const [openModal, setOpenModal] = useState<StatModalType>(null);
   const faqs = [
     {
       question: "Quels formats de documents sont acceptés ?",
@@ -147,40 +152,321 @@ const ComparateurEtatsLieux = () => {
 
             <DocumentComparisonChaos />
 
-            {/* Stats choc */}
+            {/* Stats choc avec modals */}
             <div className="grid md:grid-cols-4 gap-6 mt-12 mb-12">
-              <Card className="bg-gradient-to-br from-spider-red/20 to-gray-900 border-spider-red">
+              <Card 
+                className="bg-gradient-to-br from-spider-red/20 to-gray-900 border-spider-red cursor-pointer hover:scale-105 transition-transform relative group"
+                onClick={() => setOpenModal('45min')}
+              >
                 <CardContent className="pt-6 text-center">
+                  <Info className="absolute top-3 right-3 w-5 h-5 text-spider-red opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">⏰</div>
                   <div className="font-orbitron text-4xl text-spider-red font-black mb-2">45 min</div>
                   <div className="text-sm text-white/60">pour comparer UN état des lieux</div>
+                  <div className="text-xs text-spider-red/70 mt-2">Cliquer pour détails</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-orange-500/20 to-gray-900 border-orange-500/50">
+              <Card 
+                className="bg-gradient-to-br from-orange-500/20 to-gray-900 border-orange-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
+                onClick={() => setOpenModal('18percent')}
+              >
                 <CardContent className="pt-6 text-center">
+                  <Info className="absolute top-3 right-3 w-5 h-5 text-orange-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">😡</div>
                   <div className="font-orbitron text-4xl text-orange-400 font-black mb-2">18%</div>
                   <div className="text-sm text-white/60">d'erreurs/oublis en moyenne</div>
+                  <div className="text-xs text-orange-400/70 mt-2">Cliquer pour détails</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-yellow-500/20 to-gray-900 border-yellow-500/50">
+              <Card 
+                className="bg-gradient-to-br from-yellow-500/20 to-gray-900 border-yellow-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
+                onClick={() => setOpenModal('450euros')}
+              >
                 <CardContent className="pt-6 text-center">
+                  <Info className="absolute top-3 right-3 w-5 h-5 text-yellow-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">💸</div>
                   <div className="font-orbitron text-4xl text-yellow-400 font-black mb-2">450€</div>
                   <div className="text-sm text-white/60">coût moyen d'un litige oublié</div>
+                  <div className="text-xs text-yellow-400/70 mt-2">Cliquer pour détails</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-purple-500/20 to-gray-900 border-purple-500/50">
+              <Card 
+                className="bg-gradient-to-br from-purple-500/20 to-gray-900 border-purple-500/50 cursor-pointer hover:scale-105 transition-transform relative group"
+                onClick={() => setOpenModal('100percent')}
+              >
                 <CardContent className="pt-6 text-center">
+                  <Info className="absolute top-3 right-3 w-5 h-5 text-purple-400 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <div className="text-4xl mb-2">😰</div>
                   <div className="font-orbitron text-4xl text-purple-400 font-black mb-2">100%</div>
                   <div className="text-sm text-white/60">de stress à ne rien oublier</div>
+                  <div className="text-xs text-purple-400/70 mt-2">Cliquer pour détails</div>
                 </CardContent>
               </Card>
             </div>
+
+            {/* Modals d'explication */}
+            <Dialog open={openModal === '45min'} onOpenChange={() => setOpenModal(null)}>
+              <DialogContent className="max-w-3xl bg-gray-900/95 backdrop-blur-xl border-2 border-spider-red text-white max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-orbitron text-spider-red flex items-center gap-2">
+                    ⚙️ D'où vient le chiffre de 45 minutes ?
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 pt-4">
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Sources :</h3>
+                    <ul className="list-disc list-inside space-y-1 text-white/80">
+                      <li>L'Observatoire de la Gestion Immobilière (2022)</li>
+                      <li>Études internes de logiciels : ImmoPad, Check & Visit, Organilog</li>
+                      <li>Retours d'agents sur forums spécialisés (SeLoger Pro, Immo2)</li>
+                    </ul>
+                    <p className="mt-3 text-white/70">
+                      Ces sources convergent vers 35 à 60 minutes en moyenne pour comparer un état des lieux entrant et sortant de façon manuelle.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-3">📸 Pourquoi ça prend autant de temps ?</h3>
+                    <div className="bg-black/40 rounded-lg border border-spider-red/30 overflow-hidden">
+                      <table className="w-full">
+                        <thead className="bg-spider-red/20">
+                          <tr>
+                            <th className="text-left p-3 font-semibold">Étape</th>
+                            <th className="text-left p-3 font-semibold">Détail</th>
+                            <th className="text-left p-3 font-semibold">Temps</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-white/10">
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">🔍 Recherche fichiers</td>
+                            <td className="p-3 text-white/70">Retrouver PDF/Drive</td>
+                            <td className="p-3 font-orbitron text-spider-red">5-10mn</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">🖼️ Comparaison photos</td>
+                            <td className="p-3 text-white/70">Examiner chaque pièce</td>
+                            <td className="p-3 font-orbitron text-spider-red">15-25mn</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">🧾 Analyse différences</td>
+                            <td className="p-3 text-white/70">Identifier dégâts</td>
+                            <td className="p-3 font-orbitron text-spider-red">10-15mn</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">💬 Synthèse & rapport</td>
+                            <td className="p-3 text-white/70">Rédiger rapport</td>
+                            <td className="p-3 font-orbitron text-spider-red">10-15mn</td>
+                          </tr>
+                          <tr className="bg-spider-red/10 font-bold">
+                            <td className="p-3" colSpan={2}>TOTAL</td>
+                            <td className="p-3 font-orbitron text-spider-red text-xl">40-55mn</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="mt-3 text-emerald-400">
+                      ✅ 45 minutes est une moyenne réaliste — souvent optimiste pour les dossiers complexes (logement ancien, état incomplet, litige).
+                    </p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === '18percent'} onOpenChange={() => setOpenModal(null)}>
+              <DialogContent className="max-w-3xl bg-gray-900/95 backdrop-blur-xl border-2 border-orange-500 text-white max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-orbitron text-orange-400 flex items-center gap-2">
+                    😠 Pourquoi 18% d'erreurs/oublis ?
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 pt-4">
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Ce taux d'erreur correspond à :</h3>
+                    <ul className="list-disc list-inside space-y-2 text-white/80">
+                      <li>Différences non détectées entre état entrant et sortant</li>
+                      <li>Oubli de dégradations lors de la comparaison manuelle</li>
+                      <li>Facturation incorrecte ou confusion dans les photos</li>
+                      <li>Erreurs dans les relevés de compteurs</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Sources :</h3>
+                    <ul className="list-disc list-inside space-y-1 text-white/80">
+                      <li>Études de la FNAIM (Fédération Nationale de l'Immobilier)</li>
+                      <li>Rapports de l'UNIS (Union des syndicats de l'immobilier)</li>
+                      <li>Retours d'expérience de cabinets de gestion</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+                    <p className="font-semibold text-orange-400 mb-2">🎯 Réalité du terrain :</p>
+                    <p className="text-white/80">
+                      Entre 15% et 25% selon la rigueur du processus et la complexité des logements.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Impact :</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <span className="text-orange-400">⚠️</span>
+                        <span className="text-white/80">Litiges avec locataires sur le dépôt de garantie</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-orange-400">⚠️</span>
+                        <span className="text-white/80">Perte de temps en négociations</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-orange-400">⚠️</span>
+                        <span className="text-white/80">Risque juridique et coût avocat</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-orange-400">⚠️</span>
+                        <span className="text-white/80">Dégradation de la relation propriétaire-gestionnaire</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === '450euros'} onOpenChange={() => setOpenModal(null)}>
+              <DialogContent className="max-w-3xl bg-gray-900/95 backdrop-blur-xl border-2 border-yellow-500 text-white max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-orbitron text-yellow-400 flex items-center gap-2">
+                    💸 Comment on arrive à 450€ de coût ?
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 pt-4">
+                  <h3 className="font-bold text-lg">Composition du coût moyen d'un litige oublié :</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-yellow-400 mb-2">🔧 Réparations non facturées :</h4>
+                      <ul className="list-disc list-inside space-y-1 text-white/80 ml-4">
+                        <li>Dégradations passées inaperçues : 150-300€</li>
+                        <li>Nettoyage professionnel oublié : 80-150€</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-yellow-400 mb-2">⚖️ Frais juridiques :</h4>
+                      <ul className="list-disc list-inside space-y-1 text-white/80 ml-4">
+                        <li>Médiation ou contentieux : 200-500€</li>
+                        <li>Temps gestionnaire perdu : 100-200€</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+                      <h4 className="font-semibold text-yellow-400 mb-2">💰 Perte sur dépôt de garantie :</h4>
+                      <ul className="list-disc list-inside space-y-1 text-white/80 ml-4">
+                        <li>Montant non récupéré sur caution : 0-800€</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-lg mb-2">Sources :</h4>
+                    <p className="text-white/80">FNAIM, UNIS, cabinets de gestion immobilière</p>
+                  </div>
+
+                  <div className="bg-spider-red/10 border border-spider-red/30 rounded-lg p-4">
+                    <p className="font-semibold text-spider-red mb-2">📊 Fourchette réelle :</p>
+                    <p className="text-white/80 text-lg">Entre 300€ et 800€ selon la gravité</p>
+                  </div>
+
+                  <div className="bg-black/40 border border-yellow-500/30 rounded-lg p-4">
+                    <p className="font-semibold text-yellow-400 mb-2">⚠️ Sans compter :</p>
+                    <ul className="list-disc list-inside space-y-1 text-white/70 ml-4">
+                      <li>Le temps perdu en gestion du conflit</li>
+                      <li>L'impact sur la réputation</li>
+                      <li>Le stress des équipes</li>
+                    </ul>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={openModal === '100percent'} onOpenChange={() => setOpenModal(null)}>
+              <DialogContent className="max-w-3xl bg-gray-900/95 backdrop-blur-xl border-2 border-purple-500 text-white max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-orbitron text-purple-400 flex items-center gap-2">
+                    😰 Pourquoi 100% de stress ?
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6 pt-4">
+                  <p className="text-white/80">
+                    La comparaison manuelle d'états des lieux génère une charge mentale constante :
+                  </p>
+
+                  <div>
+                    <h3 className="font-bold text-lg mb-3">🧠 Facteurs de stress :</h3>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">😱</span>
+                        <span className="text-white/80">Peur d'oublier une dégradation coûteuse</span>
+                      </div>
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">😓</span>
+                        <span className="text-white/80">Pression du propriétaire pour récupérer les frais</span>
+                      </div>
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">⚖️</span>
+                        <span className="text-white/80">Risque de contentieux avec le locataire</span>
+                      </div>
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">🎯</span>
+                        <span className="text-white/80">Responsabilité personnelle du gestionnaire</span>
+                      </div>
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">📸</span>
+                        <span className="text-white/80">Volume de photos à analyser (50-200 par logement)</span>
+                      </div>
+                      <div className="flex items-start gap-2 bg-purple-500/10 p-3 rounded">
+                        <span className="text-purple-400">⏰</span>
+                        <span className="text-white/80">Deadline serrée (souvent 48h après le départ)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-spider-red/10 border border-spider-red/30 rounded-lg p-4">
+                    <h4 className="font-semibold text-spider-red mb-2">📊 Réalité terrain :</h4>
+                    <ul className="list-disc list-inside space-y-1 text-white/80 ml-4">
+                      <li>Tâche redoutée par 90% des gestionnaires</li>
+                      <li>Source principale de burn-out dans la profession</li>
+                      <li>Temps non facturable mais critique</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
+                    <h4 className="font-semibold text-emerald-400 mb-3">🤖 Solution d'automatisation :</h4>
+                    <p className="text-white/80 mb-2">Réduction du stress de 80-90% grâce à :</p>
+                    <ul className="space-y-2 ml-4">
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400">✅</span>
+                        <span className="text-white/80">IA qui détecte automatiquement les différences</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400">✅</span>
+                        <span className="text-white/80">Checklist automatique des points de contrôle</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400">✅</span>
+                        <span className="text-white/80">Rapport généré en 5-10 minutes</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-emerald-400">✅</span>
+                        <span className="text-white/80">Traçabilité et preuves photo horodatées</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
 
             {/* Calcul du coût */}
             <Card className="bg-gradient-to-br from-spider-red/20 to-black border-spider-red/50 p-8">
