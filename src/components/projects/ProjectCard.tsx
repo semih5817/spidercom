@@ -10,6 +10,9 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const isComingSoon = project.isComingSoon;
+  const projectLink = project.slug === 'take-5-automatisation-google-business' 
+    ? '/projets/take-5' 
+    : (project.demoUrl || '#');
 
   return (
     <motion.div
@@ -121,7 +124,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {/* CTA Button */}
         {!isComingSoon ? (
           <a
-            href={project.demoUrl || '#'}
+            href={projectLink}
             className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-bold rounded-lg hover:from-spider-red/80 hover:to-spider-red transition-all group"
           >
             Voir le projet complet

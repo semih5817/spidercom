@@ -14,6 +14,7 @@ import HomeStagingVirtuel from "./pages/HomeStagingVirtuel";
 import Contact from "./pages/Contact";
 import ComparateurEtatsLieux from "./pages/ComparateurEtatsLieux";
 import ProjetsRealises from "./pages/ProjetsRealises";
+import Take5Project from "./pages/Take5Project";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/comparateur-etats-lieux" element={<ComparateurEtatsLieux />} />
           <Route path="/projets-realises" element={<ProjetsRealises />} />
+          <Route path="/projets/take-5" element={<Take5Project />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
