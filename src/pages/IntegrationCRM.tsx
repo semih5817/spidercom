@@ -50,33 +50,33 @@ const IntegrationCRM = () => {
             {/* Stats choc */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
               <div className="group bg-gradient-to-br from-red-950/50 to-red-900/30 rounded-2xl p-8 border-2 border-red-500/30 hover:border-red-500 hover:shadow-[0_0_60px_rgba(239,68,68,0.4)] transition-all duration-300">
-                <div className="text-6xl mb-4">⏰</div>
-                <div className="text-7xl font-black text-red-500 mb-3 font-orbitron">10min</div>
-                <p className="text-lg text-gray-300">
+                <div className="text-5xl mb-4">⏰</div>
+                <div className="text-4xl md:text-5xl font-black text-red-500 mb-3 font-orbitron">10min</div>
+                <p className="text-sm md:text-base text-gray-300">
                   par lead saisi <span className="text-red-400 font-bold">manuellement</span>
                 </p>
               </div>
 
               <div className="group bg-gradient-to-br from-orange-950/50 to-orange-900/30 rounded-2xl p-8 border-2 border-orange-500/30 hover:border-orange-500 hover:shadow-[0_0_60px_rgba(251,146,60,0.4)] transition-all duration-300">
-                <div className="text-6xl mb-4">❌</div>
-                <div className="text-7xl font-black text-orange-500 mb-3 font-orbitron">12%</div>
-                <p className="text-lg text-gray-300">
+                <div className="text-5xl mb-4">❌</div>
+                <div className="text-4xl md:text-5xl font-black text-orange-500 mb-3 font-orbitron">12%</div>
+                <p className="text-sm md:text-base text-gray-300">
                   de <span className="text-orange-400 font-bold">données erronées</span> dans le CRM
                 </p>
               </div>
 
               <div className="group bg-gradient-to-br from-yellow-950/50 to-yellow-900/30 rounded-2xl p-8 border-2 border-yellow-500/30 hover:border-yellow-500 hover:shadow-[0_0_60px_rgba(251,191,36,0.4)] transition-all duration-300">
-                <div className="text-6xl mb-4">👥</div>
-                <div className="text-7xl font-black text-yellow-500 mb-3 font-orbitron">8%</div>
-                <p className="text-lg text-gray-300">
+                <div className="text-5xl mb-4">👥</div>
+                <div className="text-4xl md:text-5xl font-black text-yellow-500 mb-3 font-orbitron">8%</div>
+                <p className="text-sm md:text-base text-gray-300">
                   de <span className="text-yellow-400 font-bold">doublons</span> créés chaque mois
                 </p>
               </div>
 
               <div className="group bg-gradient-to-br from-purple-950/50 to-purple-900/30 rounded-2xl p-8 border-2 border-purple-500/30 hover:border-purple-500 hover:shadow-[0_0_60px_rgba(168,85,247,0.4)] transition-all duration-300">
-                <div className="text-6xl mb-4">💸</div>
-                <div className="text-7xl font-black text-purple-500 mb-3 font-orbitron">50h</div>
-                <p className="text-lg text-gray-300">
+                <div className="text-5xl mb-4">💸</div>
+                <div className="text-4xl md:text-5xl font-black text-purple-500 mb-3 font-orbitron">50h</div>
+                <p className="text-sm md:text-base text-gray-300">
                   <span className="text-purple-400 font-bold">perdues</span> par agent/mois
                 </p>
               </div>
