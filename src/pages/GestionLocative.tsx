@@ -742,14 +742,14 @@ const GestionLocative = () => {
                   <div className="text-3xl">⭐</div>
                   <div>
                     <div className="text-white font-bold">4.9/5</div>
-                    <div className="text-xs">247 avis vérifiés</div>
+                    <div className="text-xs">2 avis vérifiés</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center gap-3">
                   <div className="text-3xl">🏆</div>
                   <div>
-                    <div className="text-white font-bold">189 agences</div>
+                    <div className="text-white font-bold">2 agences</div>
                     <div className="text-xs">nous font confiance</div>
                   </div>
                 </div>
