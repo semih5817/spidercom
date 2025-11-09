@@ -128,15 +128,15 @@ const GestionLocative = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center mb-8">
                 <div className="text-center">
-                  <div className="text-gray-400 text-sm mb-3">Biens gérés</div>
+                  <div className="text-gray-400 text-sm mb-2">Biens gérés</div>
                   <input
                     type="number"
                     min="1"
                     max="1000"
                     value={biensGeres}
                     onChange={(e) => setBiensGeres(Number(e.target.value))}
-                    className="w-full text-4xl font-black text-white font-orbitron bg-transparent 
-                             border-2 border-white/20 rounded-xl px-6 py-4 text-center
+                    className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-2 text-center
                              focus:border-white/50 focus:outline-none transition-all"
                   />
                 </div>
@@ -144,15 +144,15 @@ const GestionLocative = () => {
                 <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
-                  <div className="text-gray-400 text-sm mb-3">Heures/bien/mois</div>
+                  <div className="text-gray-400 text-sm mb-2">Heures/bien/mois</div>
                   <input
                     type="number"
                     min="1"
                     max="50"
                     value={heuresParBien}
                     onChange={(e) => setHeuresParBien(Number(e.target.value))}
-                    className="w-full text-4xl font-black text-white font-orbitron bg-transparent 
-                             border-2 border-white/20 rounded-xl px-6 py-4 text-center
+                    className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                             border-2 border-white/20 rounded-xl px-4 py-2 text-center
                              focus:border-white/50 focus:outline-none transition-all"
                   />
                 </div>
@@ -160,7 +160,7 @@ const GestionLocative = () => {
                 <div className="text-6xl text-gray-500 hidden md:block text-center">×</div>
                 
                 <div className="text-center">
-                  <div className="text-gray-400 text-sm mb-3">Coût horaire</div>
+                  <div className="text-gray-400 text-sm mb-2">Coût horaire</div>
                   <div className="relative">
                     <input
                       type="number"
@@ -168,11 +168,11 @@ const GestionLocative = () => {
                       max="200"
                       value={coutHoraire}
                       onChange={(e) => setCoutHoraire(Number(e.target.value))}
-                      className="w-full text-4xl font-black text-white font-orbitron bg-transparent 
-                               border-2 border-white/20 rounded-xl px-6 py-4 pr-12 text-center
+                      className="w-full text-5xl font-black text-white font-orbitron bg-transparent 
+                               border-2 border-white/20 rounded-xl px-4 py-2 text-center
                                focus:border-white/50 focus:outline-none transition-all"
                     />
-                    <span className="absolute right-6 top-1/2 -translate-y-1/2 text-2xl text-white/70 font-orbitron">€</span>
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-3xl text-white font-orbitron">€</span>
                   </div>
                 </div>
               </div>
