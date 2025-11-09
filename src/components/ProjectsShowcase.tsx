@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/mockProjects";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
+import agiaLogo from "@/assets/agia-logo.png";
 
 const ProjectsShowcase = () => {
   // Filter out coming soon projects and featured ones for the homepage
@@ -51,6 +52,14 @@ const ProjectsShowcase = () => {
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
+                  ) : project.slug === 'agia' ? (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center p-8">
+                      <img 
+                        src={agiaLogo} 
+                        alt="AGIA Logo"
+                        className="w-auto h-full max-h-48 object-contain"
+                      />
+                    </div>
                   ) : (
                     <div className="p-2 scale-75">
                       <WorkflowDiagram />
