@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { mockRapports, mockDossiers, type EDLRapport, type Anomalie } from "./edlMockData";
+import { mockRapports, mockDossiers, type EDLRapport, type Anomalie } from "@/data/edlMockData";
 import { Progress } from "@/components/ui/progress";
 
 interface EDLRapportsZoneProps {

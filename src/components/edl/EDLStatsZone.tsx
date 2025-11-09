@@ -1,6 +1,6 @@
 import { TrendingUp, Clock, AlertTriangle, CheckCircle, XCircle, AlertCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { calculateGlobalStats } from "./edlMockData";
+import { calculateGlobalStats } from "@/data/edlMockData";
 
 export const EDLStatsZone = () => {
   const stats = calculateGlobalStats();
