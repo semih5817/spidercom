@@ -11,77 +11,77 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { StagingGalleryTab } from "@/components/staging/StagingGalleryTab";
 import { StagingDemoTab } from "@/components/staging/StagingDemoTab";
 import { StagingStatsTab } from "@/components/staging/StagingStatsTab";
-
 const HomeStagingVirtuel = () => {
   const [sliderPosition, setSliderPosition] = useState(50);
-
-  const styles = [
-    { id: 1, name: "Parisien Contemporain Minimaliste", emoji: "🏛️", isDefault: true },
-    { id: 2, name: "Scandinave Cosy", emoji: "🌲" },
-    { id: 3, name: "Industriel Chic", emoji: "🏭" },
-    { id: 4, name: "Haussmannien Classique", emoji: "👑" },
-    { id: 5, name: "Moderne Épuré", emoji: "✨" },
-    { id: 6, name: "Bohème Chic", emoji: "🌿" }
-  ];
-
-  const useCases = [
-    {
-      id: 1,
-      title: "Vente d'appartement vide",
-      description: "Vendez 40% plus vite avec des photos attractives",
-      before: "87 jours de délai moyen",
-      after: "52 jours",
-      icon: "🏠"
-    },
-    {
-      id: 2,
-      title: "Location meublée",
-      description: "Montrez le potentiel avant même d'acheter les meubles",
-      gain: "Économie 3 000€ de staging physique",
-      icon: "🔑"
-    },
-    {
-      id: 3,
-      title: "Programme neuf",
-      description: "Plans 3D + staging virtuel = combo gagnant",
-      impact: "+68% de pré-réservations",
-      icon: "🏗️"
-    },
-    {
-      id: 4,
-      title: "Réseaux sociaux",
-      description: "Contenu Instagram/Facebook premium en 1 clic",
-      engagement: "+127% vs photos vides",
-      icon: "📱"
-    }
-  ];
-
-
-  const faqs = [
-    {
-      question: "Quelle est la qualité des images générées ?",
-      answer: "Nos images sont photoréalistes en HD (jusqu'à 4K pour le plan Pro). L'IA génère des rendus indiscernables de vraies photos de staging."
-    },
-    {
-      question: "Combien de temps prend la génération ?",
-      answer: "En moyenne 30 secondes par image. Vous uploadez votre photo vide, sélectionnez un style, et l'IA génère le rendu instantanément."
-    },
-    {
-      question: "Ai-je les droits d'utilisation des images ?",
-      answer: "Oui, vous avez tous les droits d'utilisation commerciale des images générées. Vous pouvez les utiliser pour vos annonces, réseaux sociaux, sites web, etc."
-    },
-    {
-      question: "Peut-on modifier le résultat après génération ?",
-      answer: "Oui, vous pouvez régénérer avec un autre style autant de fois que vous le souhaitez. Chaque génération compte comme 1 crédit."
-    },
-    {
-      question: "Quels formats de photos sont supportés ?",
-      answer: "JPG, PNG, HEIC. Résolution minimum 1024x768px recommandée. Poids maximum 20MB par image."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const styles = [{
+    id: 1,
+    name: "Parisien Contemporain Minimaliste",
+    emoji: "🏛️",
+    isDefault: true
+  }, {
+    id: 2,
+    name: "Scandinave Cosy",
+    emoji: "🌲"
+  }, {
+    id: 3,
+    name: "Industriel Chic",
+    emoji: "🏭"
+  }, {
+    id: 4,
+    name: "Haussmannien Classique",
+    emoji: "👑"
+  }, {
+    id: 5,
+    name: "Moderne Épuré",
+    emoji: "✨"
+  }, {
+    id: 6,
+    name: "Bohème Chic",
+    emoji: "🌿"
+  }];
+  const useCases = [{
+    id: 1,
+    title: "Vente d'appartement vide",
+    description: "Vendez 40% plus vite avec des photos attractives",
+    before: "87 jours de délai moyen",
+    after: "52 jours",
+    icon: "🏠"
+  }, {
+    id: 2,
+    title: "Location meublée",
+    description: "Montrez le potentiel avant même d'acheter les meubles",
+    gain: "Économie 3 000€ de staging physique",
+    icon: "🔑"
+  }, {
+    id: 3,
+    title: "Programme neuf",
+    description: "Plans 3D + staging virtuel = combo gagnant",
+    impact: "+68% de pré-réservations",
+    icon: "🏗️"
+  }, {
+    id: 4,
+    title: "Réseaux sociaux",
+    description: "Contenu Instagram/Facebook premium en 1 clic",
+    engagement: "+127% vs photos vides",
+    icon: "📱"
+  }];
+  const faqs = [{
+    question: "Quelle est la qualité des images générées ?",
+    answer: "Nos images sont photoréalistes en HD (jusqu'à 4K pour le plan Pro). L'IA génère des rendus indiscernables de vraies photos de staging."
+  }, {
+    question: "Combien de temps prend la génération ?",
+    answer: "En moyenne 30 secondes par image. Vous uploadez votre photo vide, sélectionnez un style, et l'IA génère le rendu instantanément."
+  }, {
+    question: "Ai-je les droits d'utilisation des images ?",
+    answer: "Oui, vous avez tous les droits d'utilisation commerciale des images générées. Vous pouvez les utiliser pour vos annonces, réseaux sociaux, sites web, etc."
+  }, {
+    question: "Peut-on modifier le résultat après génération ?",
+    answer: "Oui, vous pouvez régénérer avec un autre style autant de fois que vous le souhaitez. Chaque génération compte comme 1 crédit."
+  }, {
+    question: "Quels formats de photos sont supportés ?",
+    answer: "JPG, PNG, HEIC. Résolution minimum 1024x768px recommandée. Poids maximum 20MB par image."
+  }];
+  return <div className="min-h-screen">
       <Header />
       <BackgroundEffects />
       
@@ -163,10 +163,9 @@ const HomeStagingVirtuel = () => {
                   </div>
                   
                   {/* Image Après (overlay) */}
-                  <div 
-                    className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-900 to-orange-900 flex items-center justify-center"
-                    style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-                  >
+                  <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-900 to-orange-900 flex items-center justify-center" style={{
+                  clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
+                }}>
                     <div className="text-center">
                       <div className="text-6xl mb-4">✨</div>
                       <p className="text-white font-inter font-semibold">Design IA - APRÈS</p>
@@ -174,20 +173,12 @@ const HomeStagingVirtuel = () => {
                   </div>
 
                   {/* Slider */}
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={sliderPosition}
-                    onChange={(e) => setSliderPosition(Number(e.target.value))}
-                    className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10 opacity-0 cursor-ew-resize"
-                  />
+                  <input type="range" min="0" max="100" value={sliderPosition} onChange={e => setSliderPosition(Number(e.target.value))} className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10 opacity-0 cursor-ew-resize" />
                   
                   {/* Ligne de séparation */}
-                  <div 
-                    className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 pointer-events-none"
-                    style={{ left: `${sliderPosition}%` }}
-                  >
+                  <div className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 pointer-events-none" style={{
+                  left: `${sliderPosition}%`
+                }}>
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-xl">
                       <div className="flex gap-1">
                         <div className="w-0.5 h-4 bg-gray-600"></div>
@@ -271,7 +262,7 @@ const HomeStagingVirtuel = () => {
 
             <div className="mt-8 p-6 bg-red-950/30 border border-red-500/30 rounded-xl text-center">
               <p className="font-inter text-lg text-white/80">
-                <span className="font-bold text-red-400">Et si l'acquéreur n'aime pas le style choisi ?</span><br/>
+                <span className="font-bold text-red-400">Et si l'acquéreur n'aime pas le style choisi ?</span><br />
                 Vous avez investi des milliers d'euros... pour rien.
               </p>
             </div>
@@ -282,26 +273,46 @@ const HomeStagingVirtuel = () => {
         <section className="px-4 py-20">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-12">
-              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-                ✅ La Solution Spydercom
-              </h2>
+              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">✅ La Solution Spidercom</h2>
               <p className="font-inter text-xl text-white/70">
-                Uploadez votre photo vide et obtenez un rendu design en 30 secondes.<br/>
+                Uploadez votre photo vide et obtenez un rendu design en 30 secondes.<br />
                 Changez de style à volonté. Zéro contrainte physique.
               </p>
             </div>
 
             {/* Workflow Steps */}
             <div className="space-y-4">
-              {[
-                { num: 1, icon: "📤", title: "Upload photo pièce vide", desc: "JPG, PNG, HEIC - Max 20MB" },
-                { num: 2, icon: "🎨", title: "Sélection style", desc: "Parisien Contemporain, Scandinave, Industriel..." },
-                { num: 3, icon: "⚡", title: "IA génère le staging", desc: "30 secondes de traitement" },
-                { num: 4, icon: "👀", title: "Preview Avant/Après", desc: "Slider comparaison interactif" },
-                { num: 5, icon: "⬇️", title: "Téléchargement HD", desc: "Jusqu'à 4K selon votre plan" },
-                { num: 6, icon: "🚀", title: "Utilisation libre", desc: "Annonces, réseaux sociaux, site web..." }
-              ].map((step) => (
-                <div key={step.num} className="flex items-start gap-4 p-4 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all group">
+              {[{
+              num: 1,
+              icon: "📤",
+              title: "Upload photo pièce vide",
+              desc: "JPG, PNG, HEIC - Max 20MB"
+            }, {
+              num: 2,
+              icon: "🎨",
+              title: "Sélection style",
+              desc: "Parisien Contemporain, Scandinave, Industriel..."
+            }, {
+              num: 3,
+              icon: "⚡",
+              title: "IA génère le staging",
+              desc: "30 secondes de traitement"
+            }, {
+              num: 4,
+              icon: "👀",
+              title: "Preview Avant/Après",
+              desc: "Slider comparaison interactif"
+            }, {
+              num: 5,
+              icon: "⬇️",
+              title: "Téléchargement HD",
+              desc: "Jusqu'à 4K selon votre plan"
+            }, {
+              num: 6,
+              icon: "🚀",
+              title: "Utilisation libre",
+              desc: "Annonces, réseaux sociaux, site web..."
+            }].map(step => <div key={step.num} className="flex items-start gap-4 p-4 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl border border-pink-500/20 hover:border-pink-500/50 transition-all group">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-white font-orbitron font-black">
                     {step.num}
                   </div>
@@ -313,8 +324,7 @@ const HomeStagingVirtuel = () => {
                     <p className="font-inter text-sm text-white/60">{step.desc}</p>
                   </div>
                   <ArrowRight className="w-6 h-6 text-pink-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -389,15 +399,31 @@ const HomeStagingVirtuel = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {[
-                { title: "Salon 45m² - Paris 16e", type: "Salon", impact: "+52% de visites" },
-                { title: "Chambre 18m² - Lyon 6e", type: "Chambre", impact: "+47% de conversion" },
-                { title: "Cuisine 12m² - Bordeaux", type: "Cuisine", impact: "+61% d'engagement" },
-                { title: "Bureau 15m² - Nantes", type: "Bureau", impact: "+38% de visites" },
-                { title: "Salon 38m² - Toulouse", type: "Salon", impact: "+55% de conversion" },
-                { title: "Chambre 22m² - Nice", type: "Chambre", impact: "+43% d'engagement" }
-              ].map((example, index) => (
-                <Card key={index} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 overflow-hidden group hover:border-pink-500/50 transition-all">
+              {[{
+              title: "Salon 45m² - Paris 16e",
+              type: "Salon",
+              impact: "+52% de visites"
+            }, {
+              title: "Chambre 18m² - Lyon 6e",
+              type: "Chambre",
+              impact: "+47% de conversion"
+            }, {
+              title: "Cuisine 12m² - Bordeaux",
+              type: "Cuisine",
+              impact: "+61% d'engagement"
+            }, {
+              title: "Bureau 15m² - Nantes",
+              type: "Bureau",
+              impact: "+38% de visites"
+            }, {
+              title: "Salon 38m² - Toulouse",
+              type: "Salon",
+              impact: "+55% de conversion"
+            }, {
+              title: "Chambre 22m² - Nice",
+              type: "Chambre",
+              impact: "+43% d'engagement"
+            }].map((example, index) => <Card key={index} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 overflow-hidden group hover:border-pink-500/50 transition-all">
                   <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-600 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
@@ -421,8 +447,7 @@ const HomeStagingVirtuel = () => {
                     <h3 className="font-orbitron font-bold text-white mb-2">{example.title}</h3>
                     <p className="font-inter text-sm text-emerald-400 font-semibold">{example.impact}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -440,8 +465,7 @@ const HomeStagingVirtuel = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {styles.map((style) => (
-                <Card key={style.id} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 hover:border-pink-500 transition-all group cursor-pointer">
+              {styles.map(style => <Card key={style.id} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 hover:border-pink-500 transition-all group cursor-pointer">
                   <div className="aspect-video bg-gradient-to-br from-pink-900/20 to-orange-900/20 flex items-center justify-center border-b border-pink-500/20">
                     <div className="text-7xl">{style.emoji}</div>
                   </div>
@@ -449,14 +473,11 @@ const HomeStagingVirtuel = () => {
                     <h3 className="font-orbitron font-bold text-white group-hover:text-pink-400 transition-colors">
                       {style.name}
                     </h3>
-                    {style.isDefault && (
-                      <span className="inline-block mt-2 px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-inter font-semibold">
+                    {style.isDefault && <span className="inline-block mt-2 px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-inter font-semibold">
                         ⭐ Recommandé
-                      </span>
-                    )}
+                      </span>}
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -474,8 +495,7 @@ const HomeStagingVirtuel = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {useCases.map((useCase) => (
-                <Card key={useCase.id} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 hover:border-pink-500/50 transition-all">
+              {useCases.map(useCase => <Card key={useCase.id} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 hover:border-pink-500/50 transition-all">
                   <CardHeader>
                     <CardTitle className="font-orbitron text-white flex items-center gap-3">
                       <span className="text-4xl">{useCase.icon}</span>
@@ -486,36 +506,25 @@ const HomeStagingVirtuel = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-2">
-                    {useCase.before && (
-                      <div className="flex items-center justify-between p-3 bg-red-950/30 border border-red-500/20 rounded-lg">
+                    {useCase.before && <div className="flex items-center justify-between p-3 bg-red-950/30 border border-red-500/20 rounded-lg">
                         <span className="font-inter text-sm text-white/60">Avant :</span>
                         <span className="font-inter font-semibold text-red-400">{useCase.before}</span>
-                      </div>
-                    )}
-                    {useCase.after && (
-                      <div className="flex items-center justify-between p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
+                      </div>}
+                    {useCase.after && <div className="flex items-center justify-between p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
                         <span className="font-inter text-sm text-white/60">Après :</span>
                         <span className="font-inter font-semibold text-emerald-400">{useCase.after}</span>
-                      </div>
-                    )}
-                    {useCase.gain && (
-                      <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
+                      </div>}
+                    {useCase.gain && <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
                         <span className="font-inter font-semibold text-emerald-400">{useCase.gain}</span>
-                      </div>
-                    )}
-                    {useCase.impact && (
-                      <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
+                      </div>}
+                    {useCase.impact && <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
                         <span className="font-inter font-semibold text-emerald-400">{useCase.impact}</span>
-                      </div>
-                    )}
-                    {useCase.engagement && (
-                      <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
+                      </div>}
+                    {useCase.engagement && <div className="p-3 bg-emerald-950/30 border border-emerald-500/20 rounded-lg">
                         <span className="font-inter font-semibold text-emerald-400">{useCase.engagement}</span>
-                      </div>
-                    )}
+                      </div>}
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -531,20 +540,14 @@ const HomeStagingVirtuel = () => {
             </div>
 
             <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 rounded-xl px-6 data-[state=open]:border-pink-500/50"
-                >
+              {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 rounded-xl px-6 data-[state=open]:border-pink-500/50">
                   <AccordionTrigger className="font-orbitron font-bold text-white hover:text-pink-400 py-4">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="font-inter text-white/70 pb-4">
                     {faq.answer}
                   </AccordionContent>
-                </AccordionItem>
-              ))}
+                </AccordionItem>)}
             </Accordion>
           </div>
         </section>
@@ -610,8 +613,6 @@ const HomeStagingVirtuel = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default HomeStagingVirtuel;
