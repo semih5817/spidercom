@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import SpiderLogo from "./SpiderLogo";
 import { useCalendly } from "@/hooks/useCalendly";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAgenciesMenuOpen, setIsAgenciesMenuOpen] = useState(false);
+  const [isOutilsMenuOpen, setIsOutilsMenuOpen] = useState(false);
+  
   const {
     openCalendly
   } = useCalendly();
@@ -138,65 +142,161 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && <nav className="lg:hidden py-4 border-t border-gray-800">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-2">
               
-
-              <div className="space-y-2">
+              {/* Agence Immobilière Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsAgenciesMenuOpen(!isAgenciesMenuOpen)}
+                  className="w-full flex items-center justify-between px-4 py-2 font-inter font-medium text-white/80 hover:text-spider-red transition-colors"
+                >
+                  <span>Agence Immobilière</span>
+                  <ChevronRight className={`w-4 h-4 transition-transform ${isAgenciesMenuOpen ? 'rotate-90' : ''}`} />
+                </button>
                 
-                
-                {/* Automatisations */}
-                <div className="pl-2">
-                  <div className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider mb-2">
-                    Automatisations
-                  </div>
-                  {agenciesSolutions.automations.map(item => <NavLink key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)} className={({
-                isActive
-              }) => `block pl-4 py-2 font-inter text-sm transition-colors ${isActive ? "text-spider-red" : "text-white/80"}`}>
-                      {item.name}
-                    </NavLink>)}
-                </div>
+                {isAgenciesMenuOpen && (
+                  <div className="space-y-2 mt-2">
+                    {/* Automatisations */}
+                    <div className="pl-4">
+                      <div className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider mb-2 px-4">
+                        Automatisations
+                      </div>
+                      {agenciesSolutions.automations.map(item => (
+                        <NavLink
+                          key={item.path}
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={({ isActive }) => 
+                            `block pl-8 py-2 font-inter text-sm transition-colors ${
+                              isActive ? "text-spider-red" : "text-white/80"
+                            }`
+                          }
+                        >
+                          {item.name}
+                        </NavLink>
+                      ))}
+                    </div>
 
-                {/* Outils */}
-                <div className="pl-2 mt-3">
-                  <div className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider mb-2">
-                    Outils
+                    {/* Outils Agence */}
+                    <div className="pl-4 mt-3">
+                      <div className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider mb-2 px-4">
+                        Outils
+                      </div>
+                      {agenciesSolutions.outils.map(item => (
+                        <NavLink
+                          key={item.path}
+                          to={item.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={({ isActive }) => 
+                            `block pl-8 py-2 font-inter text-sm transition-colors ${
+                              isActive ? "text-spider-cyan" : "text-white/80"
+                            }`
+                          }
+                        >
+                          {item.name}
+                        </NavLink>
+                      ))}
+                    </div>
                   </div>
-                  {agenciesSolutions.outils.map(item => <NavLink key={item.path} to={item.path} onClick={() => setIsMenuOpen(false)} className={({
-                isActive
-              }) => `block pl-4 py-2 font-inter text-sm transition-colors ${isActive ? "text-spider-cyan" : "text-white/80"}`}>
-                      {item.name}
-                    </NavLink>)}
-                </div>
+                )}
               </div>
 
-              <NavLink to="/outils" onClick={() => setIsMenuOpen(false)} className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-cyan" : "text-white/80"}`}>
-                Outils
-              </NavLink>
+              {/* Outils Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsOutilsMenuOpen(!isOutilsMenuOpen)}
+                  className="w-full flex items-center justify-between px-4 py-2 font-inter font-medium text-white/80 hover:text-spider-cyan transition-colors"
+                >
+                  <span>Outils</span>
+                  <ChevronRight className={`w-4 h-4 transition-transform ${isOutilsMenuOpen ? 'rotate-90' : ''}`} />
+                </button>
+                
+                {isOutilsMenuOpen && (
+                  <div className="pl-8 space-y-2 mt-2">
+                    <NavLink
+                      to="/outils"
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) => 
+                        `block py-2 font-inter text-sm transition-colors ${
+                          isActive ? "text-spider-cyan" : "text-white/80"
+                        }`
+                      }
+                    >
+                      AGIA Dashboard
+                    </NavLink>
+                    <NavLink
+                      to="/home-staging-virtuel"
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) => 
+                        `block py-2 font-inter text-sm transition-colors ${
+                          isActive ? "text-spider-cyan" : "text-white/80"
+                        }`
+                      }
+                    >
+                      Home Staging Virtuel
+                    </NavLink>
+                    <NavLink
+                      to="/comparateur-etats-lieux"
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) => 
+                        `block py-2 font-inter text-sm transition-colors ${
+                          isActive ? "text-spider-cyan" : "text-white/80"
+                        }`
+                      }
+                    >
+                      Comparateur États des Lieux
+                    </NavLink>
+                  </div>
+                )}
+              </div>
 
-              <NavLink to="/projets-realises" onClick={() => setIsMenuOpen(false)} className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red" : "text-white/80"}`}>
+              {/* Projets Réalisés */}
+              <NavLink
+                to="/projets-realises"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => 
+                  `px-4 py-2 font-inter font-medium transition-colors ${
+                    isActive ? "text-spider-red" : "text-white/80"
+                  }`
+                }
+              >
                 Projets Réalisés
               </NavLink>
 
-              <NavLink to="/contact" onClick={() => setIsMenuOpen(false)} className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red" : "text-white/80"}`}>
+              {/* À propos */}
+              <NavLink
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => 
+                  `px-4 py-2 font-inter font-medium transition-colors ${
+                    isActive ? "text-spider-red" : "text-white/80"
+                  }`
+                }
+              >
                 À propos
               </NavLink>
 
-              <NavLink to="/contact" onClick={() => setIsMenuOpen(false)} className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red" : "text-white/80"}`}>
+              {/* Contact */}
+              <NavLink
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) => 
+                  `px-4 py-2 font-inter font-medium transition-colors ${
+                    isActive ? "text-spider-red" : "text-white/80"
+                  }`
+                }
+              >
                 Contact
               </NavLink>
 
-              <button onClick={() => {
-            openCalendly();
-            setIsMenuOpen(false);
-          }} className="px-6 py-2.5 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg">
+              {/* Démo Gratuite */}
+              <button
+                onClick={() => {
+                  openCalendly();
+                  setIsMenuOpen(false);
+                }}
+                className="mx-4 mt-2 px-6 py-2.5 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg"
+              >
                 Démo Gratuite
               </button>
             </div>
