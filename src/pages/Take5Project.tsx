@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, ArrowRight, XCircle, CheckCircle2, TrendingDown, TrendingUp } from "lucide-react";
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -155,7 +155,7 @@ const StatBox = ({
 
 // Problem vs Solution Section
 const ProblemSolutionSection = () => {
-  return <section className="py-20 px-4 bg-background">
+  return <section className="py-20 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto max-w-6xl">
         <motion.h2 initial={{
         opacity: 0,
@@ -165,82 +165,161 @@ const ProblemSolutionSection = () => {
         y: 0
       }} viewport={{
         once: true
-      }} className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-[hsl(var(--primary))] to-purple-600 bg-clip-text text-transparent">
+      }} className="text-4xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-[hsl(var(--primary))] to-purple-600 bg-clip-text text-transparent">
           La Transformation Take 5
         </motion.h2>
+        
+        <motion.p initial={{
+        opacity: 0,
+        y: 10
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        delay: 0.1
+      }} className="text-center text-muted-foreground mb-16 text-lg">
+          Du chaos quotidien à l'automatisation totale
+        </motion.p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Before - Problems */}
           <motion.div initial={{
           opacity: 0,
-          x: -20
+          x: -30
         }} whileInView={{
           opacity: 1,
           x: 0
         }} viewport={{
           once: true
-        }} className="relative bg-gradient-to-br from-red-950/20 to-background border-2 border-red-500 rounded-3xl p-8 overflow-hidden">
-            <div className="absolute -top-px left-8 bg-background px-4 py-2 rounded-b-xl">
-              <span className="font-bold text-red-500">❌ AVANT</span>
-            </div>
-            
-            <h3 className="text-2xl font-bold text-red-500 mb-8 mt-4">Les Galères du Quotidien</h3>
-            
-            <div className="space-y-4">
-              <ProblemItem>3-5 heures/mois perdues sur les avis</ProblemItem>
-              <ProblemItem>40% des avis sans réponse</ProblemItem>
-              <ProblemItem>Aucune vision des performances</ProblemItem>
-              <ProblemItem>Réponses tardives ou génériques</ProblemItem>
-              <ProblemItem>WhatsApp Business non exploité</ProblemItem>
-              <ProblemItem>Rapports manuels chronophages</ProblemItem>
+        }} transition={{
+          duration: 0.6
+        }} className="relative">
+            <div className="sticky top-8">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/20 border-2 border-red-500/30 flex items-center justify-center">
+                  <TrendingDown className="w-8 h-8 text-red-500" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-red-500">Avant Take 5</h3>
+                  <p className="text-sm text-muted-foreground">Gestion manuelle chronophage</p>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <ProblemItem>3-5 heures/mois perdues sur les avis</ProblemItem>
+                <ProblemItem>40% des avis sans réponse</ProblemItem>
+                <ProblemItem>Aucune vision des performances</ProblemItem>
+                <ProblemItem>Réponses tardives ou génériques</ProblemItem>
+                <ProblemItem>WhatsApp Business non exploité</ProblemItem>
+                <ProblemItem>Rapports manuels chronophages</ProblemItem>
+              </div>
             </div>
           </motion.div>
+
+          {/* Arrow Separator */}
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <motion.div initial={{
+            scale: 0,
+            rotate: -180
+          }} whileInView={{
+            scale: 1,
+            rotate: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.8,
+            delay: 0.3
+          }} className="w-20 h-20 rounded-full bg-gradient-to-br from-[hsl(var(--primary))] to-purple-600 flex items-center justify-center shadow-2xl shadow-primary/50">
+                <ArrowRight className="w-10 h-10 text-white" />
+              </motion.div>
+          </div>
 
           {/* After - Solutions */}
           <motion.div initial={{
           opacity: 0,
-          x: 20
+          x: 30
         }} whileInView={{
           opacity: 1,
           x: 0
         }} viewport={{
           once: true
-        }} className="relative bg-gradient-to-br from-green-950/20 to-background border-2 border-green-500 rounded-3xl p-8 overflow-hidden">
-            <div className="absolute -top-px left-8 bg-background px-4 py-2 rounded-b-xl">
-              <span className="font-bold text-green-500">✅ APRÈS</span>
-            </div>
-            
-            <h3 className="text-2xl font-bold text-green-500 mb-8 mt-4">La Magie Spidercom</h3>
-            
-            <div className="space-y-4">
-              <SolutionItem>5 minutes/semaine de supervision</SolutionItem>
-              <SolutionItem>100% de réponses automatiques IA</SolutionItem>
-              <SolutionItem>Dashboard temps réel accessible</SolutionItem>
-              <SolutionItem>Réponses personnalisées en 2min</SolutionItem>
-              <SolutionItem>WhatsApp = centre de contrôle</SolutionItem>
-              <SolutionItem>Rapports automatiques mensuels</SolutionItem>
+        }} transition={{
+          duration: 0.6,
+          delay: 0.2
+        }} className="relative">
+            <div className="sticky top-8">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 border-2 border-green-500/30 flex items-center justify-center">
+                  <TrendingUp className="w-8 h-8 text-green-500" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-green-500">Après Take 5</h3>
+                  <p className="text-sm text-muted-foreground">Automatisation intelligente</p>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <SolutionItem>5 minutes/semaine de supervision</SolutionItem>
+                <SolutionItem>100% de réponses automatiques IA</SolutionItem>
+                <SolutionItem>Dashboard temps réel accessible</SolutionItem>
+                <SolutionItem>Réponses personnalisées en 2min</SolutionItem>
+                <SolutionItem>WhatsApp = centre de contrôle</SolutionItem>
+                <SolutionItem>Rapports automatiques mensuels</SolutionItem>
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>;
 };
+
 const ProblemItem = ({
   children
 }: {
   children: React.ReactNode;
-}) => <div className="flex items-center gap-3 text-lg text-foreground/90">
-    <span className="text-2xl">😫</span>
-    <span>{children}</span>
-  </div>;
+}) => {
+  return <motion.div initial={{
+    opacity: 0,
+    x: -20
+  }} whileInView={{
+    opacity: 1,
+    x: 0
+  }} viewport={{
+    once: true
+  }} transition={{
+    duration: 0.4
+  }} className="group flex items-start gap-4 p-4 rounded-xl bg-card/30 border border-red-500/20 hover:border-red-500/40 hover:bg-card/50 transition-all duration-300">
+      <div className="mt-0.5 w-6 h-6 rounded-lg bg-red-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
+        <XCircle className="w-4 h-4 text-red-500" />
+      </div>
+      <span className="text-base text-foreground/90 leading-relaxed">{children}</span>
+    </motion.div>;
+};
+
 const SolutionItem = ({
   children
 }: {
   children: React.ReactNode;
-}) => <div className="flex items-center gap-3 text-lg text-foreground/90">
-    <span className="text-2xl">🚀</span>
-    <span>{children}</span>
-  </div>;
+}) => {
+  return <motion.div initial={{
+    opacity: 0,
+    x: 20
+  }} whileInView={{
+    opacity: 1,
+    x: 0
+  }} viewport={{
+    once: true
+  }} transition={{
+    duration: 0.4
+  }} className="group flex items-start gap-4 p-4 rounded-xl bg-card/30 border border-green-500/20 hover:border-green-500/40 hover:bg-card/50 transition-all duration-300">
+      <div className="mt-0.5 w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/20 transition-colors">
+        <CheckCircle2 className="w-4 h-4 text-green-500" />
+      </div>
+      <span className="text-base text-foreground/90 leading-relaxed">{children}</span>
+    </motion.div>;
+};
 
 // Technology Stack Section
 const TechStackSection = () => {
