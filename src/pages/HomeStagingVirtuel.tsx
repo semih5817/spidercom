@@ -155,22 +155,10 @@ const HomeStagingVirtuel = () => {
               <div className="max-w-3xl mx-auto mt-12 relative">
                 <div className="relative rounded-2xl overflow-hidden border-2 border-pink-500/30 shadow-[0_0_60px_rgba(236,72,153,0.3)]">
                   {/* Image Avant (background) */}
-                  <div className="w-full h-96 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">🏚️</div>
-                      <p className="text-white/60 font-inter">Pièce vide - AVANT</p>
-                    </div>
-                  </div>
+                  
                   
                   {/* Image Après (overlay) */}
-                  <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-900 to-orange-900 flex items-center justify-center" style={{
-                  clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`
-                }}>
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">✨</div>
-                      <p className="text-white font-inter font-semibold">Design IA - APRÈS</p>
-                    </div>
-                  </div>
+                  
 
                   {/* Slider */}
                   <input type="range" min="0" max="100" value={sliderPosition} onChange={e => setSliderPosition(Number(e.target.value))} className="absolute top-1/2 left-0 w-full -translate-y-1/2 z-10 opacity-0 cursor-ew-resize" />
@@ -204,18 +192,7 @@ const HomeStagingVirtuel = () => {
         {/* BANDEAU WORKFLOW */}
         <section className="px-4 py-6 bg-gradient-to-r from-pink-950/30 via-spider-red/20 to-orange-950/30 border-y border-pink-500/20">
           <div className="container mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-inter">
-              <span className="text-white/60">💡 Workflow complet :</span>
-              <span className="text-white font-semibold">Stagez vos photos</span>
-              <span className="text-pink-400">→</span>
-              <Link to="/publication-multi-plateformes" className="text-pink-400 hover:text-pink-300 transition-colors underline">
-                Publiez sur 6 portails
-              </Link>
-              <span className="text-pink-400">→</span>
-              <Link to="/gestion-locative" className="text-pink-400 hover:text-pink-300 transition-colors underline">
-                Gérez les visites
-              </Link>
-            </div>
+            
           </div>
         </section>
 
