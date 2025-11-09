@@ -174,8 +174,8 @@ const RelanceROIResults = ({
           <div className="text-white text-xl mb-3 font-bold">
             💰 GAIN NET MENSUEL
           </div>
-          <div className="text-8xl font-black text-white mb-4 font-orbitron tabular-nums
-                          animate-pulse">💰 GAIN NET MENSUEL{Math.floor(gainNet / 1000)}k€
+          <div className="text-5xl font-black text-white mb-4 font-orbitron tabular-nums">
+            +{Math.floor(gainNet / 1000)}k€
           </div>
           <div className="flex items-center justify-center gap-8 text-white/90 text-sm">
             <div>
