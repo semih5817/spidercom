@@ -320,33 +320,33 @@ const PropertyManagementROIResults = ({
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="text-5xl mb-3">💰</div>
-            <div className="text-gray-400 text-sm mb-2">GAIN ANNUEL NET</div>
-            <div className="text-5xl font-black text-white">
+            <div className="text-5xl mb-4">💰</div>
+            <div className="text-gray-400 text-xs md:text-sm mb-3 font-medium uppercase tracking-wide">GAIN ANNUEL NET</div>
+            <div className="text-4xl md:text-6xl font-black text-white font-orbitron tabular-nums">
               {Math.round(netGain * 12 / 1000)}k€
             </div>
           </div>
 
           <div className="text-center">
-            <div className="text-5xl mb-3">⏱️</div>
-            <div className="text-gray-400 text-sm mb-2">HEURES LIBÉRÉES</div>
-            <div className="text-5xl font-black text-white">
+            <div className="text-5xl mb-4">⏱️</div>
+            <div className="text-gray-400 text-xs md:text-sm mb-3 font-medium uppercase tracking-wide">HEURES LIBÉRÉES</div>
+            <div className="text-4xl md:text-6xl font-black text-white font-orbitron tabular-nums">
               {Math.round(hoursSaved * 12)}h
             </div>
           </div>
 
           <div className="text-center">
-            <div className="text-5xl mb-3">🎫</div>
-            <div className="text-gray-400 text-sm mb-2">INCIDENTS GÉRÉS</div>
-            <div className="text-5xl font-black text-white">
+            <div className="text-5xl mb-4">🎫</div>
+            <div className="text-gray-400 text-xs md:text-sm mb-3 font-medium uppercase tracking-wide">INCIDENTS GÉRÉS</div>
+            <div className="text-4xl md:text-6xl font-black text-white font-orbitron tabular-nums">
               {Math.round(totalIncidents * 12)}
             </div>
           </div>
 
           <div className="text-center">
-            <div className="text-5xl mb-3">😊</div>
-            <div className="text-gray-400 text-sm mb-2">SATISFACTION</div>
-            <div className="text-5xl font-black text-white">
+            <div className="text-5xl mb-4">😊</div>
+            <div className="text-gray-400 text-xs md:text-sm mb-3 font-medium uppercase tracking-wide">SATISFACTION</div>
+            <div className="text-4xl md:text-6xl font-black text-white font-orbitron tabular-nums">
               +50%
             </div>
           </div>
