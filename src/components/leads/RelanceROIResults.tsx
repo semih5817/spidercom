@@ -207,16 +207,14 @@ const RelanceROIResults = ({
           <div className="text-center">
             <div className="text-5xl mb-3">💰</div>
             <div className="text-gray-400 text-sm mb-2">GAIN ANNUEL NET</div>
-            <div className="text-4xl font-black text-white">
-              +{Math.floor(gainNet * 12 / 1000)}k€
+            <div className="text-4xl font-black text-white">+100k€{Math.floor(gainNet * 12 / 1000)}k€
             </div>
           </div>
 
           <div className="text-center">
             <div className="text-5xl mb-3">🎯</div>
             <div className="text-gray-400 text-sm mb-2">VENTES SUPPLÉMENTAIRES</div>
-            <div className="text-4xl font-black text-white">
-              +{Math.floor(ventesSupplementaires * 12)}
+            <div className="text-4xl font-black text-white">+5{Math.floor(ventesSupplementaires * 12)}
             </div>
           </div>
 
@@ -231,8 +229,7 @@ const RelanceROIResults = ({
           <div className="text-center">
             <div className="text-5xl mb-3">📈</div>
             <div className="text-gray-400 text-sm mb-2">AUGMENTATION CA</div>
-            <div className="text-4xl font-black text-white">
-              +{(ventesSupplementaires * 12 / (ventesActuelles * 12) * 100).toFixed(0)}%
+            <div className="text-4xl font-black text-white">+10%{(ventesSupplementaires * 12 / (ventesActuelles * 12) * 100).toFixed(0)}%
             </div>
           </div>
         </div>
