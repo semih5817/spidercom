@@ -423,10 +423,7 @@ const ComparateurEtatsLieux = () => {
 
             {/* Coût de la Comparaison Manuelle - Version Interactive */}
             <div className="text-center mb-16 relative mt-20">
-              <Button 
-                onClick={() => setOpenModal('cost')}
-                className="absolute top-0 right-4 md:right-20 bg-orange-500/20 hover:bg-orange-500/40 border-2 border-orange-400 text-white transition-all"
-              >
+              <Button onClick={() => setOpenModal('cost')} className="absolute top-0 right-4 md:right-20 bg-orange-500/20 hover:bg-orange-500/40 border-2 border-orange-400 text-white transition-all">
                 📊 Voir les explications
               </Button>
               <div className="text-6xl mb-6">💰</div>
@@ -454,7 +451,7 @@ const ComparateurEtatsLieux = () => {
               
               <div className="text-center relative group">
                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500/30 border border-orange-400 rounded-full flex items-center justify-center text-xs cursor-help" title="1 état d'entrée + 1 état de sortie">ℹ️</div>
-                <div className="text-lg md:text-xl text-white/60 mb-2">états par<br/>relocation</div>
+                <div className="text-lg md:text-xl text-white/60 mb-2">états par<br />relocation</div>
                 <div className="font-orbitron text-5xl md:text-7xl font-bold text-white tracking-widest">2</div>
               </div>
             </div>
@@ -482,7 +479,9 @@ const ComparateurEtatsLieux = () => {
 
             {/* Résultat */}
             <div className="text-center mb-12">
-              <div className="font-orbitron text-7xl md:text-9xl font-bold text-spider-red mb-2 tracking-widest" style={{textShadow: '0 0 30px rgba(239, 68, 68, 0.3)'}}>
+              <div className="font-orbitron text-7xl md:text-9xl font-bold text-spider-red mb-2 tracking-widest" style={{
+              textShadow: '0 0 30px rgba(239, 68, 68, 0.3)'
+            }}>
                 1 890€
               </div>
               <div className="text-2xl md:text-3xl text-white/60">/an</div>
@@ -498,9 +497,13 @@ const ComparateurEtatsLieux = () => {
             </div>
 
             {/* Total */}
-            <div className="bg-gradient-to-br from-red-900/60 to-red-950/80 border-4 border-spider-red rounded-3xl p-8 md:p-12 text-center" style={{boxShadow: '0 10px 40px rgba(239, 68, 68, 0.3)'}}>
+            <div className="bg-gradient-to-br from-red-900/60 to-red-950/80 border-4 border-spider-red rounded-3xl p-8 md:p-12 text-center" style={{
+            boxShadow: '0 10px 40px rgba(239, 68, 68, 0.3)'
+          }}>
               <div className="text-2xl md:text-3xl text-red-200 mb-6 tracking-widest font-orbitron">TOTAL PERDU PAR AN</div>
-              <div className="font-orbitron text-6xl md:text-8xl font-bold text-spider-red" style={{textShadow: '0 0 30px rgba(239, 68, 68, 0.5)'}}>
+              <div className="font-orbitron text-6xl md:text-8xl font-bold text-spider-red" style={{
+              textShadow: '0 0 30px rgba(239, 68, 68, 0.5)'
+            }}>
                 ≈ 4 800€
               </div>
             </div>
@@ -715,7 +718,9 @@ const ComparateurEtatsLieux = () => {
                       <div className="relative w-20 h-20 md:w-24 md:h-24">
                         <svg viewBox="0 0 36 36" className="w-full h-full">
                           <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
-                          <circle className="text-orange-400" strokeWidth="3" strokeDasharray="18 82" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{transition: "stroke-dasharray 1s ease"}} />
+                          <circle className="text-orange-400" strokeWidth="3" strokeDasharray="18 82" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
+                          transition: "stroke-dasharray 1s ease"
+                        }} />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center font-orbitron text-orange-400 font-black text-xl">
                           18%
@@ -728,7 +733,9 @@ const ComparateurEtatsLieux = () => {
                       <div className="relative w-20 h-20 md:w-24 md:h-24">
                         <svg viewBox="0 0 36 36" className="w-full h-full">
                           <circle className="text-gray-700" strokeWidth="3" stroke="currentColor" fill="none" cx="18" cy="18" r="15" />
-                          <circle className="text-emerald-400" strokeWidth="3" strokeDasharray="0 100" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{transition: "stroke-dasharray 1s ease"}} />
+                          <circle className="text-emerald-400" strokeWidth="3" strokeDasharray="0 100" strokeLinecap="round" stroke="currentColor" fill="none" cx="18" cy="18" r="15" style={{
+                          transition: "stroke-dasharray 1s ease"
+                        }} />
                         </svg>
                         <div className="absolute inset-0 flex items-center justify-center font-orbitron text-emerald-400 font-black text-xl">
                           0%
@@ -839,15 +846,10 @@ const ComparateurEtatsLieux = () => {
               <EDLStatsZone />
 
               {/* Zone 2: Liste des dossiers */}
-              <EDLDossiersZone 
-                onSelectDossier={setSelectedDossierId}
-                selectedDossierId={selectedDossierId}
-              />
+              <EDLDossiersZone onSelectDossier={setSelectedDossierId} selectedDossierId={selectedDossierId} />
 
               {/* Zone 3: Rapports (visible si un dossier est sélectionné) */}
-              {selectedDossierId && (
-                <EDLRapportsZone selectedDossierId={selectedDossierId} />
-              )}
+              {selectedDossierId && <EDLRapportsZone selectedDossierId={selectedDossierId} />}
             </div>
           </div>
         </section>
@@ -982,28 +984,7 @@ const ComparateurEtatsLieux = () => {
         </section>
 
         {/* SECTION 14: TÉMOIGNAGES */}
-        <section className="px-4 py-20">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-12 text-center">
-              ⭐ Ils Utilisent l'Outil Tous les Jours
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {edlMockData.testimonials.map((testimonial, idx) => <Card key={idx} className="bg-gradient-to-br from-gray-900 to-gray-800 border-white/10 p-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => <span key={i} className="text-yellow-400">⭐</span>)}
-                  </div>
-                  <p className="text-white/80 italic mb-6">"{testimonial.quote}"</p>
-                  <div className="border-t border-white/10 pt-4">
-                    <div className="font-bold text-white">{testimonial.name}</div>
-                    <div className="text-sm text-white/60">{testimonial.position}</div>
-                    <div className="text-sm text-white/60">{testimonial.company}</div>
-                    <div className="text-xs text-spider-cyan mt-2">{testimonial.stats}</div>
-                  </div>
-                </Card>)}
-            </div>
-          </div>
-        </section>
+        
 
         {/* SECTION 15: OUTILS COMPLÉMENTAIRES */}
         <section className="px-4 py-20 bg-gradient-to-b from-spider-cyan/5 to-transparent">
