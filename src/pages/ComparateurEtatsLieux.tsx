@@ -12,7 +12,9 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import DocumentComparisonChaos from "@/components/leads/DocumentComparisonChaos";
 import StateComparisonDemo from "@/components/leads/StateComparisonDemo";
-import InteractiveComparison from "@/components/edl/InteractiveComparison";
+import { EDLStatsZone } from "@/components/edl/EDLStatsZone";
+import { EDLDossiersZone } from "@/components/edl/EDLDossiersZone";
+import { EDLRapportsZone } from "@/components/edl/EDLRapportsZone";
 import EDLComparisonTable from "@/components/leads/EDLComparisonTable";
 import EDLROICalculator from "@/components/leads/EDLROICalculator";
 import EDLWorkflowDiagram from "@/components/leads/EDLWorkflowDiagram";
@@ -21,6 +23,7 @@ import { edlMockData } from "@/data/mockDataEDL";
 type StatModalType = '45min' | '18percent' | '450euros' | '100percent' | 'cost' | null;
 const ComparateurEtatsLieux = () => {
   const [openModal, setOpenModal] = useState<StatModalType>(null);
+  const [selectedDossierId, setSelectedDossierId] = useState<string | undefined>(undefined);
   const faqs = [{
     question: "Quels formats de documents sont acceptés ?",
     answer: "PDF, Word, Excel, images (JPG, PNG), et même documents scannés ou photos smartphone. L'IA OCR extrait le texte même sur documents manuscrits."
@@ -824,14 +827,28 @@ const ComparateurEtatsLieux = () => {
           </div>
         </section>
 
-        {/* SECTION 3: DÉMO INTERACTIVE */}
+        {/* SECTION 3: DÉMO INTERACTIVE - DASHBOARD COMPLET */}
         <section className="px-4 py-20">
           <div className="container mx-auto max-w-7xl">
             <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-12 text-center">
               🎯 Démo : Comparez 2 États des Lieux en Direct
             </h2>
 
-            <InteractiveComparison />
+            <div className="space-y-8">
+              {/* Zone 1: Statistiques globales */}
+              <EDLStatsZone />
+
+              {/* Zone 2: Liste des dossiers */}
+              <EDLDossiersZone 
+                onSelectDossier={setSelectedDossierId}
+                selectedDossierId={selectedDossierId}
+              />
+
+              {/* Zone 3: Rapports (visible si un dossier est sélectionné) */}
+              {selectedDossierId && (
+                <EDLRapportsZone selectedDossierId={selectedDossierId} />
+              )}
+            </div>
           </div>
         </section>
 
