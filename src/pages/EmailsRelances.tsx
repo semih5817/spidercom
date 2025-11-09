@@ -10,18 +10,17 @@ import RelanceROIResults from "@/components/leads/RelanceROIResults";
 import { BenefitItem, TimingRule, BenchmarkStat } from "@/components/leads/SMSComponents";
 import WorkflowDiagram from "@/components/leads/WorkflowDiagram";
 import CTABooking from "@/components/CTABooking";
-
 const EmailsRelances = () => {
   const [selectedStep, setSelectedStep] = useState('j0');
   const [nbVisites, setNbVisites] = useState(100);
   const [nbAgents, setNbAgents] = useState(5);
   const [tjm, setTjm] = useState(35);
   const [avgCommission, setAvgCommission] = useState(8000);
-
   const scrollToDemo = () => {
-    document.getElementById('kpi-dashboard')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('kpi-dashboard')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const emailTemplates = {
     j0: {
       title: 'Merci & Créneaux',
@@ -47,13 +46,13 @@ Ou répondez simplement à cet email, je reviens vers vous en moins de 2h.
 [Signature]
 
 P.S. : Le bien intéresse d'autres acquéreurs. N'hésitez pas si vous avez des questions !`,
-      stats: { open: 0.52, click: 0.095, reply: 0.13, book: 0.14 },
-      tips: [
-        'Envoyer 1h après la visite (intérêt encore chaud)',
-        'Mentionner un détail précis de la visite pour personnaliser',
-        'Toujours inclure un CTA clair (Calendly)',
-        'Ajouter le dossier en PJ pour éviter les frictions'
-      ]
+      stats: {
+        open: 0.52,
+        click: 0.095,
+        reply: 0.13,
+        book: 0.14
+      },
+      tips: ['Envoyer 1h après la visite (intérêt encore chaud)', 'Mentionner un détail précis de la visite pour personnaliser', 'Toujours inclure un CTA clair (Calendly)', 'Ajouter le dossier en PJ pour éviter les frictions']
     },
     j1: {
       title: 'Valeur & FAQ',
@@ -84,13 +83,13 @@ Une question ? Répondez à cet email ou appelez-moi au [Téléphone].
 
 Bonne journée,
 [Signature]`,
-      stats: { open: 0.48, click: 0.085, reply: 0.10, book: 0.11 },
-      tips: [
-        'Répondre aux objections implicites (prix, charges, état)',
-        'Utiliser des données factuelles et comparatives',
-        'Mettre en avant la rareté et l\'opportunité',
-        'Rester factuel, éviter le marketing agressif'
-      ]
+      stats: {
+        open: 0.48,
+        click: 0.085,
+        reply: 0.10,
+        book: 0.11
+      },
+      tips: ['Répondre aux objections implicites (prix, charges, état)', 'Utiliser des données factuelles et comparatives', 'Mettre en avant la rareté et l\'opportunité', 'Rester factuel, éviter le marketing agressif']
     },
     j3: {
       title: 'Urgence & Preuve Sociale',
@@ -120,13 +119,13 @@ Je reste dispo pour toute question.
 [Signature]
 
 P.S. : Si le bien ne vous convient finalement pas, dites-le-moi pour que je vous propose d'autres options similaires.`,
-      stats: { open: 0.45, click: 0.12, reply: 0.15, book: 0.16 },
-      tips: [
-        'Créer l\'urgence de manière factuelle (pas de fausse urgence)',
-        'Donner une porte de sortie (proposer des alternatives)',
-        'Utiliser la preuve sociale (autres visiteurs)',
-        'Offrir de l\'aide concrète (dossier financement)'
-      ]
+      stats: {
+        open: 0.45,
+        click: 0.12,
+        reply: 0.15,
+        book: 0.16
+      },
+      tips: ['Créer l\'urgence de manière factuelle (pas de fausse urgence)', 'Donner une porte de sortie (proposer des alternatives)', 'Utiliser la preuve sociale (autres visiteurs)', 'Offrir de l\'aide concrète (dossier financement)']
     },
     j7: {
       title: 'Alternatives',
@@ -156,13 +155,13 @@ Répondez simplement OUI ou NON.
 
 Bonne journée,
 [Signature]`,
-      stats: { open: 0.41, click: 0.07, reply: 0.08, book: 0.08 },
-      tips: [
-        'Accepter que le prospect ne soit peut-être pas intéressé',
-        'Proposer des alternatives concrètes et personnalisées',
-        'Faciliter la réponse (OUI/NON)',
-        'Garder la porte ouverte pour d\'autres opportunités'
-      ]
+      stats: {
+        open: 0.41,
+        click: 0.07,
+        reply: 0.08,
+        book: 0.08
+      },
+      tips: ['Accepter que le prospect ne soit peut-être pas intéressé', 'Proposer des alternatives concrètes et personnalisées', 'Faciliter la réponse (OUI/NON)', 'Garder la porte ouverte pour d\'autres opportunités']
     },
     noshow: {
       title: 'Récupération No-Show',
@@ -190,13 +189,13 @@ Ou si vous préférez, répondez à cet email pour qu'on trouve un moment qui vo
 [Signature]
 
 P.S. : Si vous n'êtes finalement plus intéressé, n'hésitez pas à me le dire. Aucun problème !`,
-      stats: { open: 0.61, click: 0.28, reply: 0.25, book: 0.34 },
-      tips: [
-        'Envoyer immédiatement après le no-show (max 1h)',
-        'Être empathique et non-culpabilisant',
-        'Faciliter la reprogrammation (Calendly direct)',
-        'Donner une porte de sortie (si plus intéressé)'
-      ]
+      stats: {
+        open: 0.61,
+        click: 0.28,
+        reply: 0.25,
+        book: 0.34
+      },
+      tips: ['Envoyer immédiatement après le no-show (max 1h)', 'Être empathique et non-culpabilisant', 'Faciliter la reprogrammation (Calendly direct)', 'Donner une porte de sortie (si plus intéressé)']
     },
     dossier: {
       title: 'Documents Manquants',
@@ -225,18 +224,16 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
 
 À tout de suite,
 [Signature]`,
-      stats: { open: 0.55, click: 0.19, reply: 0.22, book: 0.12 },
-      tips: [
-        'Lister précisément ce qui manque (pas de flou)',
-        'Faciliter l\'envoi (plusieurs options)',
-        'Créer l\'urgence de manière factuelle',
-        'Proposer de l\'aide si besoin'
-      ]
+      stats: {
+        open: 0.55,
+        click: 0.19,
+        reply: 0.22,
+        book: 0.12
+      },
+      tips: ['Lister précisément ce qui manque (pas de flou)', 'Faciliter l\'envoi (plusieurs options)', 'Créer l\'urgence de manière factuelle', 'Proposer de l\'aide si besoin']
     }
   };
-
-  return (
-    <div className="min-h-screen bg-deep-black">
+  return <div className="min-h-screen bg-deep-black">
       <Header />
       <BackgroundEffects />
 
@@ -335,9 +332,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
               <p className="text-xl text-gray-300 mb-8">
                 Email + SMS + WhatsApp • Personnalisé selon leur comportement • Zéro effort manuel
               </p>
-              <button 
-                onClick={scrollToDemo}
-                className="px-12 py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white 
+              <button onClick={scrollToDemo} className="px-12 py-5 bg-gradient-to-r from-orange-500 to-red-600 text-white 
                            font-black text-2xl rounded-xl shadow-[0_0_40px_rgba(251,146,60,0.5)]
                            hover:shadow-[0_0_60px_rgba(251,146,60,0.7)] hover:scale-105 
                            transition-all duration-300">
@@ -387,16 +382,10 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
         <section className="px-8 py-20 bg-gradient-to-b from-black via-orange-900/10 to-black">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
             {/* Left: Steps */}
-            <EmailSequenceTimeline 
-              selectedStep={selectedStep} 
-              onSelectStep={setSelectedStep}
-            />
+            <EmailSequenceTimeline selectedStep={selectedStep} onSelectStep={setSelectedStep} />
 
             {/* Right: Preview */}
-            <EmailPreviewPanel 
-              step={selectedStep}
-              emailData={emailTemplates[selectedStep as keyof typeof emailTemplates]}
-            />
+            <EmailPreviewPanel step={selectedStep} emailData={emailTemplates[selectedStep as keyof typeof emailTemplates]} />
           </div>
         </section>
 
@@ -422,7 +411,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                       <span className="text-xl">🏠</span>
                     </div>
                     <div>
-                      <div className="text-white font-bold">Spydercom Auto</div>
+                      <div className="text-white font-bold">Spidercom Aut</div>
                       <div className="text-pink-200 text-xs">Message automatique</div>
                     </div>
                   </div>
@@ -524,26 +513,10 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                   </h3>
                   
                   <div className="space-y-4">
-                    <BenefitItem 
-                      icon="⚡"
-                      title="Taux d'ouverture 98%"
-                      description="vs 52% pour l'email. Le SMS est lu en moyenne 3 minutes après réception."
-                    />
-                    <BenefitItem 
-                      icon="🎯"
-                      title="Réponse ultra-rapide"
-                      description="78% répondent en moins de 2h. Format court = action immédiate."
-                    />
-                    <BenefitItem 
-                      icon="📱"
-                      title="Toujours sur eux"
-                      description="95% des gens ont leur téléphone à moins d'1 mètre d'eux."
-                    />
-                    <BenefitItem 
-                      icon="🚀"
-                      title="Complémentaire email"
-                      description="Email pour le détail, SMS pour le nudge. Combo parfait."
-                    />
+                    <BenefitItem icon="⚡" title="Taux d'ouverture 98%" description="vs 52% pour l'email. Le SMS est lu en moyenne 3 minutes après réception." />
+                    <BenefitItem icon="🎯" title="Réponse ultra-rapide" description="78% répondent en moins de 2h. Format court = action immédiate." />
+                    <BenefitItem icon="📱" title="Toujours sur eux" description="95% des gens ont leur téléphone à moins d'1 mètre d'eux." />
+                    <BenefitItem icon="🚀" title="Complémentaire email" description="Email pour le détail, SMS pour le nudge. Combo parfait." />
                   </div>
                 </div>
 
@@ -556,26 +529,10 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                   </h3>
                   
                   <div className="space-y-3">
-                    <TimingRule 
-                      trigger="Email ouvert mais pas de clic"
-                      delay="24-48h après"
-                      message="Nudge avec choix binaire simple (1 ou 2)"
-                    />
-                    <TimingRule 
-                      trigger="RDV pris"
-                      delay="1h avant le RDV"
-                      message="Rappel avec adresse + contact agent"
-                    />
-                    <TimingRule 
-                      trigger="No-show"
-                      delay="30min après l'heure prévue"
-                      message="Récupération immédiate avec 2 créneaux du jour"
-                    />
-                    <TimingRule 
-                      trigger="Prospect inactif J+5"
-                      delay="Si aucune réponse email"
-                      message="Last chance avec urgence douce"
-                    />
+                    <TimingRule trigger="Email ouvert mais pas de clic" delay="24-48h après" message="Nudge avec choix binaire simple (1 ou 2)" />
+                    <TimingRule trigger="RDV pris" delay="1h avant le RDV" message="Rappel avec adresse + contact agent" />
+                    <TimingRule trigger="No-show" delay="30min après l'heure prévue" message="Récupération immédiate avec 2 créneaux du jour" />
+                    <TimingRule trigger="Prospect inactif J+5" delay="Si aucune réponse email" message="Last chance avec urgence douce" />
                   </div>
                 </div>
 
@@ -632,14 +589,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                     Visites effectuées par mois
                   </label>
                   <div className="bg-black/30 rounded-xl p-6 border border-orange-500/30">
-                    <input 
-                      type="range"
-                      min="20"
-                      max="300"
-                      step="10"
-                      value={nbVisites}
-                      onChange={(e) => setNbVisites(parseInt(e.target.value))}
-                      className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
+                    <input type="range" min="20" max="300" step="10" value={nbVisites} onChange={e => setNbVisites(parseInt(e.target.value))} className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
                                  [&::-webkit-slider-thumb]:appearance-none
                                  [&::-webkit-slider-thumb]:w-8
                                  [&::-webkit-slider-thumb]:h-8
@@ -649,8 +599,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                                  [&::-webkit-slider-thumb]:to-red-500
                                  [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(251,146,60,0.8)]
                                  [&::-webkit-slider-thumb]:hover:scale-125
-                                 [&::-webkit-slider-thumb]:transition-transform"
-                    />
+                                 [&::-webkit-slider-thumb]:transition-transform" />
                     <div className="flex justify-between text-xs text-gray-500 mt-2">
                       <span>20</span>
                       <span>150</span>
@@ -672,13 +621,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                     Nombre d'agents commerciaux
                   </label>
                   <div className="bg-black/30 rounded-xl p-6 border border-cyan-500/30">
-                    <input 
-                      type="range"
-                      min="1"
-                      max="30"
-                      value={nbAgents}
-                      onChange={(e) => setNbAgents(parseInt(e.target.value))}
-                      className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
+                    <input type="range" min="1" max="30" value={nbAgents} onChange={e => setNbAgents(parseInt(e.target.value))} className="w-full h-3 bg-gray-700 rounded-full appearance-none cursor-pointer
                                  [&::-webkit-slider-thumb]:appearance-none
                                  [&::-webkit-slider-thumb]:w-8
                                  [&::-webkit-slider-thumb]:h-8
@@ -686,8 +629,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                                  [&::-webkit-slider-thumb]:bg-gradient-to-r
                                  [&::-webkit-slider-thumb]:from-cyan-500
                                  [&::-webkit-slider-thumb]:to-blue-500
-                                 [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(6,182,212,0.8)]"
-                    />
+                                 [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(6,182,212,0.8)]" />
                   </div>
                   <div className="text-center mt-4">
                     <div className="text-6xl font-black text-cyan-400 font-['Orbitron'] tabular-nums">
@@ -704,17 +646,9 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                     Coût horaire agent (salaire chargé)
                   </label>
                   <div className="bg-black/30 rounded-xl p-6 border border-yellow-500/30">
-                    <input 
-                      type="number"
-                      min="25"
-                      max="80"
-                      step="5"
-                      value={tjm}
-                      onChange={(e) => setTjm(parseInt(e.target.value))}
-                      className="w-full bg-gray-800 border-2 border-yellow-500/30 rounded-lg 
+                    <input type="number" min="25" max="80" step="5" value={tjm} onChange={e => setTjm(parseInt(e.target.value))} className="w-full bg-gray-800 border-2 border-yellow-500/30 rounded-lg 
                                  px-6 py-4 text-4xl font-bold text-white text-center
-                                 focus:border-yellow-400 focus:outline-none font-['Orbitron']"
-                    />
+                                 focus:border-yellow-400 focus:outline-none font-['Orbitron']" />
                   </div>
                   <div className="text-center mt-4">
                     <div className="text-4xl font-black text-yellow-400">
@@ -730,17 +664,9 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                     Commission moyenne par vente
                   </label>
                   <div className="bg-black/30 rounded-xl p-6 border border-green-500/30">
-                    <input 
-                      type="number"
-                      min="2000"
-                      max="15000"
-                      step="500"
-                      value={avgCommission}
-                      onChange={(e) => setAvgCommission(parseInt(e.target.value))}
-                      className="w-full bg-gray-800 border-2 border-green-500/30 rounded-lg 
+                    <input type="number" min="2000" max="15000" step="500" value={avgCommission} onChange={e => setAvgCommission(parseInt(e.target.value))} className="w-full bg-gray-800 border-2 border-green-500/30 rounded-lg 
                                  px-6 py-4 text-4xl font-bold text-white text-center
-                                 focus:border-green-400 focus:outline-none font-['Orbitron']"
-                    />
+                                 focus:border-green-400 focus:outline-none font-['Orbitron']" />
                   </div>
                   <div className="text-center mt-4">
                     <div className="text-4xl font-black text-green-400">
@@ -751,12 +677,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
               </div>
 
               {/* Résultats calculés */}
-              <RelanceROIResults 
-                nbVisites={nbVisites}
-                nbAgents={nbAgents}
-                tjm={tjm}
-                avgCommission={avgCommission}
-              />
+              <RelanceROIResults nbVisites={nbVisites} nbAgents={nbAgents} tjm={tjm} avgCommission={avgCommission} />
             </div>
           </div>
         </section>
@@ -849,8 +770,6 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
 
       <CTABooking subtitle="Voyez nos scénarios email en action" />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default EmailsRelances;
