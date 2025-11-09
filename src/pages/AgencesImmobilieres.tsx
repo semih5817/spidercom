@@ -8,13 +8,14 @@ import BackgroundEffects from "@/components/BackgroundEffects";
 import CTABooking from "@/components/CTABooking";
 import { useCalendly } from "@/hooks/useCalendly";
 import { Slider } from "@/components/ui/slider";
-
 const AgencesImmobilieres = () => {
-  const { openCalendly } = useCalendly();
+  const {
+    openCalendly
+  } = useCalendly();
   const [agentCount, setAgentCount] = useState(3);
-  const [animatedMetrics, setAnimatedMetrics] = useState({ 
-    time: 0, 
-    conversion: 0, 
+  const [animatedMetrics, setAnimatedMetrics] = useState({
+    time: 0,
+    conversion: 0,
     satisfaction: 0,
     hours: 0,
     roi: 0
@@ -28,138 +29,158 @@ const AgencesImmobilieres = () => {
         const now = Date.now();
         const progress = Math.min((now - startTime) / duration, 1);
         const value = start + (end - start) * progress;
-        setAnimatedMetrics(prev => ({ ...prev, [key]: Math.round(value) }));
+        setAnimatedMetrics(prev => ({
+          ...prev,
+          [key]: Math.round(value)
+        }));
         if (progress < 1) requestAnimationFrame(animate);
       };
       animate();
     };
-
     animateValue(0, 87, 2000, 'time');
     animateValue(0, 40, 2000, 'conversion');
     animateValue(0, 87, 2000, 'satisfaction');
     animateValue(0, 15, 2000, 'hours');
     animateValue(0, 3200, 2000, 'roi');
   }, []);
-
-  const solutions = [
-    {
-      id: 1,
-      icon: "🎯",
-      color: "#06b6d4",
-      title: "Qualification & Suivi des Leads",
-      description: "Score intelligent de 0 à 100 pour chaque prospect. L'IA analyse comportement, budget, timing et priorise automatiquement.",
-      stats: ["-2h/jour de tri", "+40% conversion", "ROI : +1 200€/mois"],
-      tag: "IA + CRM",
-      link: "/qualification-leads"
-    },
-    {
-      id: 2,
-      icon: "📧",
-      color: "#a855f7",
-      title: "Emails & Relances Post-Visite",
-      description: "Scénarios email personnalisés selon le profil. Relances intelligentes après visites. GPT génère le contenu parfait.",
-      stats: ["-5h/semaine", "+62% ouverture", "ROI : +800€/mois"],
-      tag: "IA + Email",
-      link: "/emails-relances"
-    },
-    {
-      id: 3,
-      icon: "🔗",
-      color: "#10b981",
-      title: "Intégration Automatique CRM",
-      description: "Synchronisation temps réel avec tous vos outils. Portails → CRM → Email → Calendrier. Zéro saisie manuelle.",
-      stats: ["-3h/jour de saisie", "0 erreur", "ROI : +1 050€/mois"],
-      tag: "Connecteurs API",
-      link: "/integration-crm"
-    },
-    {
-      id: 4,
-      icon: "📡",
-      color: "#6366f1",
-      title: "Publication Multi-Plateformes",
-      description: "Publiez sur 6 portails (SeLoger, Leboncoin, PAP...) en 12 min au lieu de 100. L'IA adapte chaque annonce.",
-      stats: ["-88% de temps", "6 portails synchro", "ROI : +1 540€/mois"],
-      tag: "IA + N8N",
-      link: "/publication-multi-plateformes"
-    },
-    {
-      id: 5,
-      icon: "🏘️",
-      color: "#f97316",
-      title: "Gestion Locative & Maintenance",
-      description: "Incidents, loyers, quittances, relances : tout géré automatiquement. Classement IA + assignation prestataires.",
-      stats: ["-60% temps incident", "-70% impayés", "ROI : +1 680€/mois"],
-      tag: "IA + Workflow",
-      link: "/gestion-locative"
-    },
-    {
-      id: 6,
-      icon: "🎨",
-      color: "#ec4899",
-      title: "Home Staging Virtuel IA",
-      description: "Transformez n'importe quelle pièce vide en intérieur design en 30 secondes. IA génère un style parisien contemporain sur vos photos.",
-      stats: ["30 sec/image", "+35% visites", "-80% coût staging"],
-      tag: "IA Génération",
-      link: "/home-staging-virtuel",
-      badge: "NOUVEAU"
-    },
-    {
-      id: 7,
-      icon: "📋",
-      color: "#14b8a6",
-      title: "Comparateur États des Lieux IA",
-      description: "Comparez automatiquement état des lieux d'entrée et de sortie. L'IA détecte les différences et génère le rapport en 2 minutes.",
-      stats: ["2 min vs 45 min", "100% légal", "0 litige oublié"],
-      tag: "IA Vision + OCR",
-      link: "/comparateur-etats-lieux",
-      badge: "NOUVEAU"
-    }
-  ];
-
-  const processSteps = [
-    { num: 1, icon: "📥", title: "Collecte Leads", desc: "Agrégation multi-sources" },
-    { num: 2, icon: "🎯", title: "Qualification", desc: "Score IA 0-100" },
-    { num: 3, icon: "📧", title: "Emails", desc: "GPT adaptatif" },
-    { num: 4, icon: "🔗", title: "Sync CRM", desc: "Temps réel" },
-    { num: 5, icon: "🎨", title: "Staging", desc: "IA génération" },
-    { num: 6, icon: "📡", title: "Publication", desc: "6 portails/12min" },
-    { num: 7, icon: "🏘️", title: "Gestion", desc: "Workflow incidents" },
-    { num: 8, icon: "📋", title: "États lieux", desc: "Comparaison IA" },
-    { num: 9, icon: "📊", title: "Analytics", desc: "Dashboards live" }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sophie Martin",
-      role: "Directrice - Century 21 Paris 15",
-      avatar: "👩‍💼",
-      quote: "On a économisé 23h par semaine. L'équipe se concentre enfin sur la relation client au lieu des tâches admin.",
-      results: "3 200€/agent/mois économisés"
-    },
-    {
-      name: "Thomas Dubois",
-      role: "Gestionnaire - Foncia Lyon",
-      avatar: "👨‍💼",
-      quote: "Le comparateur d'états des lieux nous a sauvé sur 12 litiges ce mois-ci. C'est incroyable.",
-      results: "0 litige perdu en 6 mois"
-    },
-    {
-      name: "Marie Lefèvre",
-      role: "Agent - Orpi Bordeaux",
-      avatar: "👩",
-      quote: "Le home staging virtuel a transformé nos annonces. +41% de visites en moyenne depuis qu'on l'utilise.",
-      results: "+41% de visites générées"
-    }
-  ];
+  const solutions = [{
+    id: 1,
+    icon: "🎯",
+    color: "#06b6d4",
+    title: "Qualification & Suivi des Leads",
+    description: "Score intelligent de 0 à 100 pour chaque prospect. L'IA analyse comportement, budget, timing et priorise automatiquement.",
+    stats: ["-2h/jour de tri", "+40% conversion", "ROI : +1 200€/mois"],
+    tag: "IA + CRM",
+    link: "/qualification-leads"
+  }, {
+    id: 2,
+    icon: "📧",
+    color: "#a855f7",
+    title: "Emails & Relances Post-Visite",
+    description: "Scénarios email personnalisés selon le profil. Relances intelligentes après visites. GPT génère le contenu parfait.",
+    stats: ["-5h/semaine", "+62% ouverture", "ROI : +800€/mois"],
+    tag: "IA + Email",
+    link: "/emails-relances"
+  }, {
+    id: 3,
+    icon: "🔗",
+    color: "#10b981",
+    title: "Intégration Automatique CRM",
+    description: "Synchronisation temps réel avec tous vos outils. Portails → CRM → Email → Calendrier. Zéro saisie manuelle.",
+    stats: ["-3h/jour de saisie", "0 erreur", "ROI : +1 050€/mois"],
+    tag: "Connecteurs API",
+    link: "/integration-crm"
+  }, {
+    id: 4,
+    icon: "📡",
+    color: "#6366f1",
+    title: "Publication Multi-Plateformes",
+    description: "Publiez sur 6 portails (SeLoger, Leboncoin, PAP...) en 12 min au lieu de 100. L'IA adapte chaque annonce.",
+    stats: ["-88% de temps", "6 portails synchro", "ROI : +1 540€/mois"],
+    tag: "IA + N8N",
+    link: "/publication-multi-plateformes"
+  }, {
+    id: 5,
+    icon: "🏘️",
+    color: "#f97316",
+    title: "Gestion Locative & Maintenance",
+    description: "Incidents, loyers, quittances, relances : tout géré automatiquement. Classement IA + assignation prestataires.",
+    stats: ["-60% temps incident", "-70% impayés", "ROI : +1 680€/mois"],
+    tag: "IA + Workflow",
+    link: "/gestion-locative"
+  }, {
+    id: 6,
+    icon: "🎨",
+    color: "#ec4899",
+    title: "Home Staging Virtuel IA",
+    description: "Transformez n'importe quelle pièce vide en intérieur design en 30 secondes. IA génère un style parisien contemporain sur vos photos.",
+    stats: ["30 sec/image", "+35% visites", "-80% coût staging"],
+    tag: "IA Génération",
+    link: "/home-staging-virtuel",
+    badge: "NOUVEAU"
+  }, {
+    id: 7,
+    icon: "📋",
+    color: "#14b8a6",
+    title: "Comparateur États des Lieux IA",
+    description: "Comparez automatiquement état des lieux d'entrée et de sortie. L'IA détecte les différences et génère le rapport en 2 minutes.",
+    stats: ["2 min vs 45 min", "100% légal", "0 litige oublié"],
+    tag: "IA Vision + OCR",
+    link: "/comparateur-etats-lieux",
+    badge: "NOUVEAU"
+  }];
+  const processSteps = [{
+    num: 1,
+    icon: "📥",
+    title: "Collecte Leads",
+    desc: "Agrégation multi-sources"
+  }, {
+    num: 2,
+    icon: "🎯",
+    title: "Qualification",
+    desc: "Score IA 0-100"
+  }, {
+    num: 3,
+    icon: "📧",
+    title: "Emails",
+    desc: "GPT adaptatif"
+  }, {
+    num: 4,
+    icon: "🔗",
+    title: "Sync CRM",
+    desc: "Temps réel"
+  }, {
+    num: 5,
+    icon: "🎨",
+    title: "Staging",
+    desc: "IA génération"
+  }, {
+    num: 6,
+    icon: "📡",
+    title: "Publication",
+    desc: "6 portails/12min"
+  }, {
+    num: 7,
+    icon: "🏘️",
+    title: "Gestion",
+    desc: "Workflow incidents"
+  }, {
+    num: 8,
+    icon: "📋",
+    title: "États lieux",
+    desc: "Comparaison IA"
+  }, {
+    num: 9,
+    icon: "📊",
+    title: "Analytics",
+    desc: "Dashboards live"
+  }];
+  const testimonials = [{
+    name: "Sophie Martin",
+    role: "Directrice - Century 21 Paris 15",
+    avatar: "👩‍💼",
+    quote: "On a économisé 23h par semaine. L'équipe se concentre enfin sur la relation client au lieu des tâches admin.",
+    results: "3 200€/agent/mois économisés"
+  }, {
+    name: "Thomas Dubois",
+    role: "Gestionnaire - Foncia Lyon",
+    avatar: "👨‍💼",
+    quote: "Le comparateur d'états des lieux nous a sauvé sur 12 litiges ce mois-ci. C'est incroyable.",
+    results: "0 litige perdu en 6 mois"
+  }, {
+    name: "Marie Lefèvre",
+    role: "Agent - Orpi Bordeaux",
+    avatar: "👩",
+    quote: "Le home staging virtuel a transformé nos annonces. +41% de visites en moyenne depuis qu'on l'utilise.",
+    results: "+41% de visites générées"
+  }];
 
   // Calcul ROI
   const hoursPerMonth = 15 * 4 * agentCount;
   const savingsPerMonth = Math.round(15 * 35 * agentCount * 4);
   const roiPerYear = savingsPerMonth * 12;
   const paybackDays = 7;
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
+  return <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
       <Header />
       <BackgroundEffects />
       
@@ -167,25 +188,28 @@ const AgencesImmobilieres = () => {
         {/* HERO SECTION IMMERSIVE */}
         <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
           {/* Animated background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-spider-red/20 via-transparent to-spider-cyan/20 animate-pulse" 
-            style={{ animationDuration: '4s' }} 
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-spider-red/20 via-transparent to-spider-cyan/20 animate-pulse" style={{
+          animationDuration: '4s'
+        }} />
           
           {/* Radial gradients */}
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-spider-red/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-spider-cyan/20 rounded-full blur-3xl animate-float" 
-            style={{ animationDelay: '2s' }} 
-          />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-spider-cyan/20 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '2s'
+        }} />
 
           <div className="container mx-auto relative z-10">
             <div className="text-center space-y-8 max-w-5xl mx-auto">
               {/* Badge principal */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-spider-red/20 to-orange-500/20 border border-spider-red/30 rounded-full backdrop-blur-sm"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.6
+            }} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-spider-red/20 to-orange-500/20 border border-spider-red/30 rounded-full backdrop-blur-sm">
                 <span className="text-3xl">🏢</span>
                 <span className="font-inter font-bold text-white uppercase text-sm tracking-widest">
                   7 Solutions Transformatrices
@@ -193,34 +217,44 @@ const AgencesImmobilieres = () => {
               </motion.div>
 
               {/* Mega titre animé */}
-              <motion.h1
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black leading-tight"
-              >
+              <motion.h1 initial={{
+              opacity: 0,
+              scale: 0.9
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.8,
+              delay: 0.2
+            }} className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black leading-tight">
                 <span className="bg-gradient-to-r from-white via-orange-200 to-white bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                   Transformez Votre Agence Immobilière
                 </span>
               </motion.h1>
 
               {/* Sous-titre */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="font-inter text-2xl md:text-3xl text-white/80 font-light max-w-3xl mx-auto"
-              >
+              <motion.p initial={{
+              opacity: 0
+            }} animate={{
+              opacity: 1
+            }} transition={{
+              duration: 0.8,
+              delay: 0.4
+            }} className="font-inter text-2xl md:text-3xl text-white/80 font-light max-w-3xl mx-auto">
                 5 Automatisations + 2 Outils IA = <span className="text-spider-red font-bold">87% de temps économisé</span>
               </motion.p>
 
               {/* Métriques animées */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-12"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              y: 30
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 0.6
+            }} className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-12">
                 <div className="p-6 bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl hover:border-spider-red/50 transition-all hover:scale-105">
                   <div className="text-5xl font-orbitron font-black text-orange-400 mb-2">
                     {animatedMetrics.time}%
@@ -258,25 +292,23 @@ const AgencesImmobilieres = () => {
               </motion.div>
 
               {/* CTA Principal */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
-              >
-                <button
-                  onClick={openCalendly}
-                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-spider-red via-orange-600 to-spider-red text-white font-inter font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-spider-red/50 transition-all hover:scale-105 bg-[length:200%_auto] hover:bg-right animate-gradient"
-                >
+              <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.8,
+              delay: 0.8
+            }} className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+                <button onClick={openCalendly} className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-spider-red via-orange-600 to-spider-red text-white font-inter font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-spider-red/50 transition-all hover:scale-105 bg-[length:200%_auto] hover:bg-right animate-gradient">
                   <Sparkles className="w-6 h-6 group-hover:rotate-12 transition-transform" />
                   Voir une Démo Complète
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </button>
 
-                <a
-                  href="#roi-calculator"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white font-inter font-bold text-xl rounded-xl hover:bg-white/10 hover:border-spider-cyan/50 transition-all hover:scale-105"
-                >
+                <a href="#roi-calculator" className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white font-inter font-bold text-xl rounded-xl hover:bg-white/10 hover:border-spider-cyan/50 transition-all hover:scale-105">
                   <Calculator className="w-6 h-6" />
                   Calculer mon ROI
                 </a>
@@ -288,13 +320,17 @@ const AgencesImmobilieres = () => {
         {/* SECTION: 7 SOLUTIONS */}
         <section className="px-4 py-20 relative">
           <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white mb-4">
                 🚀 Les 7 Solutions Qui Transforment
               </h2>
@@ -304,45 +340,42 @@ const AgencesImmobilieres = () => {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {solutions.map((solution, index) => (
-                <motion.div
-                  key={solution.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Link
-                    to={solution.link}
-                    className="group block p-8 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm rounded-2xl border-2 transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden"
-                    style={{ borderColor: `${solution.color}30` }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = solution.color;
-                      e.currentTarget.style.boxShadow = `0 20px 60px ${solution.color}66`;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = `${solution.color}30`;
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
+              {solutions.map((solution, index) => <motion.div key={solution.id} initial={{
+              opacity: 0,
+              y: 30
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }}>
+                  <Link to={solution.link} className="group block p-8 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm rounded-2xl border-2 transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden" style={{
+                borderColor: `${solution.color}30`
+              }} onMouseEnter={e => {
+                e.currentTarget.style.borderColor = solution.color;
+                e.currentTarget.style.boxShadow = `0 20px 60px ${solution.color}66`;
+              }} onMouseLeave={e => {
+                e.currentTarget.style.borderColor = `${solution.color}30`;
+                e.currentTarget.style.boxShadow = 'none';
+              }}>
                     {/* Gradient overlay au hover */}
-                    <div 
-                      className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity"
-                      style={{ background: `linear-gradient(135deg, ${solution.color} 0%, transparent 100%)` }}
-                    />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity" style={{
+                  background: `linear-gradient(135deg, ${solution.color} 0%, transparent 100%)`
+                }} />
 
                     {/* Badge NOUVEAU */}
-                    {solution.badge && (
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-xs font-inter font-black text-white animate-pulse">
+                    {solution.badge && <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full text-xs font-inter font-black text-white animate-pulse">
                         ✨ {solution.badge}
-                      </div>
-                    )}
+                      </div>}
 
                     {/* Numéro */}
-                    <div 
-                      className="absolute top-4 left-4 w-8 h-8 rounded-full flex items-center justify-center font-orbitron font-bold text-sm"
-                      style={{ backgroundColor: `${solution.color}30`, color: solution.color }}
-                    >
+                    <div className="absolute top-4 left-4 w-8 h-8 rounded-full flex items-center justify-center font-orbitron font-bold text-sm" style={{
+                  backgroundColor: `${solution.color}30`,
+                  color: solution.color
+                }}>
                       {solution.id}
                     </div>
 
@@ -352,10 +385,10 @@ const AgencesImmobilieres = () => {
                     </div>
 
                     {/* Tag */}
-                    <div 
-                      className="inline-block px-3 py-1 rounded-full text-xs font-inter font-semibold mb-4"
-                      style={{ backgroundColor: `${solution.color}20`, color: solution.color }}
-                    >
+                    <div className="inline-block px-3 py-1 rounded-full text-xs font-inter font-semibold mb-4" style={{
+                  backgroundColor: `${solution.color}20`,
+                  color: solution.color
+                }}>
                       {solution.tag}
                     </div>
 
@@ -371,27 +404,20 @@ const AgencesImmobilieres = () => {
 
                     {/* Stats */}
                     <div className="space-y-2 mb-6">
-                      {solution.stats.map((stat, i) => (
-                        <div 
-                          key={i}
-                          className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-inter text-white/80 mr-2 mb-2 group-hover:bg-white/10 group-hover:border-white/20 transition-all"
-                        >
+                      {solution.stats.map((stat, i) => <div key={i} className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-inter text-white/80 mr-2 mb-2 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
                           {stat}
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
 
                     {/* CTA */}
-                    <div 
-                      className="flex items-center gap-2 font-inter font-semibold group-hover:gap-4 transition-all"
-                      style={{ color: solution.color }}
-                    >
+                    <div className="flex items-center gap-2 font-inter font-semibold group-hover:gap-4 transition-all" style={{
+                  color: solution.color
+                }}>
                       {solution.id <= 5 ? 'Découvrir' : 'Essayer l\'outil'}
                       <ArrowRight className="w-4 h-4" />
                     </div>
                   </Link>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </section>
@@ -399,13 +425,17 @@ const AgencesImmobilieres = () => {
         {/* SECTION: PROCESSUS TIMELINE */}
         <section className="px-4 py-20 bg-gradient-to-b from-transparent via-spider-red/5 to-transparent">
           <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white mb-4">
                 🔄 Le Processus Complet en 9 Étapes
               </h2>
@@ -419,15 +449,18 @@ const AgencesImmobilieres = () => {
               {/* Ligne de connexion */}
               <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-spider-red via-orange-500 to-spider-cyan opacity-30" />
 
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative z-10 group"
-                >
+              {processSteps.map((step, index) => <motion.div key={step.num} initial={{
+              opacity: 0,
+              y: 20
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} className="relative z-10 group">
                   {/* Circle */}
                   <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-900 to-black border-2 border-spider-red/30 flex items-center justify-center mb-4 group-hover:border-spider-red group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-spider-red/50 transition-all">
                     <div className="text-center">
@@ -445,21 +478,23 @@ const AgencesImmobilieres = () => {
                   <p className="font-inter text-[10px] text-white/60 text-center">
                     {step.desc}
                   </p>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
 
             {/* Timeline Mobile */}
             <div className="lg:hidden space-y-4 max-w-md mx-auto">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-gray-900/80 to-black/80 rounded-xl border border-spider-red/20 backdrop-blur-sm hover:border-spider-red/50 transition-all"
-                >
+              {processSteps.map((step, index) => <motion.div key={step.num} initial={{
+              opacity: 0,
+              x: -20
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.5,
+              delay: index * 0.1
+            }} className="flex items-center gap-4 p-4 bg-gradient-to-r from-gray-900/80 to-black/80 rounded-xl border border-spider-red/20 backdrop-blur-sm hover:border-spider-red/50 transition-all">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-900 to-black border-2 border-spider-red/30 flex items-center justify-center flex-shrink-0">
                     <div className="text-center">
                       <div className="text-2xl mb-1">{step.icon}</div>
@@ -474,8 +509,7 @@ const AgencesImmobilieres = () => {
                       {step.desc}
                     </p>
                   </div>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </section>
@@ -483,13 +517,17 @@ const AgencesImmobilieres = () => {
         {/* SECTION: COMPARAISON AVANT/APRÈS */}
         <section className="px-4 py-20">
           <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white mb-4">
                 ⚡ Avant / Après
               </h2>
@@ -500,13 +538,17 @@ const AgencesImmobilieres = () => {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* AVANT */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="group p-8 bg-gradient-to-br from-red-900/20 to-red-950/40 border-2 border-red-500/30 rounded-2xl hover:border-red-500/50 transition-all"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: -30
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.6
+            }} className="group p-8 bg-gradient-to-br from-red-900/20 to-red-950/40 border-2 border-red-500/30 rounded-2xl hover:border-red-500/50 transition-all">
                 <div className="text-center mb-6">
                   <div className="text-5xl mb-3">😰</div>
                   <h3 className="font-orbitron text-2xl font-bold text-red-400 mb-2">AVANT</h3>
@@ -557,13 +599,17 @@ const AgencesImmobilieres = () => {
               </motion.div>
 
               {/* APRÈS */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="group p-8 bg-gradient-to-br from-emerald-900/20 to-emerald-950/40 border-2 border-emerald-500/30 rounded-2xl hover:border-emerald-500/50 transition-all"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              x: 30
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.6
+            }} className="group p-8 bg-gradient-to-br from-emerald-900/20 to-emerald-950/40 border-2 border-emerald-500/30 rounded-2xl hover:border-emerald-500/50 transition-all">
                 <div className="text-center mb-6">
                   <div className="text-5xl mb-3">🚀</div>
                   <h3 className="font-orbitron text-2xl font-bold text-emerald-400 mb-2">APRÈS</h3>
@@ -619,13 +665,17 @@ const AgencesImmobilieres = () => {
         {/* SECTION: CALCULATEUR ROI */}
         <section id="roi-calculator" className="px-4 py-20 bg-gradient-to-b from-transparent via-spider-cyan/5 to-transparent">
           <div className="container mx-auto max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center mb-12">
               <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white mb-4">
                 💰 Calculateur de ROI
               </h2>
@@ -634,13 +684,17 @@ const AgencesImmobilieres = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 md:p-12 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border-2 border-spider-cyan/30 rounded-3xl"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            scale: 0.95
+          }} whileInView={{
+            opacity: 1,
+            scale: 1
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="p-8 md:p-12 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border-2 border-spider-cyan/30 rounded-3xl">
               {/* Slider */}
               <div className="mb-12">
                 <div className="flex items-center justify-between mb-6">
@@ -652,14 +706,7 @@ const AgencesImmobilieres = () => {
                   </div>
                 </div>
                 
-                <Slider
-                  value={[agentCount]}
-                  onValueChange={(value) => setAgentCount(value[0])}
-                  min={1}
-                  max={20}
-                  step={1}
-                  className="mb-2"
-                />
+                <Slider value={[agentCount]} onValueChange={value => setAgentCount(value[0])} min={1} max={20} step={1} className="mb-2" />
                 
                 <div className="flex justify-between text-sm text-white/50 font-inter">
                   <span>1 agent</span>
@@ -721,10 +768,7 @@ const AgencesImmobilieres = () => {
 
               {/* CTA */}
               <div className="mt-8 text-center">
-                <button
-                  onClick={openCalendly}
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-spider-cyan to-blue-500 text-white font-inter font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-spider-cyan/50 transition-all hover:scale-105"
-                >
+                <button onClick={openCalendly} className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-spider-cyan to-blue-500 text-white font-inter font-bold text-lg rounded-xl hover:shadow-2xl hover:shadow-spider-cyan/50 transition-all hover:scale-105">
                   <Calculator className="w-5 h-5" />
                   Obtenir une simulation personnalisée
                   <ArrowRight className="w-5 h-5" />
@@ -737,31 +781,36 @@ const AgencesImmobilieres = () => {
         {/* SECTION: TÉMOIGNAGES */}
         <section className="px-4 py-20">
           <div className="container mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} whileInView={{
+            opacity: 1,
+            y: 0
+          }} viewport={{
+            once: true
+          }} transition={{
+            duration: 0.6
+          }} className="text-center mb-16">
               <h2 className="font-orbitron text-4xl md:text-6xl font-black text-white mb-4">
                 ⭐ Ce Que Disent Nos Clients
               </h2>
-              <p className="font-inter text-xl text-white/60 max-w-3xl mx-auto">
-                127 agences transformées, des résultats concrets
-              </p>
+              <p className="font-inter text-xl text-white/60 max-w-3xl mx-auto">2 agences transformées, des résultats concrets</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="p-6 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-spider-cyan/50 transition-all hover:scale-105"
-                >
+              {testimonials.map((testimonial, index) => <motion.div key={index} initial={{
+              opacity: 0,
+              y: 30
+            }} whileInView={{
+              opacity: 1,
+              y: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.6,
+              delay: index * 0.2
+            }} className="p-6 bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-spider-cyan/50 transition-all hover:scale-105">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="text-4xl">{testimonial.avatar}</div>
                     <div>
@@ -771,9 +820,7 @@ const AgencesImmobilieres = () => {
                   </div>
 
                   <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" />
-                    ))}
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" />)}
                   </div>
 
                   <p className="font-inter text-white/80 italic mb-4 leading-relaxed">
@@ -785,8 +832,7 @@ const AgencesImmobilieres = () => {
                       {testimonial.results}
                     </div>
                   </div>
-                </motion.div>
-              ))}
+                </motion.div>)}
             </div>
           </div>
         </section>
@@ -796,8 +842,6 @@ const AgencesImmobilieres = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AgencesImmobilieres;
