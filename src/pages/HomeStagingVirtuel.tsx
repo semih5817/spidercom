@@ -366,32 +366,7 @@ const HomeStagingVirtuel = () => {
 
         {/* SECTION: STYLES DISPONIBLES */}
         <section className="px-4 py-20">
-          <div className="container mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">
-                🎨 Styles Disponibles
-              </h2>
-              <p className="font-inter text-xl text-white/60">
-                Choisissez le style qui correspond à votre cible
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {styles.map(style => <Card key={style.id} className="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-pink-500/20 hover:border-pink-500 transition-all group cursor-pointer">
-                  <div className="aspect-video bg-gradient-to-br from-pink-900/20 to-orange-900/20 flex items-center justify-center border-b border-pink-500/20">
-                    <div className="text-7xl">{style.emoji}</div>
-                  </div>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="font-orbitron font-bold text-white group-hover:text-pink-400 transition-colors">
-                      {style.name}
-                    </h3>
-                    {style.isDefault && <span className="inline-block mt-2 px-3 py-1 bg-pink-500/20 text-pink-400 text-xs rounded-full font-inter font-semibold">
-                        ⭐ Recommandé
-                      </span>}
-                  </CardContent>
-                </Card>)}
-            </div>
-          </div>
+          
         </section>
 
         {/* SECTION: CAS D'USAGE */}
