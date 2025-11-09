@@ -64,7 +64,7 @@ const GestionLocative = () => {
                               hover:border-red-500 hover:shadow-[0_0_60px_rgba(239,68,68,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">📞</div>
-                <div className="text-7xl font-black text-red-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-red-500 mb-3 font-orbitron">
                   72h
                 </div>
                 <p className="text-lg text-gray-300">
@@ -77,7 +77,7 @@ const GestionLocative = () => {
                               hover:border-orange-500 hover:shadow-[0_0_60px_rgba(251,146,60,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">😡</div>
-                <div className="text-7xl font-black text-orange-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-orange-500 mb-3 font-orbitron">
                   100+
                 </div>
                 <p className="text-lg text-gray-300">
@@ -90,7 +90,7 @@ const GestionLocative = () => {
                               hover:border-yellow-500 hover:shadow-[0_0_60px_rgba(251,191,36,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">💸</div>
-                <div className="text-7xl font-black text-yellow-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-yellow-500 mb-3 font-orbitron">
                   10%
                 </div>
                 <p className="text-lg text-gray-300">
@@ -103,7 +103,7 @@ const GestionLocative = () => {
                               hover:border-purple-500 hover:shadow-[0_0_60px_rgba(168,85,247,0.4)]
                               transition-all duration-300">
                 <div className="text-6xl mb-4">⏰</div>
-                <div className="text-7xl font-black text-purple-500 mb-3 font-orbitron">
+                <div className="text-5xl font-black text-purple-500 mb-3 font-orbitron">
                   3h
                 </div>
                 <p className="text-lg text-gray-300">
@@ -149,7 +149,7 @@ const GestionLocative = () => {
 
               <div className="mt-8 text-center">
                 <div className="text-red-400 text-lg mb-2 font-bold">= COÛT MENSUEL CACHÉ</div>
-                <div className="text-8xl font-black text-red-500 animate-pulse mb-4">
+                <div className="text-6xl font-black text-red-500 animate-pulse mb-4">
                   50 400€
                 </div>
                 <p className="text-gray-300 text-xl">
@@ -208,7 +208,7 @@ const GestionLocative = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-green-400 font-bold">Auto:</span>
-                    <span className="text-5xl font-black text-green-400 font-orbitron">
+                    <span className="text-4xl font-black text-green-400 font-orbitron">
                       36h
                     </span>
                   </div>
@@ -238,7 +238,7 @@ const GestionLocative = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-cyan-400 font-bold">Après:</span>
-                    <span className="text-5xl font-black text-cyan-400 font-orbitron">
+                    <span className="text-4xl font-black text-cyan-400 font-orbitron">
                       70%
                     </span>
                   </div>
@@ -268,7 +268,7 @@ const GestionLocative = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-purple-400 font-bold">Auto:</span>
-                    <span className="text-5xl font-black text-purple-400 font-orbitron">
+                    <span className="text-4xl font-black text-purple-400 font-orbitron">
                       3%
                     </span>
                   </div>
@@ -292,7 +292,7 @@ const GestionLocative = () => {
                 </div>
                 
                 <div className="mb-4">
-                  <div className="text-6xl font-black text-orange-400 font-orbitron animate-pulse">
+                  <div className="text-5xl font-black text-orange-400 font-orbitron animate-pulse">
                     +16.8k€
                   </div>
                   <p className="text-sm text-gray-400 mt-2">pour 120 biens (3 agents)</p>
@@ -316,7 +316,7 @@ const GestionLocative = () => {
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <div>
                   <div className="text-5xl mb-3">⏱️</div>
-                  <div className="text-5xl font-black text-white mb-2 font-orbitron">
+                  <div className="text-4xl font-black text-white mb-2 font-orbitron">
                     480h
                   </div>
                   <p className="text-gray-300">
@@ -327,7 +327,7 @@ const GestionLocative = () => {
 
                 <div>
                   <div className="text-5xl mb-3">💰</div>
-                  <div className="text-5xl font-black text-green-400 mb-2 font-orbitron">
+                  <div className="text-4xl font-black text-green-400 mb-2 font-orbitron">
                     +16.8k€
                   </div>
                   <p className="text-gray-300">
@@ -338,7 +338,7 @@ const GestionLocative = () => {
 
                 <div>
                   <div className="text-5xl mb-3">📞</div>
-                  <div className="text-5xl font-black text-purple-400 mb-2 font-orbitron">
+                  <div className="text-4xl font-black text-purple-400 mb-2 font-orbitron">
                     -30%
                   </div>
                   <p className="text-gray-300">
@@ -349,7 +349,7 @@ const GestionLocative = () => {
 
                 <div>
                   <div className="text-5xl mb-3">😊</div>
-                  <div className="text-5xl font-black text-orange-400 mb-2 font-orbitron">
+                  <div className="text-4xl font-black text-orange-400 mb-2 font-orbitron">
                     +50%
                   </div>
                   <p className="text-gray-300">
