@@ -4,40 +4,37 @@ interface RelanceROIResultsProps {
   tjm: number;
   avgCommission: number;
 }
-
-const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceROIResultsProps) => {
+const RelanceROIResults = ({
+  nbVisites,
+  nbAgents,
+  tjm,
+  avgCommission
+}: RelanceROIResultsProps) => {
   // CALCULS PERTES ACTUELLES (sans automatisation)
   const tauxRelanceManuels = 0.33;
   const visitesNonRelancees = Math.floor(nbVisites * (1 - tauxRelanceManuels));
   const tauxConversionSansRelance = 0.08;
   const tauxConversionAvecRelance = 0.14;
   const tauxConversionAvecAuto = 0.19;
-  
   const ventesPerduesTotales = visitesNonRelancees * (tauxConversionAvecRelance - tauxConversionSansRelance);
   const manqueAGagner = ventesPerduesTotales * avgCommission;
-  
   const tempsRelanceManuelle = 20;
-  const tempsPerduMois = (nbVisites * tauxRelanceManuels * tempsRelanceManuelle) / 60;
+  const tempsPerduMois = nbVisites * tauxRelanceManuels * tempsRelanceManuelle / 60;
   const coutTempsPerdu = tempsPerduMois * tjm;
 
   // CALCULS AVEC AUTOMATISATION
   const toutesVisitesRelancees = nbVisites;
   const ventesAvecAuto = toutesVisitesRelancees * tauxConversionAvecAuto;
-  const ventesActuelles = (nbVisites * tauxRelanceManuels * tauxConversionAvecRelance) + 
-                          (visitesNonRelancees * tauxConversionSansRelance);
+  const ventesActuelles = nbVisites * tauxRelanceManuels * tauxConversionAvecRelance + visitesNonRelancees * tauxConversionSansRelance;
   const ventesSupplementaires = ventesAvecAuto - ventesActuelles;
   const gainCommissions = ventesSupplementaires * avgCommission;
-  
   const tempsGagneParAgent = 4 * 4.3;
   const valeurTempsGagne = tempsGagneParAgent * nbAgents * tjm;
-  
   const gainTotal = gainCommissions + valeurTempsGagne;
   const coutSpydercom = 180 * nbAgents;
   const gainNet = gainTotal - coutSpydercom;
-  const roi = ((gainNet / coutSpydercom) * 100).toFixed(0);
-
-  return (
-    <>
+  const roi = (gainNet / coutSpydercom * 100).toFixed(0);
+  return <>
       {/* SECTION 1 : Vos pertes actuelles */}
       <div className="mb-12 bg-gradient-to-r from-red-950/50 to-red-900/30 
                       rounded-2xl p-10 border-2 border-red-500
@@ -56,7 +53,7 @@ const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceR
               {visitesNonRelancees}
             </div>
             <div className="text-xs text-gray-500">
-              sur {nbVisites} visites ({((visitesNonRelancees/nbVisites)*100).toFixed(0)}%)
+              sur {nbVisites} visites ({(visitesNonRelancees / nbVisites * 100).toFixed(0)}%)
             </div>
           </div>
 
@@ -167,7 +164,7 @@ const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceR
             <div className="text-center">
               <div className="text-cyan-400 text-xs mb-2 font-bold">Relance auto</div>
               <div className="text-4xl font-black text-green-400">19%</div>
-              <div className="text-xs text-green-400 mt-1">Avec Spydercom (100%)</div>
+              <div className="text-xs text-green-400 mt-1">Avec Spidercom (100%)</div>
             </div>
           </div>
         </div>
@@ -236,7 +233,7 @@ const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceR
             <div className="text-5xl mb-3">📈</div>
             <div className="text-gray-400 text-sm mb-2">AUGMENTATION CA</div>
             <div className="text-4xl font-black text-white">
-              +{((ventesSupplementaires * 12 / (ventesActuelles * 12)) * 100).toFixed(0)}%
+              +{(ventesSupplementaires * 12 / (ventesActuelles * 12) * 100).toFixed(0)}%
             </div>
           </div>
         </div>
@@ -256,18 +253,12 @@ const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceR
             JE RÉCUPÈRE MES {Math.floor(gainNet / 1000)}K€ PAR MOIS
           </span>
           
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute w-2 h-2 bg-white rounded-full animate-ping"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1 + Math.random()}s`
-              }}
-            />
-          ))}
+          {[...Array(20)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-ping" style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 2}s`,
+          animationDuration: `${1 + Math.random()}s`
+        }} />)}
         </button>
         
         <p className="text-gray-400 mt-6 text-xl">
@@ -289,8 +280,6 @@ const RelanceROIResults = ({ nbVisites, nbAgents, tjm, avgCommission }: RelanceR
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default RelanceROIResults;
