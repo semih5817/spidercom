@@ -18,7 +18,7 @@ import EDLROICalculator from "@/components/leads/EDLROICalculator";
 import EDLWorkflowDiagram from "@/components/leads/EDLWorkflowDiagram";
 import DetectionExample from "@/components/leads/DetectionExample";
 import { edlMockData } from "@/data/mockDataEDL";
-type StatModalType = '45min' | '18percent' | '450euros' | '100percent' | null;
+type StatModalType = '45min' | '18percent' | '450euros' | '100percent' | 'cost' | null;
 const ComparateurEtatsLieux = () => {
   const [openModal, setOpenModal] = useState<StatModalType>(null);
   const faqs = [{
@@ -418,57 +418,247 @@ const ComparateurEtatsLieux = () => {
               </DialogContent>
             </Dialog>
 
-            {/* Calcul du coût */}
-            <Card className="bg-gradient-to-br from-spider-red/20 to-black border-spider-red/50 p-8">
-              <h2 className="font-orbitron text-3xl text-white mb-6 text-center">💰 Le Coût de la Comparaison Manuelle</h2>
+            {/* Coût de la Comparaison Manuelle - Version Interactive */}
+            <div className="text-center mb-16 relative mt-20">
+              <Button 
+                onClick={() => setOpenModal('cost')}
+                className="absolute top-0 right-4 md:right-20 bg-orange-500/20 hover:bg-orange-500/40 border-2 border-orange-400 text-white transition-all"
+              >
+                📊 Voir les explications
+              </Button>
+              <div className="text-6xl mb-6">💰</div>
+              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4 tracking-wider">
+                Le Coût de la Comparaison Manuelle
+              </h2>
+            </div>
+
+            {/* Calcul principal */}
+            <div className="flex justify-center items-center gap-4 md:gap-8 mb-12 flex-wrap">
+              <div className="text-center relative group">
+                <div className="text-lg md:text-xl text-white/60 mb-2">biens gérés</div>
+                <div className="font-orbitron text-5xl md:text-7xl font-bold text-white tracking-widest">120</div>
+              </div>
               
-              <div className="grid grid-cols-5 gap-4 mb-6 text-center">
-                <div>
-                  <div className="font-orbitron text-3xl text-white">120</div>
-                  <div className="text-sm text-white/60">biens gérés</div>
-                </div>
-                <div className="flex items-center justify-center text-2xl text-white">×</div>
-                <div>
-                  <div className="font-orbitron text-3xl text-white">2</div>
-                  <div className="text-sm text-white/60">états/an</div>
-                </div>
-                <div className="flex items-center justify-center text-2xl text-white">×</div>
-                <div>
-                  <div className="font-orbitron text-3xl text-white">45 min</div>
-                  <div className="text-sm text-white/60">par comparaison</div>
-                </div>
+              <div className="text-4xl md:text-5xl text-white/40 font-light">×</div>
+              
+              <div className="text-center relative group">
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500/30 border border-orange-400 rounded-full flex items-center justify-center text-xs cursor-help" title="Basé sur 30% de rotation moyenne">ℹ️</div>
+                <div className="text-lg md:text-xl text-white/60 mb-2">rotation/an</div>
+                <div className="font-orbitron text-5xl md:text-7xl font-bold text-white tracking-widest">36</div>
               </div>
+              
+              <div className="text-4xl md:text-5xl text-white/40 font-light">×</div>
+              
+              <div className="text-center relative group">
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-orange-500/30 border border-orange-400 rounded-full flex items-center justify-center text-xs cursor-help" title="1 état d'entrée + 1 état de sortie">ℹ️</div>
+                <div className="text-lg md:text-xl text-white/60 mb-2">états par<br/>relocation</div>
+                <div className="font-orbitron text-5xl md:text-7xl font-bold text-white tracking-widest">2</div>
+              </div>
+            </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                <div>
-                  <div className="font-orbitron text-3xl text-white">× 35€/h</div>
-                  <div className="text-sm text-white/60">coût agent</div>
-                </div>
-                <div className="flex items-center justify-center text-3xl text-spider-red">=</div>
-                <div>
-                  <div className="font-orbitron text-4xl text-spider-red font-black">-6 300€/an</div>
-                  <div className="text-sm text-white/60">en pure perte</div>
-                </div>
+            {/* Ligne secondaire */}
+            <div className="flex justify-center items-center gap-4 md:gap-8 mb-16 flex-wrap text-2xl md:text-3xl">
+              <div className="text-center">
+                <div className="text-base md:text-lg text-white/60 mb-2">= 72 comparaisons/an</div>
               </div>
+              
+              <div className="text-white/40 font-light">×</div>
+              
+              <div className="text-center">
+                <div className="text-base md:text-lg text-white/60 mb-2">par comparaison</div>
+                <div className="font-orbitron text-4xl md:text-5xl font-bold text-white">45 min</div>
+              </div>
+              
+              <div className="text-white/40 font-light">×</div>
+              
+              <div className="text-center">
+                <div className="text-base md:text-lg text-white/60 mb-2">coût agent</div>
+                <div className="font-orbitron text-4xl md:text-5xl font-bold text-white">35€/h</div>
+              </div>
+            </div>
 
-              <div className="text-center text-white/80 mb-6">
-                Et encore, on ne compte pas les litiges oubliés<br />
-                (18% × 120 × 450€ = <span className="text-spider-red font-bold">-9 720€/an supplémentaires</span>)
+            {/* Résultat */}
+            <div className="text-center mb-12">
+              <div className="font-orbitron text-7xl md:text-9xl font-bold text-spider-red mb-2 tracking-widest" style={{textShadow: '0 0 30px rgba(239, 68, 68, 0.3)'}}>
+                1 890€
               </div>
+              <div className="text-2xl md:text-3xl text-white/60">/an</div>
+              <div className="text-lg md:text-xl text-white/60 mt-6">en pure perte</div>
+            </div>
 
-              <div className="bg-spider-red/30 border-2 border-spider-red rounded-lg p-6 text-center">
-                <div className="text-sm text-white/60 mb-2">TOTAL PERDU PAR AN</div>
-                <div className="font-orbitron text-6xl text-spider-red font-black animate-pulse">
-                  -16 020€
-                </div>
+            {/* Coûts additionnels */}
+            <div className="text-center mb-12 text-xl md:text-2xl text-white/80 space-y-4">
+              <p>Et encore, on ne compte pas les <strong className="text-white">litiges oubliés</strong></p>
+              <p>
+                (18% × 36 relocations × 450€ = <span className="text-2xl md:text-3xl font-bold text-orange-400">2 916€/an supplémentaires</span>)
+              </p>
+            </div>
+
+            {/* Total */}
+            <div className="bg-gradient-to-br from-red-900/60 to-red-950/80 border-4 border-spider-red rounded-3xl p-8 md:p-12 text-center" style={{boxShadow: '0 10px 40px rgba(239, 68, 68, 0.3)'}}>
+              <div className="text-2xl md:text-3xl text-red-200 mb-6 tracking-widest font-orbitron">TOTAL PERDU PAR AN</div>
+              <div className="font-orbitron text-6xl md:text-8xl font-bold text-spider-red" style={{textShadow: '0 0 30px rgba(239, 68, 68, 0.5)'}}>
+                ≈ 4 800€
               </div>
-            </Card>
+            </div>
 
             <div className="text-center mt-12">
-              <div className="font-inter text-2xl text-white/80">
+              <div className="font-inter text-xl md:text-2xl text-white/80">
                 Et si l'IA comparait automatiquement en 2 minutes avec <span className="text-spider-cyan font-bold">0 erreur</span> ?
               </div>
             </div>
+
+            {/* Modal explicatif du coût */}
+            <Dialog open={openModal === 'cost'} onOpenChange={() => setOpenModal(null)}>
+              <DialogContent className="max-w-4xl bg-gray-900/95 backdrop-blur-xl border-2 border-orange-500 text-white max-h-[85vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl md:text-3xl font-orbitron text-orange-400 border-b border-white/10 pb-4">
+                    🧾 Explications détaillées des calculs
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-8 pt-6">
+                  {/* Section 1 */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">1. Ce que représente "2 états/an"</h3>
+                    <p className="mb-4 text-white/80">Le chiffre "2 états/an" ne signifie pas que TOUS les 120 biens font 2 états par an. Il représente :</p>
+                    <ul className="space-y-3 ml-6">
+                      <li className="flex items-start gap-3">
+                        <span className="text-emerald-400 mt-1">✅</span>
+                        <span className="text-white/80"><strong className="text-white">1 état des lieux d'entrée</strong> (nouveau locataire)</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-emerald-400 mt-1">✅</span>
+                        <span className="text-white/80"><strong className="text-white">1 état des lieux de sortie</strong> (ancien locataire)</span>
+                      </li>
+                    </ul>
+                    <p className="mt-4 text-white/80">Ces 2 états sont générés uniquement pour chaque <strong className="text-white">relocation</strong> (changement de locataire).</p>
+                  </div>
+
+                  {/* Section 2 */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">2. Taux moyen de rotation locative en France</h3>
+                    <p className="mb-4 text-white/80">
+                      Un logement locatif ne change pas de locataire chaque année. La durée moyenne d'occupation est de <strong className="text-white">3 à 4 ans</strong>.
+                    </p>
+                    
+                    <div className="bg-blue-500/10 border-l-4 border-blue-400 rounded p-6 mb-4">
+                      <h4 className="text-blue-400 font-semibold text-lg mb-3">📚 Sources officielles</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400">•</span>
+                          <span className="text-white/80">FNAIM (Fédération Nationale de l'Immobilier)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400">•</span>
+                          <span className="text-white/80">INSEE (Institut National de la Statistique)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-400">•</span>
+                          <span className="text-white/80">Century 21, Orpi, ImmoStat</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <p className="mb-4 text-white/80">Ces sources convergent vers un <strong className="text-white">taux de rotation annuel de 25 à 35%</strong>.</p>
+
+                    <div className="bg-black/40 rounded-lg border border-orange-500/30 overflow-hidden">
+                      <table className="w-full">
+                        <thead className="bg-orange-500/20">
+                          <tr>
+                            <th className="text-left p-3 font-semibold text-orange-400">Taux de rotation</th>
+                            <th className="text-left p-3 font-semibold text-orange-400">Biens concernés / an</th>
+                            <th className="text-left p-3 font-semibold text-orange-400">États à comparer (×2)</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-white/10">
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">25%</td>
+                            <td className="p-3">30 logements</td>
+                            <td className="p-3">60 comparaisons</td>
+                          </tr>
+                          <tr className="bg-orange-500/10">
+                            <td className="p-3 font-bold">30% (utilisé)</td>
+                            <td className="p-3 font-bold">36 logements</td>
+                            <td className="p-3 font-bold">72 comparaisons</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3">35%</td>
+                            <td className="p-3">42 logements</td>
+                            <td className="p-3">84 comparaisons</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Section 3 */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">3. Détail du calcul réel</h3>
+                    <p className="mb-4 text-white/80">Prenons le cas réaliste : <strong className="text-white">30% de rotation</strong>, soit 72 comparaisons.</p>
+                    
+                    <div className="bg-orange-500/10 border-l-4 border-orange-400 rounded p-6 space-y-4">
+                      <div>
+                        <p className="font-bold mb-2">Coût de la comparaison manuelle :</p>
+                        <p className="text-white/80">72 comparaisons × 45 min = 3 240 min = <strong className="text-white">54 heures/an</strong></p>
+                        <p className="text-white/80">54 h × 35 €/h = <strong className="text-orange-400 text-xl">1 890 €/an</strong></p>
+                      </div>
+                      
+                      <div>
+                        <p className="font-bold mb-2 mt-6">Coût des litiges oubliés :</p>
+                        <p className="text-white/80">18% d'erreurs × 36 relocations × 450 € = <strong className="text-orange-400 text-xl">2 916 €/an</strong></p>
+                      </div>
+                      
+                      <div className="pt-6 mt-6 border-t border-white/20">
+                        <p className="text-xl md:text-2xl font-bold text-orange-400">TOTAL = ≈ 4 800 €/an</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 4 */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4">4. En résumé</h3>
+                    <div className="bg-black/40 rounded-lg border border-orange-500/30 overflow-hidden">
+                      <table className="w-full">
+                        <tbody className="divide-y divide-white/10">
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Nombre de biens</td>
+                            <td className="p-3 font-bold text-white">120</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Rotation locative annuelle</td>
+                            <td className="p-3 font-bold text-white">25–35%</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Relocations concernées</td>
+                            <td className="p-3 font-bold text-white">36/an</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">États à comparer</td>
+                            <td className="p-3 font-bold text-white">72/an</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Temps total perdu</td>
+                            <td className="p-3 font-bold text-spider-red">54 heures/an</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Coût main d'œuvre</td>
+                            <td className="p-3 font-bold text-spider-red">1 890 €/an</td>
+                          </tr>
+                          <tr className="hover:bg-white/5">
+                            <td className="p-3 text-white/70">Coût litiges oubliés</td>
+                            <td className="p-3 font-bold text-spider-red">2 916 €/an</td>
+                          </tr>
+                          <tr className="bg-spider-red/20 font-bold">
+                            <td className="p-4 text-lg">COÛT TOTAL ANNUEL</td>
+                            <td className="p-4 text-2xl text-spider-red">≈ 4 800 €</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
 
