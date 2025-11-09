@@ -314,7 +314,7 @@ const PropertyManagementROIResults = ({
                 ×{(netGain / costSpydercom).toFixed(1)}
               </div>
             </div>
-            <div className="text-4xl">→</div>
+            
             <div>
               <div className="text-xs opacity-70">Payback</div>
               <div className="text-3xl font-bold">
