@@ -46,7 +46,7 @@ const AGIAProject = () => {
 // Hero Section with animated background
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-blue-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-600 via-blue-700 to-cyan-900">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:50px_50px] animate-[grid-move_20s_linear_infinite]" />
@@ -159,7 +159,7 @@ const ProblemSolutionSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl font-black text-center mb-4 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent"
         >
           La Révolution de l'Inspection Solaire
         </motion.h2>
@@ -288,7 +288,7 @@ const TechStackSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent"
         >
           Technologies de Pointe
         </motion.h2>
@@ -301,7 +301,7 @@ const TechStackSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:border-blue-600 hover:shadow-lg hover:shadow-blue-600/30 cursor-pointer"
+              className="group bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 cursor-pointer"
             >
               <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{tech.icon}</div>
               <div className="font-bold text-lg mb-2">{tech.name}</div>
@@ -346,7 +346,7 @@ const ProcessFlowSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent"
         >
           Processus en 4 Étapes
         </motion.h2>
@@ -359,9 +359,9 @@ const ProcessFlowSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative bg-gradient-to-br from-blue-600/10 to-indigo-500/10 border-2 border-blue-600/30 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:border-blue-600 hover:shadow-lg hover:shadow-blue-600/40"
+              className="relative bg-gradient-to-br from-cyan-600/10 to-blue-500/10 border-2 border-cyan-600/30 rounded-2xl p-8 transition-all duration-300 hover:scale-105 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/40"
             >
-              <div className="absolute -top-5 left-6 w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center font-bold text-xl text-white">
+              <div className="absolute -top-5 left-6 w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center font-bold text-xl text-white">
                 {step.number}
               </div>
               
@@ -391,7 +391,7 @@ const ResultsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+          className="text-4xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent"
         >
           Résultats Mesurables
         </motion.h2>
@@ -406,7 +406,7 @@ const ResultsSection = () => {
               transition={{ delay: index * 0.1 }}
               className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 text-center overflow-hidden"
             >
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-600" />
               
               <div className="text-5xl font-bold bg-gradient-to-br from-green-500 to-cyan-500 bg-clip-text text-transparent my-4">
                 {result.metric}
@@ -431,7 +431,7 @@ const TestimonialSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-gradient-to-br from-blue-600/10 to-indigo-500/10 border-2 border-blue-600/30 rounded-3xl p-8 md:p-12"
+          className="relative bg-gradient-to-br from-cyan-600/10 to-blue-500/10 border-2 border-cyan-600/30 rounded-3xl p-8 md:p-12"
         >
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-6xl">⭐</div>
           
@@ -456,7 +456,7 @@ const TestimonialSection = () => {
 // CTA Section
 const CTASection = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-900">
+    <section className="py-20 px-4 bg-gradient-to-br from-cyan-600 via-blue-600 to-cyan-900">
       <div className="container mx-auto max-w-4xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -485,7 +485,7 @@ const CTASection = () => {
         >
           <a
             href="/outils"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-600 font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-white/30 transition-all hover:scale-105"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-cyan-600 font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-white/30 transition-all hover:scale-105"
           >
             Découvrir la Plateforme Complète
             <ArrowRight className="w-6 h-6" />
