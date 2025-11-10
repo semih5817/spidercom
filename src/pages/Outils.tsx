@@ -656,14 +656,14 @@ const Outils = () => {
                   <h3 className="text-2xl font-bold text-yellow-400 mb-4">{plan.name}</h3>
                   
                   <div className="mb-2">
-                    <span className="text-5xl font-black bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent">
+                    <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent whitespace-nowrap">
                       {plan.price}
-                    </span>
+                    </div>
                   </div>
                   <p className="text-sm opacity-70 mb-4">{plan.period}</p>
                   
                   <div className="mb-6 p-3 bg-white/5 rounded-xl">
-                    <span className="text-lg font-bold">{plan.monthly}</span>
+                    <div className="text-lg font-bold whitespace-nowrap">{plan.monthly}</div>
                     <span className="text-sm opacity-70"> maintenance</span>
                   </div>
 
