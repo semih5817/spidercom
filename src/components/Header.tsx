@@ -77,7 +77,7 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {isDropdownOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-black/95 backdrop-blur-sm border border-gray-800 rounded-lg shadow-lg overflow-hidden">
+              {isDropdownOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden z-50">
                   {/* Automatisations Section */}
                   <div className="px-4 py-2 bg-spider-red/10 border-b border-gray-800">
                     <span className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider">
