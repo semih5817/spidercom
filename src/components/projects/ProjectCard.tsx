@@ -14,6 +14,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const isComingSoon = project.isComingSoon;
   const projectLink = project.slug === 'take-5-automatisation-google-business' 
     ? '/projets/take-5' 
+    : project.slug === 'agia'
+    ? '/projets/agia'
     : (project.demoUrl || '#');
 
   return (
