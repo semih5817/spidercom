@@ -169,9 +169,27 @@ const AGIAProject = () => {
       <div className="min-h-screen bg-black text-white">
         <Header />
 
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-b from-black via-blue-950/20 to-black overflow-hidden">
-          <div className="container mx-auto relative z-10">
+        {/* Hero Section Futuriste */}
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Animated grid background */}
+          <div className="absolute inset-0 opacity-10">
+            <div 
+              className="absolute inset-0" 
+              style={{
+                backgroundImage: 'url(data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="0" y="0" width="1" height="1" fill="white" opacity="0.1"/></svg>)',
+                backgroundSize: '20px 20px',
+                animation: 'gridScan 10s linear infinite'
+              }}
+            />
+          </div>
+
+          {/* Radial gradients */}
+          <div className="absolute inset-0">
+            <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-red-500/30 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto px-6 relative z-10">
             <Link
               to="/projets-realises"
               className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-8 transition-colors"
@@ -181,62 +199,161 @@ const AGIAProject = () => {
             </Link>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-block px-6 py-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-full mb-8 font-bold animate-pulse"
             >
-              <span className="inline-block px-4 py-2 bg-blue-600/20 rounded-full text-blue-400 text-sm font-bold uppercase">
-                🛰️ ANALYSE AÉRIENNE IA
-              </span>
+              🚁 PROJET RÉALISÉ - RÉVOLUTION ANALYSE THERMIQUE
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black text-white mb-6 font-['Orbitron']"
+              className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-white via-red-400 to-blue-400 bg-clip-text text-transparent"
+              style={{ fontFamily: 'Orbitron, sans-serif' }}
             >
-              AGIA - Analyse Intelligente d'Images Aériennes
+              AGIA
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-gray-300 max-w-4xl mb-12"
+              transition={{ delay: 0.1 }}
+              className="text-2xl md:text-4xl mb-12 opacity-90 max-w-4xl"
             >
-              Plateforme complète d'analyse IA pour la détection automatique d'anomalies sur panneaux photovoltaïques via imagerie thermique aérienne par drone.
+              Analysez 1000 photos thermiques en <span className="text-red-400 font-bold">2 minutes</span> au lieu de <span className="text-blue-400 font-bold">5 heures</span>
             </motion.p>
 
-            {/* Key Metrics */}
+            {/* Hero Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl"
+              transition={{ delay: 0.2 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mb-12"
             >
-              <div className="bg-gray-900/50 border border-blue-500/20 rounded-xl p-6">
-                <div className="text-3xl font-black text-blue-400 font-['Orbitron']">90%</div>
-                <div className="text-sm text-gray-400 mt-1">Temps économisé</div>
-              </div>
-              <div className="bg-gray-900/50 border border-blue-500/20 rounded-xl p-6">
-                <div className="text-3xl font-black text-blue-400 font-['Orbitron']">97.8%</div>
-                <div className="text-sm text-gray-400 mt-1">Précision IA</div>
-              </div>
-              <div className="bg-gray-900/50 border border-blue-500/20 rounded-xl p-6">
-                <div className="text-3xl font-black text-blue-400 font-['Orbitron']">15K+</div>
-                <div className="text-sm text-gray-400 mt-1">Images traitées</div>
-              </div>
-              <div className="bg-gray-900/50 border border-blue-500/20 rounded-xl p-6">
-                <div className="text-3xl font-black text-blue-400 font-['Orbitron']">42 min</div>
-                <div className="text-sm text-gray-400 mt-1">vs 4h manuel</div>
-              </div>
+              {[
+                { number: "150x", label: "Plus rapide" },
+                { number: "99%", label: "Précision IA" },
+                { number: "2 min", label: "Analyse complète" },
+                { number: "6 sem", label: "ROI garanti" }
+              ].map((stat, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + idx * 0.1 }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
+                >
+                  <div className="text-4xl font-black bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm uppercase tracking-wider opacity-80">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex gap-4"
+            >
+              <button
+                onClick={() => openCalendly()}
+                className="px-8 py-4 bg-gradient-to-r from-red-500 to-blue-500 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-red-500/50 transition-all hover:scale-105 flex items-center gap-2"
+              >
+                <PlayCircle className="w-5 h-5" />
+                Demander une démo
+              </button>
+              <button
+                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-8 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition-all"
+              >
+                Découvrir le projet
+              </button>
+            </motion.div>
+          </div>
+
+          <style>{`
+            @keyframes gridScan {
+              0% { transform: translateY(-100%); }
+              100% { transform: translateY(100%); }
+            }
+          `}</style>
+        </section>
+
+        {/* Problem vs Solution */}
+        <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+          <div className="container mx-auto max-w-6xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Le Problème vs La Solution
+            </motion.h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Problem Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-red-900/30 to-red-950/30 border-2 border-red-500 rounded-3xl p-8"
+              >
+                <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  ❌ Méthode Manuelle
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    "4-5 heures pour analyser 1000 photos",
+                    "Erreurs humaines 15-20% des cas",
+                    "Technicien mobilisé = perte revenus",
+                    "Rapports incohérents et incomplets",
+                    "Impossible de scaler les missions"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-lg">
+                      <span className="text-2xl">❌</span>
+                      <span className="opacity-90">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Solution Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-green-900/30 to-green-950/30 border-2 border-green-500 rounded-3xl p-8"
+              >
+                <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+                  ✅ Avec AGIA
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    "2 minutes pour 1000 photos analysées",
+                    "Précision IA 99% (meilleure qu'humain)",
+                    "Multipliez par 5 votre capacité",
+                    "Rapports PDF professionnels automatiques",
+                    "Scalez sans limites vos missions"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-lg">
+                      <span className="text-2xl">✅</span>
+                      <span className="opacity-90">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Dashboard Section */}
-        <section className="py-12 px-4">
+        {/* Dashboard Preview Section */}
+        <section id="features" className="py-12 px-4 bg-black">
           <div className="container mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -244,7 +361,7 @@ const AGIAProject = () => {
               viewport={{ once: true }}
               className="mb-12 text-center"
             >
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 font-['Orbitron']">
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-4 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent">
                 Interface de la Plateforme
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -607,8 +724,101 @@ const AGIAProject = () => {
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Process Timeline */}
+        <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+          <div className="container mx-auto max-w-6xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Comment ça marche ?
+            </motion.h2>
+
+            <div className="relative flex justify-between items-center">
+              {/* Connection line */}
+              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-red-500 to-blue-500 -translate-y-1/2 z-0" />
+
+              {[
+                { number: 1, icon: <Upload />, title: "Upload", description: "Importez vos photos thermiques" },
+                { number: 2, icon: <Cpu />, title: "IA Analyse", description: "Traitement automatique 2min" },
+                { number: 3, icon: <Target />, title: "Détection", description: "Anomalies identifiées" },
+                { number: 4, icon: <Map />, title: "Géolocalisation", description: "Cartographie GPS précise" },
+                { number: 5, icon: <FileText />, title: "Rapport", description: "PDF professionnel généré" }
+              ].map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.2 }}
+                  whileHover={{ scale: 1.1 }}
+                  className="relative z-10 bg-black border-3 border-transparent bg-gradient-to-br from-red-500/20 to-blue-500/20 rounded-2xl p-6 text-center flex-1 mx-2"
+                  style={{ borderImageSource: 'linear-gradient(135deg, #ef4444, #3b82f6)', borderImageSlice: 1 }}
+                >
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-blue-500 flex items-center justify-center font-bold text-lg">
+                    {step.number}
+                  </div>
+
+                  <div className="text-white text-4xl mb-3">
+                    {step.icon}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-yellow-400 mb-2">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-sm opacity-80">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack */}
         <section className="py-20 px-6 bg-black">
+          <div className="container mx-auto max-w-5xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Technologies de Pointe
+            </motion.h2>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {[
+                { icon: "🤖", name: "OpenAI GPT-4 Vision", description: "Analyse d'images" },
+                { icon: "🐍", name: "Python + TensorFlow", description: "Deep Learning" },
+                { icon: "⚛️", name: "React + TypeScript", description: "Interface moderne" },
+                { icon: "🗄️", name: "PostgreSQL", description: "Base de données" },
+                { icon: "☁️", name: "AWS S3", description: "Stockage cloud" },
+                { icon: "📊", name: "Recharts", description: "Visualisation" }
+              ].map((tech, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, rotateY: 90 }}
+                  whileInView={{ opacity: 1, rotateY: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ scale: 1.1, rotateZ: 5 }}
+                  className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center"
+                >
+                  <div className="text-5xl mb-3">{tech.icon}</div>
+                  <h3 className="font-bold text-yellow-400 mb-1">{tech.name}</h3>
+                  <p className="text-sm opacity-70">{tech.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
           <div className="container mx-auto max-w-7xl">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -769,6 +979,122 @@ const AGIAProject = () => {
                 </div>
                 <p className="text-sm opacity-70 mt-2">Après déduction des frais d'installation et maintenance</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-20 px-6 bg-black">
+          <div className="container mx-auto max-w-6xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Tarifs du Projet
+            </motion.h2>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "STARTER",
+                  price: "2 500€",
+                  period: "Installation unique",
+                  monthly: "149€/mois",
+                  features: [
+                    "1 utilisateur",
+                    "50 analyses/mois",
+                    "Support email",
+                    "Rapports PDF",
+                    "Mises à jour incluses"
+                  ],
+                  popular: false
+                },
+                {
+                  name: "PRO",
+                  price: "4 500€",
+                  period: "Installation unique",
+                  monthly: "299€/mois",
+                  features: [
+                    "5 utilisateurs",
+                    "200 analyses/mois",
+                    "Marque blanche",
+                    "Support prioritaire",
+                    "Formations incluses",
+                    "API access"
+                  ],
+                  popular: true
+                },
+                {
+                  name: "ENTERPRISE",
+                  price: "Sur devis",
+                  period: "Installation personnalisée",
+                  monthly: "599€+/mois",
+                  features: [
+                    "Utilisateurs illimités",
+                    "Analyses illimitées",
+                    "Multi-sites",
+                    "Support 24/7",
+                    "Développements sur-mesure",
+                    "SLA garanti"
+                  ],
+                  popular: false
+                }
+              ].map((plan, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`relative bg-white/5 border-2 rounded-3xl p-8 ${
+                    plan.popular 
+                      ? 'border-red-500 scale-105 shadow-2xl shadow-red-500/30' 
+                      : 'border-white/20'
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1 bg-gradient-to-r from-red-500 to-blue-500 rounded-full text-sm font-bold">
+                      POPULAIRE
+                    </div>
+                  )}
+
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">{plan.name}</h3>
+                  
+                  <div className="mb-2">
+                    <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent whitespace-nowrap">
+                      {plan.price}
+                    </div>
+                  </div>
+                  <p className="text-sm opacity-70 mb-4">{plan.period}</p>
+                  
+                  <div className="mb-6 p-3 bg-white/5 rounded-xl">
+                    <div className="text-lg font-bold whitespace-nowrap">{plan.monthly}</div>
+                    <span className="text-sm opacity-70"> maintenance</span>
+                  </div>
+
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, fidx) => (
+                      <li key={fidx} className="flex items-start gap-2">
+                        <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="opacity-90">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    onClick={() => openCalendly()}
+                    className={`w-full py-4 rounded-xl font-bold transition-all ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-red-500 to-blue-500 hover:shadow-xl hover:shadow-red-500/50'
+                        : 'bg-white/10 hover:bg-white/20'
+                    }`}
+                  >
+                    Demander une démo
+                  </button>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
