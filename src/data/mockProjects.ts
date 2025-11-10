@@ -95,7 +95,7 @@ Opérateur de 5 parcs PV (1200 panneaux total). Avant : 20h/mois d'analyse manue
     },
     isNew: true,
     isPopular: true,
-    isFeatured: true,
+    isFeatured: false,
     blogUrl: null,
     demoUrl: '/projets/agia',
     clientTestimonial: {
