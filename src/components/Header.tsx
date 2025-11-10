@@ -64,16 +64,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <NavLink to="/" end className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red" : "text-white/80 hover:text-spider-red"}`}>
-              Agence Immobilière
-            </NavLink>
-
-            {/* Agences Dropdown */}
+            {/* Agence Immobilière Dropdown */}
             <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
               <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-red transition-colors">
-                Agences
+                Agence Immobilière
                 <ChevronDown className="w-4 h-4" />
               </button>
 
@@ -104,11 +98,31 @@ const Header = () => {
                 </div>}
             </div>
 
-            <NavLink to="/outils" className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-cyan border-b-2 border-spider-cyan" : "text-white/80 hover:text-spider-cyan"}`}>
-              Outils
-            </NavLink>
+            {/* Outils Dropdown */}
+            <div className="relative" onMouseEnter={() => setIsOutilsMenuOpen(true)} onMouseLeave={() => setIsOutilsMenuOpen(false)}>
+              <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-cyan transition-colors">
+                Outils
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {isOutilsMenuOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden z-50">
+                  <NavLink to="/outils" className={({
+                isActive
+              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
+                    AGIA Dashboard
+                  </NavLink>
+                  <NavLink to="/home-staging-virtuel" className={({
+                isActive
+              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
+                    Home Staging Virtuel
+                  </NavLink>
+                  <NavLink to="/comparateur-etats-lieux" className={({
+                isActive
+              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
+                    Comparateur États des Lieux
+                  </NavLink>
+                </div>}
+            </div>
 
             <NavLink to="/projets-realises" className={({
             isActive
@@ -127,10 +141,6 @@ const Header = () => {
           }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"}`}>
               Contact
             </NavLink>
-
-            <button onClick={openCalendly} className="px-6 py-2.5 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all">
-              Démo Gratuite
-            </button>
           </nav>
 
           {/* Logo */}
@@ -289,16 +299,6 @@ const Header = () => {
                 Contact
               </NavLink>
 
-              {/* Démo Gratuite */}
-              <button
-                onClick={() => {
-                  openCalendly();
-                  setIsMenuOpen(false);
-                }}
-                className="mx-4 mt-2 px-6 py-2.5 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg"
-              >
-                Démo Gratuite
-              </button>
             </div>
           </nav>}
       </div>
