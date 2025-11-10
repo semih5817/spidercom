@@ -3,12 +3,15 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Upload, Search, FileText, TrendingUp, AlertTriangle, CheckCircle, Download, Settings, Users, BarChart3, Zap, Clock, Grid, Map, Sun, ArrowLeft } from 'lucide-react';
+import { Upload, Search, FileText, TrendingUp, AlertTriangle, CheckCircle, Download, Settings, Users, BarChart3, Zap, Clock, Grid, Map, Sun, ArrowLeft, Target, Rocket, Shield, Cpu, Database, Cloud, PlayCircle, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useCalendly } from '@/hooks/useCalendly';
 
 const AGIAProject = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedImage, setSelectedImage] = useState(0);
+  const [roiMissions, setRoiMissions] = useState(50);
+  const { openCalendly } = useCalendly();
 
   // Données simulées
   const stats = {
@@ -69,6 +72,89 @@ const AGIAProject = () => {
     { id: 1, panel: "B-112", temp: "65.2°C", severity: "medium", x: 67, y: 32 },
     { id: 2, panel: "C-089", temp: "82.1°C", severity: "critical", x: 23, y: 78 },
   ];
+
+  const features = [
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Analyse Ultra-Rapide",
+      description: "1000 photos analysées en 2 minutes. IA de dernière génération pour une détection instantanée.",
+      gradient: "from-red-500 to-orange-500"
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Précision 99%",
+      description: "Détection ultra-précise des anomalies thermiques : points chauds, cellules défaillantes.",
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: <Map className="w-8 h-8" />,
+      title: "Géolocalisation GPS",
+      description: "Chaque défaut est localisé avec précision GPS pour une intervention rapide.",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: "Rapports Professionnels",
+      description: "Génération automatique de rapports PDF détaillés avec photos et recommandations.",
+      gradient: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Marque Blanche",
+      description: "Personnalisez avec votre logo. Vos clients ne voient que vous.",
+      gradient: "from-yellow-500 to-amber-500"
+    },
+    {
+      icon: <Cloud className="w-8 h-8" />,
+      title: "Dashboard Cloud",
+      description: "Accédez à vos analyses depuis n'importe où. Synchronisation automatique.",
+      gradient: "from-indigo-500 to-blue-500"
+    }
+  ];
+
+  const clientSuccess = [
+    {
+      company: "HIA Drones",
+      context: "3 pilotes, 10 missions/mois",
+      problem: "Analyse manuelle 50h/mois",
+      results: [
+        "50h → 2h (-96%)",
+        "10 → 35 missions/mois (+250%)",
+        "ROI en 5 semaines",
+        "CA +8 000€/mois"
+      ]
+    },
+    {
+      company: "SolarInspect",
+      context: "1 freelance, centrales solaires",
+      problem: "Max 2 sites/semaine",
+      results: [
+        "2 → 8 sites/semaine",
+        "Nouveaux clients grands comptes",
+        "Facturation +40%",
+        "Embauche d'un pilote"
+      ]
+    }
+  ];
+
+  const calculateROI = () => {
+    const hourlyRate = 35;
+    const hoursPerMission = 4;
+    const costPerMission = hourlyRate * hoursPerMission;
+    const totalSavings = roiMissions * costPerMission;
+    const starterCost = 2500;
+    const monthlyMaintenance = 149;
+    const monthsToBreakEven = Math.ceil((starterCost + monthlyMaintenance) / costPerMission);
+    
+    return {
+      savingsPerMission: costPerMission,
+      totalSavings,
+      monthsToBreakEven,
+      roi: ((totalSavings - starterCost) / starterCost * 100).toFixed(0)
+    };
+  };
+
+  const roi = calculateROI();
 
   return (
     <>
@@ -518,6 +604,240 @@ const AGIAProject = () => {
                 </main>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 px-6 bg-black">
+          <div className="container mx-auto max-w-7xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-16 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Fonctionnalités Clés
+            </motion.h2>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {features.map((feature, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="relative bg-gradient-to-br from-white/5 to-white/10 border border-white/20 rounded-2xl p-8 overflow-hidden group"
+                >
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.gradient}`} />
+                  
+                  <div className={`text-white mb-4 bg-gradient-to-r ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center`}>
+                    {feature.icon}
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-3 text-yellow-400">
+                    {feature.title}
+                  </h3>
+
+                  <p className="opacity-90 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Success Stories */}
+        <section className="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+          <div className="container mx-auto max-w-6xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-8 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Success Stories
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-xl text-center mb-16 opacity-80"
+            >
+              Comment AGIA a transformé leur business
+            </motion.p>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {clientSuccess.map((client, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-white/5 to-white/10 border border-white/20 rounded-3xl p-8"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <Rocket className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">{client.company}</h3>
+                      <p className="text-sm opacity-70">{client.context}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-xl">
+                    <div className="text-sm font-semibold text-red-400 mb-1">Problème</div>
+                    <p className="opacity-90">{client.problem}</p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="text-sm font-semibold text-green-400 mb-2">Résultats avec AGIA</div>
+                    {client.results.map((result, ridx) => (
+                      <div key={ridx} className="flex items-center gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
+                        <span className="opacity-90">{result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ROI Calculator */}
+        <section className="py-20 px-6 bg-black">
+          <div className="container mx-auto max-w-4xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-center mb-8 bg-gradient-to-r from-red-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Calculez votre ROI
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-xl text-center mb-12 opacity-80"
+            >
+              Découvrez combien vous économisez avec AGIA
+            </motion.p>
+
+            <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl p-8">
+              <div className="mb-8">
+                <label className="block text-lg font-semibold mb-4">
+                  Nombre de missions par mois : <span className="text-red-400">{roiMissions}</span>
+                </label>
+                <input
+                  type="range"
+                  min="10"
+                  max="200"
+                  value={roiMissions}
+                  onChange={(e) => setRoiMissions(Number(e.target.value))}
+                  className="w-full h-2 bg-gradient-to-r from-red-500 to-blue-500 rounded-lg appearance-none cursor-pointer"
+                />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-green-900/30 to-green-950/30 border border-green-500/50 rounded-2xl p-6">
+                  <div className="text-sm opacity-70 mb-2">Économies mensuelles</div>
+                  <div className="text-4xl font-black text-green-400">{roi.totalSavings.toLocaleString()}€</div>
+                  <div className="text-sm opacity-70 mt-2">{roi.savingsPerMission}€ par mission</div>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-900/30 to-blue-950/30 border border-blue-500/50 rounded-2xl p-6">
+                  <div className="text-sm opacity-70 mb-2">Retour sur investissement</div>
+                  <div className="text-4xl font-black text-blue-400">{roi.monthsToBreakEven} mois</div>
+                  <div className="text-sm opacity-70 mt-2">ROI : +{roi.roi}% la 1ère année</div>
+                </div>
+              </div>
+
+              <div className="mt-8 p-6 bg-gradient-to-r from-red-500/20 to-blue-500/20 border border-white/10 rounded-2xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <CheckCircle2 className="w-6 h-6 text-green-400" />
+                  <span className="font-bold text-lg">Votre gain annuel</span>
+                </div>
+                <div className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                  {(roi.totalSavings * 12 - 2500 - (149 * 12)).toLocaleString()}€
+                </div>
+                <p className="text-sm opacity-70 mt-2">Après déduction des frais d'installation et maintenance</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-20 px-6 bg-gradient-to-r from-red-500 to-blue-500">
+          <div className="container mx-auto text-center max-w-4xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black mb-6"
+            >
+              Prêt à Révolutionner vos Inspections ?
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl mb-8 opacity-90"
+            >
+              Multipliez par 5 votre capacité d'analyse avec AGIA
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex gap-4 justify-center"
+            >
+              <button
+                onClick={() => openCalendly()}
+                className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:shadow-2xl transition-all hover:scale-105 flex items-center gap-2"
+              >
+                <PlayCircle className="w-5 h-5" />
+                Demander une démo
+              </button>
+              <Link
+                to="/projets-realises"
+                className="px-8 py-4 bg-black/20 backdrop-blur-xl border-2 border-white rounded-full font-bold text-lg hover:bg-black/40 transition-all flex items-center gap-2"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Voir tous les projets
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="mt-12 flex items-center justify-center gap-8 text-sm"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" />
+                <span>150x plus rapide</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" />
+                <span>99% précision</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" />
+                <span>ROI en 6 semaines</span>
+              </div>
+            </motion.div>
           </div>
         </section>
 
