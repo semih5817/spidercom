@@ -42,7 +42,13 @@ const ProjectsShowcase = () => {
               transition={{ delay: index * 0.1 }}
             >
               <Link
-                to={project.slug === 'take-5-automatisation-google-business' ? '/projets/take-5' : '/projets-realises'}
+                to={
+                  project.slug === 'take-5-automatisation-google-business' 
+                    ? '/projets/take-5' 
+                    : project.slug === 'agia'
+                    ? '/projets/agia'
+                    : '/projets-realises'
+                }
                 className="group block bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-spider-cyan transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-[0_0_40px_rgba(180,235,245,0.3)]"
               >
                 {/* Image */}
