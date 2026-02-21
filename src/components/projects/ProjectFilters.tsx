@@ -51,7 +51,7 @@ const ProjectFilters = ({
                   onClick={() => onSectorChange(sector)}
                   className={`px-4 py-2 rounded-lg font-semibold text-sm whitespace-nowrap transition-all ${
                     selectedSector === sector
-                      ? 'bg-spider-red text-white shadow-lg shadow-spider-red/50'
+                      ? 'bg-primary text-white shadow-lg shadow-primary/50'
                       : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                   }`}
                 >

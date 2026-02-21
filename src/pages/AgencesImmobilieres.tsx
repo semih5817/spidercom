@@ -296,7 +296,7 @@ const AgencesImmobilieres = () => {
               duration: 0.8,
               delay: 0.8
             }} className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-                <button onClick={openCalendly} className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-spider-red via-orange-600 to-spider-red text-white font-inter font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-spider-red/50 transition-all hover:scale-105 bg-[length:200%_auto] hover:bg-right animate-gradient">
+                <button onClick={openCalendly} className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-primary via-accent to-primary text-white font-inter font-bold text-xl rounded-xl hover:shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 bg-[length:200%_auto] hover:bg-right animate-gradient">
                   <Sparkles className="w-6 h-6 group-hover:rotate-12 transition-transform" />
                   Voir une Démo Complète
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
@@ -456,7 +456,7 @@ const AgencesImmobilieres = () => {
               delay: index * 0.1
             }} className="relative z-10 group">
                   {/* Circle */}
-                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-900 to-black border-2 border-spider-red/30 flex items-center justify-center mb-4 group-hover:border-spider-red group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-spider-red/50 transition-all">
+                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-gray-900 to-black border-2 border-primary/30 flex items-center justify-center mb-4 group-hover:border-primary group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/50 transition-all">
                     <div className="text-center">
                       <div className="text-3xl mb-1">{step.icon}</div>
                       <div className="text-xs font-orbitron font-bold text-spider-red">{step.num}</div>

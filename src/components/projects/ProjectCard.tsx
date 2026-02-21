@@ -143,7 +143,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {!isComingSoon ? (
           <a
             href={projectLink}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-bold rounded-lg hover:from-spider-red/80 hover:to-spider-red transition-all group"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg hover:from-primary/80 hover:to-accent/80 transition-all group"
           >
             Voir le projet complet
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

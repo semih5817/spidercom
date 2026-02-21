@@ -27,7 +27,7 @@ const EmptyState = ({ onReset }: EmptyStateProps) => {
         
         <button
           onClick={onReset}
-          className="px-6 py-3 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all"
+          className="px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all"
         >
           Réinitialiser les filtres
         </button>

@@ -615,7 +615,7 @@ Répondez simplement OUI ou NON.
         <section className="px-8 py-20 bg-gradient-to-b from-deep-black via-purple-950/20 to-deep-black">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-6xl font-black mb-6 font-['Orbitron'] bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
+              <h2 className="text-6xl font-black mb-6 font-['Orbitron'] bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 💸 Calculez Vos Pertes Actuelles
               </h2>
             </div>

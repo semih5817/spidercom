@@ -163,7 +163,7 @@ const ProjectsShowcase = () => {
         >
           <Link
             to="/projets-realises"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-spider-red to-spider-red/80 text-white text-lg font-bold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all group"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white text-lg font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all group"
           >
             Voir tous nos projets
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

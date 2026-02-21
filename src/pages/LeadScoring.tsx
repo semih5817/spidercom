@@ -30,7 +30,7 @@ const LeadScoring = () => {
 
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-inter font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all"
             >
               <ArrowLeft size={20} />
               Retour à l'accueil
