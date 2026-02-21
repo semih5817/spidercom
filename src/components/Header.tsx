@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-import SpiderLogo from "./SpiderLogo";
+import MT03Logo from "./MT03Logo";
 import { useCalendly } from "@/hooks/useCalendly";
 
 const Header = () => {
@@ -145,8 +145,8 @@ const Header = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <SpiderLogo size={40} />
-            <span className="font-orbitron text-xl font-black text-white">SPIDERCOM</span>
+            <MT03Logo size={40} />
+            <span className="font-orbitron text-xl font-black text-white">MT03</span>
           </Link>
         </div>
 
