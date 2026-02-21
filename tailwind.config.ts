@@ -52,8 +52,8 @@ export default {
         "deep-black": "hsl(var(--deep-black))",
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        orbitron: ['Sora', 'sans-serif'],
+        inter: ['Manrope', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

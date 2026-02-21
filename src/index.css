@@ -8,51 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Miles Morales Premium Color System */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* MT03 Premium Color System */
+    --background: 222 45% 5%;
+    --foreground: 222 100% 96%;
 
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
+    --card: 222 50% 8%;
+    --card-foreground: 222 100% 96%;
 
-    --popover: 0 0% 3%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 222 50% 8%;
+    --popover-foreground: 222 100% 96%;
 
-    --primary: 354 85% 57%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 224 100% 65%;
+    --primary-foreground: 222 100% 96%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 222 53% 13%;
+    --secondary-foreground: 222 100% 96%;
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 222 53% 13%;
+    --muted-foreground: 222 30% 65%;
 
-    --accent: 354 85% 57%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 253 100% 69%;
+    --accent-foreground: 222 100% 96%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 348 100% 65%;
+    --destructive-foreground: 222 100% 96%;
 
-    --border: 354 85% 57%;
-    --input: 0 0% 15%;
-    --ring: 354 85% 57%;
+    --border: 224 100% 65%;
+    --input: 222 50% 12%;
+    --ring: 224 100% 65%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    /* SPIDERCOM Miles Morales Tokens */
-    --spider-red: 354 85% 57%;
-    --spider-cyan: 185 100% 50%;
-    --deep-black: 0 0% 0%;
+    /* MT03 Brand Tokens */
+    --spider-red: 224 100% 65%;
+    --spider-cyan: 253 100% 69%;
+    --deep-black: 222 45% 5%;
     
     /* Gradients */
-    --gradient-hero: radial-gradient(circle at 50% 50%, hsl(354 85% 57% / 0.15), transparent 70%);
-    --gradient-cta: linear-gradient(135deg, hsl(354 85% 57%), hsl(354 85% 47%));
-    --gradient-glow: radial-gradient(circle at center, hsl(354 85% 57% / 0.4), transparent 70%);
+    --gradient-hero: radial-gradient(circle at 50% 50%, hsl(224 100% 65% / 0.12), transparent 70%);
+    --gradient-cta: linear-gradient(135deg, hsl(224 100% 65%), hsl(253 100% 69%));
+    --gradient-glow: radial-gradient(circle at center, hsl(224 100% 65% / 0.3), transparent 70%);
     
     /* Shadows & Effects */
-    --shadow-red-glow: 0 0 30px hsl(354 85% 57% / 0.4);
-    --shadow-red-intense: 0 5px 40px hsl(354 85% 57% / 0.6);
-    --shadow-cyan-subtle: 0 0 20px hsl(185 100% 50% / 0.2);
+    --shadow-red-glow: 0 0 30px hsl(224 100% 65% / 0.25);
+    --shadow-red-intense: 0 5px 40px hsl(224 100% 65% / 0.4);
+    --shadow-cyan-subtle: 0 0 20px hsl(253 100% 69% / 0.2);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -67,8 +67,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #000000;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #070A12;
   }
 
   html {
@@ -92,18 +92,18 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 0.02em;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
   .font-orbitron {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Sora', sans-serif;
   }
 
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
   }
 
   .text-gradient {
@@ -156,10 +156,10 @@ All colors MUST be HSL.
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 30px hsl(354 85% 57% / 0.4);
+    box-shadow: 0 0 30px hsl(224 100% 65% / 0.25);
   }
   50% {
-    box-shadow: 0 0 60px hsl(354 85% 57% / 0.7);
+    box-shadow: 0 0 60px hsl(224 100% 65% / 0.5);
   }
 }
 
