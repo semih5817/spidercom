@@ -94,14 +94,14 @@ const RelanceROIResults = ({
         </div>
       </div>
 
-      {/* SECTION 2 : Avec automatisation Spydercom */}
+      {/* SECTION 2 : Avec automatisation MT03 */}
       <div className="mb-12 bg-gradient-to-r from-green-950/50 via-cyan-950/50 to-blue-950/50 
                       rounded-2xl p-10 border-2 border-cyan-400
                       shadow-[0_0_40px_rgba(6,182,212,0.3)]">
         <div className="flex items-center gap-4 mb-8">
           <div className="text-6xl">🚀</div>
           <h3 className="text-3xl font-black text-cyan-400">
-            AVEC SPYDERCOM (automatisation complète)
+            AVEC MT03 (automatisation complète)
           </h3>
         </div>
 
@@ -164,7 +164,7 @@ const RelanceROIResults = ({
             <div className="text-center">
               <div className="text-cyan-400 text-xs mb-2 font-bold">Relance auto</div>
               <div className="text-4xl font-black text-green-400">19%</div>
-              <div className="text-xs text-green-400 mt-1">Avec Spidercom (100%)</div>
+              <div className="text-xs text-green-400 mt-1">Avec MT03 (100%)</div>
             </div>
           </div>
         </div>
@@ -179,7 +179,7 @@ const RelanceROIResults = ({
           </div>
           <div className="flex items-center justify-center gap-8 text-white/90 text-sm">
             <div>
-              <div className="text-xs opacity-70">Coût Spydercom</div>
+              <div className="text-xs opacity-70">Coût MT03</div>
               
             </div>
             <div className="text-4xl">→</div>

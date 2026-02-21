@@ -219,7 +219,7 @@ const QualificationLeads = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-              {/* AGENCE A : Sans Spydercom */}
+              {/* AGENCE A : Sans MT03 */}
               <div className="relative">
                 <div className="absolute -top-4 -left-4 bg-spider-red text-white px-4 py-2 rounded-full font-bold text-sm z-10 shadow-lg">
                   ❌ TROP LENT
@@ -270,7 +270,7 @@ const QualificationLeads = () => {
                 </div>
               </div>
 
-              {/* AGENCE B : Avec Spydercom */}
+              {/* AGENCE B : Avec MT03 */}
               <div className="relative">
                 <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-full font-black text-lg z-10 shadow-[0_0_30px_rgba(251,191,36,0.6)] animate-pulse">
                   👑 GAGNANT
@@ -282,7 +282,7 @@ const QualificationLeads = () => {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-spider-cyan">Agence B</h3>
-                      <p className="text-sm text-cyan-300">Propulsée par Spydercom IA</p>
+                      <p className="text-sm text-cyan-300">Propulsée par MT03 IA</p>
                     </div>
                   </div>
 
@@ -337,7 +337,7 @@ const QualificationLeads = () => {
                   <div className="text-6xl animate-pulse">VS</div>
                 </div>
                 <div>
-                  <div className="text-spider-cyan text-sm mb-2 font-bold">AGENCE B (Spidercom)</div>
+                  <div className="text-spider-cyan text-sm mb-2 font-bold">AGENCE B (MT03)</div>
                   <div className="text-5xl font-black text-green-500 mb-2">+126k€</div>
                   <p className="text-gray-400 text-sm">100% traités • 17% conversion • 8k€</p>
                 </div>
@@ -364,7 +364,7 @@ const QualificationLeads = () => {
                     <span className="text-xl">🤖</span>
                   </div>
                   <div>
-                    <div className="text-white font-bold">Assistant Spidercom</div>
+                    <div className="text-white font-bold">Assistant MT03</div>
                     <div className="text-cyan-200 text-xs flex items-center gap-2">
                       <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                       En ligne • Répond en &lt;2 secondes

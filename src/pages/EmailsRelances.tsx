@@ -411,7 +411,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                       <span className="text-xl">🏠</span>
                     </div>
                     <div>
-                      <div className="text-white font-bold">Spidercom Aut</div>
+                      <div className="text-white font-bold">MT03 Aut</div>
                       <div className="text-pink-200 text-xs">Message automatique</div>
                     </div>
                   </div>

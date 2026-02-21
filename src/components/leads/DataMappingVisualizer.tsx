@@ -174,7 +174,7 @@ const DataMappingVisualizer = () => {
 
         {/* Colonne 3 : CRM */}
         <div>
-          <h3 className="text-2xl font-bold text-purple-400 mb-8 text-center">💾 CRM SPIDERCOM</h3>
+          <h3 className="text-2xl font-bold text-purple-400 mb-8 text-center">💾 CRM MT03</h3>
           <div className="space-y-4">
             {fields.map(field => <motion.div key={field.id} initial={{
             x: 20,

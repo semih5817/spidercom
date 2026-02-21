@@ -71,14 +71,14 @@ const ProjetsRealises = () => {
   return (
     <>
       <Helmet>
-        <title>Projets Réalisés - Portfolio Spidercom | Automatisation & Outils</title>
+        <title>Projets Réalisés - Portfolio MT03 | Automatisation & Outils</title>
         <meta
           name="description"
-          content="Découvrez les projets concrets réalisés par Spidercom : automatisations N8N, outils Lovable, dashboards IA pour agences immobilières, restaurants, e-commerce et plus."
+          content="Découvrez les projets concrets réalisés par MT03 : automatisations N8N, outils Lovable, dashboards IA pour agences immobilières, restaurants, e-commerce et plus."
         />
         <meta
           name="keywords"
-          content="projets automatisation, portfolio spidercom, n8n projets, outils no-code, dashboard sur mesure"
+          content="projets automatisation, portfolio mt03, n8n projets, outils no-code, dashboard sur mesure"
         />
       </Helmet>
 
@@ -104,7 +104,7 @@ const ProjetsRealises = () => {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-7xl font-black text-white mb-6 font-['Orbitron']"
             >
-              Projets Réalisés par Spidercom
+              Projets Réalisés par MT03
             </motion.h1>
 
             <motion.p
@@ -113,7 +113,7 @@ const ProjetsRealises = () => {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
             >
-              Chez Spidercom, chaque projet est une expérimentation concrète de nos solutions
+              Chez MT03, chaque projet est une expérimentation concrète de nos solutions
               d'automatisation, de conception et de performance. Découvrez comment nous aidons nos
               clients à gagner du temps, à automatiser leurs processus et à valoriser leur activité.
             </motion.p>

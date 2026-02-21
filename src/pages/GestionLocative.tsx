@@ -644,7 +644,7 @@ const GestionLocative = () => {
         <section className="px-8 py-20 bg-gradient-to-b from-black via-emerald-950/20 to-black">
           <div className="max-w-7xl mx-auto">
             
-            <h2 className="text-5xl font-bold text-center mb-16 text-white">🎯 Pourquoi Choisir Spidercom ?</h2>
+            <h2 className="text-5xl font-bold text-center mb-16 text-white">🎯 Pourquoi Choisir MT03 ?</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               

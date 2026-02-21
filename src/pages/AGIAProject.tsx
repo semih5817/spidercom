@@ -11,7 +11,7 @@ const AGIAProject = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>AGIA - Analyse Intelligente d'Images Aériennes | Spidercom</title>
+        <title>AGIA - Analyse Intelligente d'Images Aériennes | MT03</title>
         <meta name="description" content="Plateforme IA pour analyser automatiquement les images thermiques de panneaux photovoltaïques. 90% de temps économisé, 97.8% de précision." />
       </Helmet>
 

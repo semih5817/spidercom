@@ -122,7 +122,7 @@ const EDLROICalculator = () => {
         </Card>
       </motion.div>
 
-      {/* Gains avec Spydercom */}
+      {/* Gains avec MT03 */}
       <motion.div initial={{
       opacity: 0,
       y: 20
@@ -135,7 +135,7 @@ const EDLROICalculator = () => {
         <Card className="bg-gradient-to-br from-emerald-500/20 to-gray-900 border-emerald-500 p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-4xl">🚀</span>
-            <h3 className="font-orbitron text-2xl text-white">AVEC SPIDERCOM (Automatisation IA)</h3>
+            <h3 className="font-orbitron text-2xl text-white">AVEC MT03 (Automatisation IA)</h3>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">

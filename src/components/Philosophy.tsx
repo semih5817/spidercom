@@ -1,5 +1,5 @@
 import { Network } from "lucide-react";
-import spiderLogo from "@/assets/spider-logo.png";
+import MT03Logo from "./MT03Logo";
 
 const Philosophy = () => {
   return (
@@ -8,7 +8,7 @@ const Philosophy = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-6 animate-fade-in">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-spider-red/10 mb-4 animate-float">
-            <img src={spiderLogo} alt="SPIDERCOM" className="w-12 h-12" />
+            <MT03Logo size={48} />
           </div>
           <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white">
             Pourquoi on fait ça ?
@@ -18,7 +18,7 @@ const Philosophy = () => {
         {/* Content */}
         <div className="space-y-6 text-lg text-white/80 mb-12 font-inter leading-relaxed">
           <p>
-            Chez <span className="text-spider-red font-semibold">SPIDERCOM</span>, on pense qu'une petite entreprise peut avoir les mêmes outils qu'un grand groupe.
+            Chez <span className="text-spider-red font-semibold">MT03</span>, on pense qu'une petite entreprise peut avoir les mêmes outils qu'un grand groupe.
           </p>
           
           <p>
@@ -41,7 +41,7 @@ const Philosophy = () => {
           </p>
         </div>
 
-        {/* Spider metaphor */}
+        {/* Network metaphor */}
         <div className="bg-spider-red/5 border border-spider-red/30 rounded-lg p-8 relative overflow-hidden group hover:border-spider-red/60 transition-all duration-400 hover:-translate-y-1">
           <div className="absolute top-0 right-0 w-64 h-64 bg-spider-red/10 rounded-full blur-3xl" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -51,9 +51,9 @@ const Philosophy = () => {
               <Network className="w-8 h-8 text-spider-red" />
             </div>
             <div>
-              <h3 className="font-orbitron text-xl font-bold text-white mb-3">La métaphore de la toile d'araignée</h3>
+              <h3 className="font-orbitron text-xl font-bold text-white mb-3">Un réseau d'automatisations intelligentes</h3>
               <p className="text-white/80 font-inter">
-                On connecte tous vos outils comme une toile d'araignée intelligente. Quand un élément bouge (nouveau lead), toute la toile réagit (notification, CRM, relance auto).
+                On connecte tous vos outils comme un réseau intelligent. Quand un élément bouge (nouveau lead), tout le système réagit (notification, CRM, relance auto).
               </p>
             </div>
           </div>
