@@ -248,7 +248,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                 💔 LE DRAME QUOTIDIEN
               </div>
               <h1 className="text-6xl md:text-8xl font-black mb-6 font-orbitron">
-                <span className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   ILS ONT VISITÉ... ET DISPARU
                 </span>
               </h1>
@@ -565,7 +565,7 @@ Besoin d'aide pour un document ? Appelez-moi au [Téléphone].
                 💸 CALCULATEUR D'IMPACT
               </div>
               <h2 className="text-6xl font-black mb-6 font-['Orbitron']">
-                <span className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 
+                <span className="bg-gradient-to-r from-primary via-accent to-primary 
                                bg-clip-text text-transparent animate-gradient">
                   Combien de ventes perdez-vous ?
                 </span>

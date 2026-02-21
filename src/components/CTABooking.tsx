@@ -20,12 +20,12 @@ const CTABooking = ({
       once: true
     }} transition={{
       duration: 0.6
-    }} className="max-w-6xl mx-auto bg-gradient-to-r from-red-950/50 via-red-900/30 to-orange-950/50 
-                   rounded-3xl p-12 md:p-16 border-2 border-red-500
-                   shadow-[0_0_80px_rgba(235,45,58,0.4)] text-center mb-20">
+    }} className="max-w-6xl mx-auto bg-gradient-to-r from-secondary via-secondary/80 to-accent/10 
+                   rounded-3xl p-12 md:p-16 border-2 border-primary/40
+                   shadow-[0_0_80px_hsl(224_100%_65%_/_0.2)] text-center mb-20">
         {/* Badge */}
         <div className="inline-block mb-6">
-          <span className="px-4 py-2 bg-red-500/20 rounded-full text-red-400 
+          <span className="px-4 py-2 bg-primary/20 rounded-full text-primary 
                          text-sm font-bold uppercase tracking-wider">
             🎯 PRÊT À AUTOMATISER ?
           </span>
@@ -37,30 +37,30 @@ const CTABooking = ({
         </h2>
 
         {/* Sous-titre (dynamique) */}
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
           {subtitle}
         </p>
 
         {/* Promesses */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-10">
-          <div className="flex items-center gap-3 bg-black/30 px-6 py-4 rounded-xl 
-                         border border-red-500/30 w-full md:w-auto">
+          <div className="flex items-center gap-3 bg-background/30 px-6 py-4 rounded-xl 
+                         border border-primary/20 w-full md:w-auto">
             <span className="text-2xl md:text-3xl">⚡</span>
-            <span className="text-white font-semibold text-sm md:text-base">
+            <span className="text-foreground font-semibold text-sm md:text-base">
               Démo live de vos automatisations
             </span>
           </div>
-          <div className="flex items-center gap-3 bg-black/30 px-6 py-4 rounded-xl 
-                         border border-red-500/30 w-full md:w-auto">
+          <div className="flex items-center gap-3 bg-background/30 px-6 py-4 rounded-xl 
+                         border border-primary/20 w-full md:w-auto">
             <span className="text-2xl md:text-3xl">💰</span>
-            <span className="text-white font-semibold text-sm md:text-base">
+            <span className="text-foreground font-semibold text-sm md:text-base">
               Calcul ROI pour votre agence
             </span>
           </div>
-          <div className="flex items-center gap-3 bg-black/30 px-6 py-4 rounded-xl 
-                         border border-red-500/30 w-full md:w-auto">
+          <div className="flex items-center gap-3 bg-background/30 px-6 py-4 rounded-xl 
+                         border border-primary/20 w-full md:w-auto">
             <span className="text-2xl md:text-3xl">🎁</span>
-            <span className="text-white font-semibold text-sm md:text-base">
+            <span className="text-foreground font-semibold text-sm md:text-base">
               Audit gratuit de vos process
             </span>
           </div>
@@ -72,10 +72,10 @@ const CTABooking = ({
       }} whileTap={{
         scale: 0.95
       }} data-event="cta-booking-clicked" data-page={typeof window !== 'undefined' ? window.location.pathname : ''} data-source="end-of-page" className="group relative px-8 md:px-12 py-5 md:py-6
-                     bg-gradient-to-r from-red-600 via-red-500 to-orange-600
+                     bg-gradient-to-r from-primary via-primary/90 to-accent
                      text-white font-black text-xl md:text-2xl rounded-2xl
-                     shadow-[0_0_60px_rgba(235,45,58,0.6)]
-                     hover:shadow-[0_0_80px_rgba(235,45,58,0.8)]
+                     shadow-[0_0_60px_hsl(224_100%_65%_/_0.4)]
+                     hover:shadow-[0_0_80px_hsl(224_100%_65%_/_0.6)]
                      transition-all duration-300 cursor-pointer
                      overflow-hidden w-full md:w-auto">
           <span className="relative z-10 flex items-center justify-center gap-3">
@@ -99,12 +99,12 @@ const CTABooking = ({
         </motion.button>
 
         {/* Sous-texte */}
-        <p className="text-xs md:text-sm text-gray-400 mt-6">
+        <p className="text-xs md:text-sm text-muted-foreground mt-6">
           ⚡ Disponibilité immédiate • 🎯 Sans engagement • 🔒 Confidentiel
         </p>
 
         {/* Social proof */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-gray-500 mt-8">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground mt-8">
           <div className="flex items-center gap-2">
             <span className="text-green-500 text-base md:text-lg">✓</span>
             <span>2 agences équipées</span>

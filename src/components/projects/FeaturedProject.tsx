@@ -152,7 +152,7 @@ const FeaturedProject = ({ project }: FeaturedProjectProps) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={project.demoUrl || '#'}
-                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all"
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all"
               >
                 Voir le projet complet
                 <ArrowRight className="w-5 h-5" />

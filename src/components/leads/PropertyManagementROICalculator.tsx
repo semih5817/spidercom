@@ -298,8 +298,8 @@ const PropertyManagementROIResults = ({
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl p-8 
-                        text-center shadow-[0_0_60px_rgba(251,191,36,0.5)]">
+        <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 
+                        text-center shadow-[0_0_60px_hsl(224_100%_65%_/_0.3)]">
           <div className="text-white text-xl mb-3 font-bold">
             💰 GAIN NET MENSUEL
           </div>

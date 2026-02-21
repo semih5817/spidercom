@@ -161,7 +161,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-spider-red to-spider-red/80 text-white font-inter font-semibold rounded-lg hover:shadow-lg hover:shadow-spider-red/50 transition-all flex items-center justify-center gap-2"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-primary to-accent text-white font-inter font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
                   Envoyer le message

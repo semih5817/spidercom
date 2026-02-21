@@ -86,7 +86,7 @@ const ProjetsRealises = () => {
         <Header />
 
         {/* Hero Section */}
-        <section className="relative py-20 px-4 bg-gradient-to-b from-black via-spider-red/10 to-black overflow-hidden">
+        <section className="relative py-20 px-4 bg-gradient-to-b from-black via-primary/10 to-black overflow-hidden">
           <div className="container mx-auto text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -165,7 +165,7 @@ const ProjetsRealises = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-spider-red/50 to-orange-950/50">
+        <section className="py-20 px-4 bg-gradient-to-r from-primary/20 to-accent/20">
           <div className="container mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ const ProjetsRealises = () => {
               </p>
               <button
                 onClick={openCalendly}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-spider-red to-spider-red/80 text-white text-lg font-bold rounded-lg hover:shadow-2xl hover:shadow-spider-red/50 transition-all animate-pulse hover:animate-none"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white text-lg font-bold rounded-lg hover:shadow-2xl hover:shadow-primary/50 transition-all animate-pulse hover:animate-none"
               >
                 💬 Discutons de Votre Projet
               </button>
