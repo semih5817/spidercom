@@ -936,7 +936,7 @@ const ComparateurEtatsLieux = () => {
               </Card>
 
               <Card className="bg-gradient-to-br from-gray-900 to-gray-800 border-white/10 p-6">
-                <h3 className="font-orbitron text-xl text-white mb-4">🛡️ Comment Spydercom garantit la conformité</h3>
+                <h3 className="font-orbitron text-xl text-white mb-4">🛡️ Comment MT03 garantit la conformité</h3>
                 <ul className="space-y-3 text-sm text-white/80">
                   <li>• Template rapport = modèle officiel ALUR</li>
                   <li>• Calcul vétusté automatique selon grille légale</li>

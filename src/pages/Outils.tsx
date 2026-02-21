@@ -250,7 +250,7 @@ const Outils = () => {
   return (
     <>
       <Helmet>
-        <title>AGIA - L'IA qui Révolutionne l'Analyse Thermique par Drone | Spidercom</title>
+        <title>AGIA - L'IA qui Révolutionne l'Analyse Thermique par Drone | MT03</title>
         <meta
           name="description"
           content="AGIA : Analysez 1000 photos thermiques en 2 minutes au lieu de 5 heures. Détection automatique des défauts, géolocalisation GPS, rapport PDF professionnel. ROI en 6 semaines."
@@ -1122,7 +1122,7 @@ const Outils = () => {
                 Réserver une démo gratuite
               </button>
               <button
-                onClick={() => window.location.href = 'mailto:contact@spidercom.fr'}
+                onClick={() => window.location.href = 'mailto:contact@mt03.fr'}
                 className="px-8 py-4 bg-black/20 backdrop-blur-xl border-2 border-white rounded-full font-bold text-lg hover:bg-black/40 transition-all"
               >
                 Nous contacter

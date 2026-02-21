@@ -62,10 +62,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-inter font-semibold text-white mb-1">Email</h3>
                       <a 
-                        href="mailto:contact@spydercom.fr" 
+                        href="mailto:contact@mt03.fr" 
                         className="font-inter text-white/70 hover:text-spider-red transition-colors"
                       >
-                        contact@spydercom.fr
+                        contact@mt03.fr
                       </a>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ const Contact = () => {
         </div>
       </main>
 
-      <CTABooking subtitle="Planifiez une démo personnalisée pour découvrir Spydercom en action" />
+      <CTABooking subtitle="Planifiez une démo personnalisée pour découvrir MT03 en action" />
       <Footer />
     </div>
   );

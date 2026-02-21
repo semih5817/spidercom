@@ -250,7 +250,7 @@ const HomeStagingVirtuel = () => {
         <section className="px-4 py-20">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-12">
-              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">✅ La Solution Spidercom</h2>
+              <h2 className="font-orbitron text-4xl md:text-5xl font-black text-white mb-4">✅ La Solution MT03</h2>
               <p className="font-inter text-xl text-white/70">
                 Uploadez votre photo vide et obtenez un rendu design en 30 secondes.<br />
                 Changez de style à volonté. Zéro contrainte physique.

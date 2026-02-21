@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
-import SpiderLogo from "@/components/SpiderLogo";
+import MT03Logo from "@/components/MT03Logo";
 import BackgroundEffects from "@/components/BackgroundEffects";
 import { useCalendly } from "@/hooks/useCalendly";
 const Hero = () => {
@@ -14,11 +14,11 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Logo + Nom */}
           <div className="flex flex-col items-center gap-6 mb-8">
-            <SpiderLogo size={90} className="animate-float" />
+            <MT03Logo size={90} className="animate-float" />
             <h1 className="font-orbitron text-5xl md:text-6xl font-black tracking-[4px] text-white relative">
-              SPIDERCOM
+              MT03
               <div className="absolute inset-0 text-spider-cyan opacity-10 translate-x-0.5 translate-y-0.5">
-                SPIDERCOM
+                MT03
               </div>
             </h1>
           </div>

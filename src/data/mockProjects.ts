@@ -147,7 +147,7 @@ Opérateur de 5 parcs PV (1200 panneaux total). Avant : 20h/mois d'analyse manue
     blogUrl: '/blog/automatisation-agences-immobilieres',
     demoUrl: '/agences-immobilieres',
     clientTestimonial: {
-      quote: "Spidercom a transformé notre agence. On a gagné 15h par semaine et doublé notre volume de leads traités.",
+      quote: "MT03 a transformé notre agence. On a gagné 15h par semaine et doublé notre volume de leads traités.",
       author: "Sophie Martin",
       role: "Directrice",
       company: "Martin Immobilier Paris"

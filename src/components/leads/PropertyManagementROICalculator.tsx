@@ -227,7 +227,7 @@ const PropertyManagementROIResults = ({
                       shadow-[0_0_40px_rgba(16,185,129,0.3)]">
         <div className="flex items-center gap-4 mb-8">
           <div className="text-6xl">🚀</div>
-          <h3 className="text-3xl font-black text-emerald-400">AVEC SPIDERCOM (Automatisation Totale)</h3>
+          <h3 className="text-3xl font-black text-emerald-400">AVEC MT03 (Automatisation Totale)</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

@@ -69,13 +69,13 @@ const ROICalculationResults = ({
         </div>
       </div>
 
-      {/* Section APRÈS : Gains avec Spydercom */}
+      {/* Section APRÈS : Gains avec MT03 */}
       <div className="mb-12 bg-gradient-to-r from-green-950/50 via-cyan-950/50 to-blue-950/50 
                       rounded-2xl p-10 border-2 border-cyan-400
                       shadow-[0_0_40px_rgba(6,182,212,0.3)]">
         <div className="flex items-center gap-4 mb-8">
           <div className="text-6xl">🚀</div>
-          <h3 className="text-3xl font-black text-cyan-400">VOS GAINS AVEC SPIDERCOM</h3>
+          <h3 className="text-3xl font-black text-cyan-400">VOS GAINS AVEC MT03</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

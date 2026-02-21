@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 const Take5Project = () => {
   return <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Take 5 - Révolution IA pour Google Business | Spidercom</title>
+        <title>Take 5 - Révolution IA pour Google Business | MT03</title>
         <meta name="description" content="Automatisation complète de Google Business avec IA : gestion des avis, métriques temps réel et rapports WhatsApp. 85% de temps économisé, 100% d'avis traités." />
       </Helmet>
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
       }} transition={{
         duration: 0.6
       }} className="inline-block bg-white/10 backdrop-blur-md px-8 py-4 rounded-full mb-8 animate-[float_3s_ease-in-out_infinite]">
-          <span className="text-3xl">🚀 TAKE 5 by SPIDERCOM</span>
+          <span className="text-3xl">🚀 TAKE 5 by MT03</span>
         </motion.div>
         
         <motion.h1 initial={{
