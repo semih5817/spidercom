@@ -1,5 +1,5 @@
 import founderImage from "@/assets/founder-semih.png";
-import ibrahimImage from "@/assets/ibrahim.png";
+
 
 const TeamMember = ({
   image,
@@ -63,23 +63,20 @@ const Founder = () => {
             </p>
           </TeamMember>
 
-          {/* Ibrahim */}
-          <TeamMember
-            image={ibrahimImage}
-            name="Ibrahim"
-            role="Lead Développeur & Tech"
-            alt="Ibrahim, lead développeur MT03"
-          >
-            <p>
-              Le cerveau technique de MT03. Ibrahim conçoit, développe et déploie toutes les solutions.
+          {/* À venir */}
+          <div className="flex flex-col items-center text-center">
+            <div className="relative group mb-6">
+              <div className="absolute inset-0 bg-primary/20 rounded-xl blur-xl group-hover:bg-primary/30 transition-all duration-400" />
+              <div className="relative rounded-xl border-2 border-dashed border-primary/30 w-64 h-80 flex items-center justify-center bg-white/5">
+                <span className="text-white/20 text-6xl">?</span>
+              </div>
+            </div>
+            <h3 className="font-orbitron text-2xl font-bold text-white/40 mb-1">À venir</h3>
+            <p className="text-primary/50 font-semibold text-sm uppercase tracking-wider mb-4">Prochain talent</p>
+            <p className="text-white/40 font-inter leading-relaxed max-w-sm text-sm">
+              Un nouveau membre rejoindra bientôt l'équipe MT03…
             </p>
-            <p>
-              <span className="text-white font-medium">Développement, automatisations N8N, intégrations API,</span> applications sur-mesure et support technique.
-            </p>
-            <p className="text-primary/90 font-medium">
-              "Transformer chaque idée en solution fiable et performante."
-            </p>
-          </TeamMember>
+          </div>
         </div>
       </div>
     </section>
