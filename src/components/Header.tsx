@@ -1,307 +1,236 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-import MT03Logo from "./MT03Logo";
-import { useCalendly } from "@/hooks/useCalendly";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isAgenciesMenuOpen, setIsAgenciesMenuOpen] = useState(false);
-  const [isOutilsMenuOpen, setIsOutilsMenuOpen] = useState(false);
-  
-  const {
-    openCalendly
-  } = useCalendly();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [isMenuOpen]);
+
   const agenciesSolutions = {
-    automations: [{
-      name: "Publication Multi-Plateformes",
-      path: "/publication-multi-plateformes"
-    }, {
-      name: "Qualification de Leads",
-      path: "/qualification-leads"
-    }, {
-      name: "Emails & Relances",
-      path: "/emails-relances"
-    }, {
-      name: "Gestion Locative",
-      path: "/gestion-locative"
-    }, {
-      name: "Intégration CRM",
-      path: "/integration-crm"
-    }],
-    outils: [{
-      name: "Home Staging Virtuel",
-      path: "/home-staging-virtuel"
-    }, {
-      name: "Comparateur États des Lieux",
-      path: "/comparateur-etats-lieux"
-    }]
+    automations: [
+      { name: "Publication Multi-Plateformes", path: "/publication-multi-plateformes" },
+      { name: "Qualification de Leads", path: "/qualification-leads" },
+      { name: "Emails & Relances", path: "/emails-relances" },
+      { name: "Gestion Locative", path: "/gestion-locative" },
+      { name: "Intégration CRM", path: "/integration-crm" },
+    ],
+    outils: [
+      { name: "Home Staging Virtuel", path: "/home-staging-virtuel" },
+      { name: "Comparateur États des Lieux", path: "/comparateur-etats-lieux" },
+    ],
   };
-  const tools = [{
-    name: "Qualification de Leads",
-    path: "/qualification-leads"
-  }, {
-    name: "Emails & Relances",
-    path: "/emails-relances"
-  }, {
-    name: "Intégration CRM",
-    path: "/integration-crm"
-  }, {
-    name: "Publication Multi-Plateformes",
-    path: "/publication-multi-plateformes"
-  }, {
-    name: "Gestion Locative",
-    path: "/gestion-locative"
-  }];
-  return <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white p-2">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {/* Agence Immobilière Dropdown */}
-            <div className="relative" onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
-              <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-red transition-colors">
-                Agence Immobilière
-                <ChevronDown className="w-4 h-4" />
+  const outilsItems = [
+    { name: "AGIA Dashboard", path: "/outils" },
+    { name: "Home Staging Virtuel", path: "/home-staging-virtuel" },
+    { name: "Comparateur États des Lieux", path: "/comparateur-etats-lieux" },
+  ];
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `font-inter text-sm font-medium tracking-wide transition-colors duration-200 ${
+      isActive ? "text-primary" : "text-white/70 hover:text-white"
+    }`;
+
+  return (
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-background/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/20"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Burger - left */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white/70 hover:text-white p-2 transition-colors"
+              aria-label="Menu"
+            >
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+
+            {/* Logo - center */}
+            <Link
+              to="/"
+              className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 hover:opacity-90 transition-opacity"
+            >
+              <span className="font-orbitron text-xl md:text-2xl font-black text-white tracking-[3px]">
+                MT03
+              </span>
+            </Link>
+
+            {/* Right spacer for symmetry */}
+            <div className="w-10" />
+          </div>
+        </div>
+      </header>
+
+      {/* Spacer */}
+      <div className="h-16 md:h-20" />
+
+      {/* Full-screen menu overlay */}
+      <div
+        className={`fixed inset-0 z-40 transition-all duration-500 ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-background/98 backdrop-blur-xl"
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Menu content */}
+        <nav className="relative z-10 flex flex-col items-center justify-center h-full px-6">
+          <div className="w-full max-w-md space-y-1">
+            {/* Agence Immobilière dropdown */}
+            <div>
+              <button
+                onClick={() => setOpenDropdown(openDropdown === "agence" ? null : "agence")}
+                className="w-full flex items-center justify-between py-4 font-orbitron text-lg font-bold text-white/80 hover:text-white transition-colors"
+              >
+                <span>Agence Immobilière</span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    openDropdown === "agence" ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-
-              {isDropdownOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden z-50">
-                  {/* Automatisations Section */}
-                  <div className="px-4 py-2 bg-spider-red/10 border-b border-gray-800">
-                    <span className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider">
-                      Automatisations
-                    </span>
-                  </div>
-                  {agenciesSolutions.automations.map(item => <NavLink key={item.path} to={item.path} className={({
-                isActive
-              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-red/20 text-spider-red" : "text-white/80 hover:bg-gray-900 hover:text-spider-red"}`}>
+              <div
+                className={`overflow-hidden transition-all duration-400 ${
+                  openDropdown === "agence" ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="pl-4 pb-4 space-y-1">
+                  <p className="text-[10px] font-orbitron font-bold text-primary uppercase tracking-[3px] py-2">
+                    Automatisations
+                  </p>
+                  {agenciesSolutions.automations.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `block py-2.5 pl-3 font-inter text-sm border-l-2 transition-all duration-200 ${
+                          isActive
+                            ? "text-primary border-primary"
+                            : "text-white/60 border-white/10 hover:text-white hover:border-white/30"
+                        }`
+                      }
+                    >
                       {item.name}
-                    </NavLink>)}
-                  
-                  {/* Outils Section */}
-                  <div className="px-4 py-2 bg-spider-cyan/10 border-b border-t border-gray-800">
-                    <span className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider">
-                      Outils
-                    </span>
-                  </div>
-                  {agenciesSolutions.outils.map(item => <NavLink key={item.path} to={item.path} className={({
-                isActive
-              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
+                    </NavLink>
+                  ))}
+                  <p className="text-[10px] font-orbitron font-bold text-accent uppercase tracking-[3px] py-2 mt-3">
+                    Outils
+                  </p>
+                  {agenciesSolutions.outils.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `block py-2.5 pl-3 font-inter text-sm border-l-2 transition-all duration-200 ${
+                          isActive
+                            ? "text-accent border-accent"
+                            : "text-white/60 border-white/10 hover:text-white hover:border-white/30"
+                        }`
+                      }
+                    >
                       {item.name}
-                    </NavLink>)}
-                </div>}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            {/* Outils Dropdown */}
-            <div className="relative" onMouseEnter={() => setIsOutilsMenuOpen(true)} onMouseLeave={() => setIsOutilsMenuOpen(false)}>
-              <button className="flex items-center gap-1 font-inter font-medium text-white/80 hover:text-spider-cyan transition-colors">
-                Outils
-                <ChevronDown className="w-4 h-4" />
-              </button>
+            <div className="h-px bg-white/5" />
 
-              {isOutilsMenuOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-black border border-gray-700 rounded-lg shadow-2xl overflow-hidden z-50">
-                  <NavLink to="/outils" className={({
-                isActive
-              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
-                    AGIA Dashboard
-                  </NavLink>
-                  <NavLink to="/home-staging-virtuel" className={({
-                isActive
-              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
-                    Home Staging Virtuel
-                  </NavLink>
-                  <NavLink to="/comparateur-etats-lieux" className={({
-                isActive
-              }) => `block px-4 py-2.5 font-inter text-sm transition-colors ${isActive ? "bg-spider-cyan/20 text-spider-cyan" : "text-white/80 hover:bg-gray-900 hover:text-spider-cyan"}`}>
-                    Comparateur États des Lieux
-                  </NavLink>
-                </div>}
+            {/* Outils dropdown */}
+            <div>
+              <button
+                onClick={() => setOpenDropdown(openDropdown === "outils" ? null : "outils")}
+                className="w-full flex items-center justify-between py-4 font-orbitron text-lg font-bold text-white/80 hover:text-white transition-colors"
+              >
+                <span>Outils</span>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-300 ${
+                    openDropdown === "outils" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-400 ${
+                  openDropdown === "outils" ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="pl-4 pb-4 space-y-1">
+                  {outilsItems.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `block py-2.5 pl-3 font-inter text-sm border-l-2 transition-all duration-200 ${
+                          isActive
+                            ? "text-accent border-accent"
+                            : "text-white/60 border-white/10 hover:text-white hover:border-white/30"
+                        }`
+                      }
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <NavLink to="/projets-realises" className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"}`}>
+            <div className="h-px bg-white/5" />
+
+            {/* Simple links */}
+            <NavLink
+              to="/projets-realises"
+              onClick={() => setIsMenuOpen(false)}
+              className="block py-4 font-orbitron text-lg font-bold text-white/80 hover:text-white transition-colors"
+            >
               Projets Réalisés
             </NavLink>
 
-            <NavLink to="/contact" className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"}`}>
-              À propos
-            </NavLink>
+            <div className="h-px bg-white/5" />
 
-            <NavLink to="/contact" className={({
-            isActive
-          }) => `font-inter font-medium transition-colors ${isActive ? "text-spider-red border-b-2 border-spider-red" : "text-white/80 hover:text-spider-red"}`}>
+            <NavLink
+              to="/contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="block py-4 font-orbitron text-lg font-bold text-white/80 hover:text-white transition-colors"
+            >
               Contact
             </NavLink>
-          </nav>
-
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <MT03Logo size={40} />
-            <span className="font-orbitron text-xl font-black text-white">MT03</span>
-          </Link>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && <nav className="lg:hidden py-4 border-t border-gray-800">
-            <div className="flex flex-col space-y-2">
-              
-              {/* Agence Immobilière Accordion */}
-              <div>
-                <button
-                  onClick={() => setIsAgenciesMenuOpen(!isAgenciesMenuOpen)}
-                  className="w-full flex items-center justify-between px-4 py-2 font-inter font-medium text-white/80 hover:text-spider-red transition-colors"
-                >
-                  <span>Agence Immobilière</span>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${isAgenciesMenuOpen ? 'rotate-90' : ''}`} />
-                </button>
-                
-                {isAgenciesMenuOpen && (
-                  <div className="space-y-2 mt-2">
-                    {/* Automatisations */}
-                    <div className="pl-4">
-                      <div className="text-xs font-orbitron font-bold text-spider-red uppercase tracking-wider mb-2 px-4">
-                        Automatisations
-                      </div>
-                      {agenciesSolutions.automations.map(item => (
-                        <NavLink
-                          key={item.path}
-                          to={item.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className={({ isActive }) => 
-                            `block pl-8 py-2 font-inter text-sm transition-colors ${
-                              isActive ? "text-spider-red" : "text-white/80"
-                            }`
-                          }
-                        >
-                          {item.name}
-                        </NavLink>
-                      ))}
-                    </div>
-
-                    {/* Outils Agence */}
-                    <div className="pl-4 mt-3">
-                      <div className="text-xs font-orbitron font-bold text-spider-cyan uppercase tracking-wider mb-2 px-4">
-                        Outils
-                      </div>
-                      {agenciesSolutions.outils.map(item => (
-                        <NavLink
-                          key={item.path}
-                          to={item.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className={({ isActive }) => 
-                            `block pl-8 py-2 font-inter text-sm transition-colors ${
-                              isActive ? "text-spider-cyan" : "text-white/80"
-                            }`
-                          }
-                        >
-                          {item.name}
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Outils Accordion */}
-              <div>
-                <button
-                  onClick={() => setIsOutilsMenuOpen(!isOutilsMenuOpen)}
-                  className="w-full flex items-center justify-between px-4 py-2 font-inter font-medium text-white/80 hover:text-spider-cyan transition-colors"
-                >
-                  <span>Outils</span>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${isOutilsMenuOpen ? 'rotate-90' : ''}`} />
-                </button>
-                
-                {isOutilsMenuOpen && (
-                  <div className="pl-8 space-y-2 mt-2">
-                    <NavLink
-                      to="/outils"
-                      onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block py-2 font-inter text-sm transition-colors ${
-                          isActive ? "text-spider-cyan" : "text-white/80"
-                        }`
-                      }
-                    >
-                      AGIA Dashboard
-                    </NavLink>
-                    <NavLink
-                      to="/home-staging-virtuel"
-                      onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block py-2 font-inter text-sm transition-colors ${
-                          isActive ? "text-spider-cyan" : "text-white/80"
-                        }`
-                      }
-                    >
-                      Home Staging Virtuel
-                    </NavLink>
-                    <NavLink
-                      to="/comparateur-etats-lieux"
-                      onClick={() => setIsMenuOpen(false)}
-                      className={({ isActive }) => 
-                        `block py-2 font-inter text-sm transition-colors ${
-                          isActive ? "text-spider-cyan" : "text-white/80"
-                        }`
-                      }
-                    >
-                      Comparateur États des Lieux
-                    </NavLink>
-                  </div>
-                )}
-              </div>
-
-              {/* Projets Réalisés */}
-              <NavLink
-                to="/projets-realises"
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => 
-                  `px-4 py-2 font-inter font-medium transition-colors ${
-                    isActive ? "text-spider-red" : "text-white/80"
-                  }`
-                }
-              >
-                Projets Réalisés
-              </NavLink>
-
-              {/* À propos */}
-              <NavLink
-                to="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => 
-                  `px-4 py-2 font-inter font-medium transition-colors ${
-                    isActive ? "text-spider-red" : "text-white/80"
-                  }`
-                }
-              >
-                À propos
-              </NavLink>
-
-              {/* Contact */}
-              <NavLink
-                to="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className={({ isActive }) => 
-                  `px-4 py-2 font-inter font-medium transition-colors ${
-                    isActive ? "text-spider-red" : "text-white/80"
-                  }`
-                }
-              >
-                Contact
-              </NavLink>
-
-            </div>
-          </nav>}
+          </div>
+        </nav>
       </div>
-    </header>;
+    </>
+  );
 };
+
 export default Header;
